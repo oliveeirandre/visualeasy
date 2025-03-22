@@ -1,18 +1,1032 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind CSS 4 Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Easy 3D - Estúdio de Renderização</title>
+  <meta name="description"
+    content="Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#007bff',
+            secondary: '#f8f9fa',
+            dark: '#343a40',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilos para a seleção de checkbox */
+.custom-checkbox {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 20px;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+.custom-checkbox:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.custom-checkbox input:checked~.checkmark {
+  background-color: #007bff;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Estilo para a logo */
+header .logo {
+  height: 40px; /* Ajuste o tamanho desejado */
+  width: auto; /* Mantém a proporção da imagem */
+}
+
+/* Rodapé para desktop */
+#desktop-footer {
+  display: flex; /* Exibe o rodapé no desktop */
+  position: static; /* Remove o comportamento fixo */
+  box-shadow: none; /* Remove a sombra */
+  padding: 1.5rem 1rem; /* Ajusta o espaçamento interno */
+}
+
+#desktop-footer .container {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+#desktop-footer p {
+  display: block; /* Mostra o texto no desktop */
+  margin: 0; /* Remove margens do texto */
+  font-size: 1.09375rem; /* Aumenta o tamanho do texto em 25% (0.875rem * 1.25) */
+  color: #333; /* Cor do texto */
+  flex: 1; /* O texto ocupa o espaço à esquerda */
+}
+
+#desktop-footer .flex {
+  display: flex;
+  justify-content: flex-end; /* Alinha os ícones à direita */
+}
+
+#desktop-footer img {
+  height: 30px; /* Aumenta o tamanho dos ícones em 25% (24px * 1.25) */
+  width: 30px; /* Mantém proporção quadrada */
+  margin-left: 1rem; /* Espaçamento entre os ícones */
+}
+
+/* Rodapé para smartphone */
+#mobile-footer {
+  display: none; /* Esconde o rodapé no desktop */
+}
+
+/* Exibir rodapé fixo no smartphone */
+@media (max-width: 768px) {
+  #desktop-footer {
+    display: none; /* Esconde o rodapé no smartphone */
+  }
+
+  #mobile-footer {
+    display: flex; /* Exibe o rodapé no smartphone */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50; /* Garante que o rodapé fique acima de outros elementos */
+    background-color: white; /* Fundo branco */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve no rodapé */
+    padding: 0.5rem 1rem; /* Ajusta o espaçamento interno */
+  }
+
+  #mobile-footer .container {
+    display: flex;
+    justify-content: space-between; /* Distribui os ícones corretamente */
+    align-items: center;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+  #mobile-footer img {
+    height: 32px; /* Tamanho dos ícones no rodapé */
+    width: 32px; /* Mantém proporção quadrada */
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+  }
+
+  #mobile-footer img:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+  }
+
+  /* Ajusta o espaçamento dos ícones */
+  #mobile-footer a {
+    flex: 1; /* Cada ícone ocupa o mesmo espaço */
+    display: flex;
+    justify-content: center; /* Centraliza o ícone dentro do espaço */
+  }
+}
+
+  </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4">Ola Dr. Mundo</h1>
-        <p class="text-gray-600 mb-6">This is a simple example of using Tailwind CSS via CDN.</p>
-        <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-            Click Me
-        </button>
+
+<body class="bg-white text-gray-800">
+  <!-- Seção 1: Cabeçalho -->
+  <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="text-2xl font-bold">
+        <a href="#" id="logo">
+          <img
+            src="public/assets/identidade_visual/logo.png"
+            alt="Visual Easy 3D"
+            class="logo"
+          />
+        </a>
+      </div>
+      
+      <script>
+        // Adiciona um evento de clique na logo
+        document.getElementById("logo").addEventListener("click", function (e) {
+          e.preventDefault(); // Evita o comportamento padrão do link
+          window.scrollTo({
+            top: 0, // Define a posição para o topo da página
+            behavior: "smooth", // Faz a rolagem suave
+          });
+        });
+      </script>
+         
+      <!-- Botão de menu (hambúrguer) para dispositivos móveis -->
+      <button
+        id="menu-toggle"
+        class="block md:hidden text-gray-800 focus:outline-none z-50 relative"
+        aria-label="Menu"
+      >
+        <div class="w-6 h-6 flex items-center justify-center relative">
+          <span id="bar-1" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-current top-1"></span>
+          <span id="bar-2" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-current top-2.5"></span>
+          <span id="bar-3" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-current top-4"></span>
+        </div>
+      </button>
+
+      <!-- Overlay para o menu mobile -->
+      <div
+        id="menu-overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 opacity-0"
+      ></div>
+
+      <!-- Menu de navegação (funciona para mobile e desktop) -->
+      <nav
+        id="menu"
+        class="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 pt-20 md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none md:transform-none md:transition-none md:p-0 md:pt-0 md:translate-x-0 md:flex-row md:items-center md:space-y-0 md:space-x-8"
+      >
+        <a
+          href="#solucoes"
+          class="font-medium hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0"
+        >
+          SOLUÇÕES
+        </a>
+        <a
+          href="#orcamento"
+          class="font-medium hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0"
+        >
+          ORÇAMENTO
+        </a>
+        <a
+          href="#contato"
+          class="font-medium hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0"
+        >
+          CONTATO
+        </a>
+      </nav>
     </div>
+  </header>
+
+  <!-- Seção 2: Carrossel de Imagens Principal -->
+  <section class="pt-20">
+    <div class="swiper main-swiper">
+      <div class="swiper-wrapper">
+        <!-- Substitua pelas suas imagens (9 no total) -->
+        <div class="swiper-slide">
+          <img src="imagem1.jpg" alt="Projeto 1" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem2.jpg" alt="Projeto 2" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem3.jpg" alt="Projeto 3" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem4.jpg" alt="Projeto 4" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem5.jpg" alt="Projeto 5" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem6.jpg" alt="Projeto 6" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem7.jpg" alt="Projeto 7" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem8.jpg" alt="Projeto 8" class="w-full h-[85vh] object-cover" />
+        </div>
+        <div class="swiper-slide">
+          <img src="imagem9.jpg" alt="Projeto 9" class="w-full h-[85vh] object-cover" />
+        </div>
+      </div>
+      <!-- Botões de navegação -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- Seção 3: Texto Centralizado -->
+  <section class="py-16 px-6">
+    <div class="container mx-auto max-w-4xl text-center">
+      <p class="text-lg leading-relaxed">
+        Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D
+        de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º, destacando o melhor do seu
+        empreendimento.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção 4: Soluções -->
+  <section id="solucoes" class="py-16 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-2xl font-semibold mb-16 text-center">SOLUÇÕES</h2>
+
+      <!-- Carrossel 1: Fachadas -->
+      <div class="flex flex-col md:flex-row items-center mb-20">
+        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+          <div class="swiper fachada-swiper">
+            <div class="swiper-wrapper">
+              <!-- Substitua pelas suas imagens de fachada (8 no total) -->
+              <div class="swiper-slide">
+                <img src="fachada1.jpg" alt="Fachada 1" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada2.jpg" alt="Fachada 2" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada3.jpg" alt="Fachada 3" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada4.jpg" alt="Fachada 4" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada5.jpg" alt="Fachada 5" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada6.jpg" alt="Fachada 6" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada7.jpg" alt="Fachada 7" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="fachada8.jpg" alt="Fachada 8" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4">Fachadas</h3>
+          <p class="text-gray-600">
+            Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem
+          </p>
+        </div>
+      </div>
+
+      <!-- Carrossel 2: Interiores -->
+      <div class="flex flex-col md:flex-row items-center mb-20">
+        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+          <div class="swiper interiores-swiper">
+            <div class="swiper-wrapper">
+              <!-- Substitua pelas suas imagens de interiores (8 no total) -->
+              <div class="swiper-slide">
+                <img src="interior1.jpg" alt="Interior 1" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior2.jpg" alt="Interior 2" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior3.jpg" alt="Interior 3" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior4.jpg" alt="Interior 4" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior5.jpg" alt="Interior 5" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior6.jpg" alt="Interior 6" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior7.jpg" alt="Interior 7" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="interior8.jpg" alt="Interior 8" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4">Interiores</h3>
+          <p class="text-gray-600">
+            Apartamentos | Áreas de uso comum
+          </p>
+        </div>
+      </div>
+
+      <!-- Carrossel 3: Áreas Externas -->
+      <div class="flex flex-col md:flex-row items-center mb-20">
+        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+          <div class="swiper areas-externas-swiper">
+            <div class="swiper-wrapper">
+              <!-- Substitua pelas suas imagens de áreas externas (8 no total) -->
+              <div class="swiper-slide">
+                <img src="externa1.jpg" alt="Área Externa 1" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa2.jpg" alt="Área Externa 2" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa3.jpg" alt="Área Externa 3" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa4.jpg" alt="Área Externa 4" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa5.jpg" alt="Área Externa 5" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa6.jpg" alt="Área Externa 6" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa7.jpg" alt="Área Externa 7" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="externa8.jpg" alt="Área Externa 8" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4">Áreas externas</h3>
+          <p class="text-gray-600">
+            Piscinas | Áreas externas | Acessos
+          </p>
+        </div>
+      </div>
+
+      <!-- Carrossel 4: Plantas Humanizadas -->
+      <div class="flex flex-col md:flex-row items-center mb-20">
+        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+          <div class="swiper plantas-swiper">
+            <div class="swiper-wrapper">
+              <!-- Substitua pelas suas imagens de plantas (8 no total) -->
+              <div class="swiper-slide">
+                <img src="planta1.jpg" alt="Planta 1" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta2.jpg" alt="Planta 2" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta3.jpg" alt="Planta 3" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta4.jpg" alt="Planta 4" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta5.jpg" alt="Planta 5" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta6.jpg" alt="Planta 6" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta7.jpg" alt="Planta 7" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+              <div class="swiper-slide">
+                <img src="planta8.jpg" alt="Planta 8" class="w-full h-96 object-cover rounded-lg shadow-md" />
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4">Plantas humanizadas</h3>
+          <p class="text-gray-600">
+            Plantas humanizadas apartamento | Térreo | Áreas de uso comum
+          </p>
+        </div>
+      </div>
+
+      <!-- Carrossel 5: Filme | Animação -->
+      <div class="flex flex-col md:flex-row items-center mb-20">
+        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+          <div class="swiper filme-swiper">
+            <div class="swiper-wrapper">
+              <!-- Substitua pelos seus vídeos (6 no total) -->
+              <div class="swiper-slide">
+                <video src="public/assets/videos/FACHADA_EMBASAMENTO.mp4" controls class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              </div>
+              <div class="swiper-slide">
+                <video src="public/assets/videos/LOUNGE_EXTERNO.mp4" controls class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              </div>
+              <div class="swiper-slide">
+                <video src="public/assets/videos/GOURMET_INTERNO.mp4" controls class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              </div>
+              <div class="swiper-slide">
+                <video src="public/assets/videos/PISCINA.mp4" controls class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              </div>
+              <div class="swiper-slide">
+                <video src="public/assets/videos/FACHADA_NOTURNA.mp4" controls class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              </div>
+              <div class="swiper-slide">
+                <video src="public/assets/videos/PET.mp4" controls class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+          <h3 class="text-xl font-semibold mb-4">Filme | Animação</h3>
+          <p class="text-gray-600">
+            Filme de apresentação do empreendimento
+          </p>
+        </div>
+      </div>
+
+      <!-- Carrossel 6: Tour Virtual 360º -->
+<div class="flex flex-col md:flex-row items-center mb-20">
+    <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+      <div class="swiper tour-swiper">
+        <div class="swiper-wrapper">
+          <!-- Substitua pelos seus tours 360 (6 no total) -->
+          <div class="swiper-slide">
+            <div class="relative">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" class="w-full h-96 rounded-lg shadow-md"></iframe>
+              <a
+                href="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html"
+                target="_blank"
+                class="absolute bottom-4 right-4 bg-primary text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
+              >
+                Tela Cheia
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="relative">
+              <iframe src="tour2.html" class="w-full h-96 rounded-lg shadow-md"></iframe>
+              <a
+                href="tour2.html"
+                target="_blank"
+                class="absolute bottom-4 right-4 bg-primary text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
+              >
+                Tela Cheia
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="relative">
+              <iframe src="tour3.html" class="w-full h-96 rounded-lg shadow-md"></iframe>
+              <a
+                href="tour3.html"
+                target="_blank"
+                class="absolute bottom-4 right-4 bg-primary text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition"
+              >
+                Tela Cheia
+              </a>
+            </div>
+          </div>
+          <!-- Adicione mais slides conforme necessário -->
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 md:pl-12 text-center md:text-left">
+      <h3 class="text-xl font-semibold mb-4">Tour Virtual 360º</h3>
+      <p class="text-gray-600">
+        Tour virtual 360º para imersão do cliente
+      </p>
+    </div>
+  </div>
+  
+  </section>
+
+  <!-- Seção 5: Orçamento -->
+<section id="orcamento" class="py-16 px-6 bg-gray-100">
+  <div class="container mx-auto max-w-6xl">
+    <div class="flex flex-col md:flex-row md:space-x-12"> <!-- Espaçamento lateral maior -->
+      <!-- Formulário de Orçamento (Lado Esquerdo) -->
+      <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
+        <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
+        <form
+          action="https://script.google.com/macros/s/AKfycbwnQdowfGasVLr2m8PMDkDsSmMDDIsNdRCAHmw_iWfHhR5QVZ97fX0RNpOR8reLDVqHg/exec"
+          method="POST"
+          class="space-y-4"
+        >
+          <div>
+            <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome*:</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label for="incorporadora" class="block text-gray-700 text-sm font-bold mb-2">Incorporadora:</label>
+            <input
+              type="text"
+              id="incorporadora"
+              name="incorporadora"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email*:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label for="whatsapp" class="block text-gray-700 text-sm font-bold mb-2">Whatsapp*:</label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label for="cidade" class="block text-gray-700 text-sm font-bold mb-2">Cidade:</label>
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+
+          <div>
+            <p class="text-sm font-bold mb-2">Qual é o tipo de empreendimento:</p>
+            <div class="space-y-2">
+              <label class="block">
+                <input type="radio" name="tipo_empreendimento" value="residencial" class="mr-2" />
+                Torre de uso residencial
+              </label>
+              <label class="block">
+                <input type="radio" name="tipo_empreendimento" value="comercial" class="mr-2" />
+                Torre de uso comercial
+              </label>
+              <label class="block">
+                <input type="radio" name="tipo_empreendimento" value="loteamento" class="mr-2" />
+                Loteamento | Condomínio de lotes
+              </label>
+              <label class="block">
+                <input type="radio" name="tipo_empreendimento" value="outro" class="mr-2" />
+                Outro
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold mb-2">Indique os itens que irão compor o material de lançamento do empreendimento:</p>
+            <div class="space-y-2">
+              <label class="block">
+                <input type="checkbox" name="itens[]" value="fachadas" class="mr-2" />
+                Fachadas
+              </label>
+              <label class="block">
+                <input type="checkbox" name="itens[]" value="imagens_uso_comum" class="mr-2" />
+                Imagens aéreas de uso comum
+              </label>
+              <label class="block">
+                <input type="checkbox" name="itens[]" value="imagens_privativas" class="mr-2" />
+                Imagens aéreas privativas
+              </label>
+              <label class="block">
+                <input type="checkbox" name="itens[]" value="plantas_humanizadas" class="mr-2" />
+                Plantas humanizadas
+              </label>
+              <label class="block">
+                <input type="checkbox" name="itens[]" value="tour_virtual" class="mr-2" />
+                Tour Virtual 360º
+              </label>
+              <label class="block">
+                <input type="checkbox" name="itens[]" value="videos" class="mr-2" />
+                Vídeos | Filme
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold mb-2">Possui projeto de arquitetura de interiores:</p>
+            <div class="space-y-2">
+              <label class="block">
+                <input type="radio" name="projeto_interiores" value="sim" class="mr-2" />
+                Sim
+              </label>
+              <label class="block">
+                <input type="radio" name="projeto_interiores" value="nao" class="mr-2" />
+                Não
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold mb-2">Como gostaria de apresentar esse empreendimento:</p>
+            <div class="space-y-2">
+              <label class="block">
+                <input type="radio" name="apresentacao" value="pacote_compacto" class="mr-2" />
+                Pacote compacto com 20 imagens
+              </label>
+              <label class="block">
+                <input type="radio" name="apresentacao" value="lista_completa" class="mr-2" />
+                Lista completa de imagens para apresentar os principais ambientes do empreendimento
+              </label>
+              <label class="block">
+                <input type="radio" name="apresentacao" value="lista_completa_filme" class="mr-2" />
+                Lista completa de imagens, Filme de lançamento e/ou tour virtual 360º
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold mb-2">Preferência de contato via:</p>
+            <div class="space-y-2">
+              <label class="block">
+                <input type="radio" name="contato" value="email" class="mr-2" />
+                Email
+              </label>
+              <label class="block">
+                <input type="radio" name="contato" value="whatsapp" class="mr-2" />
+                Whatsapp
+              </label>
+            </div>
+          </div>
+
+          <div class="text-center mt-6">
+            <button
+              type="submit"
+              class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline"
+            >
+              Solicitar Proposta
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Dúvidas (Lado Direito) -->
+      <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
+        <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
+        <div class="space-y-6">
+            <div>
+              <h4 class="font-semibold mb-2">1. Como posso solicitar um orçamento?</h4>
+              <p class="text-gray-600 text-sm">
+                Você pode solicitar um orçamento de forma prática pelo formulário ao lado, via e-mail ou pelo WhatsApp. Escolha o canal que for mais conveniente para você!
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">2. Preciso enviar o projeto para solicitar um orçamento?</h4>
+              <p class="text-gray-600 text-sm">
+                Sim, é necessário enviar o projeto para que possamos elaborar o orçamento. Aceitamos arquivos nos formatos PDF ou DWG.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">3. Qual é o pacote mínimo de imagens?</h4>
+              <p class="text-gray-600 text-sm">
+                Nosso orçamento mínimo contempla a criação de 20 imagens realistas.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">4. Qual é o prazo estimado para entrega?</h4>
+              <p class="text-gray-600 text-sm">
+                O prazo de entrega é definido após a análise detalhada do projeto. Garantimos pontualidade e qualidade em todas as entregas.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">5. Qual é a área de atuação da Visual Easy 3D?</h4>
+              <p class="text-gray-600 text-sm">
+                Atendemos incorporadoras de todo o Brasil, desenvolvendo soluções visuais realistas para torres residenciais e comerciais. Nosso objetivo é potencializar o desempenho de lançamentos imobiliários, conectando empreendimentos ao público certo.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">6. Vocês elaboram projetos de interiores?</h4>
+              <p class="text-gray-600 text-sm">
+                Sim! Nossa equipe é formada por arquitetos especializados, prontos para criar projetos de interiores com alto nível de detalhamento e realismo.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">7. Como funcionam as alterações nas entregas?</h4>
+              <p class="text-gray-600 text-sm">
+                Após a entrega inicial, o cliente pode revisar e solicitar ajustes. Todo orçamento inclui uma revisão gratuita. Caso sejam necessárias revisões extras, elas podem ser solicitadas à parte.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">8. Por que contratar a Visual Easy 3D?</h4>
+              <p class="text-gray-600 text-sm">
+                O mercado imobiliário exige lançamentos impactantes e conectados ao público-alvo. Na Visual Easy 3D, criamos representações realistas que aproximam o futuro e a realidade, ajudando a destacar seu empreendimento no mercado.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">9. Onde a Visual Easy 3D está localizada?</h4>
+              <p class="text-gray-600 text-sm">
+                Estamos em Campinas - SP, mas atendemos clientes de todo o Brasil.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">11. Como definir a lista de imagens do projeto?</h4>
+              <p class="text-gray-600 text-sm">
+                Se você ainda não tiver uma lista de ambientes a serem representados, nossa equipe pode sugerir com base no projeto e no perfil do empreendimento.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Qual é o compromisso da Visual Easy 3D?</h4>
+              <p class="text-gray-600 text-sm">
+                Nossa equipe é comprometida com a qualidade dos serviços e a pontualidade rigorosa na entrega. Trabalhamos para superar as expectativas de nossos clientes.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Como entrar em contato com a Visual Easy 3D?</h4>
+              <p class="text-gray-600 text-sm">
+                Se você tiver dúvidas ou quiser mais informações, entre em contato conosco pelo formulário, e-mail ou WhatsApp. Estamos prontos para ajudar!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+  </section>  
+
+  <!-- Seção 6: Contato -->
+<section id="contato" class="py-16 px-6">
+  <div class="container mx-auto text-center max-w-2xl">
+    <h2 class="text-2xl font-semibold mb-8">CONTATO</h2>
+    <p class="mb-2">
+      <span class="font-bold">Contato:</span> (19) 9 9699-6756
+    </p>
+    <p class="mb-6"> <!-- Margem maior aqui -->
+      <span class="font-bold">E-mail:</span> visualeasy.3d@gmail.com
+    </p>
+    <p class="mb-4 font-bold">Endereço:</p>
+    <p class="mb-2">Rua Arthur Urbano de Andrade, Edifício Flamboyant, nº 10, sala 32</p>
+    <p class="mb-2">Campinas, São Paulo</p>
+    <p>CEP: 13091-420</p>
+  </div>
+</section>
+ 
+
+  <!-- Seção 7: Rodapé -->
+<!-- Rodapé para desktop -->
+<footer id="desktop-footer" class="bg-white text-gray-800 py-2 px-6 shadow-md">
+  <div class="container mx-auto flex items-center">
+    <!-- Texto do rodapé -->
+    <p class="flex-1">© 2022 por Visual 3D.</p>
+
+    <!-- Ícones sociais -->
+    <div class="flex justify-end">
+      <a href="https://www.instagram.com/visual.easy/" target="_blank" class="hover:text-gray-500 transition duration-300">
+        <img src="public/assets/identidade_visual/instagram-icon.png" alt="Instagram" class="h-8 w-8">
+      </a>
+      <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" class="hover:text-gray-500 transition duration-300">
+        <img src="public/assets/identidade_visual/linkedin-icon.png" alt="LinkedIn" class="h-8 w-8">
+      </a>
+      <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300">
+        <img src="public/assets/identidade_visual/email-icon.png" alt="Email" class="h-8 w-8">
+      </a>
+      <a href="https://wa.me/+5519996996756" target="_blank" class="hover:text-gray-500 transition duration-300">
+        <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" class="h-8 w-8">
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Rodapé para smartphone -->
+<footer id="mobile-footer" class="bg-white text-gray-800 py-2 px-6 shadow-md fixed bottom-0 left-0 w-full">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Ícones sociais -->
+    <a href="https://www.instagram.com/visual.easy/" target="_blank" class="hover:text-gray-500 transition duration-300">
+      <img src="public/assets/identidade_visual/instagram-icon-grey.png" alt="Instagram" class="h-8 w-8">
+    </a>
+    <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300">
+      <img src="public/assets/identidade_visual/email-icon-grey.png" alt="Email" class="h-8 w-8">
+    </a>
+    <a href="https://wa.me/+5519996996756" target="_blank" class="hover:text-gray-500 transition duration-300">
+      <img src="public/assets/identidade_visual/whatsapp-icon-grey.png" alt="WhatsApp" class="h-8 w-8">
+    </a>
+  </div>
+</footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Carrossel Principal - 3 slides por vez
+    const mainSwiper = new Swiper('.main-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+
+    // Função para criar swipers de soluções
+    function createSolutionSwiper(className) {
+      return new Swiper(className, {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+    }
+
+    // Inicializar todos os carrosséis de soluções
+    const fachadaSwiper = createSolutionSwiper('.fachada-swiper');
+    const interioresSwiper = createSolutionSwiper('.interiores-swiper');
+    const areasExternasSwiper = createSolutionSwiper('.areas-externas-swiper');
+    const plantasSwiper = createSolutionSwiper('.plantas-swiper');
+    const filmeSwiper = createSolutionSwiper('.filme-swiper');
+    const tourSwiper = createSolutionSwiper('.tour-swiper');
+
+    // Scroll suave para os links de âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script>
+    // Menu mobile aprimorado
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const menuOverlay = document.getElementById("menu-overlay");
+const bar1 = document.getElementById("bar-1");
+const bar2 = document.getElementById("bar-2");
+const bar3 = document.getElementById("bar-3");
+const menuLinks = menu.querySelectorAll("a");
+
+// Função para alternar o estado do menu
+function toggleMenu() {
+  const isOpen = menu.classList.contains("translate-x-0");
+  
+  if (isOpen) {
+    // Fechar menu
+    menu.classList.remove("translate-x-0");
+    menu.classList.add("translate-x-full");
+    menuOverlay.classList.add("opacity-0");
+    
+    // Esperar a transição terminar antes de esconder completamente
+    setTimeout(() => {
+      menuOverlay.classList.add("hidden");
+    }, 300);
+    
+    // Restaurar ícone hambúrguer
+    bar1.classList.remove("rotate-45", "top-2.5");
+    bar2.classList.remove("opacity-0");
+    bar3.classList.remove("-rotate-45", "top-2.5");
+    
+    // Permitir rolagem na página
+    document.body.classList.remove("overflow-hidden", "md:overflow-auto");
+  } else {
+    // Abrir menu
+    menu.classList.remove("translate-x-full");
+    menu.classList.add("translate-x-0");
+    menuOverlay.classList.remove("hidden");
+    
+    // Esperar um momento para aplicar a opacidade (para a transição funcionar)
+    setTimeout(() => {
+      menuOverlay.classList.remove("opacity-0");
+    }, 10);
+    
+    // Transformar ícone em X
+    bar1.classList.add("rotate-45", "top-2.5");
+    bar2.classList.add("opacity-0");
+    bar3.classList.add("-rotate-45", "top-2.5");
+    
+    // Impedir rolagem na página enquanto o menu está aberto (apenas no mobile)
+    document.body.classList.add("overflow-hidden", "md:overflow-auto");
+  }
+}
+
+// Eventos
+menuToggle.addEventListener("click", toggleMenu);
+menuOverlay.addEventListener("click", toggleMenu);
+
+// Fechar o menu quando um link é clicado
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 768) {
+      toggleMenu();
+    }
+  });
+});
+
+// Ajustar comportamento ao redimensionar a janela
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 768) {
+    // Restaurar estado padrão em telas maiores
+    menu.classList.remove("translate-x-0", "translate-x-full");
+    menuOverlay.classList.add("hidden", "opacity-0");
+    bar1.classList.remove("rotate-45", "top-2.5");
+    bar2.classList.remove("opacity-0");
+    bar3.classList.remove("-rotate-45", "top-2.5");
+    document.body.classList.remove("overflow-hidden");
+  }
+});
+  </script>
+  
 </body>
+
 </html>
