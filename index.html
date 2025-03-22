@@ -605,7 +605,6 @@
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
         <div class="swiper plantas-swiper">
           <div class="swiper-wrapper">
-            <!-- Imagens otimizadas -->
             <div class="swiper-slide">
               <img src="public/assets/section_04/humanizadas/planta1.png" alt="Planta humanizada de apartamento" 
                    class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
@@ -642,7 +641,6 @@
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
         <div class="swiper filme-swiper">
           <div class="swiper-wrapper">
-            <!-- Vídeos otimizados -->
             <div class="swiper-slide">
               <video src="video1.mp4" controls preload="none" poster="video1-poster.jpg" 
                      class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
@@ -669,7 +667,6 @@
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
         <div class="swiper tour-swiper">
           <div class="swiper-wrapper">
-            <!-- Tours otimizados -->
             <div class="swiper-slide">
               <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" 
                       class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
@@ -713,48 +710,57 @@
       let currentSwiper = null; // Armazena o swiper atual
       let currentIndex = 0; // Índice da imagem atual no modal
 
-      // Função para abrir o modal e exibir a imagem ampliada
       function openModal(image, swiperClass) {
         const modal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
         const swiper = document.querySelector(`.${swiperClass} .swiper-wrapper`);
-        const images = swiper.querySelectorAll('img, video, iframe'); // Seleciona imagens, vídeos ou iframes
+        const images = swiper.querySelectorAll('img, video, iframe');
 
-        currentSwiper = images; // Armazena as imagens do swiper atual
-        currentIndex = Array.from(images).indexOf(image); // Define o índice da imagem clicada
+        currentSwiper = images;
+        currentIndex = Array.from(images).indexOf(image);
 
-        modalImage.src = image.src; // Define a imagem do modal como a imagem clicada
-        modal.classList.remove('hidden'); // Exibe o modal
+        modalImage.src = image.src;
+        modal.classList.remove('hidden');
+
+        document.addEventListener('keydown', handleKeyNavigation);
       }
 
-      // Função para fechar o modal
       function closeModal() {
         const modal = document.getElementById('imageModal');
-        modal.classList.add('hidden'); // Esconde o modal
+        modal.classList.add('hidden');
+        document.removeEventListener('keydown', handleKeyNavigation);
       }
 
-      // Função para navegar para a imagem anterior
       function showPrev() {
         if (!currentSwiper) return;
-        currentIndex = (currentIndex - 1 + currentSwiper.length) % currentSwiper.length; // Navega para a imagem anterior
+        currentIndex = (currentIndex - 1 + currentSwiper.length) % currentSwiper.length;
         const modalImage = document.getElementById('modalImage');
-        modalImage.src = currentSwiper[currentIndex].src; // Atualiza a imagem no modal
+        modalImage.src = currentSwiper[currentIndex].src;
       }
 
-      // Função para navegar para a próxima imagem
       function showNext() {
         if (!currentSwiper) return;
-        currentIndex = (currentIndex + 1) % currentSwiper.length; // Navega para a próxima imagem
+        currentIndex = (currentIndex + 1) % currentSwiper.length;
         const modalImage = document.getElementById('modalImage');
-        modalImage.src = currentSwiper[currentIndex].src; // Atualiza a imagem no modal
+        modalImage.src = currentSwiper[currentIndex].src;
       }
 
-      // Adiciona eventos aos botões de navegação do modal
+      function handleKeyNavigation(event) {
+        if (event.key === 'ArrowLeft') {
+          showPrev();
+        } else if (event.key === 'ArrowRight') {
+          showNext();
+        } else if (event.key === 'Escape') {
+          closeModal();
+        }
+      }
+
       document.getElementById('modalPrev').addEventListener('click', showPrev);
       document.getElementById('modalNext').addEventListener('click', showNext);
     </script>
   </div>
 </section>
+
 
   <!-- Depoimentos de Clientes (Novidade para melhorar conversão) -->
   <section class="py-12 px-6 bg-gray-50">
