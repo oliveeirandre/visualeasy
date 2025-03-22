@@ -111,7 +111,7 @@
     
     .swiper-button-next,
     .swiper-button-prev {
-      color: #ffffff !important; /* Mantendo as setas brancas */
+      color: #dadada !important; /* Mantendo as setas brancas */
     }
 
     body {
@@ -231,7 +231,7 @@
       bottom: 85px;
       right: 20px;
       z-index: 100;
-      background-color: #25d366;
+      background-color: #dddddd;
       color: white !important;
       border-radius: 50%;
       width: 60px;
@@ -486,16 +486,29 @@
           <div class="swiper-wrapper">
             <!-- Imagens otimizadas -->
             <div class="swiper-slide">
-              <img src="fachada1.jpg" alt="Fachada 3D diurna de edifício residencial" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/fachadas/fachada1.jpg" alt="Fachada 3D diurna de edifício residencial" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'fachada-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="fachada2.jpg" alt="Fachada 3D noturna com iluminação" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/fachadas/fachada2.jpg" alt="Fachada 3D noturna com iluminação" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'fachada-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="fachada3.jpg" alt="Detalhe de fachada 3D com jardim" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/fachadas/fachada3.jpg" alt="Detalhe de fachada 3D com jardim" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'fachada-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="fachada4.jpg" alt="Fachada 3D com perspectiva aérea" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'fachada-swiper')" />
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -504,9 +517,7 @@
       </div>
       <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
         <h3 class="text-xl font-medium mb-4">Fachadas</h3>
-        <p class="font-thin">
-          Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem
-        </p>
+        <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
       </div>
     </div>
 
@@ -517,16 +528,29 @@
           <div class="swiper-wrapper">
             <!-- Imagens otimizadas -->
             <div class="swiper-slide">
-              <img src="interior1.jpg" alt="Render 3D de sala de estar contemporânea" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/interiores/interior1.jpg" alt="Render 3D de sala de estar contemporânea" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'interiores-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="interior2.jpg" alt="Visualização 3D de cozinha integrada" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/interiores/interior2.jpg" alt="Visualização 3D de cozinha integrada" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'interiores-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="interior3.jpg" alt="Renderização de suíte master" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/interiores/interior3.jpg" alt="Renderização de suíte master" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'interiores-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="interior4.jpg" alt="Espaço gourmet em 3D" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/interiores/interior4.jpg" alt="Renderização de suíte master" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior5.jpg" alt="Renderização de suíte master" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'interiores-swiper')" />
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -546,13 +570,24 @@
           <div class="swiper-wrapper">
             <!-- Imagens otimizadas -->
             <div class="swiper-slide">
-              <img src="area1.jpg" alt="Piscina com vista para o mar" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/areas_externas/area_externa1.jpg" alt="Piscina com vista para o mar" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'areas-externas-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="area2.jpg" alt="Espaço gourmet ao ar livre" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/areas_externas/area_externa2.jpg" alt="Espaço gourmet ao ar livre" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'areas-externas-swiper')" />
             </div>
             <div class="swiper-slide">
-              <img src="area3.jpg" alt="Área de lazer com iluminação noturna" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" />
+              <img src="public/assets/section_04/areas_externas/area_externa3.jpg" alt="Área de lazer com iluminação noturna" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/area_externa4.jpg" alt="Área de lazer com iluminação noturna" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'areas-externas-swiper')" />
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -566,46 +601,41 @@
     </div>
 
     <!-- Carrossel 4: Plantas humanizadas -->
-<div class="flex flex-col md:flex-row items-center mb-20">
-  <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-    <div class="swiper plantas-swiper">
-      <div class="swiper-wrapper">
-        <!-- Imagens otimizadas -->
-        <div class="swiper-slide">
-          <img src="public/assets/section_04/humanizadas/planta1.png" 
-               alt="planta1" 
-               class="w-full h-96 object-contain rounded-lg shadow-md" 
-               loading="lazy" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_04/humanizadas/planta2.png" 
-               alt="planta2" 
-               class="w-full h-96 object-contain rounded-lg shadow-md" 
-               loading="lazy" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_04/humanizadas/planta3.png" 
-               alt="planta3" 
-               class="w-full h-96 object-contain rounded-lg shadow-md" 
-               loading="lazy" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_04/humanizadas/planta4.png" 
-               alt="planta4" 
-               class="w-full h-96 object-contain rounded-lg shadow-md" 
-               loading="lazy" />
+    <div class="flex flex-col md:flex-row items-center mb-20">
+      <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+        <div class="swiper plantas-swiper">
+          <div class="swiper-wrapper">
+            <!-- Imagens otimizadas -->
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta1.png" alt="Planta humanizada de apartamento" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta2.png" alt="Planta humanizada de área comum" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta3.png" alt="Planta humanizada de área comum" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta4.png" alt="Planta humanizada de área comum" 
+                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                   loading="lazy" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+        <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
+        <p class="font-thin">Plantas humanizadas apartamento | Térreo | Áreas de uso comum</p>
+      </div>
     </div>
-  </div>
-  <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-    <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
-    <p class="font-thin">Plantas humanizadas apartamento | Térreo | Áreas de uso comum</p>
-  </div>
-</div>
-
 
     <!-- Carrossel 5: Filme | Animação -->
     <div class="flex flex-col md:flex-row items-center mb-20">
@@ -614,10 +644,14 @@
           <div class="swiper-wrapper">
             <!-- Vídeos otimizados -->
             <div class="swiper-slide">
-              <video src="video1.mp4" controls preload="none" poster="video1-poster.jpg" class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              <video src="video1.mp4" controls preload="none" poster="video1-poster.jpg" 
+                     class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                     onclick="openModal(this, 'filme-swiper')"></video>
             </div>
             <div class="swiper-slide">
-              <video src="video2.mp4" controls preload="none" poster="video2-poster.jpg" class="w-full h-96 object-cover rounded-lg shadow-md"></video>
+              <video src="video2.mp4" controls autoplay preload="none" poster="video2-poster.jpg" 
+                     class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                     onclick="openModal(this, 'filme-swiper')"></video>
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -637,10 +671,14 @@
           <div class="swiper-wrapper">
             <!-- Tours otimizados -->
             <div class="swiper-slide">
-              <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" 
+                      class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                      loading="lazy" title="Tour Virtual 360"></iframe>
             </div>
             <div class="swiper-slide">
-              <iframe src="tour2.html" class="w-full h-96 object-cover rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+              <iframe src="tour2.html" 
+                      class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                      loading="lazy" title="Tour Virtual 360"></iframe>
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -652,6 +690,69 @@
         <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
       </div>
     </div>
+
+    <!-- Modal para exibir a imagem ampliada com navegação -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+      <div class="relative">
+        <img id="modalImage" src="" alt="Imagem ampliada" class="max-w-full max-h-screen rounded-lg shadow-lg object-contain" />
+        <button onclick="closeModal()" 
+                class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200">
+          ✕
+        </button>
+        <!-- Botões de navegação -->
+        <button id="modalPrev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200">
+          &#10094; <!-- Seta para a esquerda -->
+        </button>
+        <button id="modalNext" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200">
+          &#10095; <!-- Seta para a direita -->
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let currentSwiper = null; // Armazena o swiper atual
+      let currentIndex = 0; // Índice da imagem atual no modal
+
+      // Função para abrir o modal e exibir a imagem ampliada
+      function openModal(image, swiperClass) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const swiper = document.querySelector(`.${swiperClass} .swiper-wrapper`);
+        const images = swiper.querySelectorAll('img, video, iframe'); // Seleciona imagens, vídeos ou iframes
+
+        currentSwiper = images; // Armazena as imagens do swiper atual
+        currentIndex = Array.from(images).indexOf(image); // Define o índice da imagem clicada
+
+        modalImage.src = image.src; // Define a imagem do modal como a imagem clicada
+        modal.classList.remove('hidden'); // Exibe o modal
+      }
+
+      // Função para fechar o modal
+      function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.add('hidden'); // Esconde o modal
+      }
+
+      // Função para navegar para a imagem anterior
+      function showPrev() {
+        if (!currentSwiper) return;
+        currentIndex = (currentIndex - 1 + currentSwiper.length) % currentSwiper.length; // Navega para a imagem anterior
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = currentSwiper[currentIndex].src; // Atualiza a imagem no modal
+      }
+
+      // Função para navegar para a próxima imagem
+      function showNext() {
+        if (!currentSwiper) return;
+        currentIndex = (currentIndex + 1) % currentSwiper.length; // Navega para a próxima imagem
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = currentSwiper[currentIndex].src; // Atualiza a imagem no modal
+      }
+
+      // Adiciona eventos aos botões de navegação do modal
+      document.getElementById('modalPrev').addEventListener('click', showPrev);
+      document.getElementById('modalNext').addEventListener('click', showNext);
+    </script>
   </div>
 </section>
 
