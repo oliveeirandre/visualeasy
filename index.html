@@ -376,6 +376,146 @@
     .text-yellow-400 {
       color: #facc15 !important;
     }
+    
+    /* Ajuste para os carrosséis de solução */
+    .solution-swiper .swiper-slide img {
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    /* Ajuste específico para plantas humanizadas - exibir imagem completa */
+    .plantas-swiper .swiper-slide img {
+      height: 300px;
+      width: 100%;
+      object-fit: contain !important;
+    }
+    
+    /* Ajuste específico para vídeos - CORRIGIDO */
+    .filme-swiper .swiper-slide {
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      position: relative;
+    }
+    
+    .filme-swiper .swiper-slide video {
+      max-width: 100%;
+      max-height: 300px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    .filme-swiper .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .filme-swiper .swiper-button-next,
+    .filme-swiper .swiper-button-prev {
+      background-color: rgba(255, 255, 255, 0.7);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      top: 50%;
+    }
+    
+    .filme-swiper .swiper-button-next:after,
+    .filme-swiper .swiper-button-prev:after {
+      font-size: 18px;
+    }
+    
+    .video-play-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .filme-swiper .swiper-slide:hover .video-play-indicator {
+      opacity: 1;
+    }
+    
+    .video-play-indicator:before {
+      content: "▶";
+      font-size: 48px;
+      color: white;
+    }
+    
+    /* Ajuste para o tour 360 - reposicionar os controles do swiper */
+    .tour-swiper .swiper-button-next,
+    .tour-swiper .swiper-button-prev {
+      top: 30px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      z-index: 51;
+    }
+    
+    .tour-swiper .swiper-button-next {
+      right: 10px;
+    }
+    
+    .tour-swiper .swiper-button-prev {
+      left: 10px;
+    }
+    
+    .tour-swiper .swiper-button-next:after,
+    .tour-swiper .swiper-button-prev:after {
+      font-size: 18px;
+    }
+    
+    /* Otimização para visualização em múltiplas imagens */
+    @media (min-width: 1024px) {
+      .multi-image-swiper .swiper-slide {
+        width: 25%;
+      }
+      .dual-image-swiper .swiper-slide {
+        width: 50%;
+      }
+    }
+    
+    /* Melhorias para o modal de imagem */
+    #imageModal {
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease-in-out;
+    }
+    
+    #modalImage {
+      max-height: 80vh;
+      max-width: 90vw;
+      transition: all 0.3s ease;
+    }
+    
+    /* Otimização para carregamento de página */
+    .lazy-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .lazy-section.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -482,7 +622,7 @@
     <!-- Carrossel 1: Fachadas -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper fachada-swiper">
+        <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
           <div class="swiper-wrapper">
             <!-- Imagens otimizadas -->
             <div class="swiper-slide">
@@ -524,7 +664,7 @@
     <!-- Carrossel 2: Interiores -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper interiores-swiper">
+        <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
           <div class="swiper-wrapper">
             <!-- Imagens otimizadas -->
             <div class="swiper-slide">
@@ -566,7 +706,7 @@
     <!-- Carrossel 3: Áreas externas -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper areas-externas-swiper">
+        <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
           <div class="swiper-wrapper">
             <!-- Imagens otimizadas -->
             <div class="swiper-slide">
@@ -600,10 +740,10 @@
       </div>
     </div>
 
-    <!-- Carrossel 4: Plantas humanizadas -->
+    <!-- Carrossel 4: Plantas humanizadas (AJUSTADO) -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper plantas-swiper">
+        <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="public/assets/section_04/humanizadas/planta1.png" alt="Planta humanizada de apartamento" 
@@ -636,20 +776,66 @@
       </div>
     </div>
 
-    <!-- Carrossel 5: Filme | Animação -->
+    <!-- Carrossel 5: Filme | Animação (CORRIGIDO) -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper filme-swiper">
+        <div class="swiper filme-swiper solution-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <video src="video1.mp4" controls preload="none" poster="video1-poster.jpg" 
-                     class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
-                     onclick="openModal(this, 'filme-swiper')"></video>
+              <div class="video-container">
+                <video 
+                  src="public/assets/section_04/filmes/filme1.mp4" 
+                  controls 
+                  preload="metadata" 
+                  poster="public/assets/section_04/filmes/filme1-poster.jpg"
+                  class="video-player"
+                  playsinline>
+                  Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="video-play-indicator"></div>
+              </div>
             </div>
             <div class="swiper-slide">
-              <video src="video2.mp4" controls autoplay preload="none" poster="video2-poster.jpg" 
-                     class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
-                     onclick="openModal(this, 'filme-swiper')"></video>
+              <div class="video-container">
+                <video 
+                  src="public/assets/section_04/filmes/filme2.mp4" 
+                  controls 
+                  preload="metadata" 
+                  poster="public/assets/section_04/filmes/filme2-poster.jpg"
+                  class="video-player"
+                  playsinline>
+                  Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="video-play-indicator"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="video-container">
+                <video 
+                  src="public/assets/section_04/filmes/filme3.mp4" 
+                  controls 
+                  preload="metadata" 
+                  poster="public/assets/section_04/filmes/filme3-poster.jpg"
+                  class="video-player"
+                  playsinline>
+                  Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="video-play-indicator"></div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="video-container">
+                <video 
+                  src="public/assets/section_04/filmes/filme4.mp4" 
+                  controls 
+                  preload="metadata" 
+                  poster="public/assets/section_04/filmes/filme4-poster.jpg"
+                  class="video-player"
+                  playsinline>
+                  Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="video-play-indicator"></div>
+              </div>
             </div>
           </div>
           <div class="swiper-button-prev"></div>
@@ -662,19 +848,24 @@
       </div>
     </div>
 
-    <!-- Carrossel 6: Tour Virtual 360º -->
+    <!-- Carrossel 6: Tour Virtual 360º (AJUSTADO) -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper tour-swiper">
+        <div class="swiper tour-swiper solution-swiper dual-image-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" 
-                      class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+                      class="w-full h-96 object-contain rounded-lg shadow-md" 
                       loading="lazy" title="Tour Virtual 360"></iframe>
             </div>
             <div class="swiper-slide">
-              <iframe src="tour2.html" 
-                      class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" 
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html" 
+                      class="w-full h-96 object-contain rounded-lg shadow-md" 
+                      loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" 
+                      class="w-full h-96 object-contain rounded-lg shadow-md" 
                       loading="lazy" title="Tour Virtual 360"></iframe>
             </div>
           </div>
@@ -761,8 +952,7 @@
   </div>
 </section>
 
-
-  <!-- Depoimentos de Clientes (Novidade para melhorar conversão) -->
+  <!-- Depoimentos de Clientes -->
   <section class="py-12 px-6 bg-gray-50">
     <div class="container mx-auto max-w-6xl">
       <h2 class="text-2xl font-semibold mb-10 text-center">O QUE NOSSOS CLIENTES DIZEM</h2>
@@ -1297,6 +1487,70 @@
           });
         });
       });
+      
+      // Melhor gestão de vídeos no carrossel
+      function setupVideoHandling() {
+        const videos = document.querySelectorAll('.filme-swiper video');
+        
+        // Pausa todos os vídeos
+        function pauseAllVideos() {
+          videos.forEach(video => {
+            if (!video.paused) {
+              video.pause();
+            }
+          });
+        }
+        
+        // Adiciona interação de clique aos vídeos
+        videos.forEach(video => {
+          // Adiciona event listener para clique nos vídeos
+          video.addEventListener('play', function() {
+            // Pausa todos os outros vídeos
+            pauseAllVideos();
+            // Reproduz apenas o vídeo clicado
+            this.play();
+          });
+          
+          // Monitora o término dos vídeos
+          video.addEventListener('ended', function() {
+            // Opcional: navegar para o próximo slide quando o vídeo terminar
+            const swiperInstance = document.querySelector('.filme-swiper').swiper;
+            if (swiperInstance) {
+              swiperInstance.slideNext();
+            }
+          });
+        });
+        
+        // Adiciona listeners para as setas de navegação do swiper
+        const prevButton = document.querySelector('.filme-swiper .swiper-button-prev');
+        const nextButton = document.querySelector('.filme-swiper .swiper-button-next');
+        
+        if (prevButton) {
+          prevButton.addEventListener('click', pauseAllVideos);
+        }
+        
+        if (nextButton) {
+          nextButton.addEventListener('click', pauseAllVideos);
+        }
+      }
+      
+      // Inicializa o tratamento de vídeos após os swipers estarem prontos
+      document.addEventListener('swiperInitialized', setupVideoHandling);
+      
+      // Otimização de carregamento da página
+      const lazyItems = document.querySelectorAll('.swiper-container, h2, h3, .cta-primary');
+      const lazyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            lazyObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      lazyItems.forEach(item => {
+        lazyObserver.observe(item);
+      });
     });
 
     // Função para inicializar todos os swipers
@@ -1307,7 +1561,7 @@
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
-        },
+                },
         effect: 'fade',
         fadeEffect: {
           crossFade: true
@@ -1342,24 +1596,84 @@
         }
       });
 
-      // Lista de seletores para os swipers de soluções
-      const solutionSwipers = [
-        '.fachada-swiper',
-        '.interiores-swiper',
-        '.areas-externas-swiper',
-        '.plantas-swiper',
-        '.filme-swiper',
-        '.tour-swiper'
-      ];
+      // Configuração específica para swipers que mostram 4 itens em desktop (1, 2 e 3)
+      const multiImageOptions = {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 15,
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          }
+        }
+      };
 
-      // Inicializar cada swiper de solução
-      solutionSwipers.forEach(selector => {
-        new Swiper(selector, {
-          ...commonOptions,
-          slidesPerView: 1,
-          spaceBetween: 30,
-        });
+      // Configuração específica para swipers que mostram 2 itens em desktop (4, 5 e 6)
+      const dualImageOptions = {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 15,
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          }
+        }
+      };
+
+      // Inicializar swipers com 4 imagens por vez
+      new Swiper('.fachada-swiper', multiImageOptions);
+      new Swiper('.interiores-swiper', multiImageOptions);
+      new Swiper('.areas-externas-swiper', multiImageOptions);
+
+      // Inicializar swipers com 2 imagens por vez
+      new Swiper('.plantas-swiper', dualImageOptions);
+
+      // Configuração específica para o swiper de vídeos
+      const filmeSwiper = new Swiper('.filme-swiper', {
+        ...dualImageOptions,
+        on: {
+          slideChangeTransitionEnd: function () {
+            // Pause todos os vídeos quando o slide mudar
+            document.querySelectorAll('.filme-swiper video').forEach(video => {
+              video.pause();
+            });
+          }
+        }
       });
+
+      // Configuração específica para o tour virtual 360º
+      new Swiper('.tour-swiper', {
+        ...dualImageOptions,
+        navigation: {
+          nextEl: '.tour-swiper .swiper-button-next',
+          prevEl: '.tour-swiper .swiper-button-prev',
+        },
+      });
+
+      // Disparar evento para indicar que os swipers foram inicializados
+      document.dispatchEvent(new Event('swiperInitialized'));
     }
 
     // Validação de formulário
@@ -1377,13 +1691,13 @@
       // Verificar campos obrigatórios
       let isValid = true;
       const requiredFields = form.querySelectorAll('[required]');
-      
+
       requiredFields.forEach(field => {
         // Para checkboxes e radios, verificar se está marcado
         if ((field.type === 'checkbox' || field.type === 'radio') && !field.checked) {
           showError(field, 'Este campo é obrigatório');
           isValid = false;
-        } 
+        }
         // Para outros campos, verificar se está vazio
         else if (field.type !== 'checkbox' && field.type !== 'radio' && !field.value.trim()) {
           showError(field, 'Este campo é obrigatório');
@@ -1430,37 +1744,22 @@
     function showError(field, message) {
       // Adiciona classe de erro ao campo
       field.classList.add('input-error');
-      
+
       // Cria mensagem de erro
       const errorDiv = document.createElement('div');
       errorDiv.className = 'error-message';
       errorDiv.innerText = message;
-      
+
       // Encontra o elemento pai apropriado para adicionar a mensagem
       let parent = field.parentElement;
       while (parent.tagName === 'LABEL') {
         parent = parent.parentElement;
       }
-      
+
       // Adiciona a mensagem após o campo ou seu container
       parent.appendChild(errorDiv);
     }
-
-    // Adicionar classe de fade-in aos elementos quando aparecerem no viewport
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.swiper-container, h2, h3, .cta-primary').forEach(el => {
-        observer.observe(el);
-      });
-    });
   </script>
 </body>
 </html>
+
