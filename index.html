@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://player.vimeo.com" crossorigin>
   
   <!-- Carregamento otimizado de CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'" />
@@ -377,10 +378,11 @@
       color: #facc15 !important;
     }
     
-    /* Ajuste para os carrosséis de solução */
+    /* Ajuste para os carrosséis de solução - ESPAÇAMENTO REDUZIDO */
     .solution-swiper .swiper-slide img {
       height: 300px;
       object-fit: cover;
+      margin: 0 auto;
     }
     
     /* Ajuste específico para plantas humanizadas - exibir imagem completa */
@@ -390,33 +392,21 @@
       object-fit: contain !important;
     }
     
-    /* Ajuste específico para vídeos - CORRIGIDO */
+    /* Ajuste específico para vídeos Vimeo - ATUALIZADO */
     .filme-swiper .swiper-slide {
       height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #f0f0f0;
-      position: relative;
     }
     
-    .filme-swiper .swiper-slide video {
-      max-width: 100%;
-      max-height: 300px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-    
-    .filme-swiper .video-container {
+    .vimeo-container {
       position: relative;
       width: 100%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
     .filme-swiper .swiper-button-next,
@@ -426,37 +416,12 @@
       height: 40px;
       border-radius: 50%;
       top: 50%;
+      z-index: 11;
     }
     
     .filme-swiper .swiper-button-next:after,
     .filme-swiper .swiper-button-prev:after {
       font-size: 18px;
-    }
-    
-    .video-play-indicator {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0,0,0,0.2);
-      border-radius: 8px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .filme-swiper .swiper-slide:hover .video-play-indicator {
-      opacity: 1;
-    }
-    
-    .video-play-indicator:before {
-      content: "▶";
-      font-size: 48px;
-      color: white;
     }
     
     /* Ajuste para o tour 360 - reposicionar os controles do swiper */
@@ -740,7 +705,7 @@
       </div>
     </div>
 
-    <!-- Carrossel 4: Plantas humanizadas (AJUSTADO) -->
+    <!-- Carrossel 4: Plantas humanizadas -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
         <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
@@ -776,65 +741,57 @@
       </div>
     </div>
 
-    <!-- Carrossel 5: Filme | Animação (CORRIGIDO) -->
+    <!-- Carrossel 5: Filme | Animação (ADAPTADO PARA VIMEO) -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
         <div class="swiper filme-swiper solution-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="video-container">
-                <video 
-                  src="public/assets/section_04/filmes/filme1.mp4" 
-                  controls 
-                  preload="metadata" 
-                  poster="public/assets/section_04/filmes/filme1-poster.jpg"
-                  class="video-player"
-                  playsinline>
-                  Seu navegador não suporta vídeos HTML5.
-                </video>
-                <div class="video-play-indicator"></div>
+              <div class="vimeo-container">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src="https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                          frameborder="0" 
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                          title="filme1">
+                  </iframe>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="video-container">
-                <video 
-                  src="public/assets/section_04/filmes/filme2.mp4" 
-                  controls 
-                  preload="metadata" 
-                  poster="public/assets/section_04/filmes/filme2-poster.jpg"
-                  class="video-player"
-                  playsinline>
-                  Seu navegador não suporta vídeos HTML5.
-                </video>
-                <div class="video-play-indicator"></div>
+              <div class="vimeo-container">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src="https://player.vimeo.com/video/1069673537?h=25e44adaaa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                          frameborder="0" 
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                          title="filme2">
+                  </iframe>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="video-container">
-                <video 
-                  src="public/assets/section_04/filmes/filme3.mp4" 
-                  controls 
-                  preload="metadata" 
-                  poster="public/assets/section_04/filmes/filme3-poster.jpg"
-                  class="video-player"
-                  playsinline>
-                  Seu navegador não suporta vídeos HTML5.
-                </video>
-                <div class="video-play-indicator"></div>
+              <div class="vimeo-container">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src="https://player.vimeo.com/video/1069673567?h=97cbb62e15&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                          frameborder="0" 
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                          title="filme3">
+                  </iframe>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="video-container">
-                <video 
-                  src="public/assets/section_04/filmes/filme4.mp4" 
-                  controls 
-                  preload="metadata" 
-                  poster="public/assets/section_04/filmes/filme4-poster.jpg"
-                  class="video-player"
-                  playsinline>
-                  Seu navegador não suporta vídeos HTML5.
-                </video>
-                <div class="video-play-indicator"></div>
+              <div class="vimeo-container">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                  <iframe src="https://player.vimeo.com/video/1069673603?h=2a755967de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                          frameborder="0" 
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                          title="filme4">
+                  </iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -848,7 +805,7 @@
       </div>
     </div>
 
-    <!-- Carrossel 6: Tour Virtual 360º (AJUSTADO) -->
+    <!-- Carrossel 6: Tour Virtual 360º -->
     <div class="flex flex-col md:flex-row items-center mb-20">
       <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
         <div class="swiper tour-swiper solution-swiper dual-image-swiper">
@@ -1378,6 +1335,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
     // Carregamento assíncrono e otimizado de scripts
     document.addEventListener('DOMContentLoaded', function() {
@@ -1488,55 +1446,6 @@
         });
       });
       
-      // Melhor gestão de vídeos no carrossel
-      function setupVideoHandling() {
-        const videos = document.querySelectorAll('.filme-swiper video');
-        
-        // Pausa todos os vídeos
-        function pauseAllVideos() {
-          videos.forEach(video => {
-            if (!video.paused) {
-              video.pause();
-            }
-          });
-        }
-        
-        // Adiciona interação de clique aos vídeos
-        videos.forEach(video => {
-          // Adiciona event listener para clique nos vídeos
-          video.addEventListener('play', function() {
-            // Pausa todos os outros vídeos
-            pauseAllVideos();
-            // Reproduz apenas o vídeo clicado
-            this.play();
-          });
-          
-          // Monitora o término dos vídeos
-          video.addEventListener('ended', function() {
-            // Opcional: navegar para o próximo slide quando o vídeo terminar
-            const swiperInstance = document.querySelector('.filme-swiper').swiper;
-            if (swiperInstance) {
-              swiperInstance.slideNext();
-            }
-          });
-        });
-        
-        // Adiciona listeners para as setas de navegação do swiper
-        const prevButton = document.querySelector('.filme-swiper .swiper-button-prev');
-        const nextButton = document.querySelector('.filme-swiper .swiper-button-next');
-        
-        if (prevButton) {
-          prevButton.addEventListener('click', pauseAllVideos);
-        }
-        
-        if (nextButton) {
-          nextButton.addEventListener('click', pauseAllVideos);
-        }
-      }
-      
-      // Inicializa o tratamento de vídeos após os swipers estarem prontos
-      document.addEventListener('swiperInitialized', setupVideoHandling);
-      
       // Otimização de carregamento da página
       const lazyItems = document.querySelectorAll('.swiper-container, h2, h3, .cta-primary');
       const lazyObserver = new IntersectionObserver((entries) => {
@@ -1597,10 +1506,11 @@
       });
 
       // Configuração específica para swipers que mostram 4 itens em desktop (1, 2 e 3)
+      // ESPAÇAMENTO REDUZIDO
       const multiImageOptions = {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 15,
+        spaceBetween: 5, // Reduzido de 15
         slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         navigation: {
@@ -1610,20 +1520,21 @@
         breakpoints: {
           640: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 10, // Reduzido de 20
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 10, // Reduzido de 30
           }
         }
       };
 
       // Configuração específica para swipers que mostram 2 itens em desktop (4, 5 e 6)
+      // ESPAÇAMENTO REDUZIDO
       const dualImageOptions = {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 15,
+        spaceBetween: 5, // Reduzido de 15
         slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         navigation: {
@@ -1633,11 +1544,11 @@
         breakpoints: {
           640: {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 10, // Reduzido de 20
           },
           1024: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 10, // Reduzido de 30
           }
         }
       };
@@ -1650,17 +1561,19 @@
       // Inicializar swipers com 2 imagens por vez
       new Swiper('.plantas-swiper', dualImageOptions);
 
-      // Configuração específica para o swiper de vídeos
+      // Configuração específica para o swiper de vídeos do Vim      // Configuração específica para o swiper de vídeos do Vimeo
       const filmeSwiper = new Swiper('.filme-swiper', {
         ...dualImageOptions,
         on: {
           slideChangeTransitionEnd: function () {
             // Pause todos os vídeos quando o slide mudar
-            document.querySelectorAll('.filme-swiper video').forEach(video => {
-              video.pause();
+            const iframes = document.querySelectorAll('.filme-swiper iframe');
+            iframes.forEach((iframe) => {
+              const player = new Vimeo.Player(iframe);
+              player.pause();
             });
-          }
-        }
+          },
+        },
       });
 
       // Configuração específica para o tour virtual 360º
@@ -1680,11 +1593,11 @@
     function validateForm(form) {
       // Limpar mensagens de erro anteriores
       const errorMessages = form.querySelectorAll('.error-message');
-      errorMessages.forEach(message => message.remove());
+      errorMessages.forEach((message) => message.remove());
 
       // Remover classes de erro anteriores
       const inputFields = form.querySelectorAll('input, select, textarea');
-      inputFields.forEach(field => {
+      inputFields.forEach((field) => {
         field.classList.remove('input-error');
       });
 
@@ -1692,7 +1605,7 @@
       let isValid = true;
       const requiredFields = form.querySelectorAll('[required]');
 
-      requiredFields.forEach(field => {
+      requiredFields.forEach((field) => {
         // Para checkboxes e radios, verificar se está marcado
         if ((field.type === 'checkbox' || field.type === 'radio') && !field.checked) {
           showError(field, 'Este campo é obrigatório');
@@ -1762,4 +1675,3 @@
   </script>
 </body>
 </html>
-
