@@ -392,38 +392,31 @@
       object-fit: contain !important;
     }
     
-    /* Ajuste específico para vídeos Vimeo - ATUALIZADO */
-    .filme-swiper .swiper-slide {
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
+    /* Estilo para o container de vídeo do Vimeo */
     .vimeo-container {
       position: relative;
       width: 100%;
-      height: 100%;
+      height: 300px;
       overflow: hidden;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
-    .filme-swiper .swiper-button-next,
-    .filme-swiper .swiper-button-prev {
-      background-color: rgba(255, 255, 255, 0.7);
-      width: 40px;
-      height: 40px;
+    /* Estilo para os botões do navegador de vídeo */
+    .video-nav-button {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 32px;
       border-radius: 50%;
-      top: 50%;
-      z-index: 11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      z-index: 10;
     }
     
-    .filme-swiper .swiper-button-next:after,
-    .filme-swiper .swiper-button-prev:after {
-      font-size: 18px;
+    .video-nav-button:hover {
+      background-color: rgba(255, 255, 255, 0.9);
     }
-    
+
     /* Ajuste para o tour 360 - reposicionar os controles do swiper */
     .tour-swiper .swiper-button-next,
     .tour-swiper .swiper-button-prev {
@@ -741,62 +734,32 @@
       </div>
     </div>
 
-    <!-- Carrossel 5: Filme | Animação (ADAPTADO PARA VIMEO) -->
+    <!-- Carrossel 5: Filme | Animação (Versão Atualizada com Navegação Simples) -->
     <div class="flex flex-col md:flex-row items-center mb-20">
-      <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-        <div class="swiper filme-swiper solution-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="vimeo-container">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                  <iframe src="https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                          frameborder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                          title="filme1">
-                  </iframe>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="vimeo-container">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                  <iframe src="https://player.vimeo.com/video/1069673537?h=25e44adaaa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                          frameborder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                          title="filme2">
-                  </iframe>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="vimeo-container">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                  <iframe src="https://player.vimeo.com/video/1069673567?h=97cbb62e15&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                          frameborder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                          title="filme3">
-                  </iframe>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="vimeo-container">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                  <iframe src="https://player.vimeo.com/video/1069673603?h=2a755967de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                          frameborder="0" 
-                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                          title="filme4">
-                  </iframe>
-                </div>
-              </div>
-            </div>
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <div class="flex items-center w-full">
+          <!-- Botão para vídeo anterior -->
+          <button id="prevVideo" class="video-nav-button mr-2">
+            &#10094;
+          </button>
+          
+          <!-- Container central do vídeo -->
+          <div class="vimeo-container flex-1">
+            <iframe
+              id="videoPlayer"
+              src="https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              class="w-full h-full"
+              style="object-fit: contain;"
+              title="Filme de apresentação"
+            ></iframe>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          
+          <!-- Botão para próximo vídeo -->
+          <button id="nextVideo" class="video-nav-button ml-2">
+            &#10095;
+          </button>
         </div>
       </div>
       <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
@@ -1460,9 +1423,33 @@
       lazyItems.forEach(item => {
         lazyObserver.observe(item);
       });
+      
+      // Configuração do navegador de vídeos
+      const videoUrls = [
+        "https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "https://player.vimeo.com/video/1069673537?h=25e44adaaa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "https://player.vimeo.com/video/1069673567?h=97cbb62e15&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        "https://player.vimeo.com/video/1069673603?h=2a755967de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+      ];
+      
+      let currentVideoIndex = 0;
+      const videoPlayer = document.getElementById("videoPlayer");
+      
+      function changeVideo(direction) {
+        if (direction === "next") {
+          currentVideoIndex = (currentVideoIndex + 1) % videoUrls.length;
+        } else {
+          currentVideoIndex = (currentVideoIndex - 1 + videoUrls.length) % videoUrls.length;
+        }
+        
+        videoPlayer.src = videoUrls[currentVideoIndex];
+      }
+      
+      document.getElementById("nextVideo").addEventListener("click", () => changeVideo("next"));
+      document.getElementById("prevVideo").addEventListener("click", () => changeVideo("prev"));
     });
 
-    // Função para inicializar todos os swipers
+        // Função para inicializar todos os swipers
     function initializeSwipers() {
       // Configuração comum para todos os swipers
       const commonOptions = {
@@ -1470,12 +1457,12 @@
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
-                },
+        },
         effect: 'fade',
         fadeEffect: {
-          crossFade: true
+          crossFade: true,
         },
-        autoHeight: true
+        autoHeight: true,
       };
 
       // Carrossel Principal - 3 slides por vez
@@ -1501,16 +1488,15 @@
           },
           1024: {
             slidesPerView: 3,
-          }
-        }
+          },
+        },
       });
 
       // Configuração específica para swipers que mostram 4 itens em desktop (1, 2 e 3)
-      // ESPAÇAMENTO REDUZIDO
       const multiImageOptions = {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 5, // Reduzido de 15
+        spaceBetween: 15,
         slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         navigation: {
@@ -1520,21 +1506,20 @@
         breakpoints: {
           640: {
             slidesPerView: 2,
-            spaceBetween: 10, // Reduzido de 20
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 10, // Reduzido de 30
-          }
-        }
+            spaceBetween: 30,
+          },
+        },
       };
 
       // Configuração específica para swipers que mostram 2 itens em desktop (4, 5 e 6)
-      // ESPAÇAMENTO REDUZIDO
       const dualImageOptions = {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 5, // Reduzido de 15
+        spaceBetween: 15,
         slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         navigation: {
@@ -1544,13 +1529,13 @@
         breakpoints: {
           640: {
             slidesPerView: 1,
-            spaceBetween: 10, // Reduzido de 20
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: 2,
-            spaceBetween: 10, // Reduzido de 30
-          }
-        }
+            spaceBetween: 30,
+          },
+        },
       };
 
       // Inicializar swipers com 4 imagens por vez
@@ -1561,7 +1546,7 @@
       // Inicializar swipers com 2 imagens por vez
       new Swiper('.plantas-swiper', dualImageOptions);
 
-      // Configuração específica para o swiper de vídeos do Vim      // Configuração específica para o swiper de vídeos do Vimeo
+      // Configuração específica para o swiper de vídeos do Vimeo
       const filmeSwiper = new Swiper('.filme-swiper', {
         ...dualImageOptions,
         on: {
@@ -1675,3 +1660,4 @@
   </script>
 </body>
 </html>
+
