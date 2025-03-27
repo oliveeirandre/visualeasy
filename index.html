@@ -590,6 +590,87 @@
   }
 }
 
+/* Estilos para a seção de logos de parceiros */
+.logo-cloud {
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-slider {
+  display: flex;
+  align-items: center;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.logos-slider:hover {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.logo-item img {
+  height: 35px;
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.blur-overlay-left,
+.blur-overlay-right {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.blur-overlay-left {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.blur-overlay-right {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Media query para telas menores (smartphones) */
+@media (max-width: 768px) {
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .w-1\/4 {
+    width: 100%;
+  }
+
+  .w-3\/4 {
+    width: 100%;
+  }
+}
+
   </style>
 </head>
 
@@ -598,7 +679,7 @@
   <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm">
     <div class="container mx-auto flex items-center justify-between">
       <!-- Logo -->
-      <div class="text-2xl font-bold">
+      <div class="font-bold">
         <a href="#" id="logo">
           <img src="public/assets/identidade_visual/logo.png" alt="Visual Easy 3D - Estúdio de Renderização 3D"
             class="logo" width="160" height="40" />
@@ -1033,339 +1114,563 @@
     </div>
   </section>
 
-  <!-- Depoimentos de Clientes -->
-  <section class="py-12 px-6 bg-gray-50">
-    <div class="container mx-auto max-w-6xl">
-      <h2 class="text-2xl font-semibold mb-10 text-center">O QUE NOSSOS CLIENTES DIZEM</h2>
+    <!-- Seção de Logos de Parceiros (substitui os Depoimentos de Clientes) -->
+<section class="py-24 px-6 bg-white-50 logo-cloud">
+  <!-- Aumentei o padding-top para py-24 -->
+  <div class="container mx-auto max-w-6xl">
+    <h2 class="text-2xl font-medium mb-10 text-center">NOSSOS PARCEIROS</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
-              <span class="text-gray-500 font-medium">JL</span>
-            </div>
-            <div>
-              <h4 class="font-bold">João Lima</h4>
-              <p class="text-sm">Diretor, ABC Incorporações</p>
-            </div>
+    <div class="flex flex-col md:flex-row items-center">
+      <!-- Texto "Empresas que confiam em nosso trabalho" -->
+      <div class="w-full md:w-1/4 text-center md:text-right mb-4 md:mb-0 md:pr-8">
+        <p class="text-center font-medium">Empresas que confiam em nosso trabalho</p>
+      </div>
+
+      <!-- Slider dos logos -->
+      <div class="w-full md:w-3/4 overflow-hidden relative">
+        <div class="logos-slider">
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/nvidia.svg"
+              alt="Parceiro 1"
+              class="h-8 w-auto"
+            />
           </div>
-          <p class="italic">"As imagens da Visual Easy 3D foram fundamentais para o sucesso do nosso lançamento. A
-            qualidade e o realismo impressionaram nossos clientes."</p>
-          <div class="mt-4 flex text-yellow-400">
-            ★★★★★
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/column.svg"
+              alt="Parceiro 2"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/github.svg"
+              alt="Parceiro 3"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/nike.svg"
+              alt="Parceiro 4"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
+              alt="Parceiro 5"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/laravel.svg"
+              alt="Parceiro 6"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/lilly.svg"
+              alt="Parceiro 7"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/openai.svg"
+              alt="Parceiro 8"
+              class="h-8 w-auto"
+            />
+          </div>
+
+          <!-- Repetição das logos para o loop -->
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/nvidia.svg"
+              alt="Parceiro 1"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/column.svg"
+              alt="Parceiro 2"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/github.svg"
+              alt="Parceiro 3"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/nike.svg"
+              alt="Parceiro 4"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
+              alt="Parceiro 5"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/laravel.svg"
+              alt="Parceiro 6"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/lilly.svg"
+              alt="Parceiro 7"
+              class="h-8 w-auto"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://html.tailus.io/blocks/customers/openai.svg"
+              alt="Parceiro 8"
+              class="h-8 w-auto"
+            />
           </div>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
-              <span class="text-gray-500 font-medium">MS</span>
-            </div>
-            <div>
-              <h4 class="font-bold">Maria Silva</h4>
-              <p class="text-sm">Gerente de Marketing, XYZ Empreendimentos</p>
-            </div>
-          </div>
-          <p class="italic">"O profissionalismo e pontualidade da Visual Easy 3D fizeram toda diferença. As imagens
-            criadas superaram nossas expectativas."</p>
-          <div class="mt-4 flex text-yellow-400">
-            ★★★★★
-          </div>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-4">
-              <span class="text-gray-500 font-medium">PR</span>
-            </div>
-            <div>
-              <h4 class="font-bold">Pedro Rocha</h4>
-              <p class="text-sm">Arquiteto, Studio Arquitetura</p>
-            </div>
-          </div>
-          <p class="italic">"Trabalhar com a Visual Easy 3D é garantia de tranquilidade. Eles entenderam perfeitamente a
-            proposta do projeto e transformaram em imagens incríveis."</p>
-          <div class="mt-4 flex text-yellow-400">
-            ★★★★★
-          </div>
-        </div>
+        <!-- Blurs laterais -->
+        <div class="blur-overlay-left"></div>
+        <div class="blur-overlay-right"></div>
       </div>
     </div>
-  </section>
+  </div>
+</section> 
 
   <!-- Seção 5: Orçamento -->
-  <section id="orcamento" class="py-16 px-6 bg-white-100">
-    <div class="container mx-auto max-w-6xl">
-      <div class="flex flex-col md:flex-row md:space-x-12">
-        <!-- Formulário de Orçamento (Lado Esquerdo) -->
-        <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
-          <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
-          <form id="orcamento-form"
-            action="https://script.google.com/macros/s/AKfycbwnQdowfGasVLr2m8PMDkDsSmMDDlsNdRCAHmw_ilWfhHR5QVZ97fX0RNpOR8reLDVqHg/exec"
-            method="POST" class="space-y-4" onsubmit="return validateForm(this)">
-            <div>
-              <label for="nome" class="block text-sm font-bold mb-2">Nome*:</label>
-              <input type="text" id="nome" name="nome" required
-                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" />
-            </div>
-            <div>
-              <label for="incorporadora" class="block text-sm font-bold mb-2">Incorporadora*:</label>
-              <input type="text" id="incorporadora" name="incorporadora" required
-                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-bold mb-2">Email*:</label>
-              <input type="email" id="email" name="email" required
-                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" />
-            </div>
-            <div>
-              <label for="whatsapp" class="block text-sm font-bold mb-2">Whatsapp*:</label>
-              <input type="tel" id="whatsapp" name="whatsapp" required
-                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" />
-            </div>
-            <div>
-              <label for="cidade" class="block text-sm font-bold mb-2">Cidade*:</label>
-              <input type="text" id="cidade" name="cidade" required
-                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" />
-            </div>
+<section id="orcamento" class="py-24 px-6 bg-white-100">
+  <!-- Aumentei o padding-top para py-24 -->
+  <div class="container mx-auto max-w-6xl">
+    <!-- Textos Centralizados Adicionados -->
+    <div class="text-center mb-12">
+      <!-- Aumentei o margin-bottom para mb-12 -->
+      <p class="text-2xl font-medium mb-10">ATENDEMOS TODO O BRASIL</p>
+      <!-- Apliquei as classes text-2xl font-medium mb-10 -->
+      <p class="text-md font-thin mt-4">Se interessou pelo nosso trabalho?</p>
+      <!-- Adicionei margin-top para espaçamento -->
+      <p class="text-md font-thin mt-4">
+        Solicite um orçamento ou confira as principais dúvidas.
+      </p>
+      <!-- Adicionei margin-top para espaçamento -->
+    </div>
 
-            <div>
-              <p class="text-sm font-bold mb-2">Qual é o tipo de empreendimento:</p>
-              <div class="space-y-2">
-                <label class="custom-checkbox block">
-                  <input type="radio" name="tipo_empreendimento" value="residencial" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Torre de uso residencial
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="tipo_empreendimento" value="comercial" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Torre de uso comercial
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="tipo_empreendimento" value="loteamento" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Loteamento | Condomínio de lotes
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="tipo_empreendimento" value="outro" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Outro
-                </label>
-              </div>
-            </div>
+    <div class="flex flex-col md:flex-row md:space-x-12">
+      <!-- Formulário de Orçamento (Lado Esquerdo) -->
+      <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
+        <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
+        <form
+          id="orcamento-form"
+          action="https://script.google.com/macros/s/AKfycbwnQdowfGasVLr2m8PMDkDsSmMDDlsNdRCAHmw_ilWfhHR5QVZ97fX0RNpOR8reLDVqHg/exec"
+          method="POST"
+          class="space-y-4"
+          onsubmit="return validateForm(this)"
+        >
+          <div>
+            <label for="nome" class="block text-sm font-bold mb-2">Nome*:</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+            />
+          </div>
+          <div>
+            <label for="incorporadora" class="block text-sm font-bold mb-2"
+              >Incorporadora*:</label
+            >
+            <input
+              type="text"
+              id="incorporadora"
+              name="incorporadora"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-bold mb-2">Email*:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+            />
+          </div>
+          <div>
+            <label for="whatsapp" class="block text-sm font-bold mb-2"
+              >Whatsapp*:</label
+            >
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+            />
+          </div>
+          <div>
+            <label for="cidade" class="block text-sm font-bold mb-2">Cidade*:</label>
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+            />
+          </div>
 
-            <div>
-              <p class="text-sm font-bold mb-2">Indique os itens que irão compor o material de lançamento do
-                empreendimento:</p>
-              <div class="space-y-2">
-                <label class="custom-checkbox block">
-                  <input type="checkbox" name="itens[]" value="fachadas" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Fachadas
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="checkbox" name="itens[]" value="imagens_uso_comum" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Imagens áreas de uso comum
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="checkbox" name="itens[]" value="imagens_privativas" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Imagens áreas privativas
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="checkbox" name="itens[]" value="plantas_humanizadas" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Plantas humanizadas
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="checkbox" name="itens[]" value="tour_virtual" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Tour Virtual 360º
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="checkbox" name="itens[]" value="videos" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Vídeos | Filme
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-sm font-bold mb-2">Possui projeto de arquitetura de interiores:</p>
-              <div class="space-y-2">
-                <label class="custom-checkbox block">
-                  <input type="radio" name="projeto_interiores" value="sim" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Sim
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="projeto_interiores" value="nao" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Não
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-sm font-bold mb-2">Como gostaria de apresentar esse empreendimento:</p>
-              <div class="space-y-2">
-                <label class="custom-checkbox block">
-                  <input type="radio" name="apresentacao" value="pacote_compacto" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Pacote compacto com 20 imagens
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="apresentacao" value="lista_completa" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Lista completa de imagens para apresentar os principais ambientes do empreendimento
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="apresentacao" value="lista_completa_filme" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Lista completa de imagens, Filme de lançamento e/ou tour virtual 360º
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-sm font-bold mb-2">Preferência de contato via:</p>
-              <div class="space-y-2">
-                <label class="custom-checkbox block">
-                  <input type="radio" name="contato" value="email" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Email
-                </label>
-                <label class="custom-checkbox block">
-                  <input type="radio" name="contato" value="whatsapp" class="mr-2" />
-                  <span class="checkmark"></span>
-                  Whatsapp
-                </label>
-              </div>
-            </div>
-
-            <!-- Adição: Consentimento LGPD e Proteção de Dados -->
-            <div class="mt-6">
+          <div>
+            <p class="text-sm font-bold mb-2">Qual é o tipo de empreendimento:</p>
+            <div class="space-y-2">
               <label class="custom-checkbox block">
-                <input type="checkbox" name="lgpd_consent" required class="mr-2" />
+                <input
+                  type="radio"
+                  name="tipo_empreendimento"
+                  value="residencial"
+                  class="mr-2"
+                />
                 <span class="checkmark"></span>
-                Concordo com o tratamento dos meus dados de acordo com a LGPD
+                Torre de uso residencial
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="tipo_empreendimento"
+                  value="comercial"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Torre de uso comercial
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="tipo_empreendimento"
+                  value="loteamento"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Loteamento | Condomínio de lotes
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="tipo_empreendimento"
+                  value="outro"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Outro
               </label>
             </div>
+          </div>
 
-            <div class="text-center mt-6">
-              <button type="submit"
-                class="bg-[#707070] hover:bg-[#5a5a5a] text-white !text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline btn-transition">
-                Solicitar Proposta
-              </button>
-              <!-- Indicador de segurança -->
-              <div class="flex items-center justify-center mt-3 text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-green-600" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                Seus dados estão protegidos
-              </div>
+          <div>
+            <p class="text-sm font-bold mb-2">
+              Indique os itens que irão compor o material de lançamento do
+              empreendimento:
+            </p>
+            <div class="space-y-2">
+              <label class="custom-checkbox block">
+                <input type="checkbox" name="itens[]" value="fachadas" class="mr-2" />
+                <span class="checkmark"></span>
+                Fachadas
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="checkbox"
+                  name="itens[]"
+                  value="imagens_uso_comum"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Imagens áreas de uso comum
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="checkbox"
+                  name="itens[]"
+                  value="imagens_privativas"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Imagens áreas privativas
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="checkbox"
+                  name="itens[]"
+                  value="plantas_humanizadas"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Plantas humanizadas
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="checkbox"
+                  name="itens[]"
+                  value="tour_virtual"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Tour Virtual 360º
+              </label>
+              <label class="custom-checkbox block">
+                <input type="checkbox" name="itens[]" value="videos" class="mr-2" />
+                <span class="checkmark"></span>
+                Vídeos | Filme
+              </label>
             </div>
+          </div>
 
-          </form>
-        </div>
+          <div>
+            <p class="text-sm font-bold mb-2">
+              Possui projeto de arquitetura de interiores:
+            </p>
+            <div class="space-y-2">
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="projeto_interiores"
+                  value="sim"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Sim
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="projeto_interiores"
+                  value="nao"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Não
+              </label>
+            </div>
+          </div>
 
-        <!-- Dúvidas (Lado Direito) -->
-        <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
-          <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
-          <div class="space-y-6">
-            <div>
-              <h4 class="font-semibold mb-2">1. Como posso solicitar um orçamento?</h4>
-              <p class="text-sm">
-                Você pode solicitar um orçamento de forma prática pelo formulário ao lado, via e-mail ou pelo WhatsApp.
-                Escolha o canal que for mais conveniente para você!
-              </p>
+          <div>
+            <p class="text-sm font-bold mb-2">
+              Como gostaria de apresentar esse empreendimento:
+            </p>
+            <div class="space-y-2">
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="apresentacao"
+                  value="pacote_compacto"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Pacote compacto com 20 imagens
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="apresentacao"
+                  value="lista_completa"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Lista completa de imagens para apresentar os principais ambientes
+                do empreendimento
+              </label>
+              <label class="custom-checkbox block">
+                <input
+                  type="radio"
+                  name="apresentacao"
+                  value="lista_completa_filme"
+                  class="mr-2"
+                />
+                <span class="checkmark"></span>
+                Lista completa de imagens, Filme de lançamento e/ou tour virtual
+                360º
+              </label>
             </div>
-            <div>
-              <h4 class="font-semibold mb-2">2. Preciso enviar o projeto para solicitar um orçamento?</h4>
-              <p class="text-sm">
-                Sim, é necessário enviar o projeto para que possamos elaborar o orçamento. Aceitamos arquivos nos
-                formatos PDF ou DWG.
-              </p>
+          </div>
+
+          <div>
+            <p class="text-sm font-bold mb-2">Preferência de contato via:</p>
+            <div class="space-y-2">
+              <label class="custom-checkbox block">
+                <input type="radio" name="contato" value="email" class="mr-2" />
+                <span class="checkmark"></span>
+                Email
+              </label>
+              <label class="custom-checkbox block">
+                <input type="radio" name="contato" value="whatsapp" class="mr-2" />
+                <span class="checkmark"></span>
+                Whatsapp
+              </label>
             </div>
-            <div>
-              <h4 class="font-semibold mb-2">3. Qual é o pacote mínimo de imagens?</h4>
-              <p class="text-sm">
-                Nosso orçamento mínimo contempla a criação de 20 imagens realistas.
-              </p>
+          </div>
+
+          <!-- Adição: Consentimento LGPD e Proteção de Dados -->
+          <div class="mt-6">
+            <label class="custom-checkbox block">
+              <input type="checkbox" name="lgpd_consent" required class="mr-2" />
+              <span class="checkmark"></span>
+              Concordo com o tratamento dos meus dados de acordo com a LGPD
+            </label>
+          </div>
+
+          <div class="text-center mt-6">
+            <button
+              type="submit"
+              class="bg-[#707070] hover:bg-[#5a5a5a] text-white !text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline btn-transition"
+            >
+              Solicitar Proposta
+            </button>
+            <!-- Indicador de segurança -->
+            <div class="flex items-center justify-center mt-3 text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mr-1 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+              Seus dados estão protegidos
             </div>
-            <div>
-              <h4 class="font-semibold mb-2">4. Qual é o prazo estimado para entrega?</h4>
-              <p class="text-sm">
-                O prazo de entrega é definido após a análise detalhada do projeto. Garantimos pontualidade e qualidade em
-                todas as entregas.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">5. Qual é a área de atuação da Visual Easy 3D?</h4>
-              <p class="text-sm">
-                Atendemos incorporadoras de todo o Brasil, desenvolvendo soluções visuais realistas para torres
-                residenciais e comerciais. Nosso objetivo é potencializar o desempenho de lançamentos imobiliários,
-                conectando empreendimentos ao público certo.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">6. Vocês elaboram projetos de interiores?</h4>
-              <p class="text-sm">
-                Sim! Nossa equipe é formada por arquitetos especializados, prontos para criar projetos de interiores com
-                alto nível de detalhamento e realismo.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">7. Como funcionam as alterações nas entregas?</h4>
-              <p class="text-sm">
-                Após a entrega inicial, o cliente pode revisar e solicitar ajustes. Todo orçamento inclui uma revisão
-                gratuita. Caso sejam necessárias revisões extras, elas podem ser solicitadas à parte.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">8. Por que contratar a Visual Easy 3D?</h4>
-              <p class="text-sm">
-                O mercado imobiliário exige lançamentos impactantes e conectados ao público-alvo. Na Visual Easy 3D,
-                criamos representações realistas que aproximam o futuro e a realidade, ajudando a destacar seu
-                empreendimento no mercado.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">9. Onde a Visual Easy 3D está localizada?</h4>
-              <p class="text-sm">
-                Estamos em Campinas - SP, mas atendemos clientes de todo o Brasil.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">10. Como definir a lista de imagens do projeto?</h4>
-              <p class="text-sm">
-                Se você ainda não tiver uma lista de ambientes a serem representados, nossa equipe pode sugerir com base
-                no projeto e no perfil do empreendimento.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">11. Qual é o compromisso da Visual Easy 3D?</h4>
-              <p class="text-sm">
-                Nossa equipe é comprometida com a qualidade dos serviços e a pontualidade rigorosa na entrega.
-                Trabalhamos para superar as expectativas de nossos clientes.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-2">12. Como entrar em contato com a Visual Easy 3D?</h4>
-              <p class="text-sm">
-                Se você tiver dúvidas ou quiser mais informações, entre em contato conosco pelo formulário, e-mail ou
-                WhatsApp. Estamos prontos para ajudar!
-              </p>
-            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Dúvidas (Lado Direito) -->
+      <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
+        <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
+        <div class="space-y-6">
+          <div>
+            <h4 class="font-semibold mb-2">1. Como posso solicitar um orçamento?</h4>
+            <p class="text-sm">
+              Você pode solicitar um orçamento de forma prática pelo formulário ao
+              lado, via e-mail ou pelo WhatsApp. Escolha o canal que for mais
+              conveniente para você!
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">
+              2. Preciso enviar o projeto para solicitar um orçamento?
+            </h4>
+            <p class="text-sm">
+              Sim, é necessário enviar o projeto para que possamos elaborar o
+              orçamento. Aceitamos arquivos nos formatos PDF ou DWG.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">3. Qual é o pacote mínimo de imagens?</h4>
+            <p class="text-sm">
+              Nosso orçamento mínimo contempla a criação de 20 imagens realistas.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">4. Qual é o prazo estimado para entrega?</h4>
+            <p class="text-sm">
+              O prazo de entrega é definido após a análise detalhada do projeto.
+              Garantimos pontualidade e qualidade em todas as entregas.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">5. Qual é a área de atuação da Visual Easy 3D?</h4>
+            <p class="text-sm">
+              Atendemos incorporadoras de todo o Brasil, desenvolvendo soluções
+              visuais realistas para torres residenciais e comerciais. Nosso
+              objetivo é potencializar o desempenho de lançamentos imobiliários,
+              conectando empreendimentos ao público certo.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">6. Vocês elaboram projetos de interiores?</h4>
+            <p class="text-sm">
+              Sim! Nossa equipe é formada por arquitetos especializados, prontos
+              para criar projetos de interiores com alto nível de detalhamento e
+              realismo.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">7. Como funcionam as alterações nas entregas?</h4>
+            <p class="text-sm">
+              Após a entrega inicial, o cliente pode revisar e solicitar ajustes.
+              Todo orçamento inclui uma revisão gratuita. Caso sejam necessárias
+              revisões extras, elas podem ser solicitadas à parte.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">8. Por que contratar a Visual Easy 3D?</h4>
+            <p class="text-sm">
+              O mercado imobiliário exige lançamentos impactantes e conectados ao
+              público-alvo. Na Visual Easy 3D, criamos representações realistas
+              que aproximam o futuro e a realidade, ajudando a destacar seu
+              empreendimento no mercado.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">9. Onde a Visual Easy 3D está localizada?</h4>
+            <p class="text-sm">
+              Estamos em Campinas - SP, mas atendemos clientes de todo o Brasil.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">
+              10. Como definir a lista de imagens do projeto?
+            </h4>
+            <p class="text-sm">
+              Se você ainda não tiver uma lista de ambientes a serem
+              representados, nossa equipe pode sugerir com base no projeto e no
+              perfil do empreendimento.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">11. Qual é o compromisso da Visual Easy 3D?</h4>
+            <p class="text-sm">
+              Nossa equipe é comprometida com a qualidade dos serviços e a
+              pontualidade rigorosa na entrega. Trabalhamos para superar as
+              expectativas de nossos clientes.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">
+              12. Como entrar em contato com a Visual Easy 3D?
+            </h4>
+            <p class="text-sm">
+              Se você tiver dúvidas ou quiser mais informações, entre em contato
+              conosco pelo formulário, e-mail ou WhatsApp. Estamos prontos para
+              ajudar!
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Seção 6: Contato -->
   <section id="contato" class="py-16 px-6">
@@ -1480,7 +1785,7 @@
           menuOverlay.classList.add("opacity-0");
 
           // Esperar a transição terminar antes de esconder completamente
-          setTimeout(() => {
+          setTimeout(() =>{
             menuOverlay.classList.add("hidden");
           }, 300);
 
@@ -1559,19 +1864,19 @@
       });
 
       // Otimização de carregamento da página
-      const lazyItems = document.querySelectorAll('.swiper-container, h2, h3, .cta-primary');
-      const lazyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            lazyObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+const lazyItems = document.querySelectorAll('.swiper-container, h2, h3, .cta-primary, .text-2xl');
+const lazyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      lazyObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-      lazyItems.forEach(item => {
-        lazyObserver.observe(item);
-      });
+lazyItems.forEach(item => {
+  lazyObserver.observe(item);
+});
 
       // Configuração do navegador de vídeos
       const videoUrls = [
