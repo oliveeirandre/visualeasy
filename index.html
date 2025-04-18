@@ -1,58 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visual Easy 3D - Estúdio de Renderização Profissional</title>
 
-  <!-- Meta tags otimizadas -->
-  <meta name="description"
-    content="Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º." />
-  <meta name="keywords"
-    content="renderização 3D, imagens 3D, visualização arquitetônica, tour virtual 360, plantas humanizadas, fachadas 3D, interiores 3D" />
+  <!-- SEO e Open Graph -->
+  <meta name="description" content="Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º." />
+  <meta name="keywords" content="renderização 3D, imagens 3D, visualização arquitetônica, tour virtual 360, plantas humanizadas, fachadas 3D, interiores 3D" />
   <meta name="author" content="Visual Easy 3D" />
-
-  <!-- Tags Open Graph para compartilhamento em redes sociais -->
   <meta property="og:title" content="Visual Easy 3D - Estúdio de Renderização Profissional" />
-  <meta property="og:description"
-    content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º." />
+  <meta property="og:description" content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://visualeasy3d.com.br" />
   <meta property="og:image" content="public/assets/identidade_visual/preview.jpg" />
+  <link rel="canonical" href="https://visualeasy3d.com.br" />
 
   <!-- Preload de recursos críticos -->
   <link rel="preload" href="public/assets/identidade_visual/logo.png" as="image" />
   <link rel="preload" href="public/assets/section_02_carrossel/section_02_fachada.jpg" as="image" />
-
-  <!-- Preconnect para recursos externos -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://player.vimeo.com" crossorigin>
 
-  <!-- Carregamento otimizado de CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print"
-    onload="this.media='all'" />
-  <noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  </noscript>
-
-  <!-- Fontes com carregamento otimizado -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
-  </noscript>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://visualeasy3d.com.br" />
-
-  <!-- Configuração do Tailwind -->
+  <!-- Tailwind CSS (deferido) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <script>
     tailwind.config = {
       theme: {
@@ -73,6 +46,19 @@
       }
     }
   </script>
+
+  <!-- Swiper CSS (não bloqueante) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </noscript>
+
+  <!-- Fontes Google (otimizadas) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- Schema.org markup para SEO -->
   <script type="application/ld+json">
@@ -101,641 +87,132 @@
     }
   </script>
 
+  <!-- CSS crítico inline e estilos principais -->
   <style>
-    /* Ajuste de cores de texto para #707070 */
-    body,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    span,
-    div,
-    li,
-    td,
-    th,
-    label,
-    input,
-    textarea,
-    select {
-      color: #707070;
-    }
+    /* CSS Crítico Essencial */
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: #707070; background: #fff; }
+    .fade-in { animation: fadeIn 0.8s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .input-error { border-color: #dc3545 !important; }
+    .error-message { color: #dc3545 !important; font-size: 0.875rem; margin-top: 0.25rem; }
+    .submit-feedback { display: none; padding: 0.5rem; margin-top: 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; text-align: center; }
+    .submit-success { background-color: rgba(16, 185, 129, 0.1); color: #059669; }
+    .submit-error { background-color: rgba(239, 68, 68, 0.1); color: #dc2626; }
+    .loading-spinner { display: none; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s linear infinite; margin-left: 10px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid #4a90e2; outline-offset: 2px; }
 
-    /* Preservar cores originais para elementos interativos */
-    .swiper-button-next,
-    .swiper-button-prev,
-    button,
-    .cta-primary,
-    .btn-transition,
-    .whatsapp-float,
-    .custom-checkbox .checkmark:after,
-    .input-error,
-    .error-message,
-    input[type="submit"],
-    .text-yellow-400,
-    footer img,
-    #mobile-footer img {
-      color: inherit !important;
-    }
+    /* Estilos principais (mantidos do original) */
+    body, p, h1, h2, h3, h4, h5, h6, span, div, li, td, th, label, input, textarea, select { color: #707070; }
+    .swiper-button-next, .swiper-button-prev, button, .cta-primary, .btn-transition, .whatsapp-float, .custom-checkbox .checkmark:after, .input-error, .error-message, input[type="submit"], .text-yellow-400, footer img, #mobile-footer img { color: inherit !important; }
+    .swiper-button-next, .swiper-button-prev { color: #dadada !important; }
+    .swiper-button-next:after, .swiper-button-prev:after { font-size: 36px; font-weight: bold; }
+    .custom-checkbox { position: relative; padding-left: 30px; cursor: pointer; display: inline-block; line-height: 20px; }
+    .custom-checkbox input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } /* Ocultar corretamente */
+    .checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; background-color: #eee; border: 1px solid #ccc; transition: all 0.2s ease; }
+    .custom-checkbox:hover input ~ .checkmark { background-color: #ccc; }
+    .custom-checkbox input:checked ~ .checkmark { background-color: #9c9c9c; }
+    .checkmark:after { content: ""; position: absolute; display: none; }
+    .custom-checkbox input:checked ~ .checkmark:after { display: block; }
+    .custom-checkbox .checkmark:after { left: 7px; top: 3px; width: 5px; height: 10px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    header .logo { height: 40px; width: auto; }
+    #desktop-footer { display: flex; position: static; box-shadow: none; padding: 1.5rem 1rem; }
+    #desktop-footer .container { display: flex; align-items: center; }
+    #desktop-footer p { display: block; margin: 0; font-size: 1.09375rem; flex: 1; }
+    #desktop-footer .flex { display: flex; justify-content: flex-end; }
+    #desktop-footer img { height: 30px; width: 30px; margin-left: 1rem; transition: transform 0.3s ease; }
+    #desktop-footer img:hover { transform: scale(1.1); }
+    #mobile-footer { display: none; }
+    .whatsapp-float { position: fixed; bottom: 85px; right: 20px; z-index: 100; background-color: #dddddd; color: white !important; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; }
+    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); }
+    .whatsapp-float img { width: 35px; height: 35px; }
+    .btn-transition { transition: all 0.3s ease; }
+    .btn-transition:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+    .cta-primary { background-color: #007bff; color: white !important; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 0.375rem; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 50, 170, 0.15); }
+    .cta-primary:hover { background-color: #0069d9; transform: translateY(-2px); box-shadow: 0 6px 8px rgba(0, 50, 170, 0.2); }
+    .input-focus { transition: all 0.3s ease; border: 1px solid #ced4da; }
+    .input-focus:focus { border-color: #535353; box-shadow: 0 0 0 0.2rem rgba(184, 184, 184, 0.25); outline: none; }
+    .text-primary { color: #007bff !important; }
+    .text-yellow-400 { color: #facc15 !important; }
+    .solution-swiper .swiper-slide img { height: 300px; object-fit: cover; margin: 0 auto; }
+    .plantas-swiper .swiper-slide img { height: 300px; width: 100%; object-fit: contain !important; }
+    .vimeo-container { position: relative; width: 100%; height: 300px; overflow: hidden; border-radius: 8px; }
+    .video-nav-button { color: rgba(255, 255, 255, 0.7); font-size: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease; z-index: 10; background-color: rgba(112, 112, 112, 0.2); width: 40px; height: 40px; }
+    .video-nav-button:hover { background-color: rgba(112, 112, 112, 0.4); }
+    .tour-swiper .swiper-button-next, .tour-swiper .swiper-button-prev { bottom: 30px; top: auto; background-color: rgba(255, 255, 255, 0.7); border-radius: 50%; width: 40px; height: 40px; z-index: 51; }
+    .tour-swiper .swiper-button-next { right: 10px; }
+    .tour-swiper .swiper-button-prev { left: 10px; }
+    .tour-swiper .swiper-button-next:after, .tour-swiper .swiper-button-prev:after { font-size: 18px; }
+    #imageModal { backdrop-filter: blur(5px); transition: all 0.3s ease-in-out; }
+    #modalImage { max-height: 80vh; max-width: 90vw; transition: all 0.3s ease; }
+    .lazy-section { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .lazy-section.loaded { opacity: 1; transform: translateY(0); }
+    .main-thumbs-swiper { width: 100%; padding: 10px 0; box-sizing: border-box; }
+    .main-thumbs-swiper .swiper-slide { opacity: 0.5; cursor: pointer; overflow: hidden; }
+    .main-thumbs-swiper .swiper-slide-thumb-active { opacity: 1; }
+    .main-thumbs-swiper .swiper-slide img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+    .container p.text-lg { font-size: 1.125rem; }
+    .logo-cloud { overflow: hidden; position: relative; }
+    .logos-slider { display: flex; align-items: center; animation: scroll 30s linear infinite; width: max-content; }
+    .logos-slider:hover { animation-play-state: paused; }
+    .logo-item { display: flex; align-items: center; justify-content: center; margin: 0 2rem; }
+    .logo-item img { height: 35px; width: auto; opacity: 0.7; transition: opacity 0.3s ease; filter: grayscale(100%); }
+    .logo-item img:hover { opacity: 1; filter: grayscale(0%); }
+    .blur-overlay-left, .blur-overlay-right { position: absolute; top: 0; height: 100%; width: 80px; pointer-events: none; z-index: 5; }
+    .blur-overlay-left { left: 0; background: linear-gradient(to right, white, transparent); }
+    .blur-overlay-right { right: 0; background: linear-gradient(to left, white, transparent); }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #dadada !important;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-      font-size: 36px;
-      font-weight: bold;
-    }
-
-    /* Estilos para a seleção de checkbox */
-    .custom-checkbox {
-      position: relative;
-      padding-left: 30px;
-      cursor: pointer;
-      display: inline-block;
-      line-height: 20px;
-    }
-
-    .custom-checkbox input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 20px;
-      width: 20px;
-      background-color: #eee;
-      border: 1px solid #ccc;
-      transition: all 0.2s ease;
-    }
-
-    .custom-checkbox:hover input~.checkmark {
-      background-color: #ccc;
-    }
-
-    .custom-checkbox input:checked~.checkmark {
-      background-color: #9c9c9c;
-    }
-
-    .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-
-    .custom-checkbox input:checked~.checkmark:after {
-      display: block;
-    }
-
-    .custom-checkbox .checkmark:after {
-      left: 7px;
-      top: 3px;
-      width: 5px;
-      height: 10px;
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-    }
-
-    /* Estilo para a logo */
-    header .logo {
-      height: 40px;
-      width: auto;
-    }
-
-    /* Rodapé para desktop */
-    #desktop-footer {
-      display: flex;
-      position: static;
-      box-shadow: none;
-      padding: 1.5rem 1rem;
-    }
-
-    #desktop-footer .container {
-      display: flex;
-      align-items: center;
-    }
-
-    #desktop-footer p {
-      display: block;
-      margin: 0;
-      font-size: 1.09375rem;
-      flex: 1;
-    }
-
-    #desktop-footer .flex {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    #desktop-footer img {
-      height: 30px;
-      width: 30px;
-      margin-left: 1rem;
-      transition: transform 0.3s ease;
-    }
-
-    #desktop-footer img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Rodapé para smartphone */
-    #mobile-footer {
-      display: none;
-    }
-
-    /* Botão flutuante de WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 85px;
-      right: 20px;
-      z-index: 100;
-      background-color: #dddddd;
-      color: white !important;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .whatsapp-float img {
-      width: 35px;
-      height: 35px;
-    }
-
-    /* Esconde botão flutuante do WhatsApp em dispositivos móveis */
+    /* Media Queries */
     @media (max-width: 768px) {
-      .whatsapp-float {
-        display: none;
-      }
+      .whatsapp-float { display: none; }
+      #desktop-footer { display: none; }
+      #mobile-footer { display: flex; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 50; background-color: white; box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); padding: 0.75rem 0.75rem; }
+      #mobile-footer .container { display: flex; justify-content: space-between; align-items: center; text-align: center; }
+      #mobile-footer img { height: 32px; width: 32px; transition: transform 0.3s ease; }
+      #mobile-footer img:hover { transform: scale(1.1); }
+      #mobile-footer a { flex: 1; display: flex; justify-content: center; }
+      .container p.text-lg { font-size: 0.9rem; padding-left: 1rem; padding-right: 1rem; }
+      .main-swiper .swiper-slide img { height: 55vh; object-fit: fill; } /* Ajuste para mobile */
+      .main-thumbs-swiper { width: 95%; height: auto; }
+      .main-thumbs-swiper .swiper-slide { height: 100px; }
+      .py-16 { padding-top: 1rem; padding-bottom: 2rem; }
+      section.py-16 { margin-top: -50px !important; } /* Ajuste específico mobile */
+      .flex-col { flex-direction: column; }
+      .w-1\/4, .w-3\/4, .md\:w-1\/2 { width: 100%; } /* Ajuste para formulário e dúvidas */
+      .md\:flex-row { flex-direction: column; } /* Forçar coluna em mobile */
+      .md\:space-x-12 { margin-left: 0; margin-right: 0; } /* Remover espaço lateral */
+      .md\:mb-0 { margin-bottom: 2rem; } /* Adicionar margem inferior */
     }
-
-    /* Melhorias de animação */
-    .btn-transition {
-      transition: all 0.3s ease;
+    @media (min-width: 769px) {
+      .main-thumbs-container { display: none; }
+      .main-swiper { height: 90vh; }
+      .main-swiper .swiper-slide img { height: 90vh; object-fit: cover; }
     }
-
-    .btn-transition:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Estilos para CTA */
-    .cta-primary {
-      background-color: #007bff;
-      color: white !important;
-      font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.375rem;
-      display: inline-block;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 50, 170, 0.15);
-    }
-
-    .cta-primary:hover {
-      background-color: #0069d9;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 50, 170, 0.2);
-    }
-
-    /* Exibir rodapé fixo no smartphone */
-    @media (max-width: 768px) {
-      #desktop-footer {
-        display: none;
-      }
-
-      #mobile-footer {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 50;
-        background-color: white;
-        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-        padding: 0.75rem 0.75rem;
-      }
-
-      #mobile-footer .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-      }
-
-      #mobile-footer img {
-        height: 32px;
-        width: 32px;
-        transition: transform 0.3s ease;
-      }
-
-      #mobile-footer img:hover {
-        transform: scale(1.1);
-      }
-
-      #mobile-footer a {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-      }
-    }
-
-    /* Animação de fade-in para elementos */
-    .fade-in {
-      animation: fadeIn 0.8s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Melhorias para inputs */
-    .input-focus {
-      transition: all 0.3s ease;
-      border: 1px solid #ced4da;
-    }
-
-    .input-focus:focus {
-      border-color: #535353;
-      box-shadow: 0 0 0 0.2rem rgba(184, 184, 184, 0.25);
-      outline: none;
-    }
-
-    /* Indicador de erro em formulários */
-    .input-error {
-      border-color: #dc3545 !important;
-    }
-
-    .error-message {
-      color: #dc3545 !important;
-      font-size: 0.875rem;
-      margin-top: 0.25rem;
-    }
-
-    /* Otimização de cores */
-    .text-primary {
-      color: #007bff !important;
-    }
-
-    .text-yellow-400 {
-      color: #facc15 !important;
-    }
-
-    /* Ajuste para os carrosséis de solução */
-    .solution-swiper .swiper-slide img {
-      height: 300px;
-      object-fit: cover;
-      margin: 0 auto;
-    }
-
-    /* Ajuste específico para plantas humanizadas - exibir imagem completa */
-    .plantas-swiper .swiper-slide img {
-      height: 300px;
-      width: 100%;
-      object-fit: contain !important;
-    }
-
-    /* Estilo para o container de vídeo do Vimeo */
-    .vimeo-container {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    /* Estilo para os botões do navegador de vídeo */
-    .video-nav-button {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-      z-index: 10;
-      background-color: rgba(112, 112, 112, 0.2);
-      width: 40px;
-      height: 40px;
-    }
-
-    .video-nav-button:hover {
-      background-color: rgba(112, 112, 112, 0.4);
-    }
-
-    /* Ajuste para o tour 360 - reposicionar os controles do swiper */
-    .tour-swiper .swiper-button-next,
-    .tour-swiper .swiper-button-prev {
-      bottom: 30px;
-      top: auto;
-      background-color: rgba(255, 255, 255, 0.7);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      z-index: 51;
-    }
-
-    .tour-swiper .swiper-button-next {
-      right: 10px;
-    }
-
-    .tour-swiper .swiper-button-prev {
-      left: 10px;
-    }
-
-    .tour-swiper .swiper-button-next:after,
-    .tour-swiper .swiper-button-prev:after {
-      font-size: 18px;
-    }
-
-    /* Otimização para visualização em múltiplas imagens */
     @media (min-width: 1024px) {
-      .multi-image-swiper .swiper-slide {
-        width: 25%;
-      }
-
-      .dual-image-swiper .swiper-slide {
-        width: 50%;
-      }
+      .multi-image-swiper .swiper-slide { width: 25%; }
+      .dual-image-swiper .swiper-slide { width: 50%; }
     }
-
-    /* Melhorias para o modal de imagem */
-    #imageModal {
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease-in-out;
-    }
-
-    #modalImage {
-      max-height: 80vh;
-      max-width: 90vw;
-      transition: all 0.3s ease;
-    }
-
-    /* Otimização para carregamento de página */
-    .lazy-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .lazy-section.loaded {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Novo estilo para carrossel de miniaturas */
-    .main-thumbs-swiper {
-      width: 100%;
-      padding: 10px 0;
-      box-sizing: border-box;
-    }
-
-    .main-thumbs-swiper .swiper-slide {
-      opacity: 0.5;
-      cursor: pointer;
-      overflow: hidden;
-    }
-
-    .main-thumbs-swiper .swiper-slide-thumb-active {
-      opacity: 1;
-    }
-
-    .main-thumbs-swiper .swiper-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 3px;
-    }
-
-    /* Ocultar miniaturas em desktop */
-    @media (min-width: 769px) {
-      .main-thumbs-container {
-        display: none;
-      }
-    }
-
-    /* Estilos padrão para telas maiores */
-    .container p.text-lg {
-      font-size: 1.125rem;
-    }
-
-    /* Media query para telas menores (smartphones) */
-    @media (max-width: 768px) {
-      .container p.text-lg {
-        font-size: 0.9rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      /* Ajustes para o carrossel principal em modo mobile */
-      .main-swiper .swiper-slide img {
-        height: 55vh;
-        object-fit: fill;
-      }
-
-      .main-thumbs-swiper {
-        width: 95%;
-        height: auto;
-      }
-
-      .main-thumbs-swiper .swiper-slide {
-        height: 100px;
-      }
-
-      /* Diminuir o espaço entre o texto e o carrossel inferior */
-      .py-16 {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
-      }
-
-      section.py-16 {
-        margin-top: -50px !important;
-      }
-    }
-
-    /* Media query para telas maiores (desktops) */
-    @media (min-width: 769px) {
-      .main-swiper {
-        height: 90vh;
-      }
-
-      .main-swiper .swiper-slide img {
-        height: 90vh;
-        object-fit: cover;
-      }
-    }
-
-    /* Estilos para a seção de logos de parceiros */
-    .logo-cloud {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .logos-slider {
-      display: flex;
-      align-items: center;
-      animation: scroll 30s linear infinite;
-      width: max-content;
-    }
-
-    .logos-slider:hover {
-      animation-play-state: paused;
-    }
-
-    .logo-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 2rem;
-    }
-
-    .logo-item img {
-      height: 35px;
-      width: auto;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-      filter: grayscale(100%);
-    }
-
-    .logo-item img:hover {
-      opacity: 1;
-      filter: grayscale(0%);
-    }
-
-    .blur-overlay-left,
-    .blur-overlay-right {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 80px;
-      pointer-events: none;
-      z-index: 5;
-    }
-
-    .blur-overlay-left {
-      left: 0;
-      background: linear-gradient(to right, white, transparent);
-    }
-
-    .blur-overlay-right {
-      right: 0;
-      background: linear-gradient(to left, white, transparent);
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Media query para telas menores (smartphones) */
-    @media (max-width: 768px) {
-      .flex-col {
-        flex-direction: column;
-      }
-
-      .w-1\/4 {
-        width: 100%;
-      }
-
-      .w-3\/4 {
-        width: 100%;
-      }
-    }
-
-    /* Spinner de carregamento */
-    .loading-spinner {
-      display: none;
-      width: 20px;
-      height: 20px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top-color: #fff;
-      animation: spin 1s linear infinite;
-      margin-left: 10px;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    
-    .submit-feedback {
-      display: none;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 0.875rem;
-      text-align: center;
-    }
-    
-    .submit-success {
-      background-color: rgba(16, 185, 129, 0.1);
-      color: #059669;
-    }
-    
-    .submit-error {
-      background-color: rgba(239, 68, 68, 0.1);
-      color: #dc2626;
-    }
-
-    /* Melhoria de acessibilidade para foco */
-    a:focus-visible, button:focus-visible, input:focus-visible, 
-    textarea:focus-visible, select:focus-visible, 
-    [tabindex]:focus-visible {
-      outline: 2px solid #4a90e2;
-      outline-offset: 2px;
-    }
+    form .error-message, 
+.bg-gray-200 .error-message, 
+#orcamento-form .error-message {
+  color: #dc3545 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
   </style>
 </head>
-
 <body class="bg-white">
-  <!-- Seção 1: Cabeçalho -->
-  <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm">
+
+  <!-- Cabeçalho -->
+  <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm" role="banner">
     <div class="container mx-auto flex items-center justify-between">
-      <!-- Logo -->
       <div class="font-bold">
         <a href="#" id="logo" aria-label="Visual Easy 3D - Voltar ao topo">
-          <img src="public/assets/identidade_visual/logo.png" alt="Visual Easy 3D - Estúdio de Renderização 3D"
-            class="logo" width="160" height="40" />
+          <img src="public/assets/identidade_visual/logo.png" alt="Visual Easy 3D - Estúdio de Renderização 3D" class="logo" width="160" height="40" loading="eager" />
         </a>
       </div>
-
-      <!-- Botão de menu (hambúrguer) para dispositivos móveis -->
       <button id="menu-toggle" class="block md:hidden text-black focus:outline-none z-50 relative" aria-label="Menu" aria-expanded="false" aria-controls="menu">
         <div class="w-6 h-6 flex items-center justify-center relative">
           <span id="bar-1" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-black top-1"></span>
@@ -743,911 +220,634 @@
           <span id="bar-3" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-black top-4"></span>
         </div>
       </button>
-
-      <!-- Overlay para o menu mobile -->
-      <div id="menu-overlay"
-        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 opacity-0"></div>
-
-      <!-- Menu de navegação (funciona para mobile e desktop) -->
-      <nav id="menu"
-        class="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 pt-20 md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none md:transform-none md:transition-none md:p-0 md:pt-0 md:translate-x-0 md:flex-row md:items-center md:space-y-0 md:space-x-8">
-        <a href="#solucoes"
-          class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">
-          Soluções
-        </a>
-        <a href="#orcamento"
-          class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">
-          Orçamento
-        </a>
-        <a href="#contato"
-          class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">
-          Contato
-        </a>
+      <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 opacity-0"></div>
+      <nav id="menu" class="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 pt-20 md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none md:transform-none md:transition-none md:p-0 md:pt-0 md:translate-x-0 md:flex-row md:items-center md:space-y-0 md:space-x-8" role="navigation" aria-label="Menu principal">
+        <a href="#solucoes" class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">Soluções</a>
+        <a href="#orcamento" class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">Orçamento</a>
+        <a href="#contato" class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">Contato</a>
       </nav>
     </div>
   </header>
 
-  <!-- Seção 2: Carrossel de Imagens Principal -->
-  <section class="pt-20 relative">
-    <!-- Carrossel Principal -->
-    <div class="swiper main-swiper">
-      <div class="swiper-wrapper">
-        <!-- Imagens otimizadas com lazy loading -->
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Fachada de edifício renderizada em 3D"
-            class="w-full object-cover" loading="eager" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Renderização 3D de perspectiva de fachada"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Visualização 3D de área externa"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Render 3D de piscina e área de lazer"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Interior de apartamento em 3D"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Sala de estar renderizada em 3D"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Cozinha em perspectiva 3D"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Planta humanizada de apartamento"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Tour virtual 360 de empreendimento"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-      </div>
-      <!-- Botões de navegação -->
-      <div class="swiper-button-prev" aria-label="Imagem anterior"></div>
-      <div class="swiper-button-next" aria-label="Próxima imagem"></div>
-    </div>
-
-    <!-- Carrossel de Miniaturas (Visível apenas em mobile) -->
-    <div class="main-thumbs-container">
-      <div class="swiper main-thumbs-swiper">
+  <!-- Conteúdo principal -->
+  <main id="main-content" tabindex="-1">
+    <!-- Seção 2: Carrossel de Imagens Principal -->
+    <section class="pt-20 relative" aria-label="Destaques Visuais">
+      <!-- Carrossel Principal -->
+      <div class="swiper main-swiper" aria-label="Carrossel de imagens principais">
         <div class="swiper-wrapper">
-          <!-- Mesmas imagens do carrossel principal, mas em tamanho menor -->
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura1" loading="lazy" />
-          </div>
-          <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura2" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Fachada de edifício renderizada em 3D" class="w-full object-cover" loading="eager" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura3" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Renderização 3D de perspectiva de fachada" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura4" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Visualização 3D de área externa" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura5" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Render 3D de piscina e área de lazer" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura6" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Interior de apartamento em 3D" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura7" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Sala de estar renderizada em 3D" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura8" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Cozinha em perspectiva 3D" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura9" loading="lazy" />
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Planta humanizada de apartamento" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Tour virtual 360 de empreendimento" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+          </div>
+        </div>
+        <div class="swiper-button-prev" aria-label="Imagem anterior"></div>
+        <div class="swiper-button-next" aria-label="Próxima imagem"></div>
+      </div>
+
+      <!-- Carrossel de Miniaturas (Visível apenas em mobile) -->
+      <div class="main-thumbs-container">
+        <div class="swiper main-thumbs-swiper" aria-label="Miniaturas do carrossel principal">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura1" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura2" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura3" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura4" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura5" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura6" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura7" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura8" loading="lazy" width="160" height="90" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura9" loading="lazy" width="160" height="90" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seção 3: Texto Centralizado -->
-  <section class="py-16 px-6">
-    <div class="container mx-auto max-w-4xl text-center">
-      <p class="text-lg leading-relaxed font-thin">
-        Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D
-        de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º, destacando o melhor do seu
-        empreendimento.
-      </p>
-    </div>
-  </section>
-
-  <!-- Seção 4: Soluções -->
-  <section id="solucoes" class="py-16 px-6">
-    <div class="container mx-auto">
-      <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
-
-      <!-- Carrossel 1: Fachadas -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
-            <div class="swiper-wrapper">
-              <!-- Imagens otimizadas -->
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada1.jpg" alt="Fachada 3D diurna de edifício residencial"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada2.jpg" alt="Fachada 3D noturna com iluminação"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada3.jpg" alt="Detalhe de fachada 3D com jardim"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Fachada anterior"></div>
-            <div class="swiper-button-next" aria-label="Próxima fachada"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Fachadas</h3>
-          <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
-        </div>
+    <!-- Seção 3: Texto Centralizado -->
+    <section class="py-16 px-6" aria-label="Apresentação">
+      <div class="container mx-auto max-w-4xl text-center">
+        <p class="text-lg leading-relaxed font-thin">
+          Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D
+          de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º, destacando o melhor do seu
+          empreendimento.
+        </p>
       </div>
+    </section>
 
-      <!-- Carrossel 2: Interiores -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
-            <div class="swiper-wrapper">
-              <!-- Imagens otimizadas -->
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior1.jpg" alt="Render 3D de sala de estar contemporânea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'interiores-swiper')" />
+    <!-- Seção 4: Soluções -->
+    <section id="solucoes" class="py-16 px-6" aria-label="Soluções">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
+
+        <!-- Carrossel 1: Fachadas -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+            <div class="swiper fachada-swiper solution-swiper multi-image-swiper" aria-label="Carrossel de Fachadas">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/fachadas/fachada1.jpg" alt="Fachada 3D diurna de edifício residencial" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'fachada-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/fachadas/fachada2.jpg" alt="Fachada 3D noturna com iluminação" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'fachada-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/fachadas/fachada3.jpg" alt="Detalhe de fachada 3D com jardim" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'fachada-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'fachada-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea duplicada" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'fachada-swiper')" />
+                </div>
               </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior2.jpg" alt="Visualização 3D de cozinha integrada"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior3.jpg" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior4.jpg" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior5.jpg" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
+              <div class="swiper-button-prev" aria-label="Fachada anterior"></div>
+              <div class="swiper-button-next" aria-label="Próxima fachada"></div>
             </div>
-            <div class="swiper-button-prev" aria-label="Interior anterior"></div>
-            <div class="swiper-button-next" aria-label="Próximo interior"></div>
           </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Interiores</h3>
-          <p class="font-thin">Apartamentos | Áreas de uso comum</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 3: Áreas externas -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
-            <div class="swiper-wrapper">
-              <!-- Imagens otimizadas -->
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa1.jpg" alt="Piscina com vista para o mar"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa2.jpg" alt="Espaço gourmet ao ar livre"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa3.jpg"
-                  alt="Área de lazer com iluminação noturna"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa4.jpg"
-                  alt="Área de lazer com iluminação noturna"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Área externa anterior"></div>
-            <div class="swiper-button-next" aria-label="Próxima área externa"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Áreas externas</h3>
-          <p class="font-thin">Piscinas | Áreas externas | Acessos</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 4: Plantas humanizadas -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta1.png" alt="Planta humanizada de apartamento"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta2.png" alt="Planta humanizada de área comum"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta3.png" alt="Planta humanizada de área comum"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta4.png" alt="Planta humanizada de área comum"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Planta anterior"></div>
-            <div class="swiper-button-next" aria-label="Próxima planta"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
-          <p class="font-thin">Plantas humanizadas apartamento | Térreo | Áreas de uso comum</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 5: Filme | Animação (Versão Atualizada com Navegação Simples) -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
-        <div class="w-full md:w-1/2 mb-8 md:mb-0">
-          <div class="flex items-center w-full">
-            <!-- Botão para vídeo anterior -->
-            <button id="prevVideo" class="video-nav-button mr-2" aria-label="Vídeo anterior">
-              &#10094;
-            </button>
-
-            <!-- Container central do vídeo -->
-            <div class="vimeo-container flex-1">
-              <iframe id="videoPlayer"
-                src="https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                class="w-full h-full" style="object-fit: contain;" title="Filme de apresentação"
-                loading="lazy"></iframe>
-            </div>
-
-            <!-- Botão para próximo vídeo -->
-            <button id="nextVideo" class="video-nav-button ml-2" aria-label="Próximo vídeo">
-              &#10095;
-            </button>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
-          <p class="font-thin">Filme de apresentação do empreendimento</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 6: Tour Virtual 360º -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper tour-swiper solution-swiper dual-image-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html"
-                  class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
-              </div>
-              <div class="swiper-slide">
-                <iframe src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html"
-                  class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
-              </div>
-              <div class="swiper-slide">
-                <iframe src="https://tour360.meupasseiovirtual.com/070287/299768/tourvirtual/index.html"
-                  class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Tour anterior"></div>
-            <div class="swiper-button-next" aria-label="Próximo tour"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Tour Virtual 360º</h3>
-          <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
-        </div>
-      </div>
-
-      <!-- Modal para exibir a imagem ampliada com navegação -->
-      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="relative">
-          <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
-          <img id="modalImage" src="" alt="Imagem ampliada"
-            class="max-w-full max-h-screen rounded-lg shadow-lg object-contain" />
-          <button onclick="closeModal()"
-            class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Fechar modal">
-            ✕
-          </button>
-          <!-- Botões de navegação -->
-          <button id="modalPrev"
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Imagem anterior">
-            &#10094;
-          </button>
-          <button id="modalNext"
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Próxima imagem">
-            &#10095;
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção de Logos de Parceiros -->
-<section class="py-24 px-6 bg-white-50 logo-cloud pb-64">
-  <div class="container mx-auto max-w-6xl">
-    <h2 class="text-2xl font-medium mb-10 text-center">NOSSOS PARCEIROS</h2>
-
-    <div class="flex flex-col md:items-center">
-      <!-- Slider dos logos -->
-      <div class="w-full overflow-hidden relative">
-        <div class="logos-slider">
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5"
-              class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8 w-auto" />
-          </div>
-
-          <!-- Repetição das logos para o loop -->
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5"
-              class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8 w-auto" />
-          </div>
-          <div class="logo-item">
-            <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8 w-auto" />
+          <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+            <h3 class="text-xl font-medium mb-4">Fachadas</h3>
+            <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
           </div>
         </div>
 
-        <!-- Blurs laterais -->
-        <div class="blur-overlay-left"></div>
-        <div class="blur-overlay-right"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Seção 5: Orçamento -->
-<section id="orcamento" class="py-24 px-6 bg-white-100">
-  <div class="container mx-auto max-w-6xl">
-    <!-- Textos Centralizados -->
-    <div class="text-center mb-12">
-      <p class="text-2xl font-medium mb-10">ATENDEMOS TODO O BRASIL</p>
-      <p class="text-md font-thin mt-4">Se interessou pelo nosso trabalho?</p>
-      <p class="text-md font-thin mt-4">
-        Solicite um orçamento ou confira as principais dúvidas.
-      </p>
-    </div>
-
-    <div class="flex flex-col md:flex-row md:space-x-12">
-      <!-- Formulário de Orçamento (Lado Esquerdo) -->
-      <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
-        <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
-        <form id="orcamento-form" class="space-y-4">
-          <div>
-            <label for="nome" class="block text-sm font-bold mb-2">Nome*:</label>
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
-            />
-          </div>
-          <div>
-            <label for="incorporadora" class="block text-sm font-bold mb-2">Incorporadora*:</label>
-            <input
-              type="text"
-              id="incorporadora"
-              name="incorporadora"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
-            />
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-bold mb-2">Email*:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
-            />
-          </div>
-          <div>
-            <label for="whatsapp" class="block text-sm font-bold mb-2">Whatsapp*:</label>
-            <input
-              type="tel"
-              id="whatsapp"
-              name="whatsapp"
-              required
-              placeholder="(00) 0 0000-0000"
-              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
-            />
-          </div>
-          <div>
-            <label for="cidade" class="block text-sm font-bold mb-2">Cidade*:</label>
-            <input
-              type="text"
-              id="cidade"
-              name="cidade"
-              required
-              class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
-            />
-          </div>
-
-          <div>
-            <p class="text-sm font-bold mb-2">Qual é o tipo de empreendimento:</p>
-            <div class="space-y-2">
-              <label class="custom-checkbox block">
-                <input type="radio" name="tipo_empreendimento" value="residencial" class="mr-2" />
-                <span class="checkmark"></span>
-                Torre de uso residencial
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="tipo_empreendimento" value="comercial" class="mr-2" />
-                <span class="checkmark"></span>
-                Torre de uso comercial
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="tipo_empreendimento" value="loteamento" class="mr-2" />
-                <span class="checkmark"></span>
-                Loteamento | Condomínio de lotes
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="tipo_empreendimento" value="outro" class="mr-2" />
-                <span class="checkmark"></span>
-                Outro
-              </label>
+        <!-- Carrossel 2: Interiores -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+            <div class="swiper interiores-swiper solution-swiper multi-image-swiper" aria-label="Carrossel de Interiores">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/interiores/interior1.jpg" alt="Render 3D de sala de estar contemporânea" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'interiores-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/interiores/interior2.jpg" alt="Visualização 3D de cozinha integrada" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'interiores-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/interiores/interior3.jpg" alt="Renderização de suíte master" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'interiores-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/interiores/interior4.jpg" alt="Renderização de banheiro moderno" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'interiores-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/interiores/interior5.jpg" alt="Renderização de quarto infantil" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'interiores-swiper')" />
+                </div>
+              </div>
+              <div class="swiper-button-prev" aria-label="Interior anterior"></div>
+              <div class="swiper-button-next" aria-label="Próximo interior"></div>
             </div>
           </div>
+          <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+            <h3 class="text-xl font-medium mb-4">Interiores</h3>
+            <p class="font-thin">Apartamentos | Áreas de uso comum</p>
+          </div>
+        </div>
 
-          <div>
-            <p class="text-sm font-bold mb-2">
-              Indique os itens que irão compor o material de lançamento do empreendimento:
-            </p>
-            <div class="space-y-2">
-              <label class="custom-checkbox block">
-                <input type="checkbox" name="itens[]" value="fachadas" class="mr-2" />
-                <span class="checkmark"></span>
-                Fachadas
-              </label>
-              <label class="custom-checkbox block">
-                <input type="checkbox" name="itens[]" value="imagens_uso_comum" class="mr-2" />
-                <span class="checkmark"></span>
-                Imagens áreas de uso comum
-              </label>
-              <label class="custom-checkbox block">
-                <input type="checkbox" name="itens[]" value="imagens_privativas" class="mr-2" />
-                <span class="checkmark"></span>
-                Imagens áreas privativas
-              </label>
-              <label class="custom-checkbox block">
-                <input type="checkbox" name="itens[]" value="plantas_humanizadas" class="mr-2" />
-                <span class="checkmark"></span>
-                Plantas humanizadas
-              </label>
-              <label class="custom-checkbox block">
-                <input type="checkbox" name="itens[]" value="tour_virtual" class="mr-2" />
-                <span class="checkmark"></span>
-                Tour Virtual 360º
-              </label>
-              <label class="custom-checkbox block">
-                <input type="checkbox" name="itens[]" value="videos" class="mr-2" />
-                <span class="checkmark"></span>
-                Vídeos | Filme
-              </label>
+        <!-- Carrossel 3: Áreas externas -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+            <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper" aria-label="Carrossel de Áreas Externas">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/areas_externas/area_externa1.jpg" alt="Piscina com vista para o mar" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'areas-externas-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/areas_externas/area_externa2.jpg" alt="Espaço gourmet ao ar livre" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'areas-externas-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/areas_externas/area_externa3.jpg" alt="Área de lazer com iluminação noturna" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'areas-externas-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/areas_externas/area_externa4.jpg" alt="Jardim e paisagismo em área externa" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'areas-externas-swiper')" />
+                </div>
+              </div>
+              <div class="swiper-button-prev" aria-label="Área externa anterior"></div>
+              <div class="swiper-button-next" aria-label="Próxima área externa"></div>
             </div>
           </div>
+          <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+            <h3 class="text-xl font-medium mb-4">Áreas externas</h3>
+            <p class="font-thin">Piscinas | Áreas externas | Acessos</p>
+          </div>
+        </div>
 
-          <div>
-            <p class="text-sm font-bold mb-2">Possui projeto de arquitetura de interiores:</p>
-            <div class="space-y-2">
-              <label class="custom-checkbox block">
-                <input type="radio" name="projeto_interiores" value="sim" class="mr-2" />
-                <span class="checkmark"></span>
-                Sim
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="projeto_interiores" value="nao" class="mr-2" />
-                <span class="checkmark"></span>
-                Não
-              </label>
+        <!-- Carrossel 4: Plantas humanizadas -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+            <div class="swiper plantas-swiper solution-swiper dual-image-swiper" aria-label="Carrossel de Plantas Humanizadas">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/humanizadas/planta1.png" alt="Planta humanizada de apartamento" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'plantas-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/humanizadas/planta2.png" alt="Planta humanizada de área comum" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'plantas-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/humanizadas/planta3.png" alt="Planta humanizada de apartamento duplex" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'plantas-swiper')" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="public/assets/section_04/humanizadas/planta4.png" alt="Planta humanizada de térreo com lazer" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="600" height="400" onclick="openModal(this, 'plantas-swiper')" />
+                </div>
+              </div>
+              <div class="swiper-button-prev" aria-label="Planta anterior"></div>
+              <div class="swiper-button-next" aria-label="Próxima planta"></div>
             </div>
           </div>
+          <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+            <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
+            <p class="font-thin">Plantas humanizadas apartamento | Térreo | Áreas de uso comum</p>
+          </div>
+        </div>
 
-          <div>
-            <p class="text-sm font-bold mb-2">Como gostaria de apresentar esse empreendimento:</p>
-            <div class="space-y-2">
-              <label class="custom-checkbox block">
-                <input type="radio" name="apresentacao" value="pacote_compacto" class="mr-2" />
-                <span class="checkmark"></span>
-                Pacote compacto com 20 imagens
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="apresentacao" value="lista_completa" class="mr-2" />
-                <span class="checkmark"></span>
-                Lista completa de imagens para apresentar os principais ambientes do empreendimento
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="apresentacao" value="lista_completa_filme" class="mr-2" />
-                <span class="checkmark"></span>
-                Lista completa de imagens, Filme de lançamento e/ou tour virtual 360º
-              </label>
+        <!-- Carrossel 5: Filme | Animação -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <div class="flex items-center w-full">
+              <button id="prevVideo" class="video-nav-button mr-2" aria-label="Vídeo anterior">&#10094;</button>
+              <div class="vimeo-container flex-1">
+                <iframe id="videoPlayer" src="https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" class="w-full h-full" style="object-fit: contain;" title="Filme de apresentação" loading="lazy"></iframe>
+              </div>
+              <button id="nextVideo" class="video-nav-button ml-2" aria-label="Próximo vídeo">&#10095;</button>
             </div>
           </div>
+          <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+            <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
+            <p class="font-thin">Filme de apresentação do empreendimento</p>
+          </div>
+        </div>
 
-          <div>
-            <p class="text-sm font-bold mb-2">Preferência de contato via:</p>
-            <div class="space-y-2">
-              <label class="custom-checkbox block">
-                <input type="radio" name="contato" value="email" class="mr-2" />
-                <span class="checkmark"></span>
-                Email
-              </label>
-              <label class="custom-checkbox block">
-                <input type="radio" name="contato" value="whatsapp" class="mr-2" />
-                <span class="checkmark"></span>
-                Whatsapp
-              </label>
+        <!-- Carrossel 6: Tour Virtual 360º -->
+        <div class="flex flex-col md:flex-row items-center mb-16">
+          <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
+            <div class="swiper tour-swiper solution-swiper dual-image-swiper" aria-label="Carrossel de Tour Virtual 360º">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html" class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360 - Ambiente 1" width="600" height="400"></iframe>
+                </div>
+                <div class="swiper-slide">
+                  <iframe src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html" class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360 - Ambiente 2" width="600" height="400"></iframe>
+                </div>
+                <div class="swiper-slide">
+                  <iframe src="https://tour360.meupasseiovirtual.com/070287/299768/tourvirtual/index.html" class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360 - Ambiente 3" width="600" height="400"></iframe>
+                </div>
+              </div>
+              <div class="swiper-button-prev" aria-label="Tour anterior"></div>
+              <div class="swiper-button-next" aria-label="Próximo tour"></div>
             </div>
           </div>
+          <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+            <h3 class="text-xl font-medium mb-4">Tour Virtual 360º</h3>
+            <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
+          </div>
+        </div>
 
-          <!-- Consentimento LGPD e Proteção de Dados -->
-          <div class="mt-6">
-            <label class="custom-checkbox block">
-              <input type="checkbox" name="lgpd_consent" required class="mr-2" />
-              <span class="checkmark"></span>
-              Concordo com o tratamento dos meus dados de acordo com a LGPD
-            </label>
-          </div>
-
-          <div class="text-center mt-6">
-            <div class="inline-flex items-center">
-              <button
-                type="submit"
-                id="submitBtn"
-                class="bg-[#707070] hover:bg-[#5a5a5a] text-white !text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline btn-transition"
-              >
-                Solicitar Proposta
-              </button>
-              <div id="loadingSpinner" class="loading-spinner"></div>
-            </div>
-
-            <!-- Feedback de envio -->
-            <div id="submitSuccess" class="submit-feedback submit-success">
-              Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.
-            </div>
-            <div id="submitError" class="submit-feedback submit-error">
-              Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente.
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Dúvidas (Lado Direito) -->
-      <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
-        <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
-        <div class="space-y-6">
-          <div>
-            <h4 class="font-semibold mb-2">1. Como posso solicitar um orçamento?</h4>
-            <p class="text-sm">
-              Você pode solicitar um orçamento de forma prática pelo formulário ao
-              lado, via e-mail ou pelo WhatsApp. Escolha o canal que for mais
-              conveniente para você!
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">
-              2. Preciso enviar o projeto para solicitar um orçamento?
-            </h4>
-            <p class="text-sm">
-              Sim, é necessário enviar o projeto para que possamos elaborar o
-              orçamento. Aceitamos arquivos nos formatos PDF ou DWG.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">3. Qual é o pacote mínimo de imagens?</h4>
-            <p class="text-sm">
-              Nosso orçamento mínimo contempla a criação de 20 imagens realistas.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">4. Qual é o prazo estimado para entrega?</h4>
-            <p class="text-sm">
-              O prazo de entrega é definido após a análise detalhada do projeto.
-              Garantimos pontualidade e qualidade em todas as entregas.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">5. Qual é a área de atuação da Visual Easy 3D?</h4>
-            <p class="text-sm">
-              Atendemos incorporadoras de todo o Brasil, desenvolvendo soluções
-              visuais realistas para torres residenciais e comerciais. Nosso
-              objetivo é potencializar o desempenho de lançamentos imobiliários,
-              conectando empreendimentos ao público certo.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">6. Vocês elaboram projetos de interiores?</h4>
-            <p class="text-sm">
-              Sim! Nossa equipe é formada por arquitetos especializados, prontos
-              para criar projetos de interiores com alto nível de detalhamento e
-              realismo.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">7. Como funcionam as alterações nas entregas?</h4>
-            <p class="text-sm">
-              Após a entrega inicial, o cliente pode revisar e solicitar ajustes.
-              Todo orçamento inclui uma revisão gratuita. Caso sejam necessárias
-              revisões extras, elas podem ser solicitadas à parte.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">8. Por que contratar a Visual Easy 3D?</h4>
-            <p class="text-sm">
-              O mercado imobiliário exige lançamentos impactantes e conectados ao
-              público-alvo. Na Visual Easy 3D, criamos representações realistas
-              que aproximam o futuro e a realidade, ajudando a destacar seu
-              empreendimento no mercado.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">9. Onde a Visual Easy 3D está localizada?</h4>
-            <p class="text-sm">
-              Estamos em Campinas - SP, mas atendemos clientes de todo o Brasil.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">
-              10. Como definir a lista de imagens do projeto?
-            </h4>
-            <p class="text-sm">
-              Se você ainda não tiver uma lista de ambientes a serem
-              representados, nossa equipe pode sugerir com base no projeto e no
-              perfil do empreendimento.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">11. Qual é o compromisso da Visual Easy 3D?</h4>
-            <p class="text-sm">
-              Nossa equipe é comprometida com a qualidade dos serviços e a
-              pontualidade rigorosa na entrega. Trabalhamos para superar as
-              expectativas de nossos clientes.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-semibold mb-2">
-              12. Como entrar em contato com a Visual Easy 3D?
-            </h4>
-            <p class="text-sm">
-              Se você tiver dúvidas ou quiser mais informações, entre em contato
-              conosco pelo formulário, e-mail ou WhatsApp. Estamos prontos para
-              ajudar!
-            </p>
+        <!-- Modal para exibir a imagem ampliada com navegação -->
+        <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+          <div class="relative">
+            <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
+            <img id="modalImage" src="" alt="Imagem ampliada" class="max-w-full max-h-screen rounded-lg shadow-lg object-contain" />
+            <button onclick="closeModal()" class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Fechar modal">✕</button>
+            <button id="modalPrev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Imagem anterior">&#10094;</button>
+            <button id="modalNext" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Próxima imagem">&#10095;</button>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("orcamento-form");
-  const submitSuccess = document.getElementById("submitSuccess");
-  const submitError = document.getElementById("submitError");
-  const loadingSpinner = document.getElementById("loadingSpinner");
+    <!-- Seção de Logos de Parceiros -->
+    <section class="py-24 px-6 bg-white-50 logo-cloud pb-64" aria-label="Nossos Parceiros">
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="text-2xl font-medium mb-10 text-center">NOSSOS PARCEIROS</h2>
+        <div class="flex flex-col md:items-center">
+          <div class="w-full overflow-hidden relative">
+            <div class="logos-slider" aria-label="Logos de parceiros">
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro AF" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro Maybelly" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro Tarjab" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro Clarus" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro Grupo Sinop" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro Ace Realty" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro QHabita" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <!-- Repetição das logos para o loop -->
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro AF" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro Maybelly" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro Tarjab" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro Clarus" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro Grupo Sinop" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro Ace Realty" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+              <div class="logo-item">
+                <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro QHabita" class="h-8 w-auto" loading="lazy" width="100" height="35" />
+              </div>
+            </div>
+            <div class="blur-overlay-left" aria-hidden="true"></div>
+            <div class="blur-overlay-right" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    
-    // Mostrar spinner de carregamento
-    loadingSpinner.style.display = "inline-block";
-    
-    // Criar objeto para armazenar todos os dados do formulário
-    const formObj = {};
-    const formData = new FormData(form);
-    
-    // Processar campos normais
-    for (let [key, value] of formData.entries()) {
-      if (key !== 'itens[]') {
-        formObj[key] = value;
-      }
-    }
-    
-    // Tratar os checkboxes especificamente
-    const checkboxes = form.querySelectorAll('input[name="itens[]"]:checked');
-    formObj.itens = Array.from(checkboxes).map(cb => cb.value);
-    
-    // Enviar os dados como JSON para garantir que arrays sejam enviados corretamente
-    const jsonData = new FormData();
-    jsonData.append('json', JSON.stringify(formObj));
+    <!-- Seção 5: Orçamento -->
+    <section id="orcamento" class="py-24 px-6 bg-white-100" aria-label="Orçamento e Dúvidas">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <p class="text-2xl font-medium mb-10">ATENDEMOS TODO O BRASIL</p>
+          <p class="text-md font-thin mt-4">Se interessou pelo nosso trabalho?</p>
+          <p class="text-md font-thin mt-4">Solicite um orçamento ou confira as principais dúvidas.</p>
+        </div>
 
-    fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
-      method: "POST",
-      body: jsonData,
-    })
-      .then((response) => {
-        loadingSpinner.style.display = "none";
-        if (response.ok) {
-          submitSuccess.style.display = "block";
-          submitError.style.display = "none";
-          form.reset();
-        } else {
-          throw new Error("Erro ao enviar o formulário");
-        }
-      })
-      .catch((error) => {
-        loadingSpinner.style.display = "none";
-        submitSuccess.style.display = "none";
-        submitError.style.display = "block";
-        console.error(error);
-      });
-  });
-});
-</script>
+        <div class="flex flex-col md:flex-row md:space-x-12">
+          <!-- Formulário de Orçamento (Lado Esquerdo) -->
+          <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
+            <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
+            <form id="orcamento-form" class="space-y-4" autocomplete="on" novalidate>
+              <div>
+                <label for="nome" class="block text-sm font-bold mb-2">Nome*:</label>
+                <input type="text" id="nome" name="nome" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" aria-required="true" />
+              </div>
+              <div>
+                <label for="incorporadora" class="block text-sm font-bold mb-2">Incorporadora*:</label>
+                <input type="text" id="incorporadora" name="incorporadora" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" aria-required="true" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-bold mb-2">Email*:</label>
+                <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" aria-required="true" inputmode="email" />
+              </div>
+              <div>
+                <label for="whatsapp" class="block text-sm font-bold mb-2">Whatsapp*:</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 0 0000-0000" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" aria-required="true" inputmode="tel" />
+              </div>
+              <div>
+                <label for="cidade" class="block text-sm font-bold mb-2">Cidade*:</label>
+                <input type="text" id="cidade" name="cidade" required class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" aria-required="true" />
+              </div>
 
+              <fieldset class="space-y-2">
+                <legend class="text-sm font-bold mb-2">Qual é o tipo de empreendimento:</legend>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="residencial" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Torre de uso residencial
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="comercial" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Torre de uso comercial
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="loteamento" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Loteamento | Condomínio de lotes
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="outro" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Outro
+                </label>
+              </fieldset>
 
-  <!-- Seção 6: Contato -->
-  <section id="contato" class="py-16 px-6">
-    <div class="container mx-auto text-center max-w-2xl">
-      <h2 class="text-2xl font-medium mb-8">CONTATO</h2>
-      <p class="mb-2">
-        <span class="font-medium">Contato:</span>
-        <a href="tel:+5519996996756" class="font-thin hover:underline">(19) 9 9699-6756</a>
-      </p>
-      <p class="mb-10">
-        <span class="font-medium">E-mail:</span>
-        <a href="mailto:visualeasy.3d@gmail.com"
-          class="font-thin hover:underline">visualeasy.3d@gmail.com</a>
-      </p>
-      <p class="mb-2 font-medium">Endereço:</p>
-      <p class="mb-1 font-thin">Rua Arthur Urbano de Andrade, Edifício Flamboyant, nº 10, sala 32</p>
-      <p class="mb-1 font-thin">Campinas, São Paulo</p>
-      <p class="font-thin">CEP: 13091-420</p>
-    </div>
-  </section>
+              <fieldset class="space-y-2">
+                <legend class="text-sm font-bold mb-2">Indique os itens que irão compor o material de lançamento do empreendimento:</legend>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="fachadas" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Fachadas
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="imagens_uso_comum" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Imagens áreas de uso comum
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="imagens_privativas" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Imagens áreas privativas
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="plantas_humanizadas" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Plantas humanizadas
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="tour_virtual" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Tour Virtual 360º
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="videos" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Vídeos | Filme
+                </label>
+              </fieldset>
+
+              <fieldset class="space-y-2">
+                <legend class="text-sm font-bold mb-2">Possui projeto de arquitetura de interiores:</legend>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="projeto_interiores" value="sim" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Sim
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="projeto_interiores" value="nao" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Não
+                </label>
+              </fieldset>
+
+              <fieldset class="space-y-2">
+                <legend class="text-sm font-bold mb-2">Como gostaria de apresentar esse empreendimento:</legend>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="apresentacao" value="pacote_compacto" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Pacote compacto com 20 imagens
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="apresentacao" value="lista_completa" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Lista completa de imagens para apresentar os principais ambientes do empreendimento
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="apresentacao" value="lista_completa_filme" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Lista completa de imagens, Filme de lançamento e/ou tour virtual 360º
+                </label>
+              </fieldset>
+
+              <fieldset class="space-y-2">
+                <legend class="text-sm font-bold mb-2">Preferência de contato via:</legend>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="contato" value="email" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Email
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="contato" value="whatsapp" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Whatsapp
+                </label>
+              </fieldset>
+
+              <div class="mt-6">
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="lgpd_consent" required class="mr-2" aria-required="true" />
+                  <span class="checkmark"></span>
+                  Concordo com o tratamento dos meus dados de acordo com a LGPD*
+                </label>
+              </div>
+
+              <div class="text-center mt-6">
+                <div class="inline-flex items-center">
+                  <button type="submit" id="submitBtn" class="bg-[#707070] hover:bg-[#5a5a5a] text-white !text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline btn-transition">
+                    Solicitar Proposta
+                  </button>
+                  <div id="loadingSpinner" class="loading-spinner" aria-label="Carregando"></div>
+                </div>
+                <div id="submitSuccess" class="submit-feedback submit-success" role="alert">
+                  Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.
+                </div>
+                <div id="submitError" class="submit-feedback submit-error" role="alert">
+                  Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente.
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Dúvidas (Lado Direito) -->
+          <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
+            <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="font-semibold mb-2">1. Como posso solicitar um orçamento?</h4>
+                <p class="text-sm">Você pode solicitar um orçamento de forma prática pelo formulário ao lado, via e-mail ou pelo WhatsApp. Escolha o canal que for mais conveniente para você!</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">2. Preciso enviar o projeto para solicitar um orçamento?</h4>
+                <p class="text-sm">Sim, é necessário enviar o projeto para que possamos elaborar o orçamento. Aceitamos arquivos nos formatos PDF ou DWG.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">3. Qual é o pacote mínimo de imagens?</h4>
+                <p class="text-sm">Nosso orçamento mínimo contempla a criação de 20 imagens realistas.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">4. Qual é o prazo estimado para entrega?</h4>
+                <p class="text-sm">O prazo de entrega é definido após a análise detalhada do projeto. Garantimos pontualidade e qualidade em todas as entregas.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">5. Qual é a área de atuação da Visual Easy 3D?</h4>
+                <p class="text-sm">Atendemos incorporadoras de todo o Brasil, desenvolvendo soluções visuais realistas para torres residenciais e comerciais. Nosso objetivo é potencializar o desempenho de lançamentos imobiliários, conectando empreendimentos ao público certo.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">6. Vocês elaboram projetos de interiores?</h4>
+                <p class="text-sm">Sim! Nossa equipe é formada por arquitetos especializados, prontos para criar projetos de interiores com alto nível de detalhamento e realismo.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">7. Como funcionam as alterações nas entregas?</h4>
+                <p class="text-sm">Após a entrega inicial, o cliente pode revisar e solicitar ajustes. Todo orçamento inclui uma revisão gratuita. Caso sejam necessárias revisões extras, elas podem ser solicitadas à parte.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">8. Por que contratar a Visual Easy 3D?</h4>
+                <p class="text-sm">O mercado imobiliário exige lançamentos impactantes e conectados ao público-alvo. Na Visual Easy 3D, criamos representações realistas que aproximam o futuro e a realidade, ajudando a destacar seu empreendimento no mercado.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">9. Onde a Visual Easy 3D está localizada?</h4>
+                <p class="text-sm">Estamos em Campinas - SP, mas atendemos clientes de todo o Brasil.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">10. Como definir a lista de imagens do projeto?</h4>
+                <p class="text-sm">Se você ainda não tiver uma lista de ambientes a serem representados, nossa equipe pode sugerir com base no projeto e no perfil do empreendimento.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">11. Qual é o compromisso da Visual Easy 3D?</h4>
+                <p class="text-sm">Nossa equipe é comprometida com a qualidade dos serviços e a pontualidade rigorosa na entrega. Trabalhamos para superar as expectativas de nossos clientes.</p>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-2">12. Como entrar em contato com a Visual Easy 3D?</h4>
+                <p class="text-sm">Se você tiver dúvidas ou quiser mais informações, entre em contato conosco pelo formulário, e-mail ou WhatsApp. Estamos prontos para ajudar!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 6: Contato -->
+    <section id="contato" class="py-16 px-6" aria-label="Informações de Contato">
+      <div class="container mx-auto text-center max-w-2xl">
+        <h2 class="text-2xl font-medium mb-8">CONTATO</h2>
+        <p class="mb-2">
+          <span class="font-medium">Contato:</span>
+          <a href="tel:+5519996996756" class="font-thin hover:underline" rel="noopener">(19) 9 9699-6756</a>
+        </p>
+        <p class="mb-10">
+          <span class="font-medium">E-mail:</span>
+          <a href="mailto:visualeasy.3d@gmail.com" class="font-thin hover:underline" rel="noopener">visualeasy.3d@gmail.com</a>
+        </p>
+        <p class="mb-2 font-medium">Endereço:</p>
+        <address class="not-italic">
+          <p class="mb-1 font-thin">Rua Arthur Urbano de Andrade, Edifício Flamboyant, nº 10, sala 32</p>
+          <p class="mb-1 font-thin">Campinas, São Paulo</p>
+          <p class="font-thin">CEP: 13091-420</p>
+        </address>
+      </div>
+    </section>
+  </main>
 
   <!-- Botão flutuante do WhatsApp (apenas desktop) -->
-  <a href="https://wa.me/+5519996996756" target="_blank" class="whatsapp-float" aria-label="Contato WhatsApp">
-    <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" width="35" height="35">
+  <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato WhatsApp">
+    <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" width="35" height="35" loading="lazy">
   </a>
 
   <!-- Rodapé para desktop -->
-  <footer id="desktop-footer" class="bg-white py-2 px-6 shadow-md">
+  <footer id="desktop-footer" class="bg-white py-2 px-6 shadow-md" role="contentinfo">
     <div class="container mx-auto flex items-center">
-      <!-- Texto do rodapé -->
       <p class="flex-1 font-thin">© 2022 por Visual Easy 3D. Todos os direitos reservados.</p>
-
-      <!-- Ícones sociais -->
       <div class="flex justify-end">
-        <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
-          class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-          <img src="public/assets/identidade_visual/instagram-icon.png" alt="Instagram" class="h-8 w-8" width="32"
-            height="32">
+        <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
+          <img src="public/assets/identidade_visual/instagram-icon.png" alt="Instagram" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
-        <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" rel="noopener"
-          class="hover:text-gray-500 transition duration-300" aria-label="LinkedIn">
-          <img src="public/assets/identidade_visual/linkedin-icon.png" alt="LinkedIn" class="h-8 w-8" width="32"
-            height="32">
+        <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="LinkedIn">
+          <img src="public/assets/identidade_visual/linkedin-icon.png" alt="LinkedIn" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
-        <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
-          aria-label="Email">
-          <img src="public/assets/identidade_visual/email-icon.png" alt="Email" class="h-8 w-8" width="32" height="32">
+        <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300" aria-label="Email">
+          <img src="public/assets/identidade_visual/email-icon.png" alt="Email" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
-        <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener"
-          class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
-          <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" class="h-8 w-8" width="32"
-            height="32">
+        <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
+          <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
       </div>
     </div>
   </footer>
 
   <!-- Rodapé para smartphone -->
-  <footer id="mobile-footer" class="bg-white py-2 px-6 shadow-md fixed bottom-0 left-0 w-full">
+  <footer id="mobile-footer" class="bg-white py-2 px-6 shadow-md fixed bottom-0 left-0 w-full" role="contentinfo">
     <div class="container mx-auto flex justify-between items-center">
-      <!-- Ícones sociais -->
-      <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
-        class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-        <img src="public/assets/identidade_visual/instagram-icon-grey.png" alt="Instagram" class="h-8 w-8"
-          width="32" height="32">
+      <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
+        <img src="public/assets/identidade_visual/instagram-icon-grey.png" alt="Instagram" class="h-8 w-8" width="32" height="32" loading="lazy">
       </a>
-      <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
-        aria-label="Email">
-        <img src="public/assets/identidade_visual/email-icon-grey.png" alt="Email" class="h-8 w-8" width="32"
-          height="32">
+      <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300" aria-label="Email">
+        <img src="public/assets/identidade_visual/email-icon-grey.png" alt="Email" class="h-8 w-8" width="32" height="32" loading="lazy">
       </a>
-      <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener"
-        class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
-        <img src="public/assets/identidade_visual/whatsapp-icon-grey.png" alt="WhatsApp" class="h-8 w-8" width="32"
-          height="32">
+      <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
+        <img src="public/assets/identidade_visual/whatsapp-icon-grey.png" alt="WhatsApp" class="h-8 w-8" width="32" height="32" loading="lazy">
       </a>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (deferidos para performance) -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="https://player.vimeo.com/api/player.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Logo voltar ao topo
       document.getElementById("logo").addEventListener("click", function (e) {
         e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
       // Menu mobile aprimorado
@@ -1659,433 +859,442 @@
       const bar3 = document.getElementById("bar-3");
       const menuLinks = menu.querySelectorAll("a");
 
-      // Função para alternar o estado do menu
       function toggleMenu() {
         const isOpen = menu.classList.contains("translate-x-0");
-
         if (isOpen) {
-          // Fechar menu
           menu.classList.remove("translate-x-0");
           menu.classList.add("translate-x-full");
           menuOverlay.classList.add("opacity-0");
-
-          // Esperar a transição terminar antes de esconder completamente
-          setTimeout(() => {
-            menuOverlay.classList.add("hidden");
-          }, 300);
-
-          // Restaurar ícone hambúrguer
+          setTimeout(() => { menuOverlay.classList.add("hidden"); }, 300);
           bar1.classList.remove("rotate-45", "top-2.5");
           bar2.classList.remove("opacity-0");
           bar3.classList.remove("-rotate-45", "top-2.5");
-
-          // Permitir rolagem na página
           document.body.classList.remove("overflow-hidden", "md:overflow-auto");
-          menuToggle.setAttribute('aria-expanded', 'false'); // Atualiza o atributo aria-expanded
+          menuToggle.setAttribute('aria-expanded', 'false');
         } else {
-          // Abrir menu
           menu.classList.remove("translate-x-full");
           menu.classList.add("translate-x-0");
           menuOverlay.classList.remove("hidden");
-
-          // Esperar um momento para aplicar a opacidade (para a transição funcionar)
-          setTimeout(() => {
-            menuOverlay.classList.remove("opacity-0");
-          }, 10);
-
-          // Transformar ícone em X
+          setTimeout(() => { menuOverlay.classList.remove("opacity-0"); }, 10);
           bar1.classList.add("rotate-45", "top-2.5");
           bar2.classList.add("opacity-0");
           bar3.classList.add("-rotate-45", "top-2.5");
-
-          // Impedir rolagem na página enquanto o menu está aberto (apenas no mobile)
           document.body.classList.add("overflow-hidden", "md:overflow-auto");
-          menuToggle.setAttribute('aria-expanded', 'true'); // Atualiza o atributo aria-expanded
+          menuToggle.setAttribute('aria-expanded', 'true');
         }
       }
-
-      // Eventos
       menuToggle.addEventListener("click", toggleMenu);
       menuOverlay.addEventListener("click", toggleMenu);
-
-      // Fechar o menu quando um link é clicado
       menuLinks.forEach(link => {
         link.addEventListener("click", () => {
-          if (window.innerWidth < 768) {
+          if (window.innerWidth < 768 && menu.classList.contains("translate-x-0")) {
             toggleMenu();
           }
         });
       });
-
-      // Ajustar comportamento ao redimensionar a janela
       window.addEventListener("resize", () => {
         if (window.innerWidth >= 768) {
-          // Restaurar estado padrão em telas maiores
+          if (menu.classList.contains("translate-x-0")) {
+            toggleMenu(); // Fecha o menu se estiver aberto em desktop
+          }
+          // Garante estado resetado em desktop
           menu.classList.remove("translate-x-0", "translate-x-full");
           menuOverlay.classList.add("hidden", "opacity-0");
           bar1.classList.remove("rotate-45", "top-2.5");
           bar2.classList.remove("opacity-0");
           bar3.classList.remove("-rotate-45", "top-2.5");
           document.body.classList.remove("overflow-hidden");
-          menuToggle.setAttribute('aria-expanded', 'false'); // Garante que o atributo esteja correto
+          menuToggle.setAttribute('aria-expanded', 'false');
         }
       });
 
-      // Inicialização otimizada dos Swipers
-      if (typeof Swiper !== 'undefined') {
-        initializeSwipers();
-      } else {
-        const swiperScript = document.createElement('script');
-        swiperScript.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
-        swiperScript.onload = initializeSwipers;
-        document.body.appendChild(swiperScript);
+      // Inicialização dos Swipers (apenas se Swiper estiver carregado)
+      function initializeSwipers() {
+        if (typeof Swiper === 'undefined') {
+          console.warn("Swiper não carregado ainda.");
+          return;
+        }
+
+        // Carrossel Principal
+        const mainSwiper = new Swiper('.main-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  speed: 800,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: '.main-swiper .swiper-button-next',
+    prevEl: '.main-swiper .swiper-button-prev'
+  },
+  a11y: {
+    prevSlideMessage: 'Imagem anterior',
+    nextSlideMessage: 'Próxima imagem'
+  },
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 5
+    }
+  }
+});
+
+        // Carrossel de Miniaturas
+        const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
+          spaceBetween: 10, slidesPerView: 3, loop: true, centeredSlides: true, slideToClickedSlide: true,
+          breakpoints: { 640: { slidesPerView: 5 }, 768: { slidesPerView: 7 } }
+        });
+
+        // Sincronizar os dois carrosséis (se ambos existirem)
+        if (mainSwiper && thumbsSwiper && mainSwiper.controller && thumbsSwiper.controller) {
+          mainSwiper.controller.control = thumbsSwiper;
+          thumbsSwiper.controller.control = mainSwiper;
+        } else {
+          console.warn("Não foi possível sincronizar os carrosséis principal e de miniaturas.");
+        }
+
+        const multiImageOptions = {
+          loop: true, slidesPerView: 1, spaceBetween: 10, slidesPerGroup: 1, loopFillGroupWithBlank: true,
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          breakpoints: { 640: { slidesPerView: 2, spaceBetween: 10 }, 1024: { slidesPerView: 4, spaceBetween: 15 } },
+          a11y: { prevSlideMessage: 'Anterior', nextSlideMessage: 'Próximo' },
+        };
+
+        const dualImageOptions = {
+          loop: true, slidesPerView: 1, spaceBetween: 10, slidesPerGroup: 1, loopFillGroupWithBlank: true,
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          breakpoints: { 640: { slidesPerView: 1, spaceBetween: 10 }, 1024: { slidesPerView: 2, spaceBetween: 15 } },
+          a11y: { prevSlideMessage: 'Anterior', nextSlideMessage: 'Próximo' },
+        };
+
+        new Swiper('.fachada-swiper', { ...multiImageOptions, navigation: { nextEl: '.fachada-swiper .swiper-button-next', prevEl: '.fachada-swiper .swiper-button-prev' } });
+        new Swiper('.interiores-swiper', { ...multiImageOptions, navigation: { nextEl: '.interiores-swiper .swiper-button-next', prevEl: '.interiores-swiper .swiper-button-prev' } });
+        new Swiper('.areas-externas-swiper', { ...multiImageOptions, navigation: { nextEl: '.areas-externas-swiper .swiper-button-next', prevEl: '.areas-externas-swiper .swiper-button-prev' } });
+        new Swiper('.plantas-swiper', { ...dualImageOptions, navigation: { nextEl: '.plantas-swiper .swiper-button-next', prevEl: '.plantas-swiper .swiper-button-prev' } });
+
+        // Tour virtual 360º
+        new Swiper('.tour-swiper', {
+          ...dualImageOptions,
+          navigation: { nextEl: '.tour-swiper .swiper-button-next', prevEl: '.tour-swiper .swiper-button-prev' },
+        });
+
+        document.dispatchEvent(new Event('swiperInitialized'));
       }
+
+      // Tenta inicializar Swipers imediatamente e depois de um pequeno delay
+      initializeSwipers();
+      setTimeout(initializeSwipers, 500); // Fallback caso Swiper demore a carregar
 
       // Scroll suave para os links de âncora
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // Opcional: Focar no elemento após o scroll para acessibilidade
+            // targetElement.focus({ preventScroll: true });
+          }
         });
       });
 
-      // Otimização de carregamento da página
-      const lazyItems = document.querySelectorAll('.swiper-container, h2, h3, .cta-primary, .text-2xl');
-      const lazyObserver = new IntersectionObserver((entries) => {
+      // Otimização de carregamento da página (Intersection Observer)
+      const lazyItems = document.querySelectorAll('.swiper-container, h2, h3, .cta-primary, .text-2xl, .logo-item img, section[id]');
+      const lazyObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
-            lazyObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1 });
+      lazyItems.forEach(item => { lazyObserver.observe(item); });
 
-      lazyItems.forEach(item => {
-        lazyObserver.observe(item);
-      });
-
-      // Configuração do navegador de vídeos
+      // Configuração do navegador de vídeos Vimeo
       const videoUrls = [
-        "https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1069673537?h=25e44adaaa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1069673567?h=97cbb62e15&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1069673603?h=2a755967de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        "https://player.vimeo.com/video/1069673498?h=e4078e7ef0&badge=0&autopause=0&player_id=0&app_id=58479",
+        "https://player.vimeo.com/video/1069673537?h=25e44adaaa&badge=0&autopause=0&player_id=0&app_id=58479",
+        "https://player.vimeo.com/video/1069673567?h=97cbb62e15&badge=0&autopause=0&player_id=0&app_id=58479",
+        "https://player.vimeo.com/video/1069673603?h=2a755967de&badge=0&autopause=0&player_id=0&app_id=58479"
       ];
-
       let currentVideoIndex = 0;
       const videoPlayer = document.getElementById("videoPlayer");
+      const nextVideoButton = document.getElementById("nextVideo");
+      const prevVideoButton = document.getElementById("prevVideo");
 
       function changeVideo(direction) {
+        if (!videoPlayer) return;
         if (direction === "next") {
           currentVideoIndex = (currentVideoIndex + 1) % videoUrls.length;
         } else {
           currentVideoIndex = (currentVideoIndex - 1 + videoUrls.length) % videoUrls.length;
         }
-
         videoPlayer.src = videoUrls[currentVideoIndex];
       }
+      if (nextVideoButton) nextVideoButton.addEventListener("click", () => changeVideo("next"));
+      if (prevVideoButton) prevVideoButton.addEventListener("click", () => changeVideo("prev"));
 
-      document.getElementById("nextVideo").addEventListener("click", () => changeVideo("next"));
-      document.getElementById("prevVideo").addEventListener("click", () => changeVideo("prev"));
-    });
+      // Modal de Imagem
+      let currentSwiperModal = null;
+      let currentIndexModal = 0;
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalPrevButton = document.getElementById('modalPrev');
+      const modalNextButton = document.getElementById('modalNext');
 
-    // Função para inicializar todos os swipers
-    function initializeSwipers() {
-      // Configuração comum para todos os swipers
-      const commonOptions = {
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true,
-        },
-        autoHeight: true,
-      };
+      window.openModal = function (imageElement, swiperClass) {
+        if (!modal || !modalImage) return;
+        const swiperContainer = imageElement.closest(`.${swiperClass}`);
+        if (!swiperContainer) return;
+        const swiperWrapper = swiperContainer.querySelector('.swiper-wrapper');
+        if (!swiperWrapper) return;
 
-      // Carrossel Principal
-      const mainSwiper = new Swiper('.main-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        speed: 800,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        a11y: {
-          prevSlideMessage: 'Imagem anterior',
-          nextSlideMessage: 'Próxima imagem',
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 5,
-          },
+        const imagesInSwiper = Array.from(swiperWrapper.querySelectorAll('img')); // Apenas imagens por enquanto
+        currentSwiperModal = imagesInSwiper;
+        currentIndexModal = imagesInSwiper.indexOf(imageElement);
+
+        if (currentIndexModal === -1) return; // Imagem não encontrada
+
+        modalImage.src = imageElement.src;
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+        modalImage.focus(); // Foco na imagem para navegação
+        document.addEventListener('keydown', handleKeyNavigationModal);
+      }
+
+      window.closeModal = function () {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        document.removeEventListener('keydown', handleKeyNavigationModal);
+        // Devolver foco para o elemento que abriu o modal (melhoria futura)
+      }
+
+      function showPrevModal() {
+        if (!currentSwiperModal || !modalImage) return;
+        currentIndexModal = (currentIndexModal - 1 + currentSwiperModal.length) % currentSwiperModal.length;
+        modalImage.src = currentSwiperModal[currentIndexModal].src;
+        modalImage.alt = currentSwiperModal[currentIndexModal].alt; // Atualiza alt text
+      }
+
+      function showNextModal() {
+        if (!currentSwiperModal || !modalImage) return;
+        currentIndexModal = (currentIndexModal + 1) % currentSwiperModal.length;
+        modalImage.src = currentSwiperModal[currentIndexModal].src;
+        modalImage.alt = currentSwiperModal[currentIndexModal].alt; // Atualiza alt text
+      }
+
+      function handleKeyNavigationModal(event) {
+        if (event.key === 'ArrowLeft') {
+          showPrevModal();
+        } else if (event.key === 'ArrowRight') {
+          showNextModal();
+        } else if (event.key === 'Escape') {
+          closeModal();
         }
-      });
+      }
 
+      if (modalPrevButton) modalPrevButton.addEventListener('click', showPrevModal);
+      if (modalNextButton) modalNextButton.addEventListener('click', showNextModal);
+      // Fechar modal clicando fora da imagem
+      if (modal) {
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
 
-      // Carrossel de Miniaturas
-      const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
-        spaceBetween: 10,
-        slidesPerView: 3,
-        loop: true,
-        centeredSlides: true,
-        slideToClickedSlide: true,
-        breakpoints: {
-          640: {
-            slidesPerView: 5,
-          },
-          768: {
-            slidesPerView: 7,
+      // Validação e Submissão do Formulário de Orçamento
+      const form = document.getElementById("orcamento-form");
+      const submitSuccess = document.getElementById("submitSuccess");
+      const submitError = document.getElementById("submitError");
+      const loadingSpinner = document.getElementById("loadingSpinner");
+      const submitBtn = document.getElementById("submitBtn");
+
+      if (form) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Limpar erros anteriores
+          clearFormErrors(form);
+          // Validar formulário
+          if (!validateForm(form)) {
+            // Focar no primeiro campo inválido (melhoria de acessibilidade)
+            const firstError = form.querySelector('.input-error, input:invalid, select:invalid, textarea:invalid');
+            if (firstError) firstError.focus();
+            return;
+          }
+
+          // Mostrar spinner e desabilitar botão
+          if (loadingSpinner) loadingSpinner.style.display = "inline-block";
+          if (submitBtn) submitBtn.disabled = true;
+          if (submitSuccess) submitSuccess.style.display = "none";
+          if (submitError) submitError.style.display = "none";
+
+          const formObj = {};
+          const formData = new FormData(form);
+          for (let [key, value] of formData.entries()) {
+            if (key.endsWith('[]')) { // Tratar arrays (checkboxes)
+              if (!formObj[key]) formObj[key] = [];
+              formObj[key].push(value);
+            } else {
+              formObj[key] = value;
+            }
+          }
+
+          // Usar FormData diretamente, pois o endpoint do Google Apps Script espera isso
+          const finalFormData = new FormData();
+          // Adicionar campos normais
+          for (let key in formObj) {
+            if (!key.endsWith('[]')) {
+              finalFormData.append(key, formObj[key]);
+            }
+          }
+          // Adicionar checkboxes como múltiplos campos com o mesmo nome
+          if (formObj['itens[]']) {
+            formObj['itens[]'].forEach(item => finalFormData.append('itens[]', item));
+          }
+
+          fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
+            method: "POST",
+            body: finalFormData, // Enviar como FormData
+          })
+            .then((response) => {
+              if (loadingSpinner) loadingSpinner.style.display = "none";
+              if (submitBtn) submitBtn.disabled = false;
+              if (response.ok) {
+                if (submitSuccess) submitSuccess.style.display = "block";
+                if (submitError) submitError.style.display = "none";
+                form.reset();
+                // Opcional: scroll para a mensagem de sucesso
+                // submitSuccess.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                throw new Error("Erro na resposta do servidor");
+              }
+            })
+            .catch((error) => {
+              console.error("Erro no fetch:", error);
+              if (loadingSpinner) loadingSpinner.style.display = "none";
+              if (submitBtn) submitBtn.disabled = false;
+              if (submitSuccess) submitSuccess.style.display = "none";
+              if (submitError) submitError.style.display = "block";
+              // Opcional: scroll para a mensagem de erro
+              // submitError.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+      }
+
+      // Funções de validação do formulário
+      function validateForm(form) {
+        let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+
+        requiredFields.forEach((field) => {
+          let fieldValid = true;
+          if (field.type === 'checkbox') {
+            fieldValid = field.checked;
+          } else if (field.type === 'radio') {
+            // Verifica se algum radio com o mesmo nome está marcado
+            const radioGroup = form.querySelectorAll(`input[name="${field.name}"]`);
+            fieldValid = Array.from(radioGroup).some(radio => radio.checked);
+          } else {
+            fieldValid = field.value.trim() !== '';
+          }
+
+          if (!fieldValid) {
+            isValid = false;
+            showError(field, 'Este campo é obrigatório.');
+          }
+        });
+
+        // Validar email
+        const emailField = form.querySelector('input[type="email"]');
+        if (emailField && emailField.value.trim() && !isValidEmail(emailField.value)) {
+          isValid = false;
+          showError(emailField, 'Por favor, insira um email válido.');
+        }
+
+        // Validar telefone/whatsapp (usando a máscara como referência)
+        const phoneField = form.querySelector('input[name="whatsapp"]');
+        if (phoneField && phoneField.value.trim() && !isValidPhone(phoneField.value)) {
+           isValid = false;
+           showError(phoneField, 'Formato de telefone inválido.');
+        }
+
+        return isValid;
+      }
+
+      function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function isValidPhone(phone) {
+         // Remove caracteres não numéricos para verificar o comprimento
+         const numericPhone = phone.replace(/\D/g, '');
+         // Verifica se tem 10 ou 11 dígitos (considerando DDD)
+         return numericPhone.length === 10 || numericPhone.length === 11;
+      }
+
+      function showError(field, message) {
+        field.classList.add('input-error');
+        // Adiciona aria-invalid para acessibilidade
+        field.setAttribute('aria-invalid', 'true');
+        const errorId = field.id + '-error';
+        let errorDiv = document.getElementById(errorId);
+        if (!errorDiv) {
+          errorDiv = document.createElement('div');
+          errorDiv.className = 'error-message';
+          errorDiv.id = errorId;
+          errorDiv.setAttribute('role', 'alert'); // Para leitores de tela
+          let parent = field.closest('.custom-checkbox') || field.parentElement; // Acha o container correto
+          // Insere após o campo ou seu label/container
+          if (parent.tagName === 'LABEL' && parent.classList.contains('custom-checkbox')) {
+             parent.parentNode.insertBefore(errorDiv, parent.nextSibling);
+          } else {
+             parent.appendChild(errorDiv);
           }
         }
-      });
-
-      // Sincronizar os dois carrosséis
-      mainSwiper.controller.control = thumbsSwiper;
-      thumbsSwiper.controller.control = mainSwiper;
-
-      // Configuração específica para swipers que mostram 4 itens em desktop (1, 2 e 3)
-      const multiImageOptions = {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 10, // Reduzido de 15 para 10
-        slidesPerGroup: 1,
-        loopFillGroupWithBlank: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 10, // Reduzido de 20 para 10
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 15, // Reduzido de 30 para 15
-          },
-        },
-      };
-
-      // Configuração específica para swipers que mostram 2 itens em desktop (4, 5 e 6)
-      const dualImageOptions = {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 10, // Reduzido de 15 para 10
-        slidesPerGroup: 1,
-        loopFillGroupWithBlank: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 10, // Reduzido de 20 para 10
-          },
-          1024: {
-            slidesPerView: 2,
-            spaceBetween: 15, // Reduzido de 30 para 15
-          },
-        },
-      };
-
-      // Inicializar swipers com 4 imagens por vez
-      new Swiper('.fachada-swiper', multiImageOptions);
-      new Swiper('.interiores-swiper', multiImageOptions);
-      new Swiper('.areas-externas-swiper', multiImageOptions);
-
-      // Inicializar swipers com 2 imagens por vez
-      new Swiper('.plantas-swiper', dualImageOptions);
-
-      // Configuração específica para o swiper de vídeos do Vimeo
-      const filmeSwiper = new Swiper('.filme-swiper', {
-        ...dualImageOptions,
-        on: {
-          slideChangeTransitionEnd: function () {
-            // Pause todos os vídeos quando o slide mudar
-            const iframes = document.querySelectorAll('.filme-swiper iframe');
-            iframes.forEach((iframe) => {
-              const player = new Vimeo.Player(iframe);
-              player.pause();
-            });
-          },
-        },
-      });
-
-      // Configuração específica para o tour virtual 360º
-      new Swiper('.tour-swiper', {
-        ...dualImageOptions,
-        navigation: {
-          nextEl: '.tour-swiper .swiper-button-next',
-          prevEl: '.tour-swiper .swiper-button-prev',
-        },
-      });
-
-      // Disparar evento para indicar que os swipers foram inicializados
-      document.dispatchEvent(new Event('swiperInitialized'));
-    }
-
-    let currentSwiper = null; // Armazena o swiper atual
-    let currentIndex = 0; // Índice da imagem atual no modal
-
-    function openModal(image, swiperClass) {
-      const modal = document.getElementById('imageModal');
-      const modalImage = document.getElementById('modalImage');
-      const swiper = document.querySelector(`.${swiperClass} .swiper-wrapper`);
-      const images = swiper.querySelectorAll('img, video, iframe');
-
-      currentSwiper = images;
-      currentIndex = Array.from(images).indexOf(image);
-
-      modalImage.src = image.src;
-      modal.classList.remove('hidden');
-      modal.setAttribute('aria-hidden', 'false'); // Atualiza o atributo aria-hidden
-
-      document.addEventListener('keydown', handleKeyNavigation);
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('imageModal');
-      modal.classList.add('hidden');
-      modal.setAttribute('aria-hidden', 'true'); // Atualiza o atributo aria-hidden
-      document.removeEventListener('keydown', handleKeyNavigation);
-    }
-
-    function showPrev() {
-      if (!currentSwiper) return;
-      currentIndex = (currentIndex - 1 + currentSwiper.length) % currentSwiper.length;
-      const modalImage = document.getElementById('modalImage');
-      modalImage.src = currentSwiper[currentIndex].src;
-    }
-
-    function showNext() {
-      if (!currentSwiper) return;
-      currentIndex = (currentIndex + 1) % currentSwiper.length;
-      const modalImage = document.getElementById('modalImage');
-      modalImage.src = currentSwiper[currentIndex].src;
-    }
-
-    function handleKeyNavigation(event) {
-      if (event.key === 'ArrowLeft') {
-        showPrev();
-      } else if (event.key === 'ArrowRight') {
-        showNext();
-      } else if (event.key === 'Escape') {
-        closeModal();
+        errorDiv.innerText = message;
+        // Associa a mensagem de erro ao campo via aria-describedby
+        field.setAttribute('aria-describedby', errorId);
       }
-    }
 
-    document.getElementById('modalPrev').addEventListener('click', showPrev);
-    document.getElementById('modalNext').addEventListener('click', showNext);
+      function clearFormErrors(form) {
+        const errorMessages = form.querySelectorAll('.error-message');
+        errorMessages.forEach((message) => message.remove());
+        const inputFields = form.querySelectorAll('.input-error, [aria-invalid="true"]');
+        inputFields.forEach((field) => {
+          field.classList.remove('input-error');
+          field.removeAttribute('aria-invalid');
+          field.removeAttribute('aria-describedby');
+        });
+      }
 
-    // Validação de formulário
-    function validateForm(form) {
-      // Limpar mensagens de erro anteriores
-      const errorMessages = form.querySelectorAll('.error-message');
-      errorMessages.forEach((message) => message.remove());
-
-      // Remover classes de erro anteriores
-      const inputFields = form.querySelectorAll('input, select, textarea');
-      inputFields.forEach((field) => {
-        field.classList.remove('input-error');
-      });
-
-      // Verificar campos obrigatórios
-      let isValid = true;
-      const requiredFields = form.querySelectorAll('[required]');
-
-      requiredFields.forEach((field) => {
-        // Para checkboxes e radios, verificar se está marcado
-        if ((field.type === 'checkbox' || field.type === 'radio') && !field.checked) {
-          showError(field, 'Este campo é obrigatório');
-          isValid = false;
+      // Aplicar máscara de Inputmask (apenas se Inputmask estiver carregado)
+      if (typeof Inputmask !== 'undefined') {
+        const whatsappInput = document.getElementById("whatsapp");
+        if (whatsappInput) {
+          Inputmask("(99) 9999[9]-9999").mask(whatsappInput);
         }
-        // Para outros campos, verificar se está vazio
-        else if (field.type !== 'checkbox' && field.type !== 'radio' && !field.value.trim()) {
-          showError(field, 'Este campo é obrigatório');
-          isValid = false;
-        }
-      });
-
-      // Validar email
-      const emailField = form.querySelector('input[type="email"]');
-      if (emailField && emailField.value.trim() && !isValidEmail(emailField.value)) {
-        showError(emailField, 'Por favor, insira um email válido');
-        isValid = false;
+      } else {
+        console.warn("Inputmask não carregado ainda.");
+        // Tentar novamente após um delay
+        setTimeout(() => {
+          if (typeof Inputmask !== 'undefined') {
+            const whatsappInput = document.getElementById("whatsapp");
+            if (whatsappInput) {
+              Inputmask("(99) 9999[9]-9999").mask(whatsappInput);
+            }
+          }
+        }, 1000);
       }
 
-      // Validar telefone/whatsapp
-      const phoneField = form.querySelector('input[name="whatsapp"]');
-      if (phoneField && phoneField.value.trim() && !isValidPhone(phoneField.value)) {
-        showError(phoneField, 'Por favor, insira um número de telefone válido');
-        isValid = false;
-      }
-
-      // Verificação do consentimento LGPD
-      const lgpdConsent = form.querySelector('input[name="lgpd_consent"]');
-      if (lgpdConsent && !lgpdConsent.checked) {
-        showError(lgpdConsent, 'Você precisa concordar com o tratamento dos seus dados');
-        isValid = false;
-      }
-
-      return isValid;
-    }
-
-    // Funções auxiliares de validação
-    function isValidEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
-    }
-
-    function isValidPhone(phone) {
-      // Aceita números com ou sem formatação
-      const re = /^(\+\d{1,3})?\s*(\(\d{2}\))?\s*\d{4,5}[-\s]?\d{4}$/;
-      return re.test(phone);
-    }
-
-    function showError(field, message) {
-      // Adiciona classe de erro ao campo
-      field.classList.add('input-error');
-
-      // Cria mensagem de erro
-      const errorDiv = document.createElement('div');
-      errorDiv.className = 'error-message';
-      errorDiv.innerText = message;
-
-      // Encontra o elemento pai apropriado para adicionar a mensagem
-      let parent = field.parentElement;
-      while (parent.tagName === 'LABEL') {
-        parent = parent.parentElement;
-      }
-
-      // Adiciona a mensagem após o campo ou seu container
-      parent.appendChild(errorDiv);
-    }
+    }); // Fim do DOMContentLoaded
   </script>
 
-<!-- Adicione os scripts do jQuery e Inputmask -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
-
-<!-- Script para aplicar a máscara -->
-<script>
-  // Aplicar máscara ao campo de WhatsApp
-  Inputmask("(00) 0 0000-0000").mask(document.getElementById("whatsapp"));
-</script>
-
 </body>
-
 </html>
-
