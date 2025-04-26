@@ -22,7 +22,7 @@
   <meta property="og:image" content="public/assets/identidade_visual/preview.jpg" />
 
   <!-- Preload de recursos críticos -->
-  <link rel="preload" href="public/assets/identidade_visual/logo.png" as="image" />
+  <link rel="preload" href="public/assets/identidade_visual/logo.webp" as="image" />
   <link rel="preload" href="public/assets/section_02_carrossel/section_02_fachada.jpg" as="image" />
 
   <!-- Preconnect para recursos externos -->
@@ -92,7 +92,7 @@
       "telephone": "+551996996756",
       "email": "visualeasy.3d@gmail.com",
       "url": "https://visualeasy3d.com.br",
-      "image": "public/assets/identidade_visual/logo.png",
+      "image": "public/assets/identidade_visual/logo.webp",
       "sameAs": [
         "https://www.instagram.com/visual.easy/",
         "https://www.linkedin.com/company/visual-easy-3d/"
@@ -142,7 +142,7 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-      color: #dadada !important;
+      color: #eeeeee !important;
     }
 
     body {
@@ -580,6 +580,11 @@
       section.py-16 {
         margin-top: -50px !important;
       }
+      
+      /* Ajuste responsivo para espaçamento entre carrosséis */
+      .carousel-container {
+        margin-bottom: 15px;
+      }
     }
 
     /* Media query para telas maiores (desktops) */
@@ -591,6 +596,11 @@
       .main-swiper .swiper-slide img {
         height: 90vh;
         object-fit: cover;
+      }
+      
+      /* Espaçamento reduzido entre os carrosséis na seção de soluções para desktop */
+      .carousel-container {
+        margin-bottom: 5px;
       }
     }
 
@@ -720,17 +730,74 @@
       outline: 2px solid #4a90e2;
       outline-offset: 2px;
     }
+
+    /* Estilos para o player de vídeo HTML5 */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-color: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #000;
+    }
+
+    /* Melhorias nos controles nativos do vídeo */
+    video::-webkit-media-controls-panel {
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    }
+
+    /* Estilo para miniaturas de vídeo */
+    .video-thumb-item {
+      opacity: 0.6;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .video-thumb-item:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .video-thumb-item.active {
+      opacity: 1;
+      border-color: #707070;
+    }
+
+    /* Animação de carregamento para vídeo */
+    .loading-circle {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s linear infinite;
+    }
   </style>
 </head>
 
 <body class="bg-white">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="logo-mask">
+      <img src="public/assets/identidade_visual/logo.webp" alt="Visual Easy 3D" />
+      <div class="mask-anim"></div>
+    </div>
+  </div>
+
   <!-- Seção 1: Cabeçalho -->
   <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm">
     <div class="container mx-auto flex items-center justify-between">
       <!-- Logo -->
       <div class="font-bold">
         <a href="#" id="logo" aria-label="Visual Easy 3D - Voltar ao topo">
-          <img src="public/assets/identidade_visual/logo.png" alt="Visual Easy 3D - Estúdio de Renderização 3D"
+          <img src="public/assets/identidade_visual/logo.webp" alt="Visual Easy 3D - Estúdio de Renderização 3D"
             class="logo" width="160" height="40" />
         </a>
       </div>
@@ -869,33 +936,48 @@
       <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
 
       <!-- Carrossel 1: Fachadas -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
+      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
         <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
           <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
             <div class="swiper-wrapper">
               <!-- Imagens otimizadas -->
               <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada1.jpg" alt="Fachada 3D diurna de edifício residencial"
+                <img src="public/assets/section_04/fachadas/fachada_01.webp" alt="Fachada 3D diurna de edifício residencial"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'fachada-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada2.jpg" alt="Fachada 3D noturna com iluminação"
+                <img src="public/assets/section_04/fachadas/fachada_02.webp" alt="Fachada 3D noturna com iluminação"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'fachada-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada3.jpg" alt="Detalhe de fachada 3D com jardim"
+                <img src="public/assets/section_04/fachadas/fachada_03.webp" alt="Detalhe de fachada 3D com jardim"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'fachada-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea"
+                <img src="public/assets/section_04/fachadas/fachada_04.webp" alt="Fachada 3D com perspectiva aérea"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'fachada-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada4.jpg" alt="Fachada 3D com perspectiva aérea"
+                <img src="public/assets/section_04/fachadas/fachada_05.webp" alt="Fachada 3D com perspectiva aérea"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'fachada-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/fachadas/fachada_06.webp" alt="Fachada 3D com perspectiva aérea"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'fachada-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/fachadas/fachada_07.webp" alt="Fachada 3D com perspectiva aérea"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'fachada-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/fachadas/fachada_08.webp" alt="Fachada 3D com perspectiva aérea"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'fachada-swiper')" />
               </div>
@@ -911,33 +993,48 @@
       </div>
 
       <!-- Carrossel 2: Interiores -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
+      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
         <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
           <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
             <div class="swiper-wrapper">
               <!-- Imagens otimizadas -->
               <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior1.jpg" alt="Render 3D de sala de estar contemporânea"
+                <img src="public/assets/section_04/interiores/interior_01.webp" alt="Render 3D de sala de estar contemporânea"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'interiores-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior2.jpg" alt="Visualização 3D de cozinha integrada"
+                <img src="public/assets/section_04/interiores/interior_02.webp" alt="Visualização 3D de cozinha integrada"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'interiores-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior3.jpg" alt="Renderização de suíte master"
+                <img src="public/assets/section_04/interiores/interior_03.webp" alt="Renderização de suíte master"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'interiores-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior4.jpg" alt="Renderização de suíte master"
+                <img src="public/assets/section_04/interiores/interior_04.webp" alt="Renderização de suíte master"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'interiores-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior5.jpg" alt="Renderização de suíte master"
+                <img src="public/assets/section_04/interiores/interior_05.webp" alt="Renderização de suíte master"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'interiores-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/interiores/interior_06.webp" alt="Renderização de suíte master"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'interiores-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/interiores/interior_07.webp" alt="Renderização de suíte master"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'interiores-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/interiores/interior_08.webp" alt="Renderização de suíte master"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'interiores-swiper')" />
               </div>
@@ -953,29 +1050,51 @@
       </div>
 
       <!-- Carrossel 3: Áreas externas -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
+      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
         <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
           <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
             <div class="swiper-wrapper">
               <!-- Imagens otimizadas -->
               <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa1.jpg" alt="Piscina com vista para o mar"
+                <img src="public/assets/section_04/areas_externas/exterior_01.webp" alt="Piscina com vista para o mar"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'areas-externas-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa2.jpg" alt="Espaço gourmet ao ar livre"
+                <img src="public/assets/section_04/areas_externas/exterior_02.webp" alt="Espaço gourmet ao ar livre"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'areas-externas-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa3.jpg"
+                <img src="public/assets/section_04/areas_externas/exterior_03.webp"
                   alt="Área de lazer com iluminação noturna"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'areas-externas-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/area_externa4.jpg"
+                <img src="public/assets/section_04/areas_externas/exterior_04.webp"
+                  alt="Área de lazer com iluminação noturna"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'areas-externas-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/areas_externas/exterior_05.webp" alt="Piscina com vista para o mar"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'areas-externas-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/areas_externas/exterior_06.webp" alt="Espaço gourmet ao ar livre"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'areas-externas-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/areas_externas/exterior_07.webp"
+                  alt="Área de lazer com iluminação noturna"
+                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
+                  onclick="openModal(this, 'areas-externas-swiper')" />
+              </div>
+              <div class="swiper-slide">
+                <img src="public/assets/section_04/areas_externas/exterior_08.webp"
                   alt="Área de lazer com iluminação noturna"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'areas-externas-swiper')" />
@@ -992,27 +1111,27 @@
       </div>
 
       <!-- Carrossel 4: Plantas humanizadas -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
+      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
         <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
           <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta1.png" alt="Planta humanizada de apartamento"
+                <img src="public/assets/section_04/humanizadas/planta_terreo.webp" alt="Planta humanizada de terreo"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'plantas-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta2.png" alt="Planta humanizada de área comum"
+                <img src="public/assets/section_04/humanizadas/planta_pavimento_1.webp" alt="Planta humanizada de área comum"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'plantas-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta3.png" alt="Planta humanizada de área comum"
+                <img src="public/assets/section_04/humanizadas/planta_pavimento_tipo.webp" alt="Planta humanizada de área comum"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'plantas-swiper')" />
               </div>
               <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta4.png" alt="Planta humanizada de área comum"
+                <img src="public/assets/section_04/humanizadas/planta_apto_tipo.webp" alt="Planta humanizada de apartamento"
                   class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy"
                   onclick="openModal(this, 'plantas-swiper')" />
               </div>
@@ -1023,12 +1142,12 @@
         </div>
         <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
           <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
-          <p class="font-thin">Plantas humanizadas apartamento | Térreo | Áreas de uso comum</p>
+          <p class="font-thin">Plantas humanizadas | Apartamento | Térreo | Áreas de uso comum</p>
         </div>
       </div>
 
-      <!-- Carrossel 5: Filme | Animação (Versão Atualizada com Navegação Simples) -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
+      <!-- Carrossel 5: Filme | Animação -->
+      <div class="flex flex-col md:flex-row items-center carousel-container mb-5">
         <div class="w-full md:w-1/2 mb-8 md:mb-0">
           <div class="flex items-center w-full">
             <!-- Botão para vídeo anterior -->
@@ -1036,14 +1155,23 @@
               &#10094;
             </button>
 
-            <!-- Container central do vídeo -->
-            <div class="vimeo-container flex-1">
-              <iframe id="videoPlayer"
-                src="https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                class="w-full h-full" style="object-fit: contain;" title="Filme de apresentação"
-                loading="lazy"></iframe>
+            <!-- Container central do vídeo com player HTML5 nativo -->
+            <div class="video-container flex-1 relative rounded-lg overflow-hidden shadow-lg">
+              <!-- Elemento video principal -->
+              <video id="videoPlayer" class="w-full h-full object-cover" 
+                     preload="metadata" playsinline controls
+                     poster="public/assets/video/thumbnail-video-1.jpg">
+                <!-- Múltiplos formatos para compatibilidade entre navegadores -->
+                <source src="public/assets/video/video-1.mp4" type="video/mp4">
+                <source src="public/assets/video/video-1.webm" type="video/webm">
+                <!-- Mensagem de fallback para navegadores antigos -->
+                Seu navegador não suporta o elemento de vídeo HTML5.
+              </video>
+              
+              <!-- Indicador de carregamento -->
+              <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
+                <div class="loading-circle"></div>
+              </div>
             </div>
 
             <!-- Botão para próximo vídeo -->
@@ -1059,7 +1187,7 @@
       </div>
 
       <!-- Carrossel 6: Tour Virtual 360º -->
-      <div class="flex flex-col md:flex-row items-center mb-16">
+      <div class="flex flex-col md:flex-row items-center carousel-container mb-5">
         <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
           <div class="swiper tour-swiper solution-swiper dual-image-swiper">
             <div class="swiper-wrapper">
@@ -1539,7 +1667,7 @@
     })
       .then((response) => {
         loadingSpinner.style.display = "none";
-        if (response.ok) {
+          if (response.ok) {
           submitSuccess.style.display = "block";
           submitError.style.display = "none";
           form.reset();
@@ -1580,7 +1708,7 @@
 
   <!-- Botão flutuante do WhatsApp (apenas desktop) -->
   <a href="https://wa.me/+5519996996756" target="_blank" class="whatsapp-float" aria-label="Contato WhatsApp">
-    <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" width="35" height="35">
+    <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" width="35" height="35">
   </a>
 
   <!-- Rodapé para desktop -->
@@ -1593,21 +1721,21 @@
       <div class="flex justify-end">
         <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
           class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-          <img src="public/assets/identidade_visual/instagram-icon.png" alt="Instagram" class="h-8 w-8" width="32"
+          <img src="public/assets/identidade_visual/instagram-icon.webp" alt="Instagram" class="h-8 w-8" width="32"
             height="32">
         </a>
         <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" rel="noopener"
           class="hover:text-gray-500 transition duration-300" aria-label="LinkedIn">
-          <img src="public/assets/identidade_visual/linkedin-icon.png" alt="LinkedIn" class="h-8 w-8" width="32"
+          <img src="public/assets/identidade_visual/linkedin-icon.webp" alt="LinkedIn" class="h-8 w-8" width="32"
             height="32">
         </a>
         <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
           aria-label="Email">
-          <img src="public/assets/identidade_visual/email-icon.png" alt="Email" class="h-8 w-8" width="32" height="32">
+          <img src="public/assets/identidade_visual/email-icon.webp" alt="Email" class="h-8 w-8" width="32" height="32">
         </a>
         <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener"
           class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
-          <img src="public/assets/identidade_visual/whatsapp-icon.png" alt="WhatsApp" class="h-8 w-8" width="32"
+          <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" class="h-8 w-8" width="32"
             height="32">
         </a>
       </div>
@@ -1620,17 +1748,17 @@
       <!-- Ícones sociais -->
       <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
         class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-        <img src="public/assets/identidade_visual/instagram-icon-grey.png" alt="Instagram" class="h-8 w-8"
+        <img src="public/assets/identidade_visual/instagram-icon-grey.webp" alt="Instagram" class="h-8 w-8"
           width="32" height="32">
       </a>
       <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
         aria-label="Email">
-        <img src="public/assets/identidade_visual/email-icon-grey.png" alt="Email" class="h-8 w-8" width="32"
+        <img src="public/assets/identidade_visual/email-icon-grey.webp" alt="Email" class="h-8 w-8" width="32"
           height="32">
       </a>
       <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener"
         class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
-        <img src="public/assets/identidade_visual/whatsapp-icon-grey.png" alt="WhatsApp" class="h-8 w-8" width="32"
+        <img src="public/assets/identidade_visual/whatsapp-icon-grey.webp" alt="WhatsApp" class="h-8 w-8" width="32"
           height="32">
       </a>
     </div>
@@ -1638,7 +1766,9 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="https://player.vimeo.com/api/player.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+  
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Logo voltar ao topo
@@ -1766,29 +1896,90 @@
         lazyObserver.observe(item);
       });
 
-      // Configuração do navegador de vídeos
-      const videoUrls = [
-        "https://player.vimeo.com/video/1069673498?h=e4078e7ef0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1069673537?h=25e44adaaa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1069673567?h=97cbb62e15&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1069673603?h=2a755967de&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+      // Configuração do player de vídeo HTML5
+      // Lista de vídeos com seus respectivos posters
+      const videos = [
+        {
+          mp4: "public/assets/video/video-1.mp4",
+          webm: "public/assets/video/video-1.webm",
+          poster: "public/assets/video/thumbnail-video-1.jpg"
+        },
+        {
+          mp4: "public/assets/video/video-2.mp4",
+          webm: "public/assets/video/video-2.webm",
+          poster: "public/assets/video/thumbnail-video-2.jpg"
+        },
+        {
+          mp4: "public/assets/video/video-3.mp4",
+          webm: "public/assets/video/video-3.webm",
+          poster: "public/assets/video/thumbnail-video-3.jpg"
+        },
+        {
+          mp4: "public/assets/video/video-4.mp4",
+          webm: "public/assets/video/video-4.webm",
+          poster: "public/assets/video/thumbnail-video-4.jpg"
+        }
       ];
 
       let currentVideoIndex = 0;
       const videoPlayer = document.getElementById("videoPlayer");
-
-      function changeVideo(direction) {
-        if (direction === "next") {
-          currentVideoIndex = (currentVideoIndex + 1) % videoUrls.length;
-        } else {
-          currentVideoIndex = (currentVideoIndex - 1 + videoUrls.length) % videoUrls.length;
-        }
-
-        videoPlayer.src = videoUrls[currentVideoIndex];
+      const loadingSpinner = document.querySelector(".video-loading-spinner");
+      const mp4Source = videoPlayer.querySelector('source[type="video/mp4"]');
+      const webmSource = videoPlayer.querySelector('source[type="video/webm"]');
+      
+      // Função para trocar o vídeo
+      function changeVideo(index) {
+        // Pausar o vídeo atual
+        videoPlayer.pause();
+        
+        // Mostrar indicador de carregamento
+        loadingSpinner.classList.remove('hidden');
+        
+        // Atualizar o índice atual
+        currentVideoIndex = index;
+        
+        // Atualizar as fontes e o poster
+        mp4Source.src = videos[index].mp4;
+        webmSource.src = videos[index].webm;
+        videoPlayer.poster = videos[index].poster;
+        
+        // Recarregar o vídeo
+        videoPlayer.load();
       }
-
-      document.getElementById("nextVideo").addEventListener("click", () => changeVideo("next"));
-      document.getElementById("prevVideo").addEventListener("click", () => changeVideo("prev"));
+      
+      // Função para navegar pelos vídeos
+      function navigateVideo(direction) {
+        let newIndex;
+        if (direction === "next") {
+          newIndex = (currentVideoIndex + 1) % videos.length;
+        } else {
+          newIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+        }
+        changeVideo(newIndex);
+      }
+      
+      // Eventos para os botões de navegação
+      document.getElementById("nextVideo").addEventListener("click", () => navigateVideo("next"));
+      document.getElementById("prevVideo").addEventListener("click", () => navigateVideo("prev"));
+      
+      // Eventos do player
+      videoPlayer.addEventListener('loadeddata', function() {
+        loadingSpinner.classList.add('hidden');
+      });
+      
+      videoPlayer.addEventListener('error', function() {
+        console.error('Erro ao carregar o vídeo');
+        loadingSpinner.classList.add('hidden');
+      });
+      
+      // Suporte para navegação com teclado
+      videoPlayer.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+          navigateVideo("next");
+        } else if (e.key === 'ArrowLeft') {
+          navigateVideo("prev");
+        }
+      });
     });
 
     // Função para inicializar todos os swipers
@@ -1828,7 +2019,7 @@
         breakpoints: {
           768: {
             slidesPerView: 3,
-            spaceBetween: 5,
+            spaceBetween: 5, // Diminuído para 5px
           },
         }
       });
@@ -1836,7 +2027,7 @@
 
       // Carrossel de Miniaturas
       const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
-        spaceBetween: 10,
+        spaceBetween: 5, // Diminuído para 5px
         slidesPerView: 3,
         loop: true,
         centeredSlides: true,
@@ -1859,7 +2050,7 @@
       const multiImageOptions = {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 10, // Reduzido de 15 para 10
+        spaceBetween: 5, // Diminuído para 5px
         slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         navigation: {
@@ -1869,11 +2060,11 @@
         breakpoints: {
           640: {
             slidesPerView: 2,
-            spaceBetween: 10, // Reduzido de 20 para 10
+            spaceBetween: 5, // Diminuído para 5px
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 15, // Reduzido de 30 para 15
+            spaceBetween: 5, // Diminuído para 5px
           },
         },
       };
@@ -1882,7 +2073,7 @@
       const dualImageOptions = {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 10, // Reduzido de 15 para 10
+        spaceBetween: 5, // Diminuído para 5px
         slidesPerGroup: 1,
         loopFillGroupWithBlank: true,
         navigation: {
@@ -1892,11 +2083,11 @@
         breakpoints: {
           640: {
             slidesPerView: 1,
-            spaceBetween: 10, // Reduzido de 20 para 10
+            spaceBetween: 5, // Diminuído para 5px
           },
           1024: {
             slidesPerView: 2,
-            spaceBetween: 15, // Reduzido de 30 para 15
+            spaceBetween: 5, // Diminuído para 5px
           },
         },
       };
@@ -1908,21 +2099,6 @@
 
       // Inicializar swipers com 2 imagens por vez
       new Swiper('.plantas-swiper', dualImageOptions);
-
-      // Configuração específica para o swiper de vídeos do Vimeo
-      const filmeSwiper = new Swiper('.filme-swiper', {
-        ...dualImageOptions,
-        on: {
-          slideChangeTransitionEnd: function () {
-            // Pause todos os vídeos quando o slide mudar
-            const iframes = document.querySelectorAll('.filme-swiper iframe');
-            iframes.forEach((iframe) => {
-              const player = new Vimeo.Player(iframe);
-              player.pause();
-            });
-          },
-        },
-      });
 
       // Configuração específica para o tour virtual 360º
       new Swiper('.tour-swiper', {
@@ -2075,17 +2251,77 @@
     }
   </script>
 
-<!-- Adicione os scripts do jQuery e Inputmask -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+  <!-- Script para aplicar a máscara -->
+  <script>
+    // Aplicar máscara ao campo de WhatsApp
+    Inputmask("(00) 0 0000-0000").mask(document.getElementById("whatsapp"));
+  </script>
 
-<!-- Script para aplicar a máscara -->
+<style>
+  #preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+    opacity: 1;
+  }
+  .logo-mask {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-mask img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  .mask-anim {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+    animation: revealLogo 2s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes revealLogo {
+    from { width: 100%; }
+    to   { width: 0%; }
+  }
+  #preloader.preloader-hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+  }
+</style>
 <script>
-  // Aplicar máscara ao campo de WhatsApp
-  Inputmask("(00) 0 0000-0000").mask(document.getElementById("whatsapp"));
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.classList.add('preloader-hide');
+        setTimeout(() => preloader.remove(), 700);
+      }
+    }, 2000); // espera a animação terminar
+  });
+  // Fallback: remove o preloader após 5s
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('preloader-hide');
+      setTimeout(() => preloader.remove(), 700);
+    }
+  }, 5000);
 </script>
 
 </body>
 
 </html>
-
