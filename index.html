@@ -172,6 +172,12 @@
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
+
+    @media (max-width: 768px) {
+  .mb-mobile-extra {
+    margin-bottom: 2.5rem !important; /* ajuste o valor como preferir */
+  }
+}
   </style>
 
   <!-- Carregamento otimizado de fontes -->
@@ -540,14 +546,14 @@
     /* Ajuste para o tour 360 - reposicionar os controles do swiper */
     .tour-swiper .swiper-button-next,
     .tour-swiper .swiper-button-prev {
-      bottom: 30px;
-      top: auto;
+      top: 32px;
+      bottom: auto;
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 50%;
       width: 40px;
       height: 40px;
       z-index: 51;
-    }
+}
 
     .tour-swiper .swiper-button-next {
       right: 10px;
@@ -895,6 +901,13 @@
     #modalClose, #modalPrev, #modalNext {
       z-index: 10 !important;
     }
+
+    @media (max-width: 768px) {
+  #mobile-footer a:last-child img {
+    height: 35px !important;
+    width: 35px !important;
+  }
+}
   </style>
   
 </head>
@@ -1104,7 +1117,7 @@
             <div class="swiper-button-next" aria-label="Próxima fachada"></div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
           <h3 class="text-xl font-medium mb-4">Fachadas</h3>
           <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
         </div>
@@ -1161,7 +1174,7 @@
             <div class="swiper-button-next" aria-label="Próximo interior"></div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
           <h3 class="text-xl font-medium mb-4">Interiores</h3>
           <p class="font-thin">Apartamentos | Áreas de uso comum</p>
         </div>
@@ -1258,7 +1271,7 @@
             <div class="swiper-button-next" aria-label="Próxima planta"></div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
           <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
           <p class="font-thin">Plantas humanizadas | Apartamento | Térreo | Áreas de uso comum</p>
         </div>
@@ -1300,7 +1313,7 @@
             </button>
           </div>
         </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
+        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
           <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
           <p class="font-thin">Filme de apresentação do empreendimento</p>
         </div>
