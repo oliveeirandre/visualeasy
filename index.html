@@ -524,24 +524,29 @@
       border-radius: 8px;
     }
 
-    /* Estilo para os botões do navegador de vídeo */
+    /* Estilos para os botões do navegador de vídeo */
     .video-nav-button {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 32px;
+      color: rgba(0, 0, 0, 0.7) !important; /* Changed color to black for visibility on white background button */
+      background-color: rgba(255, 255, 255, 0.7); /* Matched tour-swiper background */
       border-radius: 50%;
+      width: 40px; /* Matched tour-swiper size */
+      height: 40px; /* Matched tour-swiper size */
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background-color 0.3s ease;
-      z-index: 10;
-      background-color: rgba(112, 112, 112, 0.2);
-      width: 40px;
-      height: 40px;
+      z-index: 51 !important; /* Matched tour-swiper z-index */
+      font-size: 18px; /* Matched tour-swiper arrow size */
+      padding: 0; /* Ensure no default padding */
+      margin: 0; /* Ensure no default margin */
+      border: none; /* Ensure no default border */
+      cursor: pointer; /* Add cursor pointer */
     }
 
     .video-nav-button:hover {
-      background-color: rgba(112, 112, 112, 0.4);
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
     }
+
 
     /* Ajuste para o tour 360 - reposicionar os controles do swiper */
     .tour-swiper .swiper-button-next,
@@ -650,7 +655,7 @@
       /* Ajustes para o carrossel principal em modo mobile */
       .main-swiper .swiper-slide img {
         height: 55vh;
-        object-fit: fill;
+        object-fit: cover;
       }
 
       .main-thumbs-swiper {
@@ -897,7 +902,7 @@
       transition: width 0.3s ease-out;
       z-index: 10;
     }
-  
+
     #modalClose, #modalPrev, #modalNext {
       z-index: 10 !important;
     }
@@ -909,7 +914,7 @@
   }
 }
   </style>
-  
+
 </head>
 
 <body class="bg-white">
@@ -972,39 +977,35 @@
       <div class="swiper-wrapper">
         <!-- Imagens otimizadas com lazy loading -->
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Fachada de edifício renderizada em 3D"
+          <img src="public/assets/section_02_carrossel/01.webp" alt="Fachada de edifício renderizada em 3D"
             class="w-full object-cover" loading="eager" width="1920" height="1080" fetchpriority="high" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Renderização 3D de perspectiva de fachada"
+          <img src="public/assets/section_02_carrossel/02.webp" alt="Renderização 3D de perspectiva de fachada"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Visualização 3D de área externa"
+          <img src="public/assets/section_02_carrossel/03.webp" alt="Visualização 3D de área externa"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Render 3D de piscina e área de lazer"
+          <img src="public/assets/section_02_carrossel/04.webp" alt="Render 3D de piscina e área de lazer"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Interior de apartamento em 3D"
+          <img src="public/assets/section_02_carrossel/05.webp" alt="Interior de apartamento em 3D"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Sala de estar renderizada em 3D"
+          <img src="public/assets/section_02_carrossel/06.webp" alt="Sala de estar renderizada em 3D"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Cozinha em perspectiva 3D"
+          <img src="public/assets/section_02_carrossel/07.webp" alt="Cozinha em perspectiva 3D"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
         <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Planta humanizada de apartamento"
-            class="w-full object-cover" loading="lazy" width="1920" height="1080" />
-        </div>
-        <div class="swiper-slide">
-          <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="Tour virtual 360 de empreendimento"
+          <img src="public/assets/section_02_carrossel/08.webp" alt="Planta humanizada de apartamento"
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
       </div>
@@ -1019,31 +1020,28 @@
         <div class="swiper-wrapper">
           <!-- Mesmas imagens do carrossel principal, mas em tamanho menor -->
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura1" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/01.webp" alt="miniatura1" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura2" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/02.webp" alt="miniatura2" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura3" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/03.webp" alt="miniatura3" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura4" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/04.webp" alt="miniatura4" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura5" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/05.webp" alt="miniatura5" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura6" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/06.webp" alt="miniatura6" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura7" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/07.webp" alt="miniatura7" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura8" loading="lazy" width="120" height="80" />
-          </div>
-          <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/section_02_fachada.jpg" alt="miniatura9" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/08.webp" alt="miniatura8" loading="lazy" width="120" height="80" />
           </div>
         </div>
       </div>
@@ -1061,318 +1059,329 @@
     </div>
   </section>
 
-  <!-- Seção 4: Soluções -->
-  <section id="solucoes" class="py-16 px-6">
-    <div class="container mx-auto">
-      <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
+<!-- Seção 4: Soluções -->
+<section id="solucoes" class="py-16 px-6">
+  <div class="container mx-auto">
+    <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
 
-      <!-- Carrossel 1: Fachadas -->
-      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
-            <div class="swiper-wrapper">
-              <!-- Imagens otimizadas -->
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_01.webp" alt="Fachada 3D diurna de edifício residencial"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_02.webp" alt="Fachada 3D noturna com iluminação"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_03.webp" alt="Detalhe de fachada 3D com jardim"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_04.webp" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_05.webp" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_06.webp" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_07.webp" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/fachadas/fachada_08.webp" alt="Fachada 3D com perspectiva aérea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'fachada-swiper')" />
-              </div>
+    <!-- Carrossel 1: Fachadas -->
+    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
+          <div class="swiper-wrapper">
+            <!-- Imagens otimizadas -->
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_01.webp" alt="Fachada 3D diurna de edifício residencial"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
             </div>
-            <div class="swiper-button-prev" aria-label="Fachada anterior"></div>
-            <div class="swiper-button-next" aria-label="Próxima fachada"></div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_02.webp" alt="Fachada 3D noturna com iluminação"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_03.webp" alt="Detalhe de fachada 3D com jardim"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_04.webp" alt="Fachada 3D com perspectiva aérea"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_05.webp" alt="Fachada 3D com perspectiva aérea"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_06.webp" alt="Fachada 3D com perspectiva aérea"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_07.webp" alt="Fachada 3D com perspectiva aérea"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_08.webp" alt="Fachada 3D com perspectiva aérea"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'fachada-swiper')" />
+            </div>
           </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
-          <h3 class="text-xl font-medium mb-4">Fachadas</h3>
-          <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
+          <div class="swiper-button-prev" aria-label="Fachada anterior"></div>
+          <div class="swiper-button-next" aria-label="Próxima fachada"></div>
         </div>
       </div>
-
-      <!-- Carrossel 2: Interiores -->
-      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
-            <div class="swiper-wrapper">
-              <!-- Imagens otimizadas -->
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_01.webp" alt="Render 3D de sala de estar contemporânea"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_02.webp" alt="Visualização 3D de cozinha integrada"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_03.webp" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_04.webp" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_05.webp" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_06.webp" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_07.webp" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/interiores/interior_08.webp" alt="Renderização de suíte master"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'interiores-swiper')" />
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Interior anterior"></div>
-            <div class="swiper-button-next" aria-label="Próximo interior"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
-          <h3 class="text-xl font-medium mb-4">Interiores</h3>
-          <p class="font-thin">Apartamentos | Áreas de uso comum</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 3: Áreas externas -->
-      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
-            <div class="swiper-wrapper">
-              <!-- Imagens otimizadas -->
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_01.webp" alt="Piscina com vista para o mar"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_02.webp" alt="Espaço gourmet ao ar livre"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_03.webp"
-                  alt="Área de lazer com iluminação noturna"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_04.webp"
-                  alt="Área de lazer com iluminação noturna"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_05.webp" alt="Piscina com vista para o mar"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_06.webp" alt="Espaço gourmet ao ar livre"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_07.webp"
-                  alt="Área de lazer com iluminação noturna"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/areas_externas/exterior_08.webp"
-                  alt="Área de lazer com iluminação noturna"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'areas-externas-swiper')" />
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Área externa anterior"></div>
-            <div class="swiper-button-next" aria-label="Próxima área externa"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Áreas externas</h3>
-          <p class="font-thin">Piscinas | Áreas externas | Acessos</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 4: Plantas humanizadas -->
-      <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px]">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta_terreo.webp" alt="Planta humanizada de terreo"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta_pavimento_1.webp" alt="Planta humanizada de área comum"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta_pavimento_tipo.webp" alt="Planta humanizada de área comum"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-              <div class="swiper-slide">
-                <img src="public/assets/section_04/humanizadas/planta_apto_tipo.webp" alt="Planta humanizada de apartamento"
-                  class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
-                  onclick="openModal(this, 'plantas-swiper')" />
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Planta anterior"></div>
-            <div class="swiper-button-next" aria-label="Próxima planta"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
-          <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
-          <p class="font-thin">Plantas humanizadas | Apartamento | Térreo | Áreas de uso comum</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 5: Filme | Animação -->
-      <div class="flex flex-col md:flex-row items-center carousel-container mb-5">
-        <div class="w-full md:w-1/2 mb-8 md:mb-0">
-          <div class="flex items-center w-full">
-            <!-- Botão para vídeo anterior -->
-            <button id="prevVideo" class="video-nav-button mr-2" aria-label="Vídeo anterior">
-              &#10094;
-            </button>
-
-            <!-- Container central do vídeo com player HTML5 nativo -->
-            <div class="video-container flex-1 relative rounded-lg overflow-hidden shadow-lg">
-              <!-- Elemento video principal -->
-              <video id="videoPlayer" class="w-full h-full object-cover"
-                     preload="metadata" playsinline controls
-                     poster="public/assets/video/thumbnail-video-1.jpg">
-                <!-- Múltiplos formatos para compatibilidade entre navegadores -->
-                <source src="public/assets/video/video-1.mp4" type="video/mp4">
-                <source src="public/assets/video/video-1.webm" type="video/webm">
-                <!-- Legendas para acessibilidade -->
-                <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
-                <!-- Mensagem de fallback para navegadores antigos -->
-                Seu navegador não suporta o elemento de vídeo HTML5.
-              </video>
-
-              <!-- Indicador de carregamento -->
-              <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
-                <div class="loading-circle"></div>
-              </div>
-            </div>
-
-            <!-- Botão para próximo vídeo -->
-            <button id="nextVideo" class="video-nav-button ml-2" aria-label="Próximo vídeo">
-              &#10095;
-            </button>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center mb-mobile-extra">
-          <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
-          <p class="font-thin">Filme de apresentação do empreendimento</p>
-        </div>
-      </div>
-
-      <!-- Carrossel 6: Tour Virtual 360º -->
-      <div class="flex flex-col md:flex-row items-center carousel-container mb-5">
-        <div class="w-full md:w-1/2 swiper-container mb-8 md:mb-0">
-          <div class="swiper tour-swiper solution-swiper dual-image-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html"
-                  class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
-              </div>
-              <div class="swiper-slide">
-                <iframe src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html"
-                  class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
-              </div>
-              <div class="swiper-slide">
-                <iframe src="https://tour360.meupasseiovirtual.com/070287/299768/tourvirtual/index.html"
-                  class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
-              </div>
-            </div>
-            <div class="swiper-button-prev" aria-label="Tour anterior"></div>
-            <div class="swiper-button-next" aria-label="Próximo tour"></div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col items-center justify-center text-center">
-          <h3 class="text-xl font-medium mb-4">Tour Virtual 360º</h3>
-          <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
-        </div>
-      </div>
-
-      <!-- Modal para exibir a imagem ampliada com navegação -->
-      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="relative modal-content">
-          <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
-          <div class="image-loading-progress"></div>
-          <img id="modalImage" src="" alt="Imagem ampliada"
-            class="max-w-full max-h-screen rounded-lg shadow-lg object-contain" />
-          <button id="modalClose"
-            class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Fechar modal">
-            ✕
-          </button>
-          <!-- Botões de navegação -->
-          <button id="modalPrev"
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Imagem anterior">
-            &#10094;
-          </button>
-          <button id="modalNext"
-            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Próxima imagem">
-            &#10095;
-          </button>
-          <!-- Área para detecção de swipe em dispositivos móveis -->
-          <div class="swipe-area" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;"></div>
-        </div>
+      <!-- Desktop: texto 1/3, centralizado -->
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Fachadas</h3>
+        <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
       </div>
     </div>
-  </section>
+
+    <!-- Carrossel 2: Interiores -->
+    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
+          <div class="swiper-wrapper">
+            <!-- Imagens otimizadas -->
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_01.webp" alt="Render 3D de sala de estar contemporânea"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_02.webp" alt="Visualização 3D de cozinha integrada"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_03.webp" alt="Renderização de suíte master"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_04.webp" alt="Renderização de suíte master"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_05.webp" alt="Renderização de suíte master"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_06.webp" alt="Renderização de suíte master"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_07.webp" alt="Renderização de suíte master"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_08.webp" alt="Renderização de suíte master"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+          </div>
+          <div class="swiper-button-prev" aria-label="Interior anterior"></div>
+          <div class="swiper-button-next" aria-label="Próximo interior"></div>
+        </div>
+      </div>
+      <!-- Desktop: texto 1/3, centralizado -->
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Interiores</h3>
+        <p class="font-thin">Apartamentos | Áreas de uso comum</p>
+      </div>
+    </div>
+
+    <!-- Carrossel 3: Áreas externas -->
+    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
+          <div class="swiper-wrapper">
+            <!-- Imagens otimizadas -->
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_01.webp" alt="Piscina com vista para o mar"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_02.webp" alt="Espaço gourmet ao ar livre"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_03.webp"
+                alt="Área de lazer com iluminação noturna"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_04.webp"
+                alt="Área de lazer com iluminação noturna"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_05.webp" alt="Piscina com vista para o mar"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_06.webp" alt="Espaço gourmet ao ar livre"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_07.webp"
+                alt="Área de lazer com iluminação noturna"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_08.webp"
+                alt="Área de lazer com iluminação noturna"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+          </div>
+          <div class="swiper-button-prev" aria-label="Área externa anterior"></div>
+          <div class="swiper-button-next" aria-label="Próxima área externa"></div>
+        </div>
+      </div>
+      <!-- Desktop: texto 1/3, centralizado -->
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center">
+        <h3 class="text-xl font-medium mb-4">Áreas externas</h3>
+        <p class="font-thin">Piscinas | Áreas externas | Acessos</p>
+      </div>
+    </div>
+
+    <!-- Carrossel 4: Plantas humanizadas -->
+    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_terreo.webp" alt="Planta humanizada de terreo"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_pavimento_1.webp" alt="Planta humanizada de área comum"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_pavimento_tipo.webp" alt="Planta humanizada de área comum"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_apto_tipo.webp" alt="Planta humanizada de apartamento"
+                class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
+                onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+          </div>
+          <div class="swiper-button-prev" aria-label="Planta anterior"></div>
+          <div class="swiper-button-next" aria-label="Próxima planta"></div>
+        </div>
+      </div>
+      <!-- Desktop: texto 1/3, centralizado -->
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
+        <p class="font-thin">Plantas humanizadas | Apartamento | Térreo | Áreas de uso comum</p>
+      </div>
+    </div>
+
+    <!-- Carrossel 5: Filme | Animação -->
+    <!-- Desktop: vídeo 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 mb-8 md:mb-0">
+        <!-- Container central do vídeo com player HTML5 nativo (agora 16:9 com aspect-video e w-full) -->
+        <div class="aspect-video w-full relative rounded-lg overflow-hidden shadow-lg">
+          <!-- Elemento video principal -->
+          <video id="videoPlayer" class="w-full h-full object-cover"
+                 preload="metadata" playsinline controls
+                 poster="public/assets/video/thumbnail-video-1.jpg">
+            <!-- Múltiplos formatos para compatibilidade entre navegadores -->
+            <source src="public/assets/video/video-1.mp4" type="video/mp4">
+            <source src="public/assets/video/video-1.webm" type="video/webm">
+            <!-- Legendas para acessibilidade -->
+            <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
+            <!-- Mensagem de fallback para navegadores antigos -->
+            Seu navegador não suporta o elemento de vídeo HTML5.
+          </video>
+
+          <!-- Indicador de carregamento -->
+          <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
+            <div class="loading-circle"></div>
+          </div>
+
+          <!-- Botão para vídeo anterior (Movido para dentro e posicionado) -->
+          <button id="prevVideo" class="video-nav-button absolute left-4 top-1/2 transform -translate-y-1/2 z-51" aria-label="Vídeo anterior">
+            &#10094;
+          </button>
+
+          <!-- Botão para próximo vídeo (Movido para dentro e posicionado) -->
+          <button id="nextVideo" class="video-nav-button absolute right-4 top-1/2 transform -translate-y-1/2 z-51" aria-label="Próximo vídeo">
+            &#10095;
+          </button>
+        </div>
+      </div>
+      <!-- Desktop: texto 1/3, centralizado -->
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
+        <p class="font-thin">Filme de apresentação do empreendimento</p>
+      </div>
+    </div>
+
+    <!-- Carrossel 6: Tour Virtual 360º -->
+    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper tour-swiper solution-swiper dual-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html"
+                class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html"
+                class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/299768/tourvirtual/index.html"
+                class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+          </div>
+          <div class="swiper-button-prev" aria-label="Tour anterior"></div>
+          <div class="swiper-button-next" aria-label="Próximo tour"></div>
+        </div>
+      </div>
+      <!-- Desktop: texto 1/3, centralizado -->
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center">
+        <h3 class="text-xl font-medium mb-4">Tour Virtual 360º</h3>
+        <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
+      </div>
+    </div>
+
+    <!-- Modal para exibir a imagem ampliada com navegação (permanece inalterado) -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="relative modal-content">
+        <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
+        <div class="image-loading-progress"></div>
+        <img id="modalImage" src="" alt="Imagem ampliada"
+          class="max-w-full max-h-screen rounded-lg shadow-lg object-contain" />
+        <button id="modalClose"
+          class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Fechar modal">
+          ✕
+        </button>
+        <!-- Botões de navegação -->
+        <button id="modalPrev"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Imagem anterior">
+          &#10094;
+        </button>
+        <button id="modalNext"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Próxima imagem">
+          &#10095;
+        </button>
+        <!-- Área para detecção de swipe em dispositivos móveis -->
+        <div class="swipe-area" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- Seção de Logos de Parceiros -->
   <section class="py-24 px-6 bg-white-50 logo-cloud pb-64">
@@ -1604,7 +1613,7 @@
                   <input type="radio" name="apresentacao" value="lista_completa_filme" class="mr-2" />
                   <span class="checkmark"></span>
                   Lista completa de imagens, Filme de lançamento e/ou tour virtual 360º
-                </label>
+				</label>
               </div>
             </div>
 
