@@ -2234,6 +2234,82 @@
     });
   </script>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.swiper-button-next, .swiper-button-prev').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          let secao = "Carrossel principal";
+          const swiper = this.closest('.swiper');
+          if (swiper) {
+            if (swiper.classList.contains('fachada-swiper')) secao = "Fachadas";
+            if (swiper.classList.contains('interiores-swiper')) secao = "Interiores";
+            if (swiper.classList.contains('areas-externas-swiper')) secao = "Áreas externas";
+            if (swiper.classList.contains('plantas-swiper')) secao = "Plantas humanizadas";
+            if (swiper.classList.contains('tour-swiper')) secao = "Tour Virtual";
+          }
+          if (typeof gtag === "function") {
+            gtag('event', 'navegacao_galeria', {
+              'event_category': 'Interação',
+              'event_label': secao,
+              'direction': btn.classList.contains('swiper-button-next') ? 'próximo' : 'anterior'
+            });
+          }
+        });
+      });
+    
+      document.querySelectorAll('.solution-swiper img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          let secao = "Indefinido";
+          const swiper = this.closest('.swiper');
+          if (swiper) {
+            if (swiper.classList.contains('fachada-swiper')) secao = "Fachadas";
+            if (swiper.classList.contains('interiores-swiper')) secao = "Interiores";
+            if (swiper.classList.contains('areas-externas-swiper')) secao = "Áreas externas";
+            if (swiper.classList.contains('plantas-swiper')) secao = "Plantas humanizadas";
+          }
+          if (typeof gtag === "function") {
+            gtag('event', 'visualizacao_ampliada', {
+              'event_category': 'Interação',
+              'event_label': secao
+            });
+          }
+        });
+      });
+    
+      document.querySelectorAll('#menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          const secao = this.getAttribute('href').replace('#', '');
+          if (typeof gtag === "function") {
+            gtag('event', 'navegacao_menu', {
+              'event_category': 'Navegação',
+              'event_label': secao
+            });
+          }
+        });
+      });
+
+      const videoPlayer = document.getElementById('videoPlayer');
+      if (videoPlayer) {
+        videoPlayer.addEventListener('play', function() {
+          if (typeof gtag === "function") {
+            gtag('event', 'video_play', {
+              'event_category': 'Vídeo',
+              'event_label': this.querySelector('source').getAttribute('src')
+            });
+          }
+        });
+        videoPlayer.addEventListener('ended', function() {
+          if (typeof gtag === "function") {
+            gtag('event', 'video_complete', {
+              'event_category': 'Vídeo',
+              'event_label': this.querySelector('source').getAttribute('src')
+            });
+          }
+        });
+      }
+    });
+    </script>
+   
 </body>
 
 </html>
