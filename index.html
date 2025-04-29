@@ -6,14 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visual Easy 3D - Estúdio de Renderização Profissional</title>
 
-  <!-- Meta tags otimizadas -->
   <meta name="description"
     content="Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º." />
   <meta name="keywords"
     content="renderização 3D, imagens 3D, visualização arquitetônica, tour virtual 360, plantas humanizadas, fachadas 3D, interiores 3D" />
   <meta name="author" content="Visual Easy 3D" />
 
-  <!-- Tags Open Graph para compartilhamento em redes sociais -->
   <meta property="og:title" content="Visual Easy 3D - Estúdio de Renderização Profissional" />
   <meta property="og:description"
     content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º." />
@@ -21,23 +19,18 @@
   <meta property="og:url" content="https://visualeasy3d.com.br" />
   <meta property="og:image" content="public/assets/identidade_visual/preview.jpg" />
 
-  <!-- Preconnect para recursos externos mais importantes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://visualeasy3d.com.br" />
 
-  <!-- Preload de recursos críticos -->
   <link rel="preload" href="public/assets/identidade_visual/logo.webp" as="image" type="image/webp" />
-  <link rel="preload" href="public/assets/section_02_carrossel/section_02_fachada.jpg" as="image"
-    fetchpriority="high" type="image/jpeg" />
+  <link rel="preload" href="public/assets/section_02_carrossel/01.webp" as="image"
+    fetchpriority="high" type="image/webp" />
 
-  <!-- CSS crítico inline para melhorar o First Paint -->
   <style>
-    /* CSS crítico para renderização acima da dobra */
     body {
       font-family: 'Poppins', sans-serif;
       color: #707070;
@@ -75,7 +68,6 @@
     .text-center { text-align: center; }
     .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
     .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    /* Preloader Styles */
     #preloader {
       position: fixed;
       inset: 0;
@@ -119,7 +111,6 @@
       pointer-events: none;
     }
 
-    /* Estilos para a seleção de checkbox */
     .custom-checkbox {
       position: relative;
       padding-left: 30px;
@@ -174,27 +165,24 @@
     }
 
     @media (max-width: 768px) {
-  .mb-mobile-extra {
-    margin-bottom: 2.5rem !important; /* ajuste o valor como preferir */
-  }
-}
+      .mb-mobile-extra {
+        margin-bottom: 2.5rem !important;
+      }
+    }
   </style>
 
-  <!-- Carregamento otimizado de fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
 
-  <!-- Carregamento otimizado de CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print"
     onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </noscript>
 
-  <!-- Schema.org markup para SEO -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -221,12 +209,9 @@
     }
   </script>
 
-  <!-- Tailwind CSS (carregamento otimizado) -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
-  <!-- Configuração do Tailwind -->
   <script>
-    // Configuração do tailwind movida para após o carregamento do script
     window.tailwindConfig = {
       theme: {
         extend: {
@@ -246,7 +231,6 @@
       }
     };
 
-    // Aplicar configuração quando Tailwind estiver carregado
     document.addEventListener('DOMContentLoaded', function() {
       if (window.tailwind) {
         window.tailwind.config = window.tailwindConfig;
@@ -254,9 +238,7 @@
     });
   </script>
 
-  <!-- Estilos principais -->
   <style>
-    /* Ajuste de cores de texto para #707070 */
     body,
     p,
     h1,
@@ -277,7 +259,6 @@
       color: #707070;
     }
 
-    /* Preservar cores originais para elementos interativos */
     .swiper-button-next,
     .swiper-button-prev,
     button,
@@ -305,7 +286,6 @@
       font-weight: bold;
     }
 
-    /* Rodapé para desktop */
     #desktop-footer {
       display: flex;
       position: static;
@@ -341,12 +321,10 @@
       transform: scale(1.1);
     }
 
-    /* Rodapé para smartphone */
     #mobile-footer {
       display: none;
     }
 
-    /* Botão flutuante de WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 85px;
@@ -374,14 +352,12 @@
       height: 35px;
     }
 
-    /* Esconde botão flutuante do WhatsApp em dispositivos móveis */
     @media (max-width: 768px) {
       .whatsapp-float {
         display: none;
       }
     }
 
-    /* Melhorias de animação */
     .btn-transition {
       transition: all 0.3s ease;
     }
@@ -391,7 +367,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Estilos para CTA */
     .cta-primary {
       background-color: #007bff;
       color: white !important;
@@ -409,7 +384,6 @@
       box-shadow: 6px 8px rgba(0, 50, 170, 0.2);
     }
 
-    /* Exibir rodapé fixo no smartphone */
     @media (max-width: 768px) {
       #desktop-footer {
         display: none;
@@ -452,7 +426,6 @@
       }
     }
 
-    /* Animação de fade-in para elementos */
     .fade-in {
       animation: fadeIn 0.8s ease-in;
     }
@@ -469,7 +442,6 @@
       }
     }
 
-    /* Melhorias para inputs */
     .input-focus {
       transition: all 0.3s ease;
       border: 1px solid #ced4da;
@@ -481,7 +453,6 @@
       outline: none;
     }
 
-    /* Indicador de erro em formulários */
     .input-error {
       border-color: #dc3545 !important;
     }
@@ -492,7 +463,6 @@
       margin-top: 0.25rem;
     }
 
-    /* Otimização de cores */
     .text-primary {
       color: #007bff !important;
     }
@@ -501,21 +471,18 @@
       color: #facc15 !important;
     }
 
-    /* Ajuste para os carrosséis de solução */
     .solution-swiper .swiper-slide img {
       height: 300px;
       object-fit: cover;
       margin: 0 auto;
     }
 
-    /* Ajuste específico para plantas humanizadas - exibir imagem completa */
     .plantas-swiper .swiper-slide img {
       height: 300px;
       width: 100%;
       object-fit: contain !important;
     }
 
-    /* Estilo para o container de vídeo do Vimeo */
     .vimeo-container {
       position: relative;
       width: 100%;
@@ -524,7 +491,6 @@
       border-radius: 8px;
     }
 
-    /* Estilo para os botões do navegador de vídeo */
     .video-nav-button {
       color: rgba(255, 255, 255, 0.7);
       font-size: 32px;
@@ -543,7 +509,6 @@
       background-color: rgba(112, 112, 112, 0.4);
     }
 
-    /* Ajuste para o tour 360 - reposicionar os controles do swiper */
     .tour-swiper .swiper-button-next,
     .tour-swiper .swiper-button-prev {
       top: 32px;
@@ -553,7 +518,7 @@
       width: 40px;
       height: 40px;
       z-index: 51;
-}
+    }
 
     .tour-swiper .swiper-button-next {
       right: 10px;
@@ -568,7 +533,6 @@
       font-size: 18px;
     }
 
-    /* Otimização para visualização em múltiplas imagens */
     @media (min-width: 1024px) {
       .multi-image-swiper .swiper-slide {
         width: 25%;
@@ -579,7 +543,6 @@
       }
     }
 
-    /* Melhorias para o modal de imagem */
     #imageModal {
       backdrop-filter: blur(5px);
       transition: all 0.3s ease-in-out;
@@ -591,7 +554,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Otimização para carregamento de página */
     .lazy-section {
       opacity: 0;
       transform: translateY(20px);
@@ -603,7 +565,6 @@
       transform: translateY(0);
     }
 
-    /* Novo estilo para carrossel de miniaturas */
     .main-thumbs-swiper {
       width: 100%;
       padding: 10px 0;
@@ -627,19 +588,16 @@
       border-radius: 3px;
     }
 
-    /* Ocultar miniaturas em desktop */
     @media (min-width: 769px) {
       .main-thumbs-container {
         display: none;
       }
     }
 
-    /* Estilos padrão para telas maiores */
     .container p.text-lg {
       font-size: 1.125rem;
     }
 
-    /* Media query para telas menores (smartphones) */
     @media (max-width: 768px) {
       .container p.text-lg {
         font-size: 0.9rem;
@@ -647,7 +605,6 @@
         padding-right: 1rem;
       }
 
-      /* Ajustes para o carrossel principal em modo mobile */
       .main-swiper .swiper-slide img {
         height: 55vh;
         object-fit: cover;
@@ -662,7 +619,6 @@
         height: 100px;
       }
 
-      /* Diminuir o espaço entre o texto e o carrossel inferior */
       .py-16 {
         padding-top: 1rem;
         padding-bottom: 2rem;
@@ -672,13 +628,11 @@
         margin-top: -50px !important;
       }
 
-      /* Ajuste responsivo para espaçamento entre carrosséis */
       .carousel-container {
         margin-bottom: 15px;
       }
     }
 
-    /* Media query para telas maiores (desktops) */
     @media (min-width: 769px) {
       .main-swiper {
         height: 90vh;
@@ -689,13 +643,11 @@
         object-fit: cover;
       }
 
-      /* Espaçamento reduzido entre os carrosséis na seção de soluções para desktop */
       .carousel-container {
         margin-bottom: 5px;
       }
     }
 
-    /* Estilos para a seção de logos de parceiros */
     .logo-cloud {
       overflow: hidden;
       position: relative;
@@ -762,7 +714,6 @@
       }
     }
 
-    /* Media query para telas menores (smartphones) */
     @media (max-width: 768px) {
       .flex-col {
         flex-direction: column;
@@ -777,7 +728,6 @@
       }
     }
 
-    /* Spinner de carregamento */
     .loading-spinner {
       display: none;
       width: 20px;
@@ -814,7 +764,6 @@
       color: #dc2626;
     }
 
-    /* Melhoria de acessibilidade para foco */
     a:focus-visible, button:focus-visible, input:focus-visible,
     textarea:focus-visible, select:focus-visible,
     [tabindex]:focus-visible {
@@ -822,7 +771,6 @@
       outline-offset: 2px;
     }
 
-    /* Estilos para o player de vídeo HTML5 */
     .video-container {
       position: relative;
       width: 100%;
@@ -839,12 +787,10 @@
       background-color: #000;
     }
 
-    /* Melhorias nos controles nativos do vídeo */
     video::-webkit-media-controls-panel {
       background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
     }
 
-    /* Estilo para miniaturas de vídeo */
     .video-thumb-item {
       opacity: 0.6;
       transition: all 0.2s ease;
@@ -861,7 +807,6 @@
       border-color: #707070;
     }
 
-    /* Animação de carregamento para vídeo */
     .loading-circle {
       width: 40px;
       height: 40px;
@@ -871,7 +816,6 @@
       animation: spin 1s linear infinite;
     }
 
-    /* Estilos para swipe no modal em dispositivos móveis */
     #imageModal .swipe-area {
       position: absolute;
       top: 0;
@@ -886,7 +830,6 @@
       z-index: 2;
     }
 
-    /* Progress Bar para Imagem em Loading */
     .image-loading-progress {
       position: absolute;
       bottom: 0;
@@ -903,17 +846,16 @@
     }
 
     @media (max-width: 768px) {
-  #mobile-footer a:last-child img {
-    height: 35px !important;
-    width: 35px !important;
-  }
-}
+      #mobile-footer a:last-child img {
+        height: 35px !important;
+        width: 35px !important;
+      }
+    }
   </style>
   
 </head>
 
 <body class="bg-white">
-  <!-- Preloader -->
   <div id="preloader">
     <div class="logo-mask">
       <img src="public/assets/identidade_visual/logo.webp" alt="Visual Easy 3D" width="80" height="80" />
@@ -921,10 +863,8 @@
     </div>
   </div>
 
-  <!-- Seção 1: Cabeçalho -->
   <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm">
     <div class="container mx-auto flex items-center justify-between">
-      <!-- Logo -->
       <div class="font-bold">
         <a href="#" id="logo" aria-label="Visual Easy 3D - Voltar ao topo">
           <img src="public/assets/identidade_visual/logo.webp" alt="Visual Easy 3D - Estúdio de Renderização 3D"
@@ -932,7 +872,6 @@
         </a>
       </div>
 
-      <!-- Botão de menu (hambúrguer) para dispositivos móveis -->
       <button id="menu-toggle" class="block md:hidden text-black focus:outline-none z-50 relative" aria-label="Menu"
         aria-expanded="false" aria-controls="menu">
         <div class="w-6 h-6 flex items-center justify-center relative">
@@ -942,11 +881,9 @@
         </div>
       </button>
 
-      <!-- Overlay para o menu mobile -->
       <div id="menu-overlay"
         class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 opacity-0"></div>
 
-      <!-- Menu de navegação (funciona para mobile e desktop) -->
       <nav id="menu"
         class="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 pt-20 md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none md:transform-none md:transition-none md:p-0 md:pt-0 md:translate-x-0 md:flex-row md:items-center md:space-y-0 md:space-x-8">
         <a href="#solucoes"
@@ -965,12 +902,9 @@
     </div>
   </header>
 
-  <!-- Seção 2: Carrossel de Imagens Principal -->
   <section class="pt-20 relative">
-    <!-- Carrossel Principal -->
     <div class="swiper main-swiper">
       <div class="swiper-wrapper">
-        <!-- Imagens otimizadas com lazy loading -->
         <div class="swiper-slide">
           <img src="public/assets/section_02_carrossel/01.webp" alt="Fachada de edifício renderizada em 3D"
             class="w-full object-cover" loading="eager" width="1920" height="1080" fetchpriority="high" />
@@ -1004,16 +938,13 @@
             class="w-full object-cover" loading="lazy" width="1920" height="1080" />
         </div>
       </div>
-      <!-- Botões de navegação -->
       <div class="swiper-button-prev" aria-label="Imagem anterior"></div>
       <div class="swiper-button-next" aria-label="Próxima imagem"></div>
     </div>
 
-    <!-- Carrossel de Miniaturas (Visível apenas em mobile) -->
     <div class="main-thumbs-container">
       <div class="swiper main-thumbs-swiper">
         <div class="swiper-wrapper">
-          <!-- Mesmas imagens do carrossel principal, mas em tamanho menor -->
           <div class="swiper-slide">
             <img src="public/assets/section_02_carrossel/01.webp" alt="miniatura1" loading="lazy" width="120" height="80" />
           </div>
@@ -1043,7 +974,6 @@
     </div>
   </section>
 
-  <!-- Seção 3: Texto Centralizado -->
   <section class="py-16 px-6">
     <div class="container mx-auto max-w-4xl text-center">
       <p class="text-lg leading-relaxed font-thin">
@@ -1054,18 +984,14 @@
     </div>
   </section>
 
-<!-- Seção 4: Soluções -->
 <section id="solucoes" class="py-16 px-6">
   <div class="container mx-auto">
     <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
 
-    <!-- Carrossel 1: Fachadas -->
-    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
         <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
           <div class="swiper-wrapper">
-            <!-- Imagens otimizadas -->
             <div class="swiper-slide">
               <img src="public/assets/section_04/fachadas/fachada_01.webp" alt="Fachada 3D diurna de edifício residencial"
                 class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
@@ -1111,20 +1037,16 @@
           <div class="swiper-button-next" aria-label="Próxima fachada"></div>
         </div>
       </div>
-      <!-- Desktop: texto 1/3, centralizado -->
       <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
         <h3 class="text-xl font-medium mb-4">Fachadas</h3>
         <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
       </div>
     </div>
 
-    <!-- Carrossel 2: Interiores -->
-    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
         <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
           <div class="swiper-wrapper">
-            <!-- Imagens otimizadas -->
             <div class="swiper-slide">
               <img src="public/assets/section_04/interiores/interior_01.webp" alt="Render 3D de sala de estar contemporânea"
                 class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
@@ -1170,20 +1092,16 @@
           <div class="swiper-button-next" aria-label="Próximo interior"></div>
         </div>
       </div>
-      <!-- Desktop: texto 1/3, centralizado -->
       <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
         <h3 class="text-xl font-medium mb-4">Interiores</h3>
         <p class="font-thin">Apartamentos | Áreas de uso comum</p>
       </div>
     </div>
 
-    <!-- Carrossel 3: Áreas externas -->
-    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
         <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
           <div class="swiper-wrapper">
-            <!-- Imagens otimizadas -->
             <div class="swiper-slide">
               <img src="public/assets/section_04/areas_externas/exterior_01.webp" alt="Piscina com vista para o mar"
                 class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384"
@@ -1233,15 +1151,12 @@
           <div class="swiper-button-next" aria-label="Próxima área externa"></div>
         </div>
       </div>
-      <!-- Desktop: texto 1/3, centralizado -->
       <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center">
         <h3 class="text-xl font-medium mb-4">Áreas externas</h3>
         <p class="font-thin">Piscinas | Áreas externas | Acessos</p>
       </div>
     </div>
 
-    <!-- Carrossel 4: Plantas humanizadas -->
-    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
         <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
@@ -1271,59 +1186,45 @@
           <div class="swiper-button-next" aria-label="Próxima planta"></div>
         </div>
       </div>
-      <!-- Desktop: texto 1/3, centralizado -->
       <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
         <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
         <p class="font-thin">Plantas humanizadas | Apartamento | Térreo | Áreas de uso comum</p>
       </div>
     </div>
 
-    <!-- Carrossel 5: Filme | Animação -->
-    <!-- Desktop: vídeo 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 mb-8 md:mb-0">
         <div class="flex items-center w-full">
-          <!-- Botão para vídeo anterior -->
           <button id="prevVideo" class="video-nav-button mr-2" aria-label="Vídeo anterior">
             &#10094;
           </button>
 
-          <!-- Container central do vídeo com player HTML5 nativo (agora 16:9 com aspect-video) -->
           <div class="aspect-video flex-1 relative rounded-lg overflow-hidden shadow-lg">
-            <!-- Elemento video principal -->
             <video id="videoPlayer" class="w-full h-full object-cover"
                    preload="metadata" playsinline controls
                    poster="public/assets/video/thumbnail-video-1.jpg">
-              <!-- Múltiplos formatos para compatibilidade entre navegadores -->
               <source src="public/assets/video/video-1.mp4" type="video/mp4">
               <source src="public/assets/video/video-1.webm" type="video/webm">
-              <!-- Legendas para acessibilidade -->
               <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
-              <!-- Mensagem de fallback para navegadores antigos -->
               Seu navegador não suporta o elemento de vídeo HTML5.
             </video>
 
-            <!-- Indicador de carregamento -->
             <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
               <div class="loading-circle"></div>
             </div>
           </div>
 
-          <!-- Botão para próximo vídeo -->
           <button id="nextVideo" class="video-nav-button ml-2" aria-label="Próximo vídeo">
             &#10095;
           </button>
         </div>
       </div>
-      <!-- Desktop: texto 1/3, centralizado -->
       <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
         <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
         <p class="font-thin">Filme de apresentação do empreendimento</p>
       </div>
     </div>
 
-    <!-- Carrossel 6: Tour Virtual 360º -->
-    <!-- Desktop: carousel 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
         <div class="swiper tour-swiper solution-swiper dual-image-swiper">
@@ -1345,14 +1246,12 @@
           <div class="swiper-button-next" aria-label="Próximo tour"></div>
         </div>
       </div>
-      <!-- Desktop: texto 1/3, centralizado -->
       <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center">
         <h3 class="text-xl font-medium mb-4">Tour Virtual 360º</h3>
         <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
       </div>
     </div>
 
-    <!-- Modal para exibir a imagem ampliada com navegação (permanece inalterado) -->
     <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="relative modal-content">
         <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
@@ -1363,7 +1262,6 @@
           class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Fechar modal">
           ✕
         </button>
-        <!-- Botões de navegação -->
         <button id="modalPrev"
           class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Imagem anterior">
           &#10094;
@@ -1372,7 +1270,6 @@
           class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Próxima imagem">
           &#10095;
         </button>
-        <!-- Área para detecção de swipe em dispositivos móveis -->
         <div class="swipe-area" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;"></div>
       </div>
     </div>
@@ -1380,13 +1277,11 @@
   </div>
 </section>
 
-  <!-- Seção de Logos de Parceiros -->
   <section class="py-24 px-6 bg-white-50 logo-cloud pb-64">
     <div class="container mx-auto max-w-6xl">
       <h2 class="text-2xl font-medium mb-10 text-center">NOSSOS PARCEIROS</h2>
 
       <div class="flex flex-col md:items-center">
-        <!-- Slider dos logos -->
         <div class="w-full overflow-hidden relative">
           <div class="logos-slider">
             <div class="logo-item">
@@ -1412,7 +1307,6 @@
               <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" />
             </div>
 
-            <!-- Repetição das logos para o loop -->
             <div class="logo-item">
               <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" />
             </div>
@@ -1436,7 +1330,6 @@
             </div>
           </div>
 
-          <!-- Blurs laterais -->
           <div class="blur-overlay-left"></div>
           <div class="blur-overlay-right"></div>
         </div>
@@ -1444,10 +1337,8 @@
     </div>
   </section>
 
-  <!-- Seção 5: Orçamento -->
   <section id="orcamento" class="py-24 px-6 bg-white-100">
     <div class="container mx-auto max-w-6xl">
-      <!-- Textos Centralizados -->
       <div class="text-center mb-12">
         <p class="text-2xl font-medium mb-10">ATENDEMOS TODO O BRASIL</p>
         <p class="text-md font-thin mt-4">Se interessou pelo nosso trabalho?</p>
@@ -1457,7 +1348,6 @@
       </div>
 
       <div class="flex flex-col md:flex-row md:space-x-12">
-        <!-- Formulário de Orçamento (Lado Esquerdo) -->
         <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
           <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
           <form id="orcamento-form" class="space-y-4">
@@ -1630,7 +1520,6 @@
               </div>
             </div>
 
-            <!-- Consentimento LGPD e Proteção de Dados -->
             <div class="mt-6">
               <label class="custom-checkbox block">
                 <input type="checkbox" name="lgpd_consent" required class="mr-2" />
@@ -1652,7 +1541,6 @@
                   class="loading-spinner"></div>
               </div>
 
-              <!-- Feedback de envio -->
               <div id="submitSuccess" class="submit-feedback submit-success">
                 Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.
               </div>
@@ -1663,7 +1551,6 @@
           </form>
         </div>
 
-        <!-- Dúvidas (Lado Direito) -->
         <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
           <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
           <div class="space-y-6">
@@ -1771,7 +1658,6 @@
     </div>
   </section>
 
-  <!-- Seção 6: Contato -->
   <section id="contato" class="py-16 px-6">
     <div class="container mx-auto text-center max-w-2xl">
       <h2 class="text-2xl font-medium mb-8">CONTATO</h2>
@@ -1791,18 +1677,14 @@
     </div>
   </section>
 
-  <!-- Botão flutuante do WhatsApp (apenas desktop) -->
   <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contato WhatsApp">
     <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" width="35" height="35">
   </a>
 
-  <!-- Rodapé para desktop -->
   <footer id="desktop-footer" class="bg-white py-2 px-6 shadow-md">
     <div class="container mx-auto flex items-center">
-      <!-- Texto do rodapé -->
       <p class="flex-1 font-thin">© 2022 por Visual Easy 3D. Todos os direitos reservados.</p>
 
-      <!-- Ícones sociais -->
       <div class="flex justify-end">
         <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
           class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
@@ -1824,10 +1706,8 @@
     </div>
   </footer>
 
-  <!-- Rodapé para smartphone -->
   <footer id="mobile-footer" class="bg-white py-2 px-6 shadow-md fixed bottom-0 left-0 w-full">
     <div class="container mx-auto flex justify-between items-center">
-      <!-- Ícones sociais -->
       <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
         class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
         <img src="public/assets/identidade_visual/instagram-icon-grey.webp" alt="Instagram" class="h-8 w-8"
@@ -1846,20 +1726,16 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <!-- Script para máscara de telefone - removido link quebrado -->
   <script>
-    // Preloader
     window.addEventListener('load', function () {
       setTimeout(function () {
         const preloader = document.getElementById('preloader');
         if (preloader) {
           preloader.classList.add('preloader-hide');
-          setTimeout(() => preloader.remove(), 700); // Tempo da animação do preloader
+          setTimeout(() => preloader.remove(), 700);
         }
-      }, 2000); // Tempo de espera antes de iniciar a animação do preloader
-      // Fallback: remove o preloader após 5s caso algo dê errado
+      }, 2000);
       setTimeout(() => {
         const preloader = document.getElementById('preloader');
         if (preloader) {
@@ -1870,7 +1746,6 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
-      // Logo voltar ao topo
       document.getElementById("logo").addEventListener("click", function (e) {
         e.preventDefault();
         window.scrollTo({
@@ -1879,7 +1754,6 @@
         });
       });
 
-      // Menu mobile aprimorado
       const menuToggle = document.getElementById("menu-toggle");
       const menu = document.getElementById("menu");
       const menuOverlay = document.getElementById("menu-overlay");
@@ -1938,7 +1812,6 @@
         }
       });
 
-      // Inicialização otimizada dos Swipers
       if (typeof Swiper !== 'undefined') {
         initializeSwipers();
       } else {
@@ -1948,7 +1821,6 @@
         document.body.appendChild(swiperScript);
       }
 
-      // Scroll suave para os links de âncora
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -1958,7 +1830,6 @@
         });
       });
 
-      // Configuração do player de vídeo HTML5
       const videos = [
         {
           mp4: "public/assets/video/video-1.mp4",
@@ -2028,121 +1899,115 @@
       });
     });
 
-    // Função para inicializar todos os swipers
     function initializeSwipers() {
-  // Carrossel de miniaturas (aparece só no mobile)
-  const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
-    spaceBetween: 5,
-    slidesPerView: 3,
-    loop: true,
-    centeredSlides: true,
-    slideToClickedSlide: true,
-    breakpoints: {
-      640: { slidesPerView: 5 },
-      768: { slidesPerView: 7 }
-    }
-  });
-
-  // Carrossel principal, com thumbs linkado só no mobile
-  const isMobile = window.innerWidth < 769;
-  const mainSwiperOptions = {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    speed: 800,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    a11y: {
-      prevSlideMessage: 'Imagem anterior',
-      nextSlideMessage: 'Próxima imagem',
-    },
-    breakpoints: {
-      768: {
+      const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
+        spaceBetween: 5,
         slidesPerView: 3,
-        spaceBetween: 5,
-      },
-    }
-  };
+        loop: true,
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+          640: { slidesPerView: 5 },
+          768: { slidesPerView: 7 }
+        }
+      });
 
-  if (isMobile) {
-    mainSwiperOptions.thumbs = { swiper: thumbsSwiper };
-  }
+      const isMobile = window.innerWidth < 769;
+      const mainSwiperOptions = {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 800,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        a11y: {
+          prevSlideMessage: 'Imagem anterior',
+          nextSlideMessage: 'Próxima imagem',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+          },
+        }
+      };
 
-  const mainSwiper = new Swiper('.main-swiper', mainSwiperOptions);
+      if (isMobile) {
+        mainSwiperOptions.thumbs = { swiper: thumbsSwiper };
+      }
 
-  // Sincroniza centralização do carrossel de miniaturas ao navegar no principal (mobile)
-  if (isMobile) {
-    mainSwiper.on('slideChange', function () {
-      const realIndex = mainSwiper.realIndex;
-      thumbsSwiper.slideToLoop(realIndex, 300, true);
-    });
-  }
+      const mainSwiper = new Swiper('.main-swiper', mainSwiperOptions);
 
-  // Outros carrosseis (soluções)
-  const multiImageOptions = {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 5,
-    slidesPerGroup: 1,
-    loopFillGroupWithBlank: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 5,
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 5,
-      },
-    },
-  };
+      if (isMobile) {
+        mainSwiper.on('slideChange', function () {
+          const realIndex = mainSwiper.realIndex;
+          thumbsSwiper.slideToLoop(realIndex, 300, true);
+        });
+      }
 
-  const dualImageOptions = {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 5,
-    slidesPerGroup: 1,
-    loopFillGroupWithBlank: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      640: {
+      const multiImageOptions = {
+        loop: true,
         slidesPerView: 1,
         spaceBetween: 5,
-      },
-      1024: {
-        slidesPerView: 2,
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 5,
+          },
+        },
+      };
+
+      const dualImageOptions = {
+        loop: true,
+        slidesPerView: 1,
         spaceBetween: 5,
-      },
-    },
-  };
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 5,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+        },
+      };
 
-  new Swiper('.fachada-swiper', multiImageOptions);
-  new Swiper('.interiores-swiper', multiImageOptions);
-  new Swiper('.areas-externas-swiper', multiImageOptions);
-  new Swiper('.plantas-swiper', dualImageOptions);
-  new Swiper('.tour-swiper', {
-    ...dualImageOptions,
-    navigation: {
-      nextEl: '.tour-swiper .swiper-button-next',
-      prevEl: '.tour-swiper .swiper-button-prev',
-    },
-  });
-}
+      new Swiper('.fachada-swiper', multiImageOptions);
+      new Swiper('.interiores-swiper', multiImageOptions);
+      new Swiper('.areas-externas-swiper', multiImageOptions);
+      new Swiper('.plantas-swiper', dualImageOptions);
+      new Swiper('.tour-swiper', {
+        ...dualImageOptions,
+        navigation: {
+          nextEl: '.tour-swiper .swiper-button-next',
+          prevEl: '.tour-swiper .swiper-button-prev',
+        },
+      });
+    }
 
-    // Modal de imagem com swipe no mobile e navegação por botões/teclado
     (function () {
       let currentImages = null;
       let currentIndex = 0;
@@ -2152,7 +2017,7 @@
       const swipeArea = document.querySelector('#imageModal .swipe-area');
       const btnPrev = document.getElementById('modalPrev');
       const btnNext = document.getElementById('modalNext');
-      const btnClose = document.getElementById('modalClose'); // Obtenha o botão de fechar
+      const btnClose = document.getElementById('modalClose');
 
       modalImage.addEventListener('load', function () {
         imageLoadingProgress.style.width = '100%';
@@ -2198,13 +2063,12 @@
       }
 
       function showNext() {
-                if (!currentImages || currentImages.length === 0) return;
+        if (!currentImages || currentImages.length === 0) return;
         currentIndex = (currentIndex + 1) % currentImages.length;
         imageLoadingProgress.style.width = '0%';
         modalImage.src = currentImages[currentIndex].src;
       }
 
-      // Navegação por teclado
       function handleKeyNavigation(event) {
         if (event.key === 'ArrowLeft') {
           showPrev();
@@ -2215,13 +2079,10 @@
         }
       }
 
-      // Adicionar event listeners aos botões (DOM element already exists)
       if(btnPrev) btnPrev.addEventListener('click', showPrev);
       if(btnNext) btnNext.addEventListener('click', showNext);
       if(btnClose) btnClose.addEventListener('click', closeModal);
 
-
-      // Swipe (apenas mobile)
       let startX = null;
       let isTouching = false;
       const threshold = 50;
@@ -2251,9 +2112,7 @@
         });
       }
 
-      // Fechar modal ao clicar fora da imagem (opcional)
       modal.addEventListener('click', function (e) {
-        // Verifica se o clique foi no overlay do modal e não na imagem ou botões
         if (e.target === modal || e.target.classList.contains('modal-content')) {
           closeModal();
         }
@@ -2261,14 +2120,12 @@
 
     })();
 
-    // Máscara de telefone (implementação simples sem biblioteca externa)
     document.addEventListener('DOMContentLoaded', function () {
       const input = document.getElementById('whatsapp');
       if (!input) return;
       input.addEventListener('input', function (e) {
-        let v = e.target.value.replace(/\D/g, ''); // Remove tudo que não for dígito
-        if (v.length > 11) v = v.slice(0, 11); // Limita a 11 dígitos
-        // Aplica a máscara (00) 0 0000-0000
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.slice(0, 11);
         if (v.length > 0) v = '(' + v;
         if (v.length > 3) v = v.slice(0, 3) + ') ' + v.slice(3);
         if (v.length > 10) v = v.slice(0, 10) + '-' + v.slice(10);
@@ -2276,7 +2133,6 @@
       });
     });
 
-    // Formulário de orçamento (envio para Google Apps Script e feedback)
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("orcamento-form");
       const submitSuccess = document.getElementById("submitSuccess");
@@ -2337,22 +2193,18 @@
       });
     });
     document.addEventListener('DOMContentLoaded', function() {
-  // Garante que os botões do modal fiquem acima da swipe-area
-  const modalButtons = document.querySelectorAll('#modalClose, #modalPrev, #modalNext');
-  modalButtons.forEach(button => {
-    if (button) button.style.zIndex = "10";
-  });
+      const modalButtons = document.querySelectorAll('#modalClose, #modalPrev, #modalNext');
+      modalButtons.forEach(button => {
+        if (button) button.style.zIndex = "10";
+      });
 
-  // Garante que o clique nos botões não seja engolido pela swipe-area
-  modalButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
+      modalButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      });
     });
-  });
-});
-
   </script>
 </body>
 
 </html>
-
