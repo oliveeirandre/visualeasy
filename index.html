@@ -2142,77 +2142,99 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("orcamento-form");
-      const submitSuccess = document.getElementById("submitSuccess");
-      const submitError = document.getElementById("submitError");
-      const loadingSpinner = document.getElementById("loadingSpinner");
+  const form = document.getElementById("orcamento-form");
+  const submitSuccess = document.getElementById("submitSuccess");
+  const submitError = document.getElementById("submitError");
+  const loadingSpinner = document.getElementById("loadingSpinner");
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        submitSuccess.style.display = "none";
-        submitError.style.display = "none";
-        loadingSpinner.style.display = "inline-block";
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    submitSuccess.style.display = "none";
+    submitError.style.display = "none";
+    loadingSpinner.style.display = "inline-block";
 
-        const formObj = {};
-        const formData = new FormData(form);
+    const formObj = {};
+    const formData = new FormData(form);
 
-        for (let [key, value] of formData.entries()) {
-            if (key !== 'itens[]') {
-                formObj[key] = value;
-            }
-        }
+    for (let [key, value] of formData.entries()) {
+      if (key !== 'itens[]') {
+        formObj[key] = value;
+      }
+    }
 
-        const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
-        formObj.itens = Array.from(checkedItems).map(cb => cb.value);
+    const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
+    formObj.itens = Array.from(checkedItems).map(cb => cb.value);
 
-        const jsonDataToSend = new FormData();
-        jsonDataToSend.append('json', JSON.stringify(formObj));
+    const jsonDataToSend = new FormData();
+    jsonDataToSend.append('json', JSON.stringify(formObj));
 
-        fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
-          method: "POST",
-          body: jsonDataToSend,
-        })
-          .then((response) => {
-            loadingSpinner.style.display = "none";
+    fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
+      method: "POST",
+      body: jsonDataToSend,
+    })
+      .then((response) => {
+        loadingSpinner.style.display = "none";
 
-            if (response.redirected) {
-              submitSuccess.style.display = "block";
-              form.reset();
-            } else if (response.ok) {
-               return response.text().then(text => {
-                   console.log('Resposta do Apps Script (não redirecionado):', text);
-                   submitSuccess.style.display = "block";
-                   form.reset();
-               });
-            }
-             else {
-              return response.text().then(text => {
-                 console.error('Erro na resposta do servidor (não OK):', response.status, text);
-                 throw new Error(`Erro na resposta do servidor: ${response.status}`);
+        if (response.redirected) {
+          submitSuccess.style.display = "block";
+          form.reset();
+
+          if (typeof gtag === "function") {
+            gtag('event', 'enviar_orcamento', {
+              'event_category': 'Formulário',
+              'event_label': 'Orçamento'
+            });
+          }
+
+        } else if (response.ok) {
+          return response.text().then(text => {
+            console.log('Resposta do Apps Script (não redirecionado):', text);
+            submitSuccess.style.display = "block";
+            form.reset();
+
+            if (typeof gtag === "function") {
+              gtag('event', 'enviar_orcamento', {
+                'event_category': 'Formulário',
+                'event_label': 'Orçamento'
               });
             }
-          })
-          .catch((error) => {
-            loadingSpinner.style.display = "none";
-            submitSuccess.style.display = "none";
-            submitError.style.display = "block";
-            console.error("Erro no fetch ou processamento da resposta:", error);
-          });
-      });
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      const modalButtons = document.querySelectorAll('#modalClose, #modalPrev, #modalNext');
-      modalButtons.forEach(button => {
-        if (button) button.style.zIndex = "10";
-      });
 
-      modalButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          e.stopPropagation();
+          });
+        }
+        else {
+          return response.text().then(text => {
+            console.error('Erro na resposta do servidor (não OK):', response.status, text);
+            throw new Error(`Erro na resposta do servidor: ${response.status}`);
+          });
+        }
+      })
+      .catch((error) => {
+        loadingSpinner.style.display = "none";
+        submitSuccess.style.display = "none";
+        submitError.style.display = "block";
+        console.error("Erro no fetch ou processamento da resposta:", error);
+      });
+  });
+});
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Seleciona todos os links que levam ao WhatsApp
+      var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+      whatsappLinks.forEach(function(link) {
+        link.addEventListener("click", function () {
+          if (typeof gtag === "function") {
+            gtag('event', 'clique_whatsapp', {
+              'event_category': 'Contato',
+              'event_label': 'WhatsApp'
+            });
+          }
         });
       });
     });
   </script>
+  
 </body>
 
 </html>
