@@ -524,29 +524,24 @@
       border-radius: 8px;
     }
 
-    /* Estilos para os botões do navegador de vídeo */
+    /* Estilo para os botões do navegador de vídeo */
     .video-nav-button {
-      color: rgba(0, 0, 0, 0.7) !important; /* Changed color to black for visibility on white background button */
-      background-color: rgba(255, 255, 255, 0.7); /* Matched tour-swiper background */
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 32px;
       border-radius: 50%;
-      width: 40px; /* Matched tour-swiper size */
-      height: 40px; /* Matched tour-swiper size */
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background-color 0.3s ease;
-      z-index: 51 !important; /* Matched tour-swiper z-index */
-      font-size: 18px; /* Matched tour-swiper arrow size */
-      padding: 0; /* Ensure no default padding */
-      margin: 0; /* Ensure no default margin */
-      border: none; /* Ensure no default border */
-      cursor: pointer; /* Add cursor pointer */
+      z-index: 10;
+      background-color: rgba(112, 112, 112, 0.2);
+      width: 40px;
+      height: 40px;
     }
 
     .video-nav-button:hover {
-      background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
+      background-color: rgba(112, 112, 112, 0.4);
     }
-
 
     /* Ajuste para o tour 360 - reposicionar os controles do swiper */
     .tour-swiper .swiper-button-next,
@@ -902,7 +897,7 @@
       transition: width 0.3s ease-out;
       z-index: 10;
     }
-
+  
     #modalClose, #modalPrev, #modalNext {
       z-index: 10 !important;
     }
@@ -914,7 +909,7 @@
   }
 }
   </style>
-
+  
 </head>
 
 <body class="bg-white">
@@ -1287,33 +1282,35 @@
     <!-- Desktop: vídeo 2/3, texto 1/3, com gap entre eles e espaçamento de 5px entre carrosséis -->
     <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
       <div class="w-full md:w-2/3 mb-8 md:mb-0">
-        <!-- Container central do vídeo com player HTML5 nativo (agora 16:9 com aspect-video e w-full) -->
-        <div class="aspect-video w-full relative rounded-lg overflow-hidden shadow-lg">
-          <!-- Elemento video principal -->
-          <video id="videoPlayer" class="w-full h-full object-cover"
-                 preload="metadata" playsinline controls
-                 poster="public/assets/video/thumbnail-video-1.jpg">
-            <!-- Múltiplos formatos para compatibilidade entre navegadores -->
-            <source src="public/assets/video/video-1.mp4" type="video/mp4">
-            <source src="public/assets/video/video-1.webm" type="video/webm">
-            <!-- Legendas para acessibilidade -->
-            <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
-            <!-- Mensagem de fallback para navegadores antigos -->
-            Seu navegador não suporta o elemento de vídeo HTML5.
-          </video>
-
-          <!-- Indicador de carregamento -->
-          <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
-            <div class="loading-circle"></div>
-          </div>
-
-          <!-- Botão para vídeo anterior (Movido para dentro e posicionado) -->
-          <button id="prevVideo" class="video-nav-button absolute left-4 top-1/2 transform -translate-y-1/2 z-51" aria-label="Vídeo anterior">
+        <div class="flex items-center w-full">
+          <!-- Botão para vídeo anterior -->
+          <button id="prevVideo" class="video-nav-button mr-2" aria-label="Vídeo anterior">
             &#10094;
           </button>
 
-          <!-- Botão para próximo vídeo (Movido para dentro e posicionado) -->
-          <button id="nextVideo" class="video-nav-button absolute right-4 top-1/2 transform -translate-y-1/2 z-51" aria-label="Próximo vídeo">
+          <!-- Container central do vídeo com player HTML5 nativo (agora 16:9 com aspect-video) -->
+          <div class="aspect-video flex-1 relative rounded-lg overflow-hidden shadow-lg">
+            <!-- Elemento video principal -->
+            <video id="videoPlayer" class="w-full h-full object-cover"
+                   preload="metadata" playsinline controls
+                   poster="public/assets/video/thumbnail-video-1.jpg">
+              <!-- Múltiplos formatos para compatibilidade entre navegadores -->
+              <source src="public/assets/video/video-1.mp4" type="video/mp4">
+              <source src="public/assets/video/video-1.webm" type="video/webm">
+              <!-- Legendas para acessibilidade -->
+              <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
+              <!-- Mensagem de fallback para navegadores antigos -->
+              Seu navegador não suporta o elemento de vídeo HTML5.
+            </video>
+
+            <!-- Indicador de carregamento -->
+            <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
+              <div class="loading-circle"></div>
+            </div>
+          </div>
+
+          <!-- Botão para próximo vídeo -->
+          <button id="nextVideo" class="video-nav-button ml-2" aria-label="Próximo vídeo">
             &#10095;
           </button>
         </div>
@@ -1651,7 +1648,8 @@
                 >
                   Solicitar Proposta
                 </button>
-                <div id="loadingSpinner" class="loading-spinner"></div>
+                <div id="loadingSpinner"
+                  class="loading-spinner"></div>
               </div>
 
               <!-- Feedback de envio -->
@@ -2032,106 +2030,117 @@
 
     // Função para inicializar todos os swipers
     function initializeSwipers() {
-      const mainSwiper = new Swiper('.main-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        speed: 800,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        a11y: {
-          prevSlideMessage: 'Imagem anterior',
-          nextSlideMessage: 'Próxima imagem',
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 5,
-          },
-        }
-      });
-
-      const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
-        spaceBetween: 5,
-        slidesPerView: 3,
-        loop: true,
-        centeredSlides: true,
-        slideToClickedSlide: true,
-        breakpoints: {
-          640: {
-            slidesPerView: 5,
-          },
-          768: {
-            slidesPerView: 7,
-          }
-        }
-      });
-
-      mainSwiper.controller.control = thumbsSwiper;
-      thumbsSwiper.controller.control = mainSwiper;
-
-      const multiImageOptions = {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 5,
-        slidesPerGroup: 1,
-        loopFillGroupWithBlank: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 5,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 5,
-          },
-        },
-      };
-
-      const dualImageOptions = {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 5,
-        slidesPerGroup: 1,
-        loopFillGroupWithBlank: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 5,
-          },
-          1024: {
-            slidesPerView: 2,
-            spaceBetween: 5,
-          },
-        },
-      };
-
-      new Swiper('.fachada-swiper', multiImageOptions);
-      new Swiper('.interiores-swiper', multiImageOptions);
-      new Swiper('.areas-externas-swiper', multiImageOptions);
-      new Swiper('.plantas-swiper', dualImageOptions);
-      new Swiper('.tour-swiper', {
-        ...dualImageOptions,
-        navigation: {
-          nextEl: '.tour-swiper .swiper-button-next',
-          prevEl: '.tour-swiper .swiper-button-prev',
-        },
-      });
+  // Carrossel de miniaturas (aparece só no mobile)
+  const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
+    spaceBetween: 5,
+    slidesPerView: 3,
+    loop: true,
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    breakpoints: {
+      640: { slidesPerView: 5 },
+      768: { slidesPerView: 7 }
     }
+  });
+
+  // Carrossel principal, com thumbs linkado só no mobile
+  const isMobile = window.innerWidth < 769;
+  const mainSwiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 800,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    a11y: {
+      prevSlideMessage: 'Imagem anterior',
+      nextSlideMessage: 'Próxima imagem',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+    }
+  };
+
+  if (isMobile) {
+    mainSwiperOptions.thumbs = { swiper: thumbsSwiper };
+  }
+
+  const mainSwiper = new Swiper('.main-swiper', mainSwiperOptions);
+
+  // Sincroniza centralização do carrossel de miniaturas ao navegar no principal (mobile)
+  if (isMobile) {
+    mainSwiper.on('slideChange', function () {
+      const realIndex = mainSwiper.realIndex;
+      thumbsSwiper.slideToLoop(realIndex, 300, true);
+    });
+  }
+
+  // Outros carrosseis (soluções)
+  const multiImageOptions = {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 5,
+    slidesPerGroup: 1,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 5,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 5,
+      },
+    },
+  };
+
+  const dualImageOptions = {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 5,
+    slidesPerGroup: 1,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 5,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 5,
+      },
+    },
+  };
+
+  new Swiper('.fachada-swiper', multiImageOptions);
+  new Swiper('.interiores-swiper', multiImageOptions);
+  new Swiper('.areas-externas-swiper', multiImageOptions);
+  new Swiper('.plantas-swiper', dualImageOptions);
+  new Swiper('.tour-swiper', {
+    ...dualImageOptions,
+    navigation: {
+      nextEl: '.tour-swiper .swiper-button-next',
+      prevEl: '.tour-swiper .swiper-button-prev',
+    },
+  });
+}
 
     // Modal de imagem com swipe no mobile e navegação por botões/teclado
     (function () {
@@ -2346,3 +2355,4 @@
 </body>
 
 </html>
+
