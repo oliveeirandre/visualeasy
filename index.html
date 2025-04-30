@@ -6,38 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visual Easy 3D - Estúdio de Renderização Profissional</title>
 
+  <!-- Preconnect para domínios externos (colocado no topo para iniciar conexões mais cedo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
+  <!-- Analytics - mantido no topo para capturar métricas corretamente -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-THZBSRV92T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-THZBSRV92T');
+    gtag('config', 'G-THZBSRV92T', {
+      'send_page_view': true,
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
   </script>
 
+  <!-- Meta tags SEO aprimoradas -->
   <meta name="description"
     content="Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º." />
   <meta name="keywords"
     content="renderização 3D, imagens 3D, visualização arquitetônica, tour virtual 360, plantas humanizadas, fachadas 3D, interiores 3D" />
   <meta name="author" content="Visual Easy 3D" />
+  <meta name="robots" content="index, follow" />
+  <meta name="generator" content="Visual Easy 3D" />
 
+  <!-- Open Graph para compartilhamento em redes sociais -->
   <meta property="og:title" content="Visual Easy 3D - Estúdio de Renderização Profissional" />
   <meta property="og:description"
     content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://visualeasy3d.com.br" />
-  <meta property="og:image" content="public/assets/identidade_visual/preview.jpg" />
+  <meta property="og:image" content="https://visualeasy3d.com.br/public/assets/identidade_visual/preview.jpg" />
+  <meta property="og:site_name" content="Visual Easy 3D" />
+  <meta property="og:locale" content="pt_BR" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Visual Easy 3D - Estúdio de Renderização Profissional">
+  <meta name="twitter:description" content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º.">
+  <meta name="twitter:image" content="https://visualeasy3d.com.br/public/assets/identidade_visual/preview.jpg">
 
+  <!-- Meta tags de segurança -->
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- Links canônicos e alternativas para dispositivos -->
   <link rel="canonical" href="https://visualeasy3d.com.br" />
+  <link rel="alternate" href="https://visualeasy3d.com.br" hreflang="pt-BR" />
 
+  <!-- Preload dos recursos críticos -->
   <link rel="preload" href="public/assets/identidade_visual/logo.webp" as="image" type="image/webp" />
   <link rel="preload" href="public/assets/section_02_carrossel/01.webp" as="image"
     fetchpriority="high" type="image/webp" />
 
+  <!-- Estilos críticos inline (não alterados do original) -->
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -179,18 +208,21 @@
     }
   </style>
 
+  <!-- Carregamento otimizado das fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
 
+  <!-- Swiper CSS com carregamento otimizado -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print"
     onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </noscript>
 
+  <!-- Microdata Schema.org expandido -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -208,15 +240,64 @@
       "telephone": "+551996996756",
       "email": "visualeasy.3d@gmail.com",
       "url": "https://visualeasy3d.com.br",
-      "image": "public/assets/identidade_visual/logo.webp",
+      "image": "https://visualeasy3d.com.br/public/assets/identidade_visual/logo.webp",
       "sameAs": [
         "https://www.instagram.com/visual.easy/",
         "https://www.linkedin.com/company/visual-easy-3d/"
       ],
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Renderização 3D",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Renderização de Fachadas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Renderização de Interiores"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plantas Humanizadas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tour Virtual 360°"
+            }
+          }
+        ]
+      }
     }
   </script>
 
+  <!-- Tailwind CSS com defer para evitar bloqueio de renderização -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
   <script>
@@ -954,28 +1035,28 @@
       <div class="swiper main-thumbs-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/01.webp" alt="miniatura1" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/01.webp" alt="Miniatura de fachada de edifício" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/02.webp" alt="miniatura2" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/02.webp" alt="Miniatura de perspectiva de fachada" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/03.webp" alt="miniatura3" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/03.webp" alt="Miniatura de área externa" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/04.webp" alt="miniatura4" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/04.webp" alt="Miniatura de piscina e área de lazer" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/05.webp" alt="miniatura5" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/05.webp" alt="Miniatura de interior de apartamento" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/06.webp" alt="miniatura6" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/06.webp" alt="Miniatura de sala de estar" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/07.webp" alt="miniatura7" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/07.webp" alt="Miniatura de cozinha" loading="lazy" width="120" height="80" />
           </div>
           <div class="swiper-slide">
-            <img src="public/assets/section_02_carrossel/08.webp" alt="miniatura8" loading="lazy" width="120" height="80" />
+            <img src="public/assets/section_02_carrossel/08.webp" alt="Miniatura de planta humanizada" loading="lazy" width="120" height="80" />
           </div>
         </div>
       </div>
@@ -1736,21 +1817,65 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script>
+    // Script de monitoramento de Web Vitals
+    window.addEventListener('load', function() {
+      // Monitoramento de performance básico
+      if ('performance' in window && 'getEntriesByType' in window.performance) {
+        setTimeout(function() {
+          const perfData = window.performance.getEntriesByType('navigation')[0];
+          const lcpEntry = window.performance.getEntriesByType('paint').find(entry => entry.name === 'largest-contentful-paint');
+          const fcp = window.performance.getEntriesByType('paint').find(entry => entry.name === 'first-contentful-paint');
+          
+          // Reporta métricas para Google Analytics
+          if (window.gtag && perfData) {
+            gtag('event', 'timing_complete', {
+              'name': 'load',
+              'value': Math.round(perfData.loadEventStart),
+              'event_category': 'Performance'
+            });
+          }
+          
+          if (window.gtag && lcpEntry) {
+            gtag('event', 'timing_complete', {
+              'name': 'lcp',
+              'value': Math.round(lcpEntry.startTime),
+              'event_category': 'Web Vitals'
+            });
+          }
+          
+          if (window.gtag && fcp) {
+            gtag('event', 'timing_complete', {
+              'name': 'fcp',
+              'value': Math.round(fcp.startTime),
+              'event_category': 'Web Vitals'
+            });
+          }
+        }, 3000);
+      }
+    });
+
+    // Logging de erros JavaScript
+    window.addEventListener('error', function(e) {
+      if (window.gtag) {
+        gtag('event', 'javascript_error', {
+          'event_category': 'Error',
+          'event_label': e.message,
+          'value': e.lineno,
+          'non_interaction': true
+        });
+      }
+      console.error('Error logged:', e.message);
+    });
+
+    // Otimização do preloader para não bloquear renderização
     window.addEventListener('load', function () {
       setTimeout(function () {
         const preloader = document.getElementById('preloader');
         if (preloader) {
           preloader.classList.add('preloader-hide');
-          setTimeout(() => preloader.remove(), 700);
+          setTimeout(() => preloader.remove(), 300);
         }
-      }, 2000);
-      setTimeout(() => {
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-          preloader.classList.add('preloader-hide');
-          setTimeout(() => preloader.remove(), 700);
-        }
-      }, 5000);
+      }, 300);
     });
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -2142,80 +2267,80 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("orcamento-form");
-  const submitSuccess = document.getElementById("submitSuccess");
-  const submitError = document.getElementById("submitError");
-  const loadingSpinner = document.getElementById("loadingSpinner");
+      const form = document.getElementById("orcamento-form");
+      const submitSuccess = document.getElementById("submitSuccess");
+      const submitError = document.getElementById("submitError");
+      const loadingSpinner = document.getElementById("loadingSpinner");
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    submitSuccess.style.display = "none";
-    submitError.style.display = "none";
-    loadingSpinner.style.display = "inline-block";
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitSuccess.style.display = "none";
+        submitError.style.display = "none";
+        loadingSpinner.style.display = "inline-block";
 
-    const formObj = {};
-    const formData = new FormData(form);
+        const formObj = {};
+        const formData = new FormData(form);
 
-    for (let [key, value] of formData.entries()) {
-      if (key !== 'itens[]') {
-        formObj[key] = value;
-      }
-    }
-
-    const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
-    formObj.itens = Array.from(checkedItems).map(cb => cb.value);
-
-    const jsonDataToSend = new FormData();
-    jsonDataToSend.append('json', JSON.stringify(formObj));
-
-    fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
-      method: "POST",
-      body: jsonDataToSend,
-    })
-      .then((response) => {
-        loadingSpinner.style.display = "none";
-
-        if (response.redirected) {
-          submitSuccess.style.display = "block";
-          form.reset();
-
-          if (typeof gtag === "function") {
-            gtag('event', 'enviar_orcamento', {
-              'event_category': 'Formulário',
-              'event_label': 'Orçamento'
-            });
+        for (let [key, value] of formData.entries()) {
+          if (key !== 'itens[]') {
+            formObj[key] = value;
           }
+        }
 
-        } else if (response.ok) {
-          return response.text().then(text => {
-            console.log('Resposta do Apps Script (não redirecionado):', text);
-            submitSuccess.style.display = "block";
-            form.reset();
+        const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
+        formObj.itens = Array.from(checkedItems).map(cb => cb.value);
 
-            if (typeof gtag === "function") {
-              gtag('event', 'enviar_orcamento', {
-                'event_category': 'Formulário',
-                'event_label': 'Orçamento'
+        const jsonDataToSend = new FormData();
+        jsonDataToSend.append('json', JSON.stringify(formObj));
+
+        fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
+          method: "POST",
+          body: jsonDataToSend,
+        })
+          .then((response) => {
+            loadingSpinner.style.display = "none";
+
+            if (response.redirected) {
+              submitSuccess.style.display = "block";
+              form.reset();
+
+              if (typeof gtag === "function") {
+                gtag('event', 'enviar_orcamento', {
+                  'event_category': 'Formulário',
+                  'event_label': 'Orçamento'
+                });
+              }
+
+            } else if (response.ok) {
+              return response.text().then(text => {
+                console.log('Resposta do Apps Script (não redirecionado):', text);
+                submitSuccess.style.display = "block";
+                form.reset();
+
+                if (typeof gtag === "function") {
+                  gtag('event', 'enviar_orcamento', {
+                    'event_category': 'Formulário',
+                    'event_label': 'Orçamento'
+                  });
+                }
+
               });
             }
-
+            else {
+              return response.text().then(text => {
+                console.error('Erro na resposta do servidor (não OK):', response.status, text);
+                throw new Error(`Erro na resposta do servidor: ${response.status}`);
+              });
+            }
+          })
+          .catch((error) => {
+            loadingSpinner.style.display = "none";
+            submitSuccess.style.display = "none";
+            submitError.style.display = "block";
+            console.error("Erro no fetch ou processamento da resposta:", error);
           });
-        }
-        else {
-          return response.text().then(text => {
-            console.error('Erro na resposta do servidor (não OK):', response.status, text);
-            throw new Error(`Erro na resposta do servidor: ${response.status}`);
-          });
-        }
-      })
-      .catch((error) => {
-        loadingSpinner.style.display = "none";
-        submitSuccess.style.display = "none";
-        submitError.style.display = "block";
-        console.error("Erro no fetch ou processamento da resposta:", error);
       });
-  });
-});
+    });
   </script>
 
   <script>
