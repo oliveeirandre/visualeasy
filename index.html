@@ -1290,13 +1290,14 @@
 
           <div class="aspect-video flex-1 relative rounded-lg overflow-hidden shadow-lg">
             <video id="videoPlayer" class="w-full h-full object-cover"
-                   preload="metadata" playsinline controls
-                   poster="public/assets/video/thumbnail-video-1.jpg">
-              <source src="public/assets/video/video-1.mp4" type="video/mp4">
-              <source src="public/assets/video/video-1.webm" type="video/webm">
-              <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
-              Seu navegador não suporta o elemento de vídeo HTML5.
-            </video>
+            preload="metadata" playsinline controls
+            controlsList="nodownload" oncontextmenu="return false;"
+            poster="public/assets/video/thumbnail-video-1.jpg">
+       <source src="public/assets/video/video-1.mp4" type="video/mp4">
+       <source src="public/assets/video/video-1.webm" type="video/webm">
+       <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
+       Seu navegador não suporta o elemento de vídeo HTML5.
+     </video>
 
             <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
               <div class="loading-circle"></div>
