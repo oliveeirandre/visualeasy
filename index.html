@@ -1817,6 +1817,24 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('img').forEach(function(img) {
+        img.setAttribute('oncontextmenu', 'return false;');
+        img.setAttribute('draggable', 'false');
+        img.setAttribute('ondragstart', 'return false;');
+        img.style.webkitUserSelect = 'none';
+        img.style.webkitTouchCallout = 'none';
+        img.style.userSelect = 'none';
+      });
+
+      // Opcional: Adicione também para os elementos iframe de tour virtual, se quiser dificultar a interação com o clique direito neles
+      document.querySelectorAll('iframe').forEach(function(iframe) {
+         iframe.setAttribute('oncontextmenu', 'return false;');
+         // Não faz sentido draggable/ondragstart para iframe, nem user-select
+      });
+    });
+  </script>
+  <script>
     // Script de monitoramento de Web Vitals
     window.addEventListener('load', function() {
       // Monitoramento de performance básico
@@ -1866,7 +1884,7 @@
       }
       console.error('Error logged:', e.message);
     });
-
+    
     // Otimização do preloader para não bloquear renderização
     window.addEventListener('load', function () {
       setTimeout(function () {
