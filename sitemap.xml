@@ -2,13 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
         http://www.google.com/schemas/sitemap-image/1.1
-        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd
-        http://www.google.com/schemas/sitemap-video/1.1
-        http://www.google.com/schemas/sitemap-video/1.1/sitemap-video.xsd">
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
   <!-- Página principal (única URL permitida para o site de página única) -->
   <url>
@@ -17,8 +14,8 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 
-    <!-- ATENÇÃO: TODAS AS IMAGENS E VÍDEOS DO SITE DEVEM SER LISTADOS AQUI,
-                 ASSOCIADOS A ESTA ÚNICA URL DA PÁGINA PRINCIPAL. -->
+    <!-- ATENÇÃO: TODAS AS IMAGENS DO SITE DEVEM SER LISTADAS AQUI,
+                 ASSOCIADAS A ESTA ÚNICA URL DA PÁGINA PRINCIPAL. -->
 
     <!-- Imagens da Página Principal (Logo, Carrossel Principal, etc.) -->
     <image:image>
@@ -217,51 +214,6 @@
       <image:caption>Planta humanizada realista de apartamento tipo com detalhamento de ambientes</image:caption>
     </image:image>
 
-    <!-- Vídeos da Seção Filme/Animação -->
-    <video:video>
-      <video:thumbnail_loc>https://visualeasy3d.com.br/public/assets/video/thumbnail-video-1.jpg</video:thumbnail_loc>
-      <video:title>Filme de apresentação de empreendimento imobiliário de alto padrão</video:title>
-      <video:description>Animação 3D que apresenta todos os detalhes do empreendimento, desde a implantação até os interiores e áreas de lazer</video:description>
-      <video:content_loc>https://visualeasy3d.com.br/public/assets/video/video-1.mp4</video:content_loc>
-      <!-- REMOVIDO A TAG VIDEO:PLAYER_LOC POIS NÃO SE APLICA A VIDEO NATIVO HTML5 -->
-      <video:duration>45</video:duration> <!-- Ajustar duração real do vídeo -->
-      <video:publication_date>2023-01-15T08:00:00+08:00</video:publication_date> <!-- Ajustar data -->
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-    </video:video>
-    <!-- Repetir para os outros vídeos -->
-    <video:video>
-        <video:thumbnail_loc>https://visualeasy3d.com.br/public/assets/video/thumbnail-video-2.jpg</video:thumbnail_loc>
-        <video:title>Filme de apresentação de empreendimento imobiliário - Vídeo 2</video:title>
-        <video:description>Mais detalhes do empreendimento em vídeo 3D.</video:description>
-        <video:content_loc>https://visualeasy3d.com.br/public/assets/video/video-2.mp4</video:content_loc>
-        <video:duration>45</video:duration> <!-- Ajustar duração real do vídeo -->
-        <video:publication_date>2023-01-15T08:00:00+08:00</video:publication_date> <!-- Ajustar data -->
-        <video:family_friendly>yes</video:family_friendly>
-        <video:requires_subscription>no</video:requires_subscription>
-    </video:video>
-     <video:video>
-        <video:thumbnail_loc>https://visualeasy3d.com.br/public/assets/video/thumbnail-video-3.jpg</video:thumbnail_loc>
-        <video:title>Filme de apresentação de empreendimento imobiliário - Vídeo 3</video:title>
-        <video:description>Terceiro vídeo promocional do empreendimento.</video:description>
-        <video:content_loc>https://visualeasy3d.com.br/public/assets/video/video-3.mp4</video:content_loc>
-        <video:duration>45</video:duration> <!-- Ajustar duração real do vídeo -->
-        <video:publication_date>2023-01-15T08:00:00+08:00</video:publication_date> <!-- Ajustar data -->
-        <video:family_friendly>yes</video:family_friendly>
-        <video:requires_subscription>no</video:subscription>
-    </video:video>
-    <video:video>
-        <video:thumbnail_loc>https://visualeasy3d.com.br/public/assets/video/thumbnail-video-4.jpg</video:thumbnail_loc>
-        <video:title>Filme de apresentação de empreendimento imobiliário - Vídeo 4</video:title>
-        <video:description>Quarto vídeo mostrando detalhes do empreendimento.</video:description>
-        <video:content_loc>https://visualeasy3d.com.br/public/assets/video/video-4.mp4</video:content_loc>
-        <video:duration>45</video:duration> <!-- Ajustar duração real do vídeo -->
-        <video:publication_date>2023-01-15T08:00:00+08:00</video:publication_date> <!-- Ajustar data -->
-        <video:family_friendly>yes</video:family_friendly>
-        <video:requires_subscription>no</video:requires_subscription>
-    </video:video>
-
-
     <!-- Imagem da Seção Tour Virtual (Prévia/Thumbnail) -->
     <!-- Os tours virtuais via iframe externo não podem ser listados como video:video, apenas a prévia como image:image -->
     <image:image>
@@ -351,4 +303,3 @@
   <!-- Fim da URL da página principal -->
 
 </urlset>
-
