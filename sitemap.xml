@@ -19,47 +19,47 @@
 
     <!-- Imagens da Página Principal (Logo, Carrossel Principal, etc.) -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/logo.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/logo.webp</image:loc>
       <image:title>Visual Easy 3D - Estúdio de Renderização Profissional para Empreendimentos Imobiliários</image:title>
       <image:caption>Logotipo oficial do estúdio especializado em renderização 3D arquitetônica de alta qualidade</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/01.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/01.webp</image:loc>
       <image:title>Renderização fotorrealista de fachada principal de empreendimento residencial de alto padrão</image:title>
       <image:caption>Imagem principal de fachada renderizada em 3D com detalhes arquitetônicos premium e tratamento paisagístico</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/02.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/02.webp</image:loc>
       <image:title>Perspectiva angular de fachada contemporânea com detalhes em vidro e concreto aparente destacando a volumetria arquitetônica do edifício</image:title>
       <image:caption>Segunda imagem do carrossel principal, detalhando a arquitetura da fachada</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/03.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/03.webp</image:loc>
       <image:title>Render de área externa exclusiva com piscina infinity, deck molhado e paisagismo integrado em ambiente de lazer de condomínio</image:title>
       <image:caption>Terceira imagem do carrossel principal, mostrando área de lazer do condomínio</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/04.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/04.webp</image:loc>
       <image:title>Visualização hiperrealista de área de lazer com piscina, jardins e espaço gourmet ao ar livre</image:title>
       <image:caption>Quarta imagem do carrossel principal, detalhando o espaço gourmet e piscina</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/05.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/05.webp</image:loc>
       <image:title>Renderização de interior de apartamento de luxo com sala integrada, mobiliário contemporâneo e amplas aberturas para luz natural</image:title>
       <image:caption>Quinta imagem do carrossel principal, mostrando um interior de apartamento</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/06.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/06.webp</image:loc>
       <image:title>Sala de estar de alto padrão com design de interiores premium, pé-direito duplo e acabamentos sofisticados em render 3D ultrarrealista</image:title>
       <image:caption>Sexta imagem do carrossel principal, detalhando a sala de estar</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/07.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/07.webp</image:loc>
       <image:title>Cozinha gourmet com ilha central, armários planejados e eletrodomésticos de última geração em apartamento premium renderizado em 3D</image:title>
       <image:caption>Sétima imagem do carrossel principal, mostrando a cozinha</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/08.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_02_carrossel/08.webp</image:loc>
       <image:title>Planta humanizada de apartamento tipo com distribuição otimizada, 3 dormitórios, varanda gourmet e acabamentos realistas</image:title>
       <image:caption>Oitava imagem do carrossel principal, apresentando uma planta humanizada</image:caption>
     </image:image>
@@ -67,84 +67,84 @@
 
     <!-- Imagens da Seção Soluções (Fachadas) -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_01.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_01.webp</image:loc>
       <image:title>Fachada principal de edifício residencial com iluminação diurna destacando elementos arquitetônicos contemporâneos, revestimentos nobres e paisagismo integrado</image:title>
       <image:caption>Renderização 3D de fachada com tratamento realista de materiais, texturas e iluminação natural</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_02.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_02.webp</image:loc>
       <image:title>Fachada noturna com iluminação cênica que valoriza volumes arquitetônicos, entrada monumental e tratamento de luz</image:title>
       <image:caption>Render noturno de fachada com tratamento especializado de luzes, sombras e reflexões em materiais diversos</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_03.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_03.webp</image:loc>
       <image:title>Detalhe arquitetônico de fachada com jardim vertical integrado, painéis texturizados e brises</image:title>
       <image:caption>Render ultrarrealista de detalhe de fachada com elementos paisagísticos</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_04.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_04.webp</image:loc>
       <image:title>Perspectiva aérea de empreendimento com implantação privilegiada, destacando a inserção urbana e volumetria</image:title>
       <image:caption>Vista aérea da fachada com tratamento paisagístico do entorno em render 3D</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_05.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_05.webp</image:loc>
       <image:title>Vista aérea frontal de fachada com terraço gourmet integrado, varandas amplas e volumetria escalonada</image:title>
       <image:caption>Render de fachada com vista frontal aérea detalhando terraços e varandas</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_06.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_06.webp</image:loc>
       <image:title>Render fotorrealista de fachada posterior com áreas de convivência e piscina integrada</image:title>
       <image:caption>Renderização 3D da fachada posterior com foco nas áreas de lazer e piscinas</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_07.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_07.webp</image:loc>
       <image:title>Perspectiva lateral de fachada com tratamento de luz ao entardecer, destacando elementos estruturais e esquadrias premium</image:title>
       <image:caption>Render lateral de fachada destacando iluminação e acabamentos premium ao entardecer</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_08.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/fachadas/fachada_08.webp</image:loc>
       <image:title>Fachada em perspectiva com ângulo valorizado que evidencia a escala do empreendimento e detalhes construtivos</image:title>
       <image:caption>Render 3D de fachada em perspectiva angular com detalhes construtivos</image:caption>
     </image:image>
 
     <!-- Imagens da Seção Soluções (Interiores) -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_01.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_01.webp</image:loc>
       <image:title>Sala de estar contemporânea com pé-direito duplo, mobiliário exclusivo, integração com área externa e acabamentos de alto padrão</image:title>
       <image:caption>Render fotorrealista de interior de sala de estar de alto padrão</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_02.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_02.webp</image:loc>
       <image:title>Cozinha integrada com ilha central em mármore, armários planejados, eletrodomésticos embutidos e iluminação técnica</image:title>
       <image:caption>Visualização 3D de cozinha contemporânea com acabamentos sofisticados</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_03.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_03.webp</image:loc>
       <image:title>Suíte master com cabeceira estofada, iluminação indireta, closet integrado e vista panorâmica</image:title>
       <image:caption>Renderização de suíte master com design de interiores premium</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_04.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_04.webp</image:loc>
       <image:title>Banheiro de suíte com bancada dupla em material nobre, banheira autoportante, box em vidro temperado e iluminação zenital natural</image:title>
       <image:caption>Render 3D de banheiro de suíte com acabamentos de luxo</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_05.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_05.webp</image:loc>
       <image:title>Home office integrado com mobiliário ergonômico, estantes planejadas, iluminação técnica e conexão visual com áreas sociais</image:title>
       <image:caption>Renderização de home office funcional e estético em apartamento</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_06.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_06.webp</image:loc>
       <image:title>Sala de jantar sofisticada com mesa para 8 lugares, pendentes decorativos, painel em madeira nobre e integração com varanda gourmet</image:title>
       <image:caption>Render 3D de sala de jantar integrada e elegante</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_07.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_07.webp</image:loc>
       <image:title>Espaço multiúso com home theater, sofá modular, painel acústico e automação residencial integrada</image:title>
       <image:caption>Visualização 3D de ambiente com home theater e automação residencial</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_08.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/interiores/interior_08.webp</image:loc>
       <image:title>Varanda gourmet com churrasqueira a gás, adega climatizada, mobiliário outdoor e vista privilegiada da cidade em apartamento de alto padrão</image:title>
       <image:caption>Renderização de varanda gourmet com vista privilegiada da cidade</image:caption>
     </image:image>
@@ -152,64 +152,64 @@
 
     <!-- Imagens da Seção Soluções (Áreas Externas) -->
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_01.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_01.webp</image:loc>
       <image:title>Piscina com borda infinita e vista panorâmica para o mar, deque molhado com espreguiçadeiras e bar molhado integrado ao solário</image:title>
       <image:caption>Visualização 3D de área externa com piscina de borda infinita</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_02.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_02.webp</image:loc>
       <image:title>Espaço gourmet ao ar livre com pergolado, churrasqueira premium, forno de pizza e mobiliário outdoor em área de convivência exclusiva</image:title>
       <image:caption>Render 3D de espaço gourmet externo em área de convivência</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_03.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_03.webp</image:loc>
       <image:title>Área de lazer noturna com piscina iluminada por LED subaquático, lounge com lareira a gás e paisagismo com iluminação cênica</image:title>
       <image:caption>Render noturno de área externa com iluminação cênica e paisagismo</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_04.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_04.webp</image:loc>
       <image:title>Playground com brinquedos em madeira certificada, piso emborrachado antimpacto e área verde integrada com pergolado para sombra natural</image:title>
       <image:caption>Visualização 3D de playground infantil no condomínio</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_05.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_05.webp</image:loc>
       <image:title>Área de convivência externa com espelho d'água, jardim japonês e espaços contemplativos integrados ao paisagismo do empreendimento</image:title>
       <image:caption>Render 3D de praça e áreas de convivência externa</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_06.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_06.webp</image:loc>
       <image:title>Terraço com vista panorâmica, deck em madeira ecológica, mobiliário contemporâneo e jardim vertical</image:title>
       <image:caption>Visualização 3D de terraço com vista e elementos naturais</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_07.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_07.webp</image:loc>
       <image:title>Quadra poliesportiva com iluminação profissional, arquibancada e área de apoio integrada ao complexo de lazer do condomínio</image:title>
       <image:caption>Renderização 3D de quadra poliesportiva</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_08.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/areas_externas/exterior_08.webp</image:loc>
       <image:title>Praça central do condomínio com espelho d'água, jardins ornamentais e caminhos suspensos que conectam as diferentes áreas de convivência</image:title>
       <image:caption>Render 3D da praça central do condomínio</image:caption>
     </image:image>
 
     <!-- Imagens da Seção Soluções (Plantas Humanizadas) -->
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/humanizadas/planta_terreo.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/humanizadas/planta_terreo.webp</image:loc>
       <image:title>Planta humanizada do pavimento térreo com lobby de entrada, áreas de convivência e salão de festas</image:title>
       <image:caption>Planta humanizada realista do pavimento térreo do empreendimento</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/humanizadas/planta_pavimento_1.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/humanizadas/planta_pavimento_1.webp</image:loc>
       <image:title>Planta humanizada do primeiro pavimento com áreas comuns, espaço fitness, coworking e lazer infantil</image:title>
       <image:caption>Planta humanizada realista do primeiro pavimento com áreas comuns</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/humanizadas/planta_pavimento_tipo.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/humanizadas/planta_pavimento_tipo.webp</image:loc>
       <image:title>Planta humanizada do pavimento tipo com distribuição de unidades, circulação, áreas técnicas e elevadores</image:title>
       <image:caption>Planta humanizada realista do pavimento tipo com layout de unidades</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/humanizadas/planta_apto_tipo.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/humanizadas/planta_apto_tipo.webp</image:loc>
       <image:title>Planta humanizada de apartamento tipo com 3 dormitórios, suíte master com closet, living ampliado e varanda gourmet</image:title>
       <image:caption>Planta humanizada realista de apartamento tipo com detalhamento de ambientes</image:caption>
     </image:image>
@@ -217,7 +217,7 @@
     <!-- Imagem da Seção Tour Virtual (Prévia/Thumbnail) -->
     <!-- Os tours virtuais via iframe externo não podem ser listados como video:video, apenas a prévia como image:image -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/tour_virtual/tour_preview.jpg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_04/tour_virtual/tour_preview.jpg</image:loc>
       <image:title>Tour Virtual 360° de apartamento decorado com experiência imersiva (Prévia)</image:title>
       <image:caption>Imagem de prévia da experiência de tour virtual 360 graus</image:caption>
     </image:image>
@@ -225,76 +225,76 @@
 
     <!-- Imagens da Seção Parceiros (Logos) -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-af.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-af.svg</image:loc>
       <image:title>Logo da AF - Parceiro da Visual Easy 3D em projetos de renderização arquitetônica</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
      <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-maybelly.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-maybelly.svg</image:loc>
       <image:title>Logo da Maybelly - Parceiro da Visual Easy 3D</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-tarjab.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-tarjab.svg</image:loc>
       <image:title>Logo da Tarjab - Incorporadora parceira da Visual Easy 3D</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-clarus.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-clarus.svg</image:loc>
       <image:title>Logo da Clarus - Parceiro da Visual Easy 3D</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-grupo-sinop.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-grupo-sinop.svg</image:loc>
       <image:title>Logo do Grupo Sinop - Parceiro da Visual Easy 3D</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-ace-realty.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-ace-realty.svg</image:loc>
       <image:title>Logo da Ace Realty - Parceiro da Visual Easy 3D</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-qhabita.svg</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/section_05_parceiros/logo-qhabita.svg</image:loc>
       <image:title>Logo da QHabita - Parceiro da Visual Easy 3D</image:title>
       <image:caption>Logotipo de uma das empresas parceiras</image:caption>
     </image:image>
 
     <!-- Ícones do Rodapé (Desktop) -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/instagram-icon.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/instagram-icon.webp</image:loc>
       <image:title>Ícone Instagram - Siga nosso portfólio de projetos de renderização 3D arquitetônica</image:title>
       <image:caption>Ícone de link para o perfil do Instagram</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/linkedin-icon.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/linkedin-icon.webp</image:loc>
       <image:title>Ícone LinkedIn - Conecte-se profissionalmente com nosso estúdio de visualização arquitetônica</image:title>
       <image:caption>Ícone de link para a página do LinkedIn</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/email-icon.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/email-icon.webp</image:loc>
       <image:title>Ícone Email - Solicite orçamentos ou informações sobre nossos serviços de renderização 3D</image:title>
       <image:caption>Ícone de link para enviar email</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/whatsapp-icon.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/whatsapp-icon.webp</image:loc>
       <image:title>Ícone WhatsApp - Entre em contato para orçamentos de renderização 3D</image:title>
       <image:caption>Ícone de link para iniciar conversa no WhatsApp</image:caption>
     </image:image>
 
     <!-- Ícones do Rodapé (Mobile) - Listados separadamente se forem arquivos de imagem diferentes -->
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/instagram-icon-grey.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/instagram-icon-grey.webp</image:loc>
       <image:title>Ícone Instagram (versão mobile) - Siga nosso portfólio de projetos de renderização 3D arquitetônica</image:title>
       <image:caption>Ícone de link para o perfil do Instagram na versão mobile</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/email-icon-grey.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/email-icon-grey.webp</image:loc>
       <image:title>Ícone Email (versão mobile) - Solicite orçamentos ou informações sobre nossos serviços de renderização 3D</image:title>
       <image:caption>Ícone de link para enviar email na versão mobile</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/whatsapp-icon-grey.webp</image:loc>
+      <image:loc>https://visualeasy.com.br/public/assets/identidade_visual/whatsapp-icon-grey.webp</image:loc>
       <image:title>Ícone WhatsApp (versão mobile) - Entre em contato para orçamentos de renderização 3D</image:title>
       <image:caption>Ícone de link para iniciar conversa no WhatsApp na versão mobile</image:caption>
     </image:image>
