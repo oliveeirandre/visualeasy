@@ -9,7 +9,7 @@
 
   <!-- Página principal (única URL permitida para o site de página única) -->
   <url>
-    <loc>https://visualeasy3d.com.br/</loc>
+    <loc>https://visualeasy.com.br/</loc>
     <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
