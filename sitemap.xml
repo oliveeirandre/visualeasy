@@ -2,86 +2,148 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
         http://www.google.com/schemas/sitemap-image/1.1
-        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd
+        http://www.google.com/schemas/sitemap-video/1.1
+        http://www.google.com/schemas/sitemap-video/1.1/sitemap-video.xsd">
 
   <!-- Página principal -->
   <url>
     <loc>https://visualeasy3d.com.br/</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/logo.webp</image:loc>
-      <image:title>Visual Easy 3D - Estúdio de Renderização Profissional</image:title>
+      <image:title>Visual Easy 3D - Estúdio de Renderização Profissional para Empreendimentos Imobiliários</image:title>
+      <image:caption>Logotipo oficial do estúdio especializado em renderização 3D arquitetônica de alta qualidade</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/01.webp</image:loc>
-      <image:title>Fachada de edifício renderizada em 3D</image:title>
+      <image:title>Renderização fotorrealista de fachada principal de empreendimento residencial de alto padrão</image:title>
+      <image:caption>Imagem principal de fachada renderizada em 3D com detalhes arquitetônicos premium e tratamento paisagístico</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/05.webp</image:loc>
+      <image:title>Renderização hiperrealista de interior de apartamento de luxo contemporâneo</image:title>
+      <image:caption>Visualização de interior de apartamento com sala integrada, mobiliário de design e acabamentos exclusivos</image:caption>
     </image:image>
   </url>
   
   <!-- Seção de Soluções -->
   <url>
     <loc>https://visualeasy3d.com.br/#solucoes</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_01.webp</image:loc>
-      <image:title>Fachada 3D diurna de edifício residencial</image:title>
+      <image:title>Fachada principal de edifício residencial com iluminação diurna e elementos arquitetônicos contemporâneos</image:title>
+      <image:caption>Renderização 3D de fachada com tratamento realista de materiais, texturas e iluminação natural</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_01.webp</image:loc>
+      <image:title>Sala de estar contemporânea com pé-direito duplo e acabamentos de alto padrão</image:title>
+      <image:caption>Render fotorrealista de ambiente interno com atenção aos detalhes de iluminação, textura e reflexões</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_01.webp</image:loc>
+      <image:title>Piscina com borda infinita e vista panorâmica em área de lazer exclusiva</image:title>
+      <image:caption>Visualização 3D de área externa com tratamento realista de água, paisagismo e iluminação natural</image:caption>
     </image:image>
   </url>
   
-  <!-- Subseções de Soluções -->
+  <!-- Subseção de Fachadas -->
   <url>
     <loc>https://visualeasy3d.com.br/#fachadas</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_02.webp</image:loc>
+      <image:title>Fachada noturna com iluminação cênica destacando volumes arquitetônicos</image:title>
+      <image:caption>Render noturno de fachada com tratamento especializado de luzes, sombras e reflexões em materiais diversos</image:caption>
+    </image:image>
   </url>
   
+  <!-- Subseção de Interiores -->
   <url>
     <loc>https://visualeasy3d.com.br/#interiores</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/interiores/interior_02.webp</image:loc>
+      <image:title>Cozinha integrada com ilha central em mármore e eletrodomésticos premium</image:title>
+      <image:caption>Visualização 3D de cozinha contemporânea com acabamentos sofisticados e iluminação técnica</image:caption>
+    </image:image>
   </url>
   
+  <!-- Subseção de Áreas Externas -->
   <url>
     <loc>https://visualeasy3d.com.br/#areas-externas</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/areas_externas/exterior_03.webp</image:loc>
+      <image:title>Área de lazer noturna com piscina iluminada e lounge com elementos paisagísticos</image:title>
+      <image:caption>Render noturno de área externa com iluminação cênica, tratamento de água e integração com paisagismo</image:caption>
+    </image:image>
   </url>
   
+  <!-- Subseção de Plantas Humanizadas -->
   <url>
     <loc>https://visualeasy3d.com.br/#plantas-humanizadas</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/humanizadas/planta_apto_tipo.webp</image:loc>
+      <image:title>Planta humanizada de apartamento tipo com 3 dormitórios e varanda gourmet</image:title>
+      <image:caption>Visualização superior de planta humanizada com mobiliário, texturas realistas e tratamento de luz</image:caption>
+    </image:image>
   </url>
   
+  <!-- Subseção de Filme/Animação -->
   <url>
-    <loc>https://visualeasy3d.com.br/#animacoes</loc>
-    <lastmod>2025-05-02</lastmod>
+    <loc>https://visualeasy3d.com.br/#filme-animacao</loc>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://visualeasy3d.com.br/public/assets/video/thumbnail-video-1.jpg</video:thumbnail_loc>
+      <video:title>Filme de apresentação de empreendimento imobiliário de alto padrão</video:title>
+      <video:description>Animação 3D que apresenta todos os detalhes do empreendimento, desde a implantação até os interiores e áreas de lazer</video:description>
+      <video:content_loc>https://visualeasy3d.com.br/public/assets/video/video-1.mp4</video:content_loc>
+      <video:player_loc>https://visualeasy3d.com.br/#filme-animacao</video:player_loc>
+      <video:duration>45</video:duration>
+      <video:publication_date>2023-01-15T08:00:00+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
   </url>
   
+  <!-- Subseção de Tour Virtual -->
   <url>
     <loc>https://visualeasy3d.com.br/#tour-virtual</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/tour_virtual/tour_preview.jpg</image:loc>
+      <image:title>Tour Virtual 360° de apartamento decorado com experiência imersiva</image:title>
+      <image:caption>Visualização interativa que permite navegação completa pelos ambientes do empreendimento</image:caption>
+    </image:image>
   </url>
   
   <!-- Seção de Orçamento -->
   <url>
     <loc>https://visualeasy3d.com.br/#orcamento</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -89,7 +151,7 @@
   <!-- Seção de Contato -->
   <url>
     <loc>https://visualeasy3d.com.br/#contato</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -97,9 +159,17 @@
   <!-- Seção de Parceiros -->
   <url>
     <loc>https://visualeasy3d.com.br/#parceiros</loc>
-    <lastmod>2025-05-02</lastmod>
+    <lastmod>2023-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-af.svg</image:loc>
+      <image:title>Logo da AF - Parceiro da Visual Easy 3D em projetos de renderização arquitetônica</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_05_parceiros/logo-tarjab.svg</image:loc>
+      <image:title>Logo da Tarjab - Incorporadora parceira da Visual Easy 3D</image:title>
+    </image:image>
   </url>
   
 </urlset>
