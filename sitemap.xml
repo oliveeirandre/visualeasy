@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://visualeasy3d.com.br/</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/identidade_visual/logo.webp</image:loc>
+      <image:title>Visual Easy 3D - Estúdio de Renderização Profissional</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_02_carrossel/01.webp</image:loc>
+      <image:title>Fachada de edifício renderizada em 3D</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Seção de Soluções -->
+  <url>
+    <loc>https://visualeasy3d.com.br/#solucoes</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://visualeasy3d.com.br/public/assets/section_04/fachadas/fachada_01.webp</image:loc>
+      <image:title>Fachada 3D diurna de edifício residencial</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Subseções de Soluções -->
+  <url>
+    <loc>https://visualeasy3d.com.br/#fachadas</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://visualeasy3d.com.br/#interiores</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://visualeasy3d.com.br/#areas-externas</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://visualeasy3d.com.br/#plantas-humanizadas</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://visualeasy3d.com.br/#animacoes</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://visualeasy3d.com.br/#tour-virtual</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Seção de Orçamento -->
+  <url>
+    <loc>https://visualeasy3d.com.br/#orcamento</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Seção de Contato -->
+  <url>
+    <loc>https://visualeasy3d.com.br/#contato</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Seção de Parceiros -->
+  <url>
+    <loc>https://visualeasy3d.com.br/#parceiros</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
