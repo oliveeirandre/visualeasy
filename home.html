@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Easy 3D - Estúdio de Renderização Profissional</title>
+
+  <!-- Preconnect para domínios externos (colocado no topo para iniciar conexões mais cedo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
+  <!-- Analytics - mantido no topo para capturar métricas corretamente -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-THZBSRV92T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-THZBSRV92T', {
+      'send_page_view': true,
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
+
+  <!-- Meta tags SEO aprimoradas -->
+  <meta name="description"
+    content="Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º." />
+  <meta name="keywords"
+    content="renderização 3D, imagens 3D, visualização arquitetônica, tour virtual 360, plantas humanizadas, fachadas 3D, interiores 3D" />
+  <meta name="author" content="Visual Easy 3D" />
+  <meta name="robots" content="index, follow" />
+  <meta name="generator" content="Visual Easy 3D" />
+
+  <!-- Open Graph para compartilhamento em redes sociais -->
+  <meta property="og:title" content="Visual Easy 3D - Estúdio de Renderização Profissional" />
+  <meta property="og:description"
+    content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://visualeasy3d.com.br" />
+  <meta property="og:image" content="https://visualeasy3d.com.br/public/assets/identidade_visual/preview.jpg" />
+  <meta property="og:site_name" content="Visual Easy 3D" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Visual Easy 3D - Estúdio de Renderização Profissional">
+  <meta name="twitter:description" content="Transformamos projetos em experiências visuais impactantes com renderização 3D realista. Fachadas, interiores, plantas humanizadas e tours 360º.">
+  <meta name="twitter:image" content="https://visualeasy3d.com.br/public/assets/identidade_visual/preview.jpg">
+
+  <!-- Meta tags de segurança -->
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- Links canônicos e alternativas para dispositivos -->
+  <link rel="canonical" href="https://visualeasy3d.com.br" />
+  <link rel="alternate" href="https://visualeasy3d.com.br" hreflang="pt-BR" />
+
+  <!-- Preload dos recursos críticos -->
+  <link rel="preload" href="public/assets/identidade_visual/logo.webp" as="image" type="image/webp" />
+  <link rel="preload" href="public/assets/section_02_carrossel/01.webp" as="image"
+    fetchpriority="high" type="image/webp" />
+
+  <!-- Estilos críticos inline (não alterados do original) -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #707070;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #fff;
+      padding: 1rem 1.5rem;
+      position: fixed;
+      width: 100%;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    header .logo {
+      height: 40px;
+      width: auto;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #eeeeee !important;
+    }
+    .pt-20 { padding-top: 5rem; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+      opacity: 1;
+    }
+    .logo-mask {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-mask img {
+      width: 80px;
+      height: 80px;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .mask-anim {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 2;
+      animation: revealLogo 2s cubic-bezier(.4,0,.2,1) forwards;
+    }
+    @keyframes revealLogo {
+      from { width: 100%; }
+      to   { width: 0%; }
+    }
+    #preloader.preloader-hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .custom-checkbox {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      display: inline-block;
+      line-height: 20px;
+    }
+
+    .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      transition: all 0.2s ease;
+    }
+
+    .custom-checkbox:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    .custom-checkbox input:checked~.checkmark {
+      background-color: #9c9c9c;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .custom-checkbox input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .custom-checkbox .checkmark:after {
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+      .mb-mobile-extra {
+        margin-bottom: 2.5rem !important;
+      }
+    }
+  </style>
+
+  <!-- Carregamento otimizado das fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- Swiper CSS com carregamento otimizado -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </noscript>
+
+  <!-- Microdata Schema.org expandido -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Visual Easy 3D",
+      "description": "Estúdio especializado em renderização 3D para projetos arquitetônicos.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Arthur Urbano de Andrade, Edifício Flamboyant, nº 10, sala 32",
+        "addressLocality": "Campinas",
+        "addressRegion": "São Paulo",
+        "postalCode": "13091-420",
+        "addressCountry": "BR"
+      },
+      "telephone": "+551996996756",
+      "email": "visualeasy.3d@gmail.com",
+      "url": "https://visualeasy3d.com.br",
+      "image": "https://visualeasy3d.com.br/public/assets/identidade_visual/logo.webp",
+      "sameAs": [
+        "https://www.instagram.com/visual.easy/",
+        "https://www.linkedin.com/company/visual-easy-3d/"
+      ],
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Renderização 3D",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Renderização de Fachadas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Renderização de Interiores"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Plantas Humanizadas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tour Virtual 360°"
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <!-- Tailwind CSS com defer para evitar bloqueio de renderização -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <script>
+    window.tailwindConfig = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#007bff',
+            secondary: '#f8f9fa',
+            dark: '#343a40',
+            gray: {
+              200: '#e9ecef',
+              700: '#707070'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.tailwind) {
+        window.tailwind.config = window.tailwindConfig;
+      }
+    });
+  </script>
+
+  <style>
+    body,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    div,
+    li,
+    td,
+    th,
+    label,
+    input,
+    textarea,
+    select {
+      color: #707070;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev,
+    button,
+    .cta-primary,
+    .btn-transition,
+    .whatsapp-float,
+    .custom-checkbox .checkmark:after,
+    .input-error,
+    .error-message,
+    input[type="submit"],
+    .text-yellow-400,
+    footer img,
+    #mobile-footer img {
+      color: inherit !important;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #eeeeee !important;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    #desktop-footer {
+      display: flex;
+      position: static;
+      box-shadow: none;
+      padding: 1.5rem 1rem;
+    }
+
+    #desktop-footer .container {
+      display: flex;
+      align-items: center;
+    }
+
+    #desktop-footer p {
+      display: block;
+      margin: 0;
+      font-size: 1.09375rem;
+      flex: 1;
+    }
+
+    #desktop-footer .flex {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #desktop-footer img {
+      height: 30px;
+      width: 30px;
+      margin-left: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    #desktop-footer img:hover {
+      transform: scale(1.1);
+    }
+
+    #mobile-footer {
+      display: none;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 85px;
+      right: 20px;
+      z-index: 100;
+      background-color: #dddddd;
+      color: white !important;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        display: none;
+      }
+    }
+
+    .btn-transition {
+      transition: all 0.3s ease;
+    }
+
+    .btn-transition:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-primary {
+      background-color: #007bff;
+      color: white !important;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 50, 170, 0.15);
+    }
+
+    .cta-primary:hover {
+      background-color: #0069d9;
+      transform: translateY(-2px);
+      box-shadow: 6px 8px rgba(0, 50, 170, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      #desktop-footer {
+        display: none;
+      }
+
+      #mobile-footer {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        background-color: white;
+        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        padding: 0.75rem 0.75rem;
+      }
+
+      #mobile-footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      #mobile-footer img {
+        height: 32px;
+        width: 32px;
+        transition: transform 0.3s ease;
+      }
+
+      #mobile-footer img:hover {
+        transform: scale(1.1);
+      }
+
+      #mobile-footer a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .input-focus {
+      transition: all 0.3s ease;
+      border: 1px solid #ced4da;
+    }
+
+    .input-focus:focus {
+      border-color: #535353;
+      box-shadow: 0 0 0 0.2rem rgba(184, 184, 184, 0.25);
+      outline: none;
+    }
+
+    .input-error {
+      border-color: #dc3545 !important;
+    }
+
+    .error-message {
+      color: #dc3545 !important;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .text-primary {
+      color: #007bff !important;
+    }
+
+    .text-yellow-400 {
+      color: #facc15 !important;
+    }
+
+    .solution-swiper .swiper-slide img {
+      height: 300px;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+
+    .plantas-swiper .swiper-slide img {
+      height: 300px;
+      width: 100%;
+      object-fit: contain !important;
+    }
+
+    .vimeo-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .video-nav-button {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+      background-color: rgba(112, 112, 112, 0.2);
+      width: 40px;
+      height: 40px;
+    }
+
+    .video-nav-button:hover {
+      background-color: rgba(112, 112, 112, 0.4);
+    }
+
+    .tour-swiper .swiper-button-next,
+    .tour-swiper .swiper-button-prev {
+      top: 32px;
+      bottom: auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      z-index: 51;
+    }
+
+    .tour-swiper .swiper-button-next {
+      right: 10px;
+    }
+
+    .tour-swiper .swiper-button-prev {
+      left: 10px;
+    }
+
+    .tour-swiper .swiper-button-next:after,
+    .tour-swiper .swiper-button-prev:after {
+      font-size: 18px;
+    }
+
+    @media (min-width: 1024px) {
+      .multi-image-swiper .swiper-slide {
+        width: 25%;
+      }
+
+      .dual-image-swiper .swiper-slide {
+        width: 50%;
+      }
+    }
+
+    #imageModal {
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease-in-out;
+    }
+
+    #modalImage {
+      max-height: 80vh;
+      max-width: 90vw;
+      transition: all 0.3s ease;
+    }
+
+    .lazy-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .lazy-section.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .main-thumbs-swiper {
+      width: 100%;
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+
+    .main-thumbs-swiper .swiper-slide {
+      opacity: 0.5;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .main-thumbs-swiper .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .main-thumbs-swiper .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    @media (min-width: 769px) {
+      .main-thumbs-container {
+        display: none;
+      }
+    }
+
+    .container p.text-lg {
+      font-size: 1.125rem;
+    }
+
+    @media (max-width: 768px) {
+      .container p.text-lg {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .main-swiper .swiper-slide img {
+        height: 55vh;
+        object-fit: cover;
+      }
+
+      .main-thumbs-swiper {
+        width: 95%;
+        height: auto;
+      }
+
+      .main-thumbs-swiper .swiper-slide {
+        height: 100px;
+      }
+
+      .py-16 {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+      }
+
+      section.py-16 {
+        margin-top: -50px !important;
+      }
+
+      .carousel-container {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .main-swiper {
+        height: 90vh;
+      }
+
+      .main-swiper .swiper-slide img {
+        height: 90vh;
+        object-fit: cover;
+      }
+
+      .carousel-container {
+        margin-bottom: 5px;
+      }
+    }
+
+    .logo-cloud {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logos-slider {
+      display: flex;
+      align-items: center;
+      animation: scroll 30s linear infinite;
+      width: max-content;
+    }
+
+    .logos-slider:hover {
+      animation-play-state: paused;
+    }
+
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 2rem;
+    }
+
+    .logo-item img {
+      height: 35px;
+      width: auto;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      filter: grayscale(100%);
+    }
+
+    .logo-item img:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    .blur-overlay-left,
+    .blur-overlay-right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 80px;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .blur-overlay-left {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+
+    .blur-overlay-right {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .w-1\/4 {
+        width: 100%;
+      }
+
+      .w-3\/4 {
+        width: 100%;
+      }
+    }
+
+    .loading-spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .submit-feedback {
+      display: none;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    .submit-success {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #059669;
+    }
+
+    .submit-error {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: #dc2626;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    textarea:focus-visible, select:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 2px solid #4a90e2;
+      outline-offset: 2px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-color: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #000;
+    }
+
+    video::-webkit-media-controls-panel {
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    }
+
+    .video-thumb-item {
+      opacity: 0.6;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .video-thumb-item:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .video-thumb-item.active {
+      opacity: 1;
+      border-color: #707070;
+    }
+
+    .loading-circle {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s linear infinite;
+    }
+
+    #imageModal .swipe-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    #imageModal .modal-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-loading-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background-color: #007bff;
+      transition: width 0.3s ease-out;
+      z-index: 10;
+    }
+  
+    #modalClose, #modalPrev, #modalNext {
+      z-index: 10 !important;
+    }
+
+    @media (max-width: 768px) {
+      #mobile-footer a:last-child img {
+        height: 35px !important;
+        width: 35px !important;
+      }
+    }
+  </style>
+  
+</head>
+
+<body class="bg-white">
+  <div id="preloader">
+    <div class="logo-mask">
+      <img src="public/assets/identidade_visual/logo.webp" alt="Visual Easy 3D" width="80" height="80" />
+      <div class="mask-anim"></div>
+    </div>
+  </div>
+
+  <header class="bg-white py-4 px-6 fixed w-full z-50 shadow-sm">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="font-bold">
+        <a href="#" id="logo" aria-label="Visual Easy 3D - Voltar ao topo">
+          <img src="public/assets/identidade_visual/logo.webp" alt="Logotipo Visual Easy 3D - Estúdio especializado em renderização 3D arquitetônica de alta qualidade" class="logo" width="160" height="40" />
+        </a>
+      </div>
+
+      <button id="menu-toggle" class="block md:hidden text-black focus:outline-none z-50 relative" aria-label="Menu"
+        aria-expanded="false" aria-controls="menu">
+        <div class="w-6 h-6 flex items-center justify-center relative">
+          <span id="bar-1" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-black top-1"></span>
+          <span id="bar-2" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-black top-2.5"></span>
+          <span id="bar-3" class="transform transition-all duration-300 absolute h-0.5 w-5 bg-black top-4"></span>
+        </div>
+      </button>
+
+      <div id="menu-overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 opacity-0"></div>
+
+      <nav id="menu"
+        class="fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 pt-20 md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none md:transform-none md:transition-none md:p-0 md:pt-0 md:translate-x-0 md:flex-row md:items-center md:space-y-0 md:space-x-8">
+        <a href="#solucoes"
+          class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">
+          Soluções
+        </a>
+        <a href="#orcamento"
+          class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">
+          Orçamento
+        </a>
+        <a href="#contato"
+		  class="font-thin hover:text-primary transition duration-300 py-3 border-b border-gray-200 md:border-none md:py-0">
+          Contato
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pt-20 relative">
+    <div class="swiper main-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/01.webp" alt="Renderização fotorrealista de fachada principal de empreendimento residencial de alto padrão com iluminação diurna e tratamento paisagístico" class="w-full object-cover" loading="eager" width="1920" height="1080" fetchpriority="high" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/02.webp" alt="Perspectiva angular de fachada contemporânea com detalhes em vidro e concreto aparente destacando a volumetria arquitetônica do edifício" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/03.webp" alt="Render de área externa exclusiva com piscina infinity, deck molhado e paisagismo integrado em ambiente de lazer de condomínio" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/04.webp" alt="Visualização hiperrealista de área de lazer com piscina, jardins e espaço gourmet ao ar livre com detalhes de iluminação e texturas naturais" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/05.webp" alt="Renderização de interior de apartamento de luxo com sala integrada, mobiliário contemporâneo e amplas aberturas para luz natural" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/06.webp" alt="Sala de estar de alto padrão com design de interiores premium, pé-direito duplo e acabamentos sofisticados em render 3D ultrarrealista" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/07.webp" alt="Cozinha gourmet com ilha central, armários planejados e eletrodomésticos de última geração em apartamento premium renderizado em 3D" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+        <div class="swiper-slide">
+          <img src="public/assets/section_02_carrossel/08.webp" alt="Planta humanizada de apartamento tipo com distribuição otimizada, 3 dormitórios, varanda gourmet e acabamentos realistas em renderização vista superior" class="w-full object-cover" loading="lazy" width="1920" height="1080" />
+        </div>
+      </div>
+      <div class="swiper-button-prev" aria-label="Imagem anterior"></div>
+      <div class="swiper-button-next" aria-label="Próxima imagem"></div>
+    </div>
+
+    <div class="main-thumbs-container">
+      <div class="swiper main-thumbs-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/01.webp" alt="Miniatura de fachada moderna residencial com tratamento de luz diurna e elementos arquitetônicos contemporâneos" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/02.webp" alt="Miniatura de perspectiva lateral da fachada com detalhes de revestimento e volumetria de projeto arquitetônico premium" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/03.webp" alt="Miniatura de área externa exclusiva com piscina e paisagismo integrado em ambiente de lazer de alto padrão" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/04.webp" alt="Miniatura de área de lazer completa com piscina, deck molhado e espaço gourmet para convivência em condomínio" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/05.webp" alt="Miniatura de interior de apartamento com sala ampla, decoração sofisticada e iluminação natural abundante" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/06.webp" alt="Miniatura de sala de estar contemporânea com pé-direito elevado, mobiliário exclusivo e detalhes arquitetônicos premium" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/07.webp" alt="Miniatura de cozinha planejada com ilha central, equipamentos de alta performance e integração com área social" loading="lazy" width="120" height="80" />
+          </div>
+          <div class="swiper-slide">
+            <img src="public/assets/section_02_carrossel/08.webp" alt="Miniatura de planta humanizada vista superior com layout otimizado, mobiliário e diferenciação de ambientes por texturas" loading="lazy" width="120" height="80" />
+          </div>          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6">
+    <div class="container mx-auto max-w-4xl text-center">
+      <p class="text-lg leading-relaxed font-thin">
+        Transformamos os seus projetos em experiências visuais impactantes. Nosso estúdio de renderização cria imagens 3D
+        de interiores, fachadas, plantas humanizadas, filmes e tours virtuais 360º, destacando o melhor do seu
+        empreendimento.
+      </p>
+    </div>
+  </section>
+
+<section id="solucoes" class="py-16 px-6">
+  <div class="container mx-auto">
+    <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
+
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_01.webp" alt="Fachada principal de edifício residencial com iluminação diurna destacando elementos arquitetônicos contemporâneos, revestimentos nobres e paisagismo integrado" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_02.webp" alt="Fachada noturna com iluminação cênica que valoriza volumes arquitetônicos, entrada monumental e tratamento de luz que destaca elementos estruturais e detalhes de design" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_03.webp" alt="Detalhe arquitetônico de fachada com jardim vertical integrado, painéis texturizados e brises que proporcionam conforto térmico em render ultrarrealista" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_04.webp" alt="Perspectiva aérea de empreendimento com implantação privilegiada, destacando a inserção urbana, volumetria do edifício e tratamento paisagístico do entorno" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_05.webp" alt="Vista aérea frontal de fachada com terraço gourmet integrado, varandas amplas e volumetria escalonada que maximiza a incidência de luz natural" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_06.webp" alt="Render fotorrealista de fachada posterior com áreas de convivência, piscina e tratamento de paisagismo que integra arquitetura e natureza" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_07.webp" alt="Perspectiva lateral de fachada com tratamento de luz ao entardecer, destacando elementos estruturais, esquadrias premium e revestimentos exclusivos" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/fachadas/fachada_08.webp" alt="Fachada em perspectiva com ângulo valorizado que evidencia a escala do empreendimento, detalhes construtivos e solução de acessos" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'fachada-swiper')" />
+            </div>            
+          </div>
+          <div class="swiper-button-prev" aria-label="Fachada anterior"></div>
+          <div class="swiper-button-next" aria-label="Próxima fachada"></div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Fachadas</h3>
+        <p class="font-thin">Fachadas diurnas | Fachadas noturnas | Detalhes de fachada | Fotomontagem</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_01.webp" alt="Sala de estar contemporânea com pé-direito duplo, mobiliário exclusivo, integração com área externa e acabamentos de alto padrão em render fotorrealista" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_02.webp" alt="Cozinha integrada com ilha central em mármore, armários planejados, eletrodomésticos embutidos e iluminação técnica que valoriza os espaços" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_03.webp" alt="Suíte master com cabeceira estofada, iluminação indireta, closet integrado e vista panorâmica através de amplas esquadrias" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_04.webp" alt="Banheiro de suíte com bancada dupla em material nobre, banheira autoportante, box em vidro temperado e iluminação zenital natural" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_05.webp" alt="Home office integrado com mobiliário ergonômico, estantes planejadas, iluminação técnica e conexão visual com áreas sociais" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_06.webp" alt="Sala de jantar sofisticada com mesa para 8 lugares, pendentes decorativos, painel em madeira nobre e integração com varanda gourmet" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_07.webp" alt="Espaço multiúso com home theater, sofá modular, painel acústico e automação residencial integrada para experiência audiovisual premium" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/interiores/interior_08.webp" alt="Varanda gourmet com churrasqueira a gás, adega climatizada, mobiliário outdoor e vista privilegiada da cidade em apartamento de alto padrão" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'interiores-swiper')" />
+            </div>            
+          </div>
+          <div class="swiper-button-prev" aria-label="Interior anterior"></div>
+          <div class="swiper-button-next" aria-label="Próximo interior"></div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Interiores</h3>
+        <p class="font-thin">Apartamentos | Áreas de uso comum</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_01.webp" alt="Piscina com borda infinita e vista panorâmica para o mar, deque molhado com espreguiçadeiras e bar molhado integrado ao solário" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_02.webp" alt="Espaço gourmet ao ar livre com pergolado, churrasqueira premium, forno de pizza e mobiliário outdoor em área de convivência exclusiva" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_03.webp" alt="Área de lazer noturna com piscina iluminada por LED subaquático, lounge com lareira a gás e paisagismo com iluminação cênica" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_04.webp" alt="Playground com brinquedos em madeira certificada, piso emborrachado antimpacto e área verde integrada com pergolado para sombra natural" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_05.webp" alt="Área de convivência externa com espelho d'água, jardim japonês e espaços contemplativos integrados ao paisagismo do empreendimento" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_06.webp" alt="Terraço com vista panorâmica, deck em madeira ecológica, mobiliário contemporâneo e jardim vertical que integra natureza ao espaço" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_07.webp" alt="Quadra poliesportiva com iluminação profissional, arquibancada e área de apoio integrada ao complexo de lazer do condomínio" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/areas_externas/exterior_08.webp" alt="Praça central do condomínio com espelho d'água, jardins ornamentais e caminhos suspensos que conectam as diferentes áreas de convivência" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'areas-externas-swiper')" />
+            </div>            
+          </div>
+          <div class="swiper-button-prev" aria-label="Área externa anterior"></div>
+          <div class="swiper-button-next" aria-label="Próxima área externa"></div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center">
+        <h3 class="text-xl font-medium mb-4">Áreas externas</h3>
+        <p class="font-thin">Piscinas | Áreas externas | Acessos</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_terreo.webp" alt="Planta humanizada do pavimento térreo com lobby de entrada, áreas de convivência, salão de festas e acessos setorizados com texturas e mobiliário realistas" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_pavimento_1.webp" alt="Planta humanizada do primeiro pavimento com áreas comuns, espaço fitness, coworking e lazer infantil com detalhes de acabamento e iluminação realista" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_pavimento_tipo.webp" alt="Planta humanizada do pavimento tipo com distribuição de unidades, circulação, áreas técnicas e elevadores em representação com mobiliário e texturas fotorrealistas" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'plantas-swiper')" />
+            </div>
+            <div class="swiper-slide">
+              <img src="public/assets/section_04/humanizadas/planta_apto_tipo.webp" alt="Planta humanizada de apartamento tipo com 3 dormitórios, suíte master com closet, living ampliado e varanda gourmet com mobiliário e detalhamento de acabamentos" class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer" loading="lazy" width="720" height="384" onclick="openModal(this, 'plantas-swiper')" />
+            </div>            
+          </div>
+          <div class="swiper-button-prev" aria-label="Planta anterior"></div>
+          <div class="swiper-button-next" aria-label="Próxima planta"></div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Plantas humanizadas</h3>
+        <p class="font-thin">Plantas humanizadas | Apartamento | Térreo | Áreas de uso comum</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 mb-8 md:mb-0">
+        <div class="flex items-center w-full">
+          <button id="prevVideo" class="video-nav-button mr-2" aria-label="Vídeo anterior">
+            &#10094;
+          </button>
+
+          <div class="aspect-video flex-1 relative rounded-lg overflow-hidden shadow-lg">
+            <video id="videoPlayer" class="w-full h-full object-cover"
+            preload="metadata" playsinline controls
+            controlsList="nodownload" oncontextmenu="return false;"
+            poster="public/assets/video/thumbnail-video-1.jpg">
+       <source src="public/assets/video/video-1.mp4" type="video/mp4">
+       <source src="public/assets/video/video-1.webm" type="video/webm">
+       <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt" srclang="pt">
+       Seu navegador não suporta o elemento de vídeo HTML5.
+     </video>
+
+            <div class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
+              <div class="loading-circle"></div>
+            </div>
+          </div>
+
+          <button id="nextVideo" class="video-nav-button ml-2" aria-label="Próximo vídeo">
+            &#10095;
+          </button>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-mobile-extra">
+        <h3 class="text-xl font-medium mb-4">Filme | Animação</h3>
+        <p class="font-thin">Filme de apresentação do empreendimento</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
+      <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
+        <div class="swiper tour-swiper solution-swiper dual-image-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html"
+                class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html"
+                class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+            <div class="swiper-slide">
+              <iframe src="https://tour360.meupasseiovirtual.com/070287/299768/tourvirtual/index.html"
+                class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy" title="Tour Virtual 360"></iframe>
+            </div>
+          </div>
+          <div class="swiper-button-prev" aria-label="Tour anterior"></div>
+          <div class="swiper-button-next" aria-label="Próximo tour"></div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex flex-col items-center justify-center text-center">
+        <h3 class="text-xl font-medium mb-4">Tour Virtual 360º</h3>
+        <p class="font-thin">Tour virtual 360º para imersão do cliente</p>
+      </div>
+    </div>
+
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="relative modal-content">
+        <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
+        <div class="image-loading-progress"></div>
+        <img id="modalImage" src="" alt="Imagem ampliada"
+          class="max-w-full max-h-screen rounded-lg shadow-lg object-contain" />
+        <button id="modalClose"
+          class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Fechar modal">
+          ✕
+        </button>
+        <button id="modalPrev"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Imagem anterior">
+          &#10094;
+        </button>
+        <button id="modalNext"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200" aria-label="Próxima imagem">
+          &#10095;
+        </button>
+        <div class="swipe-area" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section class="py-24 px-6 bg-white-50 logo-cloud pb-64">
+    <div class="container mx-auto max-w-6xl">
+      <h2 class="text-2xl font-medium mb-10 text-center">NOSSOS PARCEIROS</h2>
+
+      <div class="flex flex-col md:items-center">
+        <div class="w-full overflow-hidden relative">
+          <div class="logos-slider">
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5"
+                class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" />
+            </div>
+
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5" class="h-8" width="120" height="32" />
+			</div>
+			<div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8" width="120" height="32" />
+            </div>
+            <div class="logo-item">
+              <img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" />
+            </div>
+          </div>
+
+          <div class="blur-overlay-left"></div>
+          <div class="blur-overlay-right"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="orcamento" class="py-24 px-6 bg-white-100">
+    <div class="container mx-auto max-w-6xl">
+      <div class="text-center mb-12">
+        <p class="text-2xl font-medium mb-10">ATENDEMOS TODO O BRASIL</p>
+        <p class="text-md font-thin mt-4">Se interessou pelo nosso trabalho?</p>
+        <p class="text-md font-thin mt-4">
+          Solicite um orçamento ou confira as principais dúvidas.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:space-x-12">
+        <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
+          <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
+          <form id="orcamento-form" class="space-y-4">
+            <div>
+              <label for="nome" class="block text-sm font-bold mb-2">Nome*:</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                required
+                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+              />
+            </div>
+            <div>
+              <label for="incorporadora" class="block text-sm font-bold mb-2">Incorporadora*:</label>
+              <input
+                type="text"
+                id="incorporadora"
+                name="incorporadora"
+                required
+                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-bold mb-2">Email*:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+              />
+            </div>
+            <div>
+              <label for="whatsapp" class="block text-sm font-bold mb-2">Whatsapp*:</label>
+              <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                required
+                placeholder="(00) 0 0000-0000"
+                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+              />
+            </div>
+            <div>
+              <label for="cidade" class="block text-sm font-bold mb-2">Cidade*:</label>
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                required
+                class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus"
+              />
+            </div>
+
+            <div>
+              <p class="text-sm font-bold mb-2">Qual é o tipo de empreendimento:</p>
+              <div class="space-y-2">
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="residencial" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Torre de uso residencial
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="comercial" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Torre de uso comercial
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="loteamento" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Loteamento | Condomínio de lotes
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="tipo_empreendimento" value="outro" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Outro
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold mb-2">
+                Indique os itens que irão compor o material de lançamento do empreendimento:
+              </p>
+              <div class="space-y-2">
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="fachadas" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Fachadas
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="imagens_uso_comum" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Imagens áreas de uso comum
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="imagens_privativas" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Imagens áreas privativas
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="plantas_humanizadas" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Plantas humanizadas
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="tour_virtual" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Tour Virtual 360º
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="checkbox" name="itens[]" value="videos" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Vídeos | Filme
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold mb-2">Possui projeto de arquitetura de interiores:</p>
+              <div class="space-y-2">
+                <label class="custom-checkbox block">
+                  <input type="radio" name="projeto_interiores" value="sim" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Sim
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="projeto_interiores" value="nao" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Não
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold mb-2">Como gostaria de apresentar esse empreendimento:</p>
+              <div class="space-y-2">
+                <label class="custom-checkbox block">
+                  <input type="radio" name="apresentacao" value="pacote_compacto" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Pacote compacto com 20 imagens
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="apresentacao" value="lista_completa" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Lista completa de imagens para apresentar os principais ambientes do empreendimento
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="apresentacao" value="lista_completa_filme" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Lista completa de imagens, Filme de lançamento e/ou tour virtual 360º
+				</label>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-bold mb-2">Preferência de contato via:</p>
+              <div class="space-y-2">
+                <label class="custom-checkbox block">
+                  <input type="radio" name="contato" value="email" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Email
+                </label>
+                <label class="custom-checkbox block">
+                  <input type="radio" name="contato" value="whatsapp" class="mr-2" />
+                  <span class="checkmark"></span>
+                  Whatsapp
+                </label>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label class="custom-checkbox block">
+                <input type="checkbox" name="lgpd_consent" required class="mr-2" />
+                <span class="checkmark"></span>
+                Concordo com o tratamento dos meus dados de acordo com a LGPD
+              </label>
+            </div>
+
+            <div class="text-center mt-6">
+              <div class="inline-flex items-center">
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="bg-[#707070] hover:bg-[#5a5a5a] text-white !text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline btn-transition"
+                >
+                  Solicitar Proposta
+                </button>
+                <div id="loadingSpinner"
+                  class="loading-spinner"></div>
+              </div>
+
+              <div id="submitSuccess" class="submit-feedback submit-success">
+                Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.
+              </div>
+              <div id="submitError" class="submit-feedback submit-error">
+                Ocorreu um erro ao enviar sua solicitação. Por favor, tente novamente.
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
+          <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-semibold mb-2">1. Como posso solicitar um orçamento?</h4>
+              <p class="text-sm">
+                Você pode solicitar um orçamento de forma prática pelo formulário ao
+                lado, via e-mail ou pelo WhatsApp. Escolha o canal que for mais
+                conveniente para você!
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">
+                2. Preciso enviar o projeto para solicitar um orçamento?
+              </h4>
+              <p class="text-sm">
+                Sim, é necessário enviar o projeto para que possamos elaborar o
+                orçamento. Aceitamos arquivos nos formatos PDF ou DWG.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">3. Qual é o pacote mínimo de imagens?</h4>
+              <p class="text-sm">
+                Nosso orçamento mínimo contempla a criação de 20 imagens realistas.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">4. Qual é o prazo estimado para entrega?</h4>
+              <p class="text-sm">
+                O prazo de entrega é definido após a análise detalhada do projeto.
+                Garantimos pontualidade e qualidade em todas as entregas.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">5. Qual é a área de atuação da Visual Easy 3D?</h4>
+              <p class="text-sm">
+                Atendemos incorporadoras de todo o Brasil, desenvolvendo soluções
+                visuais realistas para torres residenciais e comerciais. Nosso
+                objetivo é potencializar o desempenho de lançamentos imobiliários,
+                conectando empreendimentos ao público certo.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">6. Vocês elaboram projetos de interiores?</h4>
+              <p class="text-sm">
+                Sim! Nossa equipe é formada por arquitetos especializados, prontos
+                para criar projetos de interiores com alto nível de detalhamento e
+                realismo.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">7. Como funcionam as alterações nas entregas?</h4>
+              <p class="text-sm">
+                Após a entrega inicial, o cliente pode revisar e solicitar ajustes.
+                Todo orçamento inclui uma revisão gratuita. Caso sejam necessárias
+                revisões extras, elas podem ser solicitadas à parte.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">8. Por que contratar a Visual Easy 3D?</h4>
+              <p class="text-sm">
+                O mercado imobiliário exige lançamentos impactantes e conectados ao
+                público-alvo. Na Visual Easy 3D, criamos representações realistas
+                que aproximam o futuro e a realidade, ajudando a destacar seu
+                empreendimento no mercado.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">9. Onde a Visual Easy 3D está localizada?</h4>
+              <p class="text-sm">
+                Estamos em Campinas - SP, mas atendemos clientes de todo o Brasil.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">
+                10. Como definir a lista de imagens do projeto?
+              </h4>
+              <p class="text-sm">
+                Se você ainda não tiver uma lista de ambientes a serem
+                representados, nossa equipe pode sugerir com base no projeto e no
+                perfil do empreendimento.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">11. Qual é o compromisso da Visual Easy 3D?</h4>
+              <p class="text-sm">
+                Nossa equipe é comprometida com a qualidade dos serviços e a
+                pontualidade rigorosa na entrega. Trabalhamos para superar as
+                expectativas de nossos clientes.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">
+                12. Como entrar em contato com a Visual Easy 3D?
+              </h4>
+              <p class="text-sm">
+                Se você tiver dúvidas ou quiser mais informações, entre em contato
+                conosco pelo formulário, e-mail ou WhatsApp. Estamos prontos para
+                ajudar!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="py-16 px-6">
+    <div class="container mx-auto text-center max-w-2xl">
+      <h2 class="text-2xl font-medium mb-8">CONTATO</h2>
+      <p class="mb-2">
+        <span class="font-medium">Contato:</span>
+        <a href="tel:+5519996996756" class="font-thin hover:underline">(19) 9 9699-6756</a>
+      </p>
+      <p class="mb-10">
+        <span class="font-medium">E-mail:</span>
+        <a href="mailto:visualeasy.3d@gmail.com"
+          class="font-thin hover:underline">visualeasy.3d@gmail.com</a>
+      </p>
+      <p class="mb-2 font-medium">Endereço:</p>
+      <p class="mb-1 font-thin">Rua Arthur Urbano de Andrade, Edifício Flamboyant, nº 10, sala 32</p>
+      <p class="mb-1 font-thin">Campinas, São Paulo</p>
+      <p class="font-thin">CEP: 13091-420</p>
+    </div>
+  </section>
+
+  <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contato WhatsApp">
+    <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="Ícone WhatsApp - Entre em contato para orçamentos de renderização 3D" width="35" height="35">
+  </a>
+
+  <footer id="desktop-footer" class="bg-white py-2 px-6 shadow-md">
+    <div class="container mx-auto flex items-center">
+      <p class="flex-1 font-thin">© 2022 por Visual Easy 3D. Todos os direitos reservados.</p>
+
+      <div class="flex justify-end">
+        <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
+          class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
+          <img src="public/assets/identidade_visual/instagram-icon.webp" alt="Ícone Instagram - Siga nosso portfólio de projetos de renderização 3D arquitetônica" class="h-8 w-8" width="32" height="32">
+        </a>
+        <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" rel="noopener"
+          class="hover:text-gray-500 transition duration-300" aria-label="LinkedIn">
+          <img src="public/assets/identidade_visual/linkedin-icon.webp" alt="Ícone LinkedIn - Conecte-se profissionalmente com nosso estúdio de visualização arquitetônica" class="h-8 w-8" width="32" height="32">
+        </a>
+        <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
+          aria-label="Email">
+          <img src="public/assets/identidade_visual/email-icon.webp" alt="Ícone Email - Solicite orçamentos ou informações sobre nossos serviços de renderização 3D" class="h-8 w-8" width="32" height="32">
+        </a>
+        <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener"
+          class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
+          <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <footer id="mobile-footer" class="bg-white py-2 px-6 shadow-md fixed bottom-0 left-0 w-full">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener"
+        class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
+        <img src="public/assets/identidade_visual/instagram-icon-grey.webp" alt="Instagram" class="h-8 w-8"
+          width="32" height="32">
+      </a>
+      <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
+        aria-label="Email">
+        <img src="public/assets/identidade_visual/email-icon-grey.webp" alt="Email" class="h-8 w-8" width="32"
+          height="32">
+      </a>
+      <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener"
+        class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
+        <img src="public/assets/identidade_visual/whatsapp-icon-grey.webp" alt="WhatsApp" class="h-8 w-8" width="32"
+          height="32">
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('img').forEach(function(img) {
+        img.setAttribute('oncontextmenu', 'return false;');
+        img.setAttribute('draggable', 'false');
+        img.setAttribute('ondragstart', 'return false;');
+        img.style.webkitUserSelect = 'none';
+        img.style.webkitTouchCallout = 'none';
+        img.style.userSelect = 'none';
+      });
+
+      // Opcional: Adicione também para os elementos iframe de tour virtual, se quiser dificultar a interação com o clique direito neles
+      document.querySelectorAll('iframe').forEach(function(iframe) {
+         iframe.setAttribute('oncontextmenu', 'return false;');
+         // Não faz sentido draggable/ondragstart para iframe, nem user-select
+      });
+    });
+  </script>
+  <script>
+    // Script de monitoramento de Web Vitals
+    window.addEventListener('load', function() {
+      // Monitoramento de performance básico
+      if ('performance' in window && 'getEntriesByType' in window.performance) {
+        setTimeout(function() {
+          const perfData = window.performance.getEntriesByType('navigation')[0];
+          const lcpEntry = window.performance.getEntriesByType('paint').find(entry => entry.name === 'largest-contentful-paint');
+          const fcp = window.performance.getEntriesByType('paint').find(entry => entry.name === 'first-contentful-paint');
+          
+          // Reporta métricas para Google Analytics
+          if (window.gtag && perfData) {
+            gtag('event', 'timing_complete', {
+              'name': 'load',
+              'value': Math.round(perfData.loadEventStart),
+              'event_category': 'Performance'
+            });
+          }
+          
+          if (window.gtag && lcpEntry) {
+            gtag('event', 'timing_complete', {
+              'name': 'lcp',
+              'value': Math.round(lcpEntry.startTime),
+              'event_category': 'Web Vitals'
+            });
+          }
+          
+          if (window.gtag && fcp) {
+            gtag('event', 'timing_complete', {
+              'name': 'fcp',
+              'value': Math.round(fcp.startTime),
+              'event_category': 'Web Vitals'
+            });
+          }
+        }, 3000);
+      }
+    });
+
+    // Logging de erros JavaScript
+    window.addEventListener('error', function(e) {
+      if (window.gtag) {
+        gtag('event', 'javascript_error', {
+          'event_category': 'Error',
+          'event_label': e.message,
+          'value': e.lineno,
+          'non_interaction': true
+        });
+      }
+      console.error('Error logged:', e.message);
+    });
+    
+    // Otimização do preloader para não bloquear renderização
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.classList.add('preloader-hide');
+          setTimeout(() => preloader.remove(), 300);
+        }
+      }, 300);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById("logo").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+      const bar1 = document.getElementById("bar-1");
+      const bar2 = document.getElementById("bar-2");
+      const bar3 = document.getElementById("bar-3");
+      const menuLinks = menu.querySelectorAll("a");
+
+      function toggleMenu() {
+        const isOpen = menu.classList.contains("translate-x-0");
+        if (isOpen) {
+          menu.classList.remove("translate-x-0");
+          menu.classList.add("translate-x-full");
+          menuOverlay.classList.add("opacity-0");
+          setTimeout(() => {
+            menuOverlay.classList.add("hidden");
+          }, 300);
+          bar1.classList.remove("rotate-45", "top-2.5");
+          bar2.classList.remove("opacity-0");
+          bar3.classList.remove("-rotate-45", "top-2.5");
+          document.body.classList.remove("overflow-hidden", "md:overflow-auto");
+          menuToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.remove("translate-x-full");
+          menu.classList.add("translate-x-0");
+          menuOverlay.classList.remove("hidden");
+          setTimeout(() => {
+            menuOverlay.classList.remove("opacity-0");
+          }, 10);
+          bar1.classList.add("rotate-45", "top-2.5");
+          bar2.classList.add("opacity-0");
+          bar3.classList.add("-rotate-45", "top-2.5");
+          document.body.classList.add("overflow-hidden", "md:overflow-auto");
+          menuToggle.setAttribute('aria-expanded', 'true');
+        }
+      }
+
+      menuToggle.addEventListener("click", toggleMenu);
+      menuOverlay.addEventListener("click", toggleMenu);
+      menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            toggleMenu();
+          }
+        });
+      });
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          menu.classList.remove("translate-x-0", "translate-x-full");
+          menuOverlay.classList.add("hidden", "opacity-0");
+          bar1.classList.remove("rotate-45", "top-2.5");
+          bar2.classList.remove("opacity-0");
+          bar3.classList.remove("-rotate-45", "top-2.5");
+          document.body.classList.remove("overflow-hidden");
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (typeof Swiper !== 'undefined') {
+        initializeSwipers();
+      } else {
+        const swiperScript = document.createElement('script');
+        swiperScript.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+        swiperScript.onload = initializeSwipers;
+        document.body.appendChild(swiperScript);
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      const videos = [
+        {
+          mp4: "public/assets/video/video-1.mp4",
+          webm: "public/assets/video/video-1.webm",
+          poster: "public/assets/video/thumbnail-video-1.jpg"
+        },
+        {
+          mp4: "public/assets/video/video-2.mp4",
+          webm: "public/assets/video/video-2.webm",
+          poster: "public/assets/video/thumbnail-video-2.jpg"
+        },
+        {
+          mp4: "public/assets/video/video-3.mp4",
+          webm: "public/assets/video/video-3.webm",
+          poster: "public/assets/video/thumbnail-video-3.jpg"
+        },
+        {
+          mp4: "public/assets/video/video-4.mp4",
+          webm: "public/assets/video/video-4.webm",
+          poster: "public/assets/video/thumbnail-video-4.jpg"
+        }
+      ];
+      let currentVideoIndex = 0;
+      const videoPlayer = document.getElementById("videoPlayer");
+      const loadingSpinner = document.querySelector(".video-loading-spinner");
+      const mp4Source = videoPlayer.querySelector('source[type="video/mp4"]');
+      const webmSource = videoPlayer.querySelector('source[type="video/webm"]');
+
+      function changeVideo(index) {
+        videoPlayer.pause();
+        loadingSpinner.classList.remove('hidden');
+        currentVideoIndex = index;
+        mp4Source.src = videos[index].mp4;
+        webmSource.src = videos[index].webm;
+        videoPlayer.poster = videos[index].poster;
+        videoPlayer.load();
+      }
+
+      function navigateVideo(direction) {
+        let newIndex;
+        if (direction === "next") {
+          newIndex = (currentVideoIndex + 1) % videos.length;
+        } else {
+          newIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+        }
+        changeVideo(newIndex);
+      }
+
+      document.getElementById("nextVideo").addEventListener("click", () => navigateVideo("next"));
+      document.getElementById("prevVideo").addEventListener("click", () => navigateVideo("prev"));
+
+      videoPlayer.addEventListener('loadeddata', function() {
+        loadingSpinner.classList.add('hidden');
+      });
+
+      videoPlayer.addEventListener('error', function() {
+        console.error('Erro ao carregar o vídeo');
+        loadingSpinner.classList.add('hidden');
+      });
+
+      videoPlayer.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+          navigateVideo("next");
+        } else if (e.key === 'ArrowLeft') {
+          navigateVideo("prev");
+        }
+      });
+    });
+
+    function initializeSwipers() {
+      const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
+        spaceBetween: 5,
+        slidesPerView: 3,
+        loop: true,
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+          640: { slidesPerView: 5 },
+          768: { slidesPerView: 7 }
+        }
+      });
+
+      const isMobile = window.innerWidth < 769;
+      const mainSwiperOptions = {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        speed: 800,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        a11y: {
+          prevSlideMessage: 'Imagem anterior',
+          nextSlideMessage: 'Próxima imagem',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+          },
+        }
+      };
+
+      if (isMobile) {
+        mainSwiperOptions.thumbs = { swiper: thumbsSwiper };
+      }
+
+      const mainSwiper = new Swiper('.main-swiper', mainSwiperOptions);
+
+      if (isMobile) {
+        mainSwiper.on('slideChange', function () {
+          const realIndex = mainSwiper.realIndex;
+          thumbsSwiper.slideToLoop(realIndex, 300, true);
+        });
+      }
+
+      const multiImageOptions = {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 5,
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 5,
+          },
+        },
+      };
+
+      const dualImageOptions = {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 5,
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 5,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+        },
+      };
+
+      new Swiper('.fachada-swiper', multiImageOptions);
+      new Swiper('.interiores-swiper', multiImageOptions);
+      new Swiper('.areas-externas-swiper', multiImageOptions);
+      new Swiper('.plantas-swiper', dualImageOptions);
+      new Swiper('.tour-swiper', {
+        ...dualImageOptions,
+        navigation: {
+          nextEl: '.tour-swiper .swiper-button-next',
+          prevEl: '.tour-swiper .swiper-button-prev',
+        },
+      });
+    }
+
+    (function () {
+      let currentImages = null;
+      let currentIndex = 0;
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const imageLoadingProgress = document.querySelector('.image-loading-progress');
+      const swipeArea = document.querySelector('#imageModal .swipe-area');
+      const btnPrev = document.getElementById('modalPrev');
+      const btnNext = document.getElementById('modalNext');
+      const btnClose = document.getElementById('modalClose');
+
+      modalImage.addEventListener('load', function () {
+        imageLoadingProgress.style.width = '100%';
+        setTimeout(() => {
+          imageLoadingProgress.style.width = '0%';
+        }, 300);
+      });
+
+      modalImage.addEventListener('error', function () {
+        imageLoadingProgress.style.width = '0%';
+        console.error('Erro ao carregar imagem no modal.');
+      });
+
+      window.openModal = function (image, swiperClass) {
+        const swiper = document.querySelector(`.${swiperClass} .swiper-wrapper`);
+        const images = swiper.querySelectorAll('img');
+        currentImages = Array.from(images);
+        currentIndex = currentImages.indexOf(image);
+
+        if (!currentImages || currentImages.length === 0 || currentIndex === -1) {
+            console.warn("Elemento clicado não é uma imagem ou não encontrado no swiper, modal não abrirá.");
+            return;
+        }
+
+        imageLoadingProgress.style.width = '0%';
+        modalImage.src = currentImages[currentIndex].src;
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+        document.addEventListener('keydown', handleKeyNavigation);
+      };
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        document.removeEventListener('keydown', handleKeyNavigation);
+      }
+
+      function showPrev() {
+        if (!currentImages || currentImages.length === 0) return;
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        imageLoadingProgress.style.width = '0%';
+        modalImage.src = currentImages[currentIndex].src;
+      }
+
+      function showNext() {
+        if (!currentImages || currentImages.length === 0) return;
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        imageLoadingProgress.style.width = '0%';
+        modalImage.src = currentImages[currentIndex].src;
+      }
+
+      function handleKeyNavigation(event) {
+        if (event.key === 'ArrowLeft') {
+          showPrev();
+        } else if (event.key === 'ArrowRight') {
+          showNext();
+        } else if (event.key === 'Escape') {
+          closeModal();
+        }
+      }
+
+      if(btnPrev) btnPrev.addEventListener('click', showPrev);
+      if(btnNext) btnNext.addEventListener('click', showNext);
+      if(btnClose) btnClose.addEventListener('click', closeModal);
+
+      let startX = null;
+      let isTouching = false;
+      const threshold = 50;
+
+      if (swipeArea) {
+        swipeArea.addEventListener('touchstart', function (e) {
+          if (window.innerWidth < 768 && e.touches.length === 1) {
+            startX = e.touches[0].clientX;
+            isTouching = true;
+          }
+        }, { passive: true });
+
+        swipeArea.addEventListener('touchend', function (e) {
+          if (!isTouching || startX === null) return;
+          const endX = e.changedTouches[0].clientX;
+          const deltaX = endX - startX;
+
+          if (Math.abs(deltaX) > threshold) {
+            if (deltaX > 0) {
+              showPrev();
+            } else {
+              showNext();
+            }
+          }
+          startX = null;
+          isTouching = false;
+        });
+      }
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal || e.target.classList.contains('modal-content')) {
+          closeModal();
+        }
+      });
+
+    })();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.getElementById('whatsapp');
+      if (!input) return;
+      input.addEventListener('input', function (e) {
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.slice(0, 11);
+        if (v.length > 0) v = '(' + v;
+        if (v.length > 3) v = v.slice(0, 3) + ') ' + v.slice(3);
+        if (v.length > 10) v = v.slice(0, 10) + '-' + v.slice(10);
+        e.target.value = v;
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("orcamento-form");
+      const submitSuccess = document.getElementById("submitSuccess");
+      const submitError = document.getElementById("submitError");
+      const loadingSpinner = document.getElementById("loadingSpinner");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        submitSuccess.style.display = "none";
+        submitError.style.display = "none";
+        loadingSpinner.style.display = "inline-block";
+
+        const formObj = {};
+        const formData = new FormData(form);
+
+        for (let [key, value] of formData.entries()) {
+          if (key !== 'itens[]') {
+            formObj[key] = value;
+          }
+        }
+
+        const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
+        formObj.itens = Array.from(checkedItems).map(cb => cb.value);
+
+        const jsonDataToSend = new FormData();
+        jsonDataToSend.append('json', JSON.stringify(formObj));
+
+        fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
+          method: "POST",
+          body: jsonDataToSend,
+        })
+          .then((response) => {
+            loadingSpinner.style.display = "none";
+
+            if (response.redirected) {
+              submitSuccess.style.display = "block";
+              form.reset();
+
+              if (typeof gtag === "function") {
+                gtag('event', 'enviar_orcamento', {
+                  'event_category': 'Formulário',
+                  'event_label': 'Orçamento'
+                });
+              }
+
+            } else if (response.ok) {
+              return response.text().then(text => {
+                console.log('Resposta do Apps Script (não redirecionado):', text);
+                submitSuccess.style.display = "block";
+                form.reset();
+
+                if (typeof gtag === "function") {
+                  gtag('event', 'enviar_orcamento', {
+                    'event_category': 'Formulário',
+                    'event_label': 'Orçamento'
+                  });
+                }
+
+              });
+            }
+            else {
+              return response.text().then(text => {
+                console.error('Erro na resposta do servidor (não OK):', response.status, text);
+                throw new Error(`Erro na resposta do servidor: ${response.status}`);
+              });
+            }
+          })
+          .catch((error) => {
+            loadingSpinner.style.display = "none";
+            submitSuccess.style.display = "none";
+            submitError.style.display = "block";
+            console.error("Erro no fetch ou processamento da resposta:", error);
+          });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+      whatsappLinks.forEach(function(link) {
+        link.addEventListener("click", function () {
+          if (typeof gtag === "function") {
+            gtag('event', 'clique_whatsapp', {
+              'event_category': 'Contato',
+              'event_label': 'WhatsApp'
+            });
+          }
+        });
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.swiper-button-next, .swiper-button-prev').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          let secao = "Carrossel principal";
+          const swiper = this.closest('.swiper');
+          if (swiper) {
+            if (swiper.classList.contains('fachada-swiper')) secao = "Fachadas";
+            if (swiper.classList.contains('interiores-swiper')) secao = "Interiores";
+            if (swiper.classList.contains('areas-externas-swiper')) secao = "Áreas externas";
+            if (swiper.classList.contains('plantas-swiper')) secao = "Plantas humanizadas";
+            if (swiper.classList.contains('tour-swiper')) secao = "Tour Virtual";
+          }
+          if (typeof gtag === "function") {
+            gtag('event', 'navegacao_galeria', {
+              'event_category': 'Interação',
+              'event_label': secao,
+              'direction': btn.classList.contains('swiper-button-next') ? 'próximo' : 'anterior'
+            });
+          }
+        });
+      });
+    
+      document.querySelectorAll('.solution-swiper img').forEach(function(img) {
+        img.addEventListener('click', function() {
+          let secao = "Indefinido";
+          const swiper = this.closest('.swiper');
+          if (swiper) {
+            if (swiper.classList.contains('fachada-swiper')) secao = "Fachadas";
+            if (swiper.classList.contains('interiores-swiper')) secao = "Interiores";
+            if (swiper.classList.contains('areas-externas-swiper')) secao = "Áreas externas";
+            if (swiper.classList.contains('plantas-swiper')) secao = "Plantas humanizadas";
+          }
+          if (typeof gtag === "function") {
+            gtag('event', 'visualizacao_ampliada', {
+              'event_category': 'Interação',
+              'event_label': secao
+            });
+          }
+        });
+      });
+    
+      document.querySelectorAll('#menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          const secao = this.getAttribute('href').replace('#', '');
+          if (typeof gtag === "function") {
+            gtag('event', 'navegacao_menu', {
+              'event_category': 'Navegação',
+              'event_label': secao
+            });
+          }
+        });
+      });
+
+      const videoPlayer = document.getElementById('videoPlayer');
+      if (videoPlayer) {
+        videoPlayer.addEventListener('play', function() {
+          if (typeof gtag === "function") {
+            gtag('event', 'video_play', {
+              'event_category': 'Vídeo',
+              'event_label': this.querySelector('source').getAttribute('src')
+            });
+          }
+        });
+        videoPlayer.addEventListener('ended', function() {
+          if (typeof gtag === "function") {
+            gtag('event', 'video_complete', {
+              'event_category': 'Vídeo',
+              'event_label': this.querySelector('source').getAttribute('src')
+            });
+          }
+        });
+      }
+    });
+    </script>
+   
+</body>
+
+</html>
