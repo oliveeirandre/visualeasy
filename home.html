@@ -849,6 +849,15 @@
           width: 35px !important;
         }
       }
+      #submitSuccess #waFollowUpBtn {
+          pointer-events: auto;
+          position: relative;
+          z-index: 2;
+      }
+      #submitSuccess {
+          position: relative;
+          z-index: 1;
+      }
     </style>
   </head>
 
@@ -1473,7 +1482,12 @@
                 <div id="submitSuccess" class="submit-feedback submit-success" aria-live="polite">
                   Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.
                   <div style="margin-top:8px;">
-                    <a id="waFollowUpBtn" href="#" target="_blank" rel="noopener" class="cta-primary" style="display:none;">Falar no WhatsApp</a>
+                                        <a
+                      id="waFollowUpBtn"
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="cta-primary" style="display:none; cursor:pointer;" title="Abrir conversa no WhatsApp">Falar no WhatsApp</a>
                   </div>
                 </div>
                 <div id="submitError" class="submit-feedback submit-error" aria-live="polite">
@@ -1522,7 +1536,7 @@
       </div>
     </section>
 
-    <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato WhatsApp">
+    <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato WhatsApp" title="Abrir WhatsApp">
       <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="Ícone WhatsApp - Entre em contato para orçamentos de renderização 3D" width="35" height="35">
     </a>
 
@@ -1540,7 +1554,7 @@
           <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300" aria-label="Email">
             <img src="public/assets/identidade_visual/email-icon.webp" alt="Ícone Email - Solicite orçamentos ou informações sobre nossos serviços de renderização 3D" class="h-8 w-8" width="32" height="32">
           </a>
-          <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
+          <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
             <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32">
           </a>
         </div>
@@ -1555,7 +1569,7 @@
         <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300" aria-label="Email">
           <img src="public/assets/identidade_visual/email-icon-grey.webp" alt="Email" class="h-8 w-8" width="32" height="32">
         </a>
-        <a href="https://wa.me/+5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
+        <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
           <img src="public/assets/identidade_visual/whatsapp-icon-grey.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32">
         </a>
       </div>
@@ -2003,17 +2017,21 @@
         function buildWaLinkFromForm(formObj) {
           const myNumber = '+5519996996756';
           const linhas = [
-            'Olá, Visual Easy!',
+            'Olá, Visual Easy 3D!',
             'Enviei uma solicitação de orçamento pelo site e gostaria de continuar por aqui.',
-            formObj.nome ? `Meu nome é ${formObj.nome}` : null,
-           formObj.incorporadora ? `Incorporadora: ${formObj.incorporadora}` : null,
+            formObj.nome ? `Meu nome: ${formObj.nome}` : null,
+            formObj.incorporadora ? `Incorporadora: ${formObj.incorporadora}` : null,
             '',
             'Podem me orientar sobre os próximos passos?'
-         ]
+          ]
             .filter(Boolean)
             .join('\n');
 
-          return `https://wa.me/${myNumber.replace(/\D/g, '')}?text=${encodeURIComponent(linhas)}`;
+          // Remove tudo que não for número do telefone e codifica o texto
+          const phone = myNumber.replace(/\D/g, '');
+          const text = encodeURIComponent(linhas);
+
+          return `https://wa.me/${phone}?text=${text}`;
         }
 
         form.addEventListener("submit", function (event) {
@@ -2044,6 +2062,15 @@
           const jsonDataToSend = new FormData();
           jsonDataToSend.append('json', JSON.stringify(formObj));
 
+          // Garante que o botão WhatsApp não está bloqueado por overlay/estilo
+          (function ensureWaBtnIsClickable() {
+            const waBtn = document.getElementById('waFollowUpBtn');
+            if (waBtn) {
+              waBtn.style.pointerEvents = 'auto';
+              waBtn.style.zIndex = '1';
+            }
+          })();
+          
           fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
             method: "POST",
             body: jsonDataToSend,
@@ -2051,13 +2078,34 @@
           .then((response) => {
             loadingSpinner.style.display = "none";
 
-            const waBtn = document.getElementById('waFollowUpBtn');
-            const applyWa = () => {
-              if (waBtn) {
-                waBtn.href = buildWaLinkFromForm(formObj);
-                waBtn.style.display = 'inline-block';
+            function applyWhatsappCTA(formObj) {
+              const waBtn = document.getElementById('waFollowUpBtn');
+              if (!waBtn) return;
+
+              const waUrl = buildWaLinkFromForm(formObj);
+              waBtn.href = waUrl;
+              waBtn.target = '_blank';
+              waBtn.rel = 'noopener noreferrer';
+              waBtn.style.display = 'inline-block';
+
+              // Analytics sem bloquear o clique
+              waBtn.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                  gtag('event', 'clique_whatsapp', {
+                    event_category: 'Contato',
+                    event_label: 'WhatsApp FollowUp',
+                  });
+                }
+              }, { passive: true, once: true });
+
+              // Opcional: abrir automaticamente no mobile
+              const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+              if (isMobile) {
+                setTimeout(() => {
+                  window.location.href = waUrl;
+                }, 400);
               }
-            };
+            }
 
             if (response.redirected) {
               submitSuccess.style.display = "block";
@@ -2066,7 +2114,7 @@
                 gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
               }
               submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              applyWa();
+              applyWhatsappCTA(formObj);
             } else if (response.ok) {
               return response.text().then(() => {
                 submitSuccess.style.display = "block";
@@ -2075,7 +2123,7 @@
                   gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
                 }
                 submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                applyWa();
+                applyWhatsappCTA(formObj);
               });
             } else {
               return response.text().then(text => {
@@ -2090,12 +2138,23 @@
             submitError.style.display = "block";
             console.error("Erro no fetch ou processamento da resposta:", error);
             submitError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Fallback: ainda assim prepara o botão do WhatsApp para o usuário tentar contato
+            try {
+              const waBtn = document.getElementById('waFollowUpBtn');
+              if (waBtn) {
+                waBtn.href = buildWaLinkFromForm(formObj);
+                waBtn.target = '_blank';
+                waBtn.rel = 'noopener noreferrer';
+                waBtn.style.display = 'inline-block';
+              }
+            } catch (e) {
+              console.warn('Falha ao preparar link WhatsApp no fallback:', e);
+            }
           })
           .finally(() => {
             if (submitBtn) submitBtn.disabled = false;
           });
         });
-      });
     </script>
 
     <script>
