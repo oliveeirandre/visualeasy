@@ -2002,20 +2002,18 @@
 
         function buildWaLinkFromForm(formObj) {
           const myNumber = '+5519996996756';
-          const itens = (formObj.itens || []).join(', ');
-          const msg = [
-            'Olá, aqui é o André da Visual Easy 3D 👋',
-            'Recebemos sua solicitação de orçamento pelo site.',
-            formObj.nome ? `Nome: ${formObj.nome}` : null,
-            formObj.incorporadora ? `Incorporadora: ${formObj.incorporadora}` : null,
-            formObj.cidade ? `Cidade: ${formObj.cidade}` : null,
-            formObj.tipo_empreendimento ? `Tipo: ${formObj.tipo_empreendimento}` : null,
-            itens ? `Itens: ${itens}` : null,
-            formObj.apresentacao ? `Apresentação: ${formObj.apresentacao}` : null,
+          const linhas = [
+            'Olá, Visual Easy!',
+            'Enviei uma solicitação de orçamento pelo site e gostaria de continuar por aqui.',
+            formObj.nome ? `Meu nome é ${formObj.nome}` : null,
+           formObj.incorporadora ? `Incorporadora: ${formObj.incorporadora}` : null,
             '',
-            'Podemos continuar por aqui no WhatsApp?'
-          ].filter(Boolean).join('\n');
-          return `https://wa.me/${myNumber.replace(/\D/g,'')}?text=${encodeURIComponent(msg)}`;
+            'Podem me orientar sobre os próximos passos?'
+         ]
+            .filter(Boolean)
+            .join('\n');
+
+          return `https://wa.me/${myNumber.replace(/\D/g, '')}?text=${encodeURIComponent(linhas)}`;
         }
 
         form.addEventListener("submit", function (event) {
