@@ -7,15 +7,11 @@
         http://www.google.com/schemas/sitemap-image/1.1
         http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Página principal (A ÚNICA URL oficial para indexação) -->
   <url>
     <loc>https://visualeasy.com.br/</loc>
-    <!-- Atualize esta data sempre que fizer alterações importantes no site -->
     <lastmod>2025-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-
-    <!-- === IMAGENS DA PÁGINA PRINCIPAL === -->
 
     <!-- Identidade Visual -->
     <image:image>

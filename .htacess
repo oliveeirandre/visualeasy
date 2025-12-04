@@ -29,12 +29,12 @@
 # ----------------------------------------------------------------------
 # Brotli (se disponível no servidor)
 <IfModule mod_brotli.c>
-    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css application/javascript application/json image/svg+xml image/x-icon application/xml
 </IfModule>
 
 # Gzip (fallback comum)
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml image/x-icon application/xml
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -51,6 +51,8 @@
     ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
 
     # Fontes: 1 ano
     ExpiresByType font/ttf "access plus 1 year"
@@ -70,20 +72,30 @@
     <FilesMatch "\.(js|css)$">
         Header set Cache-Control "public, max-age=2592000, immutable"
     </FilesMatch>
-    <FilesMatch "\.(png|jpg|jpeg|gif|webp|svg|ico|woff2?)$">
+    <FilesMatch "\.(png|jpg|jpeg|gif|webp|svg|ico|woff2?|mp4|webm)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 </IfModule>
 
 # ----------------------------------------------------------------------
-# Segurança Básica
+# Segurança Básica e Headers Modernos
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
+    # Evita que o site seja carregado em iframes de terceiros (Clickjacking protection)
     Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Previne que o navegador adivinhe o tipo de arquivo (MIME sniffing)
     Header always set X-Content-Type-Options "nosniff"
-    Header always set X-XSS-Protection "1; mode=block"
-    # Opcional: reforça HTTPS para navegadores (não substitui TLS)
+    
+    # HSTS: Reforça HTTPS para navegadores (incluindo subdomínios)
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+    
+    # Referrer Policy: Protege dados de referência ao sair do site
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy: Desabilita recursos não usados (Câmera, Microfone, Geolocalização)
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
     # Remove assinatura do servidor (se permitido)
     ServerSignature Off
 </IfModule>
@@ -91,5 +103,5 @@
 # ----------------------------------------------------------------------
 # Proteções simples
 # ----------------------------------------------------------------------
-# Bloqueia listagem de diretórios (se não houver index)
+# Bloqueia listagem de diretórios
 Options -Indexes

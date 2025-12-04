@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Aponta para o mapa do site completo
 Sitemap: https://visualeasy.com.br/sitemap.xml

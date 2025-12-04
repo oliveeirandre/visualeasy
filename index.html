@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Visual Easy 3D - Estúdio de Renderização Profissional</title>
 
-    <!-- CANONICAL: Aponta para a raiz (versão oficial) -->
+    <!-- CANONICAL -->
     <link rel="canonical" href="https://visualeasy.com.br/" />
     <link rel="alternate" href="https://visualeasy.com.br/" hreflang="pt-BR" />
 
@@ -23,7 +24,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics (Deferido para não bloquear) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-THZBSRV92T"
@@ -86,10 +87,6 @@
       content="https://visualeasy.com.br/public/assets/identidade_visual/preview.jpg"
     />
 
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-
     <!-- Preload LCP Images -->
     <link
       rel="preload"
@@ -105,7 +102,7 @@
       type="image/webp"
     />
 
-    <!-- CSS Fonts & Libs -->
+    <!-- CSS Fonts & Libs (Otimizado com display=swap) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -177,7 +174,7 @@
       }
     </script>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Mantido via CDN conforme solicitação, mas otimizado) -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
       window.tailwindConfig = {
@@ -200,664 +197,9 @@
       });
     </script>
 
+    <!-- CSS Minificado para Performance -->
     <style>
-      body, p, h1, h2, h3, h4, h5, h6, span, div, li, td, th, label, input, textarea, select {
-        font-family: 'Poppins', sans-serif;
-        color: #707070;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-      }
-      /* H1 oculto para SEO */
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-      }
-      header {
-        background-color: #fff;
-        padding: 1rem 1.5rem;
-        position: fixed;
-        width: 100%;
-        z-index: 50;
-        top: 0;
-        left: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-      }
-      header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      header .logo {
-        height: 40px;
-        width: auto;
-      }
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #eeeeee !important;
-      }
-      .pt-20 {
-        padding-top: 5rem;
-      }
-      .container {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .py-16 {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-      .px-6 {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-      #preloader {
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
-        opacity: 1;
-      }
-      .logo-mask {
-        position: relative;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .logo-mask img {
-        width: 80px;
-        height: 80px;
-        display: block;
-        position: relative;
-        z-index: 1;
-      }
-      .mask-anim {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        z-index: 2;
-        animation: revealLogo 2s cubic-bezier(.4,0,.2,1) forwards;
-      }
-      @keyframes revealLogo {
-        from {
-          width: 100%;
-        }
-        to {
-          width: 0%;
-        }
-      }
-      #preloader.preloader-hide {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      /* Checkbox & Inputs */
-      .custom-checkbox {
-        position: relative;
-        padding-left: 30px;
-        cursor: pointer;
-        display: inline-block;
-        line-height: 20px;
-      }
-      .custom-checkbox input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-      }
-      .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: #eee;
-        border: 1px solid #ccc;
-        transition: all 0.2s ease;
-      }
-      .custom-checkbox:hover input ~ .checkmark {
-        background-color: #ccc;
-      }
-      .custom-checkbox input:checked ~ .checkmark {
-        background-color: #9c9c9c;
-      }
-      .checkmark:after {
-        content: '';
-        position: absolute;
-        display: none;
-      }
-      .custom-checkbox input:checked ~ .checkmark:after {
-        display: block;
-      }
-      .custom-checkbox .checkmark:after {
-        left: 7px;
-        top: 3px;
-        width: 5px;
-        height: 10px;
-        border: solid white;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-      }
-      .input-focus {
-        transition: all 0.3s ease;
-        border: 1px solid #ced4da;
-      }
-      .input-focus:focus {
-        border-color: #535353;
-        box-shadow: 0 0 0 0.2rem rgba(184, 184, 184, 0.25);
-        outline: none;
-      }
-      .input-error {
-        border-color: #dc3545 !important;
-      }
-      .error-message {
-        color: #dc3545 !important;
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-      }
-
-      @media (max-width: 768px) {
-        .mb-mobile-extra {
-          margin-bottom: 2.5rem !important;
-        }
-      }
-      .swiper-button-next:after,
-      .swiper-button-prev:after {
-        font-size: 36px;
-        font-weight: bold;
-      }
-      #desktop-footer {
-        display: flex;
-        position: static;
-        box-shadow: none;
-        padding: 1.5rem 1rem;
-      }
-      #desktop-footer .container {
-        display: flex;
-        align-items: center;
-      }
-      #desktop-footer p {
-        display: block;
-        margin: 0;
-        font-size: 1.09375rem;
-        flex: 1;
-      }
-      #desktop-footer .flex {
-        display: flex;
-        justify-content: flex-end;
-      }
-      #desktop-footer img {
-        height: 30px;
-        width: 30px;
-        margin-left: 1rem;
-        transition: transform 0.3s ease;
-      }
-      #desktop-footer img:hover {
-        transform: scale(1.1);
-      }
-      #mobile-footer {
-        display: none;
-      }
-      .whatsapp-float {
-        position: fixed;
-        bottom: 85px;
-        right: 20px;
-        z-index: 100;
-        background-color: #dddddd;
-        color: white !important;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
-      }
-      .whatsapp-float:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-      .whatsapp-float img {
-        width: 35px;
-        height: 35px;
-      }
-      @media (max-width: 768px) {
-        .whatsapp-float {
-          display: none;
-        }
-      }
-      .btn-transition {
-        transition: all 0.3s ease;
-      }
-      .btn-transition:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .cta-primary {
-        background-color: #007bff;
-        color: white !important;
-        font-weight: bold;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.375rem;
-        display: inline-block;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 50, 170, 0.15);
-      }
-      .cta-primary:hover {
-        background-color: #0069d9;
-        transform: translateY(-2px);
-        box-shadow: 6px 8px rgba(0, 50, 170, 0.2);
-      }
-      @media (max-width: 768px) {
-        #desktop-footer {
-          display: none;
-        }
-        #mobile-footer {
-          display: flex;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          z-index: 50;
-          background-color: white;
-          box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-          padding: 0.75rem 0.75rem;
-        }
-        #mobile-footer .container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          text-align: center;
-          width: 100%;
-        }
-        #mobile-footer img {
-          height: 32px;
-          width: 32px;
-          transition: transform 0.3s ease;
-        }
-        #mobile-footer img:hover {
-          transform: scale(1.1);
-        }
-        #mobile-footer a {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-        }
-      }
-      .fade-in {
-        animation: fadeIn 0.8s ease-in;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .text-primary {
-        color: #007bff !important;
-      }
-      .text-yellow-400 {
-        color: #facc15 !important;
-      }
-      .solution-swiper .swiper-slide img {
-        height: 300px;
-        object-fit: cover;
-        margin: 0 auto;
-      }
-      .plantas-swiper .swiper-slide img {
-        height: 300px;
-        width: 100%;
-        object-fit: contain !important;
-      }
-      .vimeo-container {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        overflow: hidden;
-        border-radius: 8px;
-      }
-      .video-nav-button {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s ease;
-        z-index: 10;
-        background-color: rgba(112, 112, 112, 0.2);
-        width: 40px;
-        height: 40px;
-      }
-      .video-nav-button:hover {
-        background-color: rgba(112, 112, 112, 0.4);
-      }
-      .tour-swiper .swiper-button-next,
-      .tour-swiper .swiper-button-prev {
-        top: 32px;
-        bottom: auto;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        z-index: 51;
-      }
-      .tour-swiper .swiper-button-next {
-        right: 10px;
-      }
-      .tour-swiper .swiper-button-prev {
-        left: 10px;
-      }
-      .tour-swiper .swiper-button-next:after,
-      .tour-swiper .swiper-button-prev:after {
-        font-size: 18px;
-      }
-      @media (min-width: 1024px) {
-        .multi-image-swiper .swiper-slide {
-          width: 25%;
-        }
-        .dual-image-swiper .swiper-slide {
-          width: 50%;
-        }
-      }
-      #imageModal {
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease-in-out;
-      }
-      #modalImage {
-        max-height: 80vh;
-        max-width: 90vw;
-        transition: all 0.3s ease;
-      }
-      .lazy-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-      .lazy-section.loaded {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .main-thumbs-swiper {
-        width: 100%;
-        padding: 10px 0;
-        box-sizing: border-box;
-      }
-      .main-thumbs-swiper .swiper-slide {
-        opacity: 0.5;
-        cursor: pointer;
-        overflow: hidden;
-      }
-      .main-thumbs-swiper .swiper-slide-thumb-active {
-        opacity: 1;
-      }
-      .main-thumbs-swiper .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 3px;
-      }
-      @media (min-width: 769px) {
-        .main-thumbs-container {
-          display: none;
-        }
-      }
-      .container p.text-lg {
-        font-size: 1.125rem;
-      }
-      @media (max-width: 768px) {
-        .container p.text-lg {
-          font-size: 0.9rem;
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-        .main-swiper .swiper-slide img {
-          height: 55vh;
-          object-fit: cover;
-        }
-        .main-thumbs-swiper {
-          width: 95%;
-          height: auto;
-        }
-        .main-thumbs-swiper .swiper-slide {
-          height: 100px;
-        }
-        .py-16 {
-          padding-top: 1rem;
-          padding-bottom: 2rem;
-        }
-        section.py-16 {
-          margin-top: -50px !important;
-        }
-        .carousel-container {
-          margin-bottom: 15px;
-        }
-      }
-      @media (min-width: 769px) {
-        .main-swiper {
-          height: 90vh;
-        }
-        .main-swiper .swiper-slide img {
-          height: 90vh;
-          object-fit: cover;
-        }
-        .carousel-container {
-          margin-bottom: 5px;
-        }
-      }
-      .logo-cloud {
-        overflow: hidden;
-        position: relative;
-      }
-      .logos-slider {
-        display: flex;
-        align-items: center;
-        animation: scroll 30s linear infinite;
-        width: max-content;
-      }
-      .logos-slider:hover {
-        animation-play-state: paused;
-      }
-      .logo-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 2rem;
-      }
-      .logo-item img {
-        height: 35px;
-        width: auto;
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
-        filter: grayscale(100%);
-      }
-      .logo-item img:hover {
-        opacity: 1;
-        filter: grayscale(0%);
-      }
-      .blur-overlay-left,
-      .blur-overlay-right {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 80px;
-        pointer-events: none;
-        z-index: 5;
-      }
-      .blur-overlay-left {
-        left: 0;
-        background: linear-gradient(to right, white, transparent);
-      }
-      .blur-overlay-right {
-        right: 0;
-        background: linear-gradient(to left, white, transparent);
-      }
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-      @media (max-width: 768px) {
-        .flex-col {
-          flex-direction: column;
-        }
-        .w-1\/4,
-        .w-3\/4 {
-          width: 100%;
-        }
-      }
-      .loading-spinner {
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: #fff;
-        animation: spin 1s linear infinite;
-        margin-left: 10px;
-      }
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      .submit-feedback {
-        display: none;
-        padding: 0.5rem;
-        margin-top: 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-        text-align: center;
-      }
-      .submit-success {
-        background-color: rgba(16, 185, 129, 0.1);
-        color: #059669;
-      }
-      .submit-error {
-        background-color: rgba(239, 68, 68, 0.1);
-        color: #dc2626;
-      }
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      textarea:focus-visible,
-      select:focus-visible,
-      [tabindex]:focus-visible {
-        outline: 2px solid #4a90e2;
-        outline-offset: 2px;
-      }
-      .video-container {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        background-color: #000;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .video-container video {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        background-color: #000;
-      }
-      video::-webkit-media-controls-panel {
-        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
-      }
-      .video-thumb-item {
-        opacity: 0.6;
-        transition: all 0.2s ease;
-        border: 2px solid transparent;
-      }
-      .video-thumb-item:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-      }
-      .video-thumb-item.active {
-        opacity: 1;
-        border-color: #707070;
-      }
-      .loading-circle {
-        width: 40px;
-        height: 40px;
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: #fff;
-        animation: spin 1s linear infinite;
-      }
-      #imageModal .swipe-area {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-      }
-      #imageModal .modal-content {
-        position: relative;
-        z-index: 2;
-      }
-      .image-loading-progress {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 4px;
-        background-color: #007bff;
-        transition: width 0.3s ease-out;
-        z-index: 10;
-      }
-      #modalClose,
-      #modalPrev,
-      #modalNext {
-        z-index: 10 !important;
-      }
-      @media (max-width: 768px) {
-        #mobile-footer a:last-child img {
-          height: 35px !important;
-          width: 35px !important;
-        }
-      }
-      #submitSuccess #waFollowUpBtn {
-          pointer-events: auto;
-          position: relative;
-          z-index: 2;
-      }
-      #submitSuccess {
-          position: relative;
-          z-index: 1;
-      }
+      body,div,h1,h2,h3,h4,h5,h6,input,label,li,p,select,span,td,textarea,th{font-family:Poppins,sans-serif;color:#707070}body{margin:0;padding:0;overflow-x:hidden}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}header{background-color:#fff;padding:1rem 1.5rem;position:fixed;width:100%;z-index:50;top:0;left:0;box-shadow:0 2px 4px rgba(0,0,0,.1);box-sizing:border-box}header .container{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:0 auto}header .logo{height:40px;width:auto}.swiper-button-next,.swiper-button-prev{color:#eee!important}.pt-20{padding-top:5rem}.container{width:100%;max-width:1280px;margin:0 auto}.text-center{text-align:center}.py-16{padding-top:4rem;padding-bottom:4rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}#preloader{position:fixed;inset:0;z-index:9999;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .7s cubic-bezier(.4,0,.2,1);opacity:1}.logo-mask{position:relative;width:80px;height:80px;display:flex;align-items:center;justify-content:center}.logo-mask img{width:80px;height:80px;display:block;position:relative;z-index:1}.mask-anim{position:absolute;left:0;top:0;bottom:0;width:100%;background:#fff;z-index:2;animation:revealLogo 2s cubic-bezier(.4,0,.2,1) forwards}@keyframes revealLogo{from{width:100%}to{width:0}}#preloader.preloader-hide{opacity:0;pointer-events:none}.custom-checkbox{position:relative;padding-left:30px;cursor:pointer;display:inline-block;line-height:20px}.custom-checkbox input{position:absolute;opacity:0;cursor:pointer}.checkmark{position:absolute;top:0;left:0;height:20px;width:20px;background-color:#eee;border:1px solid #ccc;transition:all .2s ease}.custom-checkbox:hover input~.checkmark{background-color:#ccc}.custom-checkbox input:checked~.checkmark{background-color:#9c9c9c}.checkmark:after{content:'';position:absolute;display:none}.custom-checkbox input:checked~.checkmark:after{display:block}.custom-checkbox .checkmark:after{left:7px;top:3px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}.input-focus{transition:all .3s ease;border:1px solid #ced4da}.input-focus:focus{border-color:#535353;box-shadow:0 0 0 .2rem rgba(184,184,184,.25);outline:0}.input-error{border-color:#dc3545!important}.error-message{color:#dc3545!important;font-size:.875rem;margin-top:.25rem}.swiper-button-next:after,.swiper-button-prev:after{font-size:36px;font-weight:700}#desktop-footer{display:flex;position:static;box-shadow:none;padding:1.5rem 1rem}#desktop-footer .container{display:flex;align-items:center}#desktop-footer p{display:block;margin:0;font-size:1.09375rem;flex:1}#desktop-footer .flex{display:flex;justify-content:flex-end}#desktop-footer img{height:30px;width:30px;margin-left:1rem;transition:transform .3s ease}#desktop-footer img:hover{transform:scale(1.1)}#mobile-footer{display:none}.whatsapp-float{position:fixed;bottom:85px;right:20px;z-index:100;background-color:#ddd;color:#fff!important;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 8px rgba(0,0,0,.15);transition:all .3s ease}.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 12px rgba(0,0,0,.2)}.whatsapp-float img{width:35px;height:35px}.btn-transition{transition:all .3s ease}.btn-transition:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(0,0,0,.1)}.cta-primary{background-color:#007bff;color:#fff!important;font-weight:700;padding:.75rem 1.5rem;border-radius:.375rem;display:inline-block;transition:all .3s ease;box-shadow:0 4px 6px rgba(0,50,170,.15)}.cta-primary:hover{background-color:#0069d9;transform:translateY(-2px);box-shadow:6px 8px rgba(0,50,170,.2)}.fade-in{animation:fadeIn .8s ease-in}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.text-primary{color:#007bff!important}.text-yellow-400{color:#facc15!important}.solution-swiper .swiper-slide img{height:300px;object-fit:cover;margin:0 auto}.plantas-swiper .swiper-slide img{height:300px;width:100%;object-fit:contain!important}.vimeo-container{position:relative;width:100%;height:300px;overflow:hidden;border-radius:8px}.video-nav-button{color:rgba(255,255,255,.7);font-size:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background-color .3s ease;z-index:10;background-color:rgba(112,112,112,.2);width:40px;height:40px}.video-nav-button:hover{background-color:rgba(112,112,112,.4)}.tour-swiper .swiper-button-next,.tour-swiper .swiper-button-prev{top:32px;bottom:auto;background-color:rgba(255,255,255,.7);border-radius:50%;width:40px;height:40px;z-index:51}.tour-swiper .swiper-button-next{right:10px}.tour-swiper .swiper-button-prev{left:10px}.tour-swiper .swiper-button-next:after,.tour-swiper .swiper-button-prev:after{font-size:18px}#imageModal{backdrop-filter:blur(5px);transition:all .3s ease-in-out}#modalImage{max-height:80vh;max-width:90vw;transition:all .3s ease}.lazy-section{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.lazy-section.loaded{opacity:1;transform:translateY(0)}.main-thumbs-swiper{width:100%;padding:10px 0;box-sizing:border-box}.main-thumbs-swiper .swiper-slide{opacity:.5;cursor:pointer;overflow:hidden}.main-thumbs-swiper .swiper-slide-thumb-active{opacity:1}.main-thumbs-swiper .swiper-slide img{width:100%;height:100%;object-fit:cover;border-radius:3px}@media (min-width:769px){.main-thumbs-container{display:none}.main-swiper{height:90vh}.main-swiper .swiper-slide img{height:90vh;object-fit:cover}.carousel-container{margin-bottom:5px}}.container p.text-lg{font-size:1.125rem}.logo-cloud{overflow:hidden;position:relative}.logos-slider{display:flex;align-items:center;animation:scroll 30s linear infinite;width:max-content}.logos-slider:hover{animation-play-state:paused}.logo-item{display:flex;align-items:center;justify-content:center;margin:0 2rem}.logo-item img{height:35px;width:auto;opacity:.7;transition:opacity .3s ease;filter:grayscale(100%)}.logo-item img:hover{opacity:1;filter:grayscale(0)}.blur-overlay-left,.blur-overlay-right{position:absolute;top:0;height:100%;width:80px;pointer-events:none;z-index:5}.blur-overlay-left{left:0;background:linear-gradient(to right,white,transparent)}.blur-overlay-right{right:0;background:linear-gradient(to left,white,transparent)}@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.loading-spinner{display:none;width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-radius:50%;border-top-color:#fff;animation:spin 1s linear infinite;margin-left:10px}@keyframes spin{to{transform:rotate(360deg)}}.submit-feedback{display:none;padding:.5rem;margin-top:.5rem;border-radius:.25rem;font-size:.875rem;text-align:center}.submit-success{background-color:rgba(16,185,129,.1);color:#059669}.submit-error{background-color:rgba(239,68,68,.1);color:#dc2626}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #4a90e2;outline-offset:2px}.video-container{position:relative;width:100%;height:300px;background-color:#000;border-radius:8px;overflow:hidden}.video-container video{width:100%;height:100%;object-fit:contain;background-color:#000}video::-webkit-media-controls-panel{background-image:linear-gradient(transparent,rgba(0,0,0,.5))}.video-thumb-item{opacity:.6;transition:all .2s ease;border:2px solid transparent}.video-thumb-item:hover{opacity:.9;transform:translateY(-2px)}.video-thumb-item.active{opacity:1;border-color:#707070}.loading-circle{width:40px;height:40px;border:4px solid rgba(255,255,255,.3);border-radius:50%;border-top-color:#fff;animation:spin 1s linear infinite}#imageModal .swipe-area{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}#imageModal .modal-content{position:relative;z-index:2}.image-loading-progress{position:absolute;bottom:0;left:0;width:0;height:4px;background-color:#007bff;transition:width .3s ease-out;z-index:10}#modalClose,#modalNext,#modalPrev{z-index:10!important}#submitSuccess #waFollowUpBtn{pointer-events:auto;position:relative;z-index:2}#submitSuccess{position:relative;z-index:1}@media (max-width:768px){.mb-mobile-extra{margin-bottom:2.5rem!important}#desktop-footer{display:none}#mobile-footer{display:flex;position:fixed;bottom:0;left:0;width:100%;z-index:50;background-color:#fff;box-shadow:0 -1px 5px rgba(0,0,0,.1);padding:.75rem}#mobile-footer .container{display:flex;justify-content:space-between;align-items:center;text-align:center;width:100%}#mobile-footer img{height:32px;width:32px;transition:transform .3s ease}#mobile-footer img:hover{transform:scale(1.1)}#mobile-footer a{flex:1;display:flex;justify-content:center}.whatsapp-float{display:none}.flex-col{flex-direction:column}.w-1\/4,.w-3\/4{width:100%}.container p.text-lg{font-size:.9rem;padding-left:1rem;padding-right:1rem}.main-swiper .swiper-slide img{height:55vh;object-fit:cover}.main-thumbs-swiper{width:95%;height:auto}.main-thumbs-swiper .swiper-slide{height:100px}.py-16{padding-top:1rem;padding-bottom:2rem}section.py-16{margin-top:-50px!important}.carousel-container{margin-bottom:15px}#mobile-footer a:last-child img{height:35px!important;width:35px!important}}@media (min-width:1024px){.multi-image-swiper .swiper-slide{width:25%}.dual-image-swiper .swiper-slide{width:50%}}
     </style>
   </head>
 
@@ -1128,6 +470,7 @@
       <div class="container mx-auto">
         <h2 class="text-2xl font-medium mb-16 text-center">SOLUÇÕES</h2>
 
+        <!-- Fachadas -->
         <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
           <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
             <div class="swiper fachada-swiper solution-swiper multi-image-swiper">
@@ -1167,6 +510,7 @@
           </div>
         </div>
 
+        <!-- Interiores -->
         <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
           <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
             <div class="swiper interiores-swiper solution-swiper multi-image-swiper">
@@ -1206,6 +550,7 @@
           </div>
         </div>
 
+        <!-- Áreas Externas -->
         <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
           <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
             <div class="swiper areas-externas-swiper solution-swiper multi-image-swiper">
@@ -1245,6 +590,7 @@
           </div>
         </div>
 
+        <!-- Plantas -->
         <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
           <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
             <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
@@ -1272,6 +618,7 @@
           </div>
         </div>
 
+        <!-- Vídeos -->
         <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
           <div class="w-full md:w-2/3 mb-8 md:mb-0">
             <div class="flex items-center w-full">
@@ -1296,6 +643,7 @@
           </div>
         </div>
 
+        <!-- Tour Virtual -->
         <div class="flex flex-col md:flex-row items-center carousel-container mb-[5px] md:gap-8 md:mb-[5px]">
           <div class="w-full md:w-2/3 swiper-container mb-8 md:mb-0">
             <div class="swiper tour-swiper solution-swiper dual-image-swiper">
@@ -1320,6 +668,7 @@
           </div>
         </div>
 
+        <!-- Modal -->
         <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
           <div class="relative modal-content">
             <span id="modalTitle" class="sr-only">Visualização ampliada da imagem</span>
@@ -1340,21 +689,22 @@
         <div class="flex flex-col md:items-center">
           <div class="w-full overflow-hidden relative">
             <div class="logos-slider">
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" /></div>
-
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8" width="120" height="32" /></div>
-              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" /></div>
+              <!-- Logos -->
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <!-- Duplicados para o loop -->
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-af.svg" alt="Parceiro 1" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-maybelly.svg" alt="Parceiro 2" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-tarjab.svg" alt="Parceiro 3" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-clarus.svg" alt="Parceiro 4" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-grupo-sinop.svg" alt="Parceiro 5" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-ace-realty.svg" alt="Parceiro 6" class="h-8" width="120" height="32" loading="lazy" /></div>
+              <div class="logo-item"><img src="public/assets/section_05_parceiros/logo-qhabita.svg" alt="Parceiro 7" class="h-8" width="120" height="32" loading="lazy" /></div>
             </div>
             <div class="blur-overlay-left"></div>
             <div class="blur-overlay-right"></div>
@@ -1372,6 +722,7 @@
         </div>
 
         <div class="flex flex-col md:flex-row md:space-x-12">
+          <!-- Formulário -->
           <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg mb-8 md:mb-0">
             <h3 class="text-xl font-semibold mb-6 text-center">ORÇAMENTO</h3>
             <form id="orcamento-form" class="space-y-4">
@@ -1388,7 +739,7 @@
                 <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" class="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline input-focus" />
               </div>
 
-              <!-- Novo campo WhatsApp otimizado -->
+              <!-- Campo WhatsApp -->
               <div>
                 <label for="whatsapp_input" class="block text-sm font-bold mb-2">WhatsApp:</label>
                 <input
@@ -1402,15 +753,9 @@
                   aria-describedby="whatsapp_hint whatsapp_error"
                   required
                 />
-                <!-- Input oculto para envio padronizado E.164 -->
                 <input type="hidden" id="whatsapp" name="whatsapp" />
-
-                <div id="whatsapp_hint" class="text-xs mt-1" style="color:#6b7280">
-                  Dica: digite o DDD e número. Ex.: (11) 91234-5678
-                </div>
-                <div id="whatsapp_error" class="error-message" style="display:none;">
-                  Informe um número válido no formato internacional. Ex.: +55 11 91234-5678
-                </div>
+                <div id="whatsapp_hint" class="text-xs mt-1" style="color:#6b7280">Dica: digite o DDD e número. Ex.: (11) 91234-5678</div>
+                <div id="whatsapp_error" class="error-message" style="display:none;">Informe um número válido no formato internacional. Ex.: +55 11 91234-5678</div>
               </div>
 
               <div>
@@ -1429,7 +774,7 @@
               </div>
 
               <div>
-                <p class="text-sm font-bold mb-2">Indique os itens que irão compor o material de lançamento do empreendimento:</p>
+                <p class="text-sm font-bold mb-2">Indique os itens que irão compor o material de lançamento:</p>
                 <div class="space-y-2">
                   <label class="custom-checkbox block"><input type="checkbox" name="itens[]" value="fachadas" class="mr-2" /><span class="checkmark"></span> Fachadas</label>
                   <label class="custom-checkbox block"><input type="checkbox" name="itens[]" value="imagens_uso_comum" class="mr-2" /><span class="checkmark"></span> Imagens áreas de uso comum</label>
@@ -1482,12 +827,7 @@
                 <div id="submitSuccess" class="submit-feedback submit-success" aria-live="polite">
                   Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.
                   <div style="margin-top:8px;">
-                                        <a
-                      id="waFollowUpBtn"
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="cta-primary" style="display:none; cursor:pointer;" title="Abrir conversa no WhatsApp">Falar no WhatsApp</a>
+                    <a id="waFollowUpBtn" href="#" target="_blank" rel="noopener noreferrer" class="cta-primary" style="display:none; cursor:pointer;" title="Abrir conversa no WhatsApp">Falar no WhatsApp</a>
                   </div>
                 </div>
                 <div id="submitError" class="submit-feedback submit-error" aria-live="polite">
@@ -1497,6 +837,7 @@
             </form>
           </div>
 
+          <!-- FAQ -->
           <div class="w-full md:w-1/2 p-4 md:p-8 bg-gray-200 rounded-lg">
             <h3 class="text-xl font-semibold mb-6 text-center">DÚVIDAS</h3>
             <div class="space-y-6">
@@ -1537,126 +878,62 @@
     </section>
 
     <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contato WhatsApp" title="Abrir WhatsApp">
-      <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="Ícone WhatsApp - Entre em contato para orçamentos de renderização 3D" width="35" height="35">
+      <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="Ícone WhatsApp - Entre em contato para orçamentos de renderização 3D" width="35" height="35" loading="lazy">
     </a>
 
+    <!-- Footer Desktop -->
     <footer id="desktop-footer" class="bg-white py-2 px-6 shadow-md">
       <div class="container mx-auto flex items-center">
         <p class="flex-1 font-thin">© 2022 por Visual Easy 3D. Todos os direitos reservados.</p>
-
         <div class="flex justify-end">
           <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-            <img src="public/assets/identidade_visual/instagram-icon.webp" alt="Ícone Instagram - Siga nosso portfólio de projetos de renderização 3D arquitetônica" class="h-8 w-8" width="32" height="32">
+            <img src="public/assets/identidade_visual/instagram-icon.webp" alt="Ícone Instagram" class="h-8 w-8" width="32" height="32" loading="lazy">
           </a>
           <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="LinkedIn">
-            <img src="public/assets/identidade_visual/linkedin-icon.webp" alt="Ícone LinkedIn - Conecte-se profissionalmente com nosso estúdio de visualização arquitetônica" class="h-8 w-8" width="32" height="32">
+            <img src="public/assets/identidade_visual/linkedin-icon.webp" alt="Ícone LinkedIn" class="h-8 w-8" width="32" height="32" loading="lazy">
           </a>
           <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300" aria-label="Email">
-            <img src="public/assets/identidade_visual/email-icon.webp" alt="Ícone Email - Solicite orçamentos ou informações sobre nossos serviços de renderização 3D" class="h-8 w-8" width="32" height="32">
+            <img src="public/assets/identidade_visual/email-icon.webp" alt="Ícone Email" class="h-8 w-8" width="32" height="32" loading="lazy">
           </a>
           <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
-            <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32">
+            <img src="public/assets/identidade_visual/whatsapp-icon.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32" loading="lazy">
           </a>
         </div>
       </div>
     </footer>
 
+    <!-- Footer Mobile -->
     <footer id="mobile-footer" class="bg-white py-2 px-6 shadow-md fixed bottom-0 left-0 w-full">
       <div class="container mx-auto flex justify-between items-center">
         <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-          <img src="public/assets/identidade_visual/instagram-icon-grey.webp" alt="Instagram" class="h-8 w-8" width="32" height="32">
+          <img src="public/assets/identidade_visual/instagram-icon-grey.webp" alt="Instagram" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
         <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300" aria-label="Email">
-          <img src="public/assets/identidade_visual/email-icon-grey.webp" alt="Email" class="h-8 w-8" width="32" height="32">
+          <img src="public/assets/identidade_visual/email-icon-grey.webp" alt="Email" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
         <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer" class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
-          <img src="public/assets/identidade_visual/whatsapp-icon-grey.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32">
+          <img src="public/assets/identidade_visual/whatsapp-icon-grey.webp" alt="WhatsApp" class="h-8 w-8" width="32" height="32" loading="lazy">
         </a>
       </div>
     </footer>
 
+    <!-- Scripts Otimizados -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script>
+    <script defer>
       document.addEventListener('DOMContentLoaded', function() {
+        // Bloqueio de contexto (anti-download simples)
         document.querySelectorAll('img').forEach(function(img) {
           img.setAttribute('oncontextmenu', 'return false;');
           img.setAttribute('draggable', 'false');
           img.setAttribute('ondragstart', 'return false;');
           img.style.webkitUserSelect = 'none';
-          img.style.webkitTouchCallout = 'none';
           img.style.userSelect = 'none';
         });
         document.querySelectorAll('iframe').forEach(function(iframe) {
           iframe.setAttribute('oncontextmenu', 'return false;');
         });
-      });
-    </script>
-    <script>
-      window.addEventListener('load', function() {
-        if ('performance' in window && 'getEntriesByType' in window.performance) {
-          setTimeout(function() {
-            const perfData = window.performance.getEntriesByType('navigation')[0];
-            const lcpEntry = window.performance.getEntriesByType('paint').find(entry => entry.name === 'largest-contentful-paint');
-            const fcp = window.performance.getEntriesByType('paint').find(entry => entry.name === 'first-contentful-paint');
 
-            if (window.gtag && perfData) {
-              gtag('event', 'timing_complete', {
-                name: 'load',
-                value: Math.round(perfData.loadEventStart),
-                event_category: 'Performance'
-              });
-            }
-            if (window.gtag && lcpEntry) {
-              gtag('event', 'timing_complete', {
-                name: 'lcp',
-                value: Math.round(lcpEntry.startTime),
-                event_category: 'Web Vitals'
-              });
-            }
-            if (window.gtag && fcp) {
-              gtag('event', 'timing_complete', {
-                name: 'fcp',
-                value: Math.round(fcp.startTime),
-                event_category: 'Web Vitals'
-              });
-            }
-          }, 3000);
-        }
-      });
-
-      window.addEventListener('error', function(e) {
-        if (window.gtag) {
-          gtag('event', 'javascript_error', {
-            event_category: 'Error',
-            event_label: e.message,
-            value: e.lineno,
-            non_interaction: true
-          });
-        }
-        console.error('Error logged:', e.message);
-      });
-
-      window.addEventListener('load', function () {
-        // Evita reenvio de formulário ao voltar/avançar no histórico
-        if ('navigation' in performance && performance.navigation.type === 2) {
-          const forms = document.querySelectorAll('form');
-          forms.forEach(f => f.reset());
-        }
-        setTimeout(function () {
-          const preloader = document.getElementById('preloader');
-          if (preloader) {
-            preloader.classList.add('preloader-hide');
-            setTimeout(() => preloader.remove(), 300);
-          }
-        }, 300);
-      });
-
-      document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById("logo").addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
+        // Toggle do Menu Mobile
         const menuToggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu");
         const menuOverlay = document.getElementById("menu-overlay");
@@ -1690,11 +967,14 @@
           }
         }
 
-        menuToggle.addEventListener("click", toggleMenu);
-        menuOverlay.addEventListener("click", toggleMenu);
-        menuLinks.forEach(link => {
-          link.addEventListener("click", () => { if (window.innerWidth < 768) toggleMenu(); });
-        });
+        if(menuToggle) {
+          menuToggle.addEventListener("click", toggleMenu);
+          menuOverlay.addEventListener("click", toggleMenu);
+          menuLinks.forEach(link => {
+            link.addEventListener("click", () => { if (window.innerWidth < 768) toggleMenu(); });
+          });
+        }
+        
         window.addEventListener("resize", () => {
           if (window.innerWidth >= 768) {
             menu.classList.remove("translate-x-0", "translate-x-full");
@@ -1703,57 +983,50 @@
             bar2.classList.remove("opacity-0");
             bar3.classList.remove("-rotate-45", "top-2.5");
             document.body.classList.remove("overflow-hidden");
-            menuToggle.setAttribute('aria-expanded', 'false');
+            if(menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
           }
         });
 
-        // Swiper já é carregado com defer; inicializa diretamente
-        if (typeof Swiper !== 'undefined') {
-          initializeSwipers();
-        }
-
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth' });
           });
         });
-
-        const videos = [
-          { mp4: "public/assets/video/video-1.mp4", webm: "public/assets/video/video-1.webm", poster: "public/assets/video/thumbnail-video-1.jpg" },
-          { mp4: "public/assets/video/video-2.mp4", webm: "public/assets/video/video-2.webm", poster: "public/assets/video/thumbnail-video-2.jpg" },
-          { mp4: "public/assets/video/video-3.mp4", webm: "public/assets/video/video-3.webm", poster: "public/assets/video/thumbnail-video-3.jpg" },
-          { mp4: "public/assets/video/video-4.mp4", webm: "public/assets/video/video-4.webm", poster: "public/assets/video/thumbnail-video-4.jpg" }
-        ];
-        let currentVideoIndex = 0;
-        const videoPlayer = document.getElementById("videoPlayer");
-        const loadingSpinner = document.querySelector(".video-loading-spinner");
-        const mp4Source = videoPlayer.querySelector('source[type="video/mp4"]');
-        const webmSource = videoPlayer.querySelector('source[type="video/webm"]');
-
-        function changeVideo(index) {
-          videoPlayer.pause();
-          loadingSpinner.classList.remove('hidden');
-          currentVideoIndex = index;
-          mp4Source.src = videos[index].mp4;
-          webmSource.src = videos[index].webm;
-          videoPlayer.poster = videos[index].poster;
-          videoPlayer.load();
+        
+        const logo = document.getElementById("logo");
+        if(logo) {
+            logo.addEventListener("click", function (e) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            });
         }
 
-        function navigateVideo(direction) {
-          let newIndex = direction === "next" ? (currentVideoIndex + 1) % videos.length : (currentVideoIndex - 1 + videos.length) % videos.length;
-          changeVideo(newIndex);
+        // Lazy load para performance metrics
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                  preloader.classList.add('preloader-hide');
+                  setTimeout(() => preloader.remove(), 300);
+                }
+            }, 300);
+        });
+
+        // Inicializar Swipers se carregados
+        if (typeof Swiper !== 'undefined') {
+          initializeSwipers();
+        } else {
+            // Fallback caso script do swiper demore
+            window.onload = function() {
+                if (typeof Swiper !== 'undefined') initializeSwipers();
+            }
         }
-
-        document.getElementById("nextVideo").addEventListener("click", () => navigateVideo("next"));
-        document.getElementById("prevVideo").addEventListener("click", () => navigateVideo("prev"));
-
-        videoPlayer.addEventListener('loadeddata', function() { loadingSpinner.classList.add('hidden'); });
-        videoPlayer.addEventListener('error', function() { console.error('Erro ao carregar o vídeo'); loadingSpinner.classList.add('hidden'); });
-        videoPlayer.addEventListener('keydown', function(e) { if (e.key === 'ArrowRight') navigateVideo("next"); else if (e.key === 'ArrowLeft') navigateVideo("prev"); });
       });
 
+      // Função de Inicialização do Swiper
       function initializeSwipers() {
         const thumbsSwiper = new Swiper('.main-thumbs-swiper', {
           spaceBetween: 5,
@@ -1814,6 +1087,7 @@
         });
       }
 
+      // Lógica do Modal de Imagem
       (function () {
         let currentImages = null;
         let currentIndex = 0;
@@ -1825,15 +1099,15 @@
         const btnNext = document.getElementById('modalNext');
         const btnClose = document.getElementById('modalClose');
 
-        modalImage.addEventListener('load', function () {
-          imageLoadingProgress.style.width = '100%';
-          setTimeout(() => { imageLoadingProgress.style.width = '0%'; }, 300);
-        });
-
-        modalImage.addEventListener('error', function () {
-          imageLoadingProgress.style.width = '0%';
-          console.error('Erro ao carregar imagem no modal.');
-        });
+        if(modalImage) {
+            modalImage.addEventListener('load', function () {
+              imageLoadingProgress.style.width = '100%';
+              setTimeout(() => { imageLoadingProgress.style.width = '0%'; }, 300);
+            });
+            modalImage.addEventListener('error', function () {
+              imageLoadingProgress.style.width = '0%';
+            });
+        }
 
         window.openModal = function (image, swiperClass) {
           const swiper = document.querySelector(`.${swiperClass} .swiper-wrapper`);
@@ -1879,11 +1153,10 @@
         if(btnNext) btnNext.addEventListener('click', showNext);
         if(btnClose) btnClose.addEventListener('click', closeModal);
 
-        let startX = null;
-        let isTouching = false;
-        const threshold = 50;
-
         if (swipeArea) {
+          let startX = null;
+          let isTouching = false;
+          const threshold = 50;
           swipeArea.addEventListener('touchstart', function (e) {
             if (window.innerWidth < 768 && e.touches.length === 1) {
               startX = e.touches[0].clientX;
@@ -1895,22 +1168,61 @@
             if (!isTouching || startX === null) return;
             const endX = e.changedTouches[0].clientX;
             const deltaX = endX - startX;
-
             if (Math.abs(deltaX) > threshold) {
-              if (deltaX > 0) showPrev();
-              else showNext();
+              deltaX > 0 ? showPrev() : showNext();
             }
             startX = null;
             isTouching = false;
           });
         }
-
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal || e.target.classList.contains('modal-content')) closeModal();
-        });
+        if(modal) {
+            modal.addEventListener('click', function (e) {
+              if (e.target === modal || e.target.classList.contains('modal-content')) closeModal();
+            });
+        }
       })();
 
-      // Submissão do formulário com botão WhatsApp dinâmico e validação otimizada
+      // Lógica do Player de Vídeo
+      (function() {
+        const videos = [
+          { mp4: "public/assets/video/video-1.mp4", webm: "public/assets/video/video-1.webm", poster: "public/assets/video/thumbnail-video-1.jpg" },
+          { mp4: "public/assets/video/video-2.mp4", webm: "public/assets/video/video-2.webm", poster: "public/assets/video/thumbnail-video-2.jpg" },
+          { mp4: "public/assets/video/video-3.mp4", webm: "public/assets/video/video-3.webm", poster: "public/assets/video/thumbnail-video-3.jpg" },
+          { mp4: "public/assets/video/video-4.mp4", webm: "public/assets/video/video-4.webm", poster: "public/assets/video/thumbnail-video-4.jpg" }
+        ];
+        let currentVideoIndex = 0;
+        const videoPlayer = document.getElementById("videoPlayer");
+        const loadingSpinner = document.querySelector(".video-loading-spinner");
+        const btnNextVideo = document.getElementById("nextVideo");
+        const btnPrevVideo = document.getElementById("prevVideo");
+
+        if(videoPlayer && btnNextVideo && btnPrevVideo) {
+            const mp4Source = videoPlayer.querySelector('source[type="video/mp4"]');
+            const webmSource = videoPlayer.querySelector('source[type="video/webm"]');
+
+            function changeVideo(index) {
+              videoPlayer.pause();
+              loadingSpinner.classList.remove('hidden');
+              currentVideoIndex = index;
+              mp4Source.src = videos[index].mp4;
+              webmSource.src = videos[index].webm;
+              videoPlayer.poster = videos[index].poster;
+              videoPlayer.load();
+            }
+
+            function navigateVideo(direction) {
+              let newIndex = direction === "next" ? (currentVideoIndex + 1) % videos.length : (currentVideoIndex - 1 + videos.length) % videos.length;
+              changeVideo(newIndex);
+            }
+
+            btnNextVideo.addEventListener("click", () => navigateVideo("next"));
+            btnPrevVideo.addEventListener("click", () => navigateVideo("prev"));
+            videoPlayer.addEventListener('loadeddata', function() { loadingSpinner.classList.add('hidden'); });
+            videoPlayer.addEventListener('error', function() { loadingSpinner.classList.add('hidden'); });
+        }
+      })();
+
+      // Lógica do Formulário e WhatsApp
       document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("orcamento-form");
         const submitSuccess = document.getElementById("submitSuccess");
@@ -1918,7 +1230,7 @@
         const loadingSpinner = document.getElementById("loadingSpinner");
         const submitBtn = document.getElementById("submitBtn");
 
-        // Lógica do novo campo WhatsApp
+        // Validação WhatsApp
         (function () {
           const input = document.getElementById('whatsapp_input');
           const hidden = document.getElementById('whatsapp');
@@ -1942,22 +1254,7 @@
               }
               return out.trim();
             }
-
-            const ddiMatch = v.match(/^\+\d{1,3}/);
-            const ddi = ddiMatch ? ddiMatch[0] : '';
-            const rest = v.replace(ddi, '').replace(/\D/g, '').slice(0, 14);
-            let out = ddi || (assumeBRIfNoDDI ? '+55' : '');
-            if (rest) {
-              const groups = [];
-              let s = rest;
-              while (s.length > 0) {
-                const take = s.length > 4 ? (groups.length ? 4 : 3) : s.length;
-                groups.push(s.slice(0, take));
-                s = s.slice(take);
-              }
-              out += ' ' + groups.join(' ');
-            }
-            return out.trim();
+            return v;
           }
 
           function normalizeE164(viewValue) {
@@ -1970,27 +1267,12 @@
             return '+' + digits;
           }
 
-          function isValidBrazil(e164) {
-            if (!e164 || !e164.startsWith('+55')) return true;
-            const digits = e164.replace(/\D/g, '').slice(2);
-            if (digits.length === 10) {
-              const ddd = digits.slice(0, 2);
-              const f = digits.slice(2);
-              return !/^0|1/.test(ddd[0]) && /^[2-5]\d{7}$/.test(f);
-            } else if (digits.length === 11) {
-              const ddd = digits.slice(0, 2);
-              const c = digits.slice(2);
-              return !/^0|1/.test(ddd[0]) && /^9\d{8}$/.test(c);
-            }
-            return false;
-          }
-
-          window.validateWhatsapp = function() { // Exposto para o form handler
+          window.validateWhatsapp = function() {
+            if(!input) return true;
             input.value = formatDisplay(input.value);
             const e164 = normalizeE164(input.value);
-            const basicOK = /^\+[1-9]\d{7,14}$/.test(e164 || '');
-            const brOK = isValidBrazil(e164);
-            const valid = basicOK && brOK;
+            // Validação simples
+            const valid = e164 && /^\+\d{8,15}$/.test(e164);
 
             if (valid) {
               hidden.value = e164;
@@ -1998,7 +1280,7 @@
               input.classList.remove('input-error');
             } else {
               hidden.value = '';
-              if(input.value.length > 0) { // Mostra erro apenas se digitou algo
+              if(input.value.length > 0) {
                   err.style.display = 'block';
                   input.classList.add('input-error');
               }
@@ -2009,13 +1291,12 @@
           if(input) {
             input.addEventListener('input', window.validateWhatsapp);
             input.addEventListener('blur', window.validateWhatsapp);
-            // Formatar inicial caso haja valor
-            if(input.value) window.validateWhatsapp();
           }
         })();
 
+        // Montar Link WhatsApp
         function buildWaLinkFromForm(formObj) {
-          const myNumber = '+5519996996756';
+          const myNumber = '5519996996756'; // Formato limpo
           const linhas = [
             'Olá, Visual Easy 3D!',
             'Enviei uma solicitação de orçamento pelo site e gostaria de continuar por aqui.',
@@ -2023,213 +1304,77 @@
             formObj.incorporadora ? `Incorporadora: ${formObj.incorporadora}` : null,
             '',
             'Podem me orientar sobre os próximos passos?'
-          ]
-            .filter(Boolean)
-            .join('\n');
-
-          // Remove tudo que não for número do telefone e codifica o texto
-          const phone = myNumber.replace(/\D/g, '');
-          const text = encodeURIComponent(linhas);
-
-          return `https://wa.me/${phone}?text=${text}`;
+          ].filter(Boolean).join('\n');
+          return `https://wa.me/${myNumber}?text=${encodeURIComponent(linhas)}`;
         }
 
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
+        if(form) {
+            form.addEventListener("submit", function (event) {
+              event.preventDefault();
 
-          // Validação final antes do envio
-          if (typeof window.validateWhatsapp === 'function' && !window.validateWhatsapp()) {
-             const input = document.getElementById('whatsapp_input');
-             input.focus();
-             input.classList.add('input-error');
-             document.getElementById('whatsapp_error').style.display = 'block';
-             return;
-          }
+              if (typeof window.validateWhatsapp === 'function' && !window.validateWhatsapp()) {
+                 const input = document.getElementById('whatsapp_input');
+                 if(input) { input.focus(); input.classList.add('input-error'); }
+                 const err = document.getElementById('whatsapp_error');
+                 if(err) err.style.display = 'block';
+                 return;
+              }
 
-          submitSuccess.style.display = "none";
-          submitError.style.display = "none";
-          loadingSpinner.style.display = "inline-block";
-          if (submitBtn) submitBtn.disabled = true;
+              submitSuccess.style.display = "none";
+              submitError.style.display = "none";
+              loadingSpinner.style.display = "inline-block";
+              if (submitBtn) submitBtn.disabled = true;
 
-          const formObj = {};
-          const formData = new FormData(form);
-          for (let [key, value] of formData.entries()) {
-            if (key !== 'itens[]') formObj[key] = value;
-          }
-          const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
-          formObj.itens = Array.from(checkedItems).map(cb => cb.value);
+              const formObj = {};
+              const formData = new FormData(form);
+              for (let [key, value] of formData.entries()) {
+                if (key !== 'itens[]') formObj[key] = value;
+              }
+              const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
+              formObj.itens = Array.from(checkedItems).map(cb => cb.value);
 
-          const jsonDataToSend = new FormData();
-          jsonDataToSend.append('json', JSON.stringify(formObj));
+              const jsonDataToSend = new FormData();
+              jsonDataToSend.append('json', JSON.stringify(formObj));
 
-          // Garante que o botão WhatsApp não está bloqueado por overlay/estilo
-          (function ensureWaBtnIsClickable() {
-            const waBtn = document.getElementById('waFollowUpBtn');
-            if (waBtn) {
-              waBtn.style.pointerEvents = 'auto';
-              waBtn.style.zIndex = '1';
-            }
-          })();
-          
-          fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
-            method: "POST",
-            body: jsonDataToSend,
-          })
-          .then((response) => {
-            loadingSpinner.style.display = "none";
+              fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
+                method: "POST",
+                body: jsonDataToSend,
+              })
+              .then((response) => {
+                loadingSpinner.style.display = "none";
+                const waBtn = document.getElementById('waFollowUpBtn');
 
-            function applyWhatsappCTA(formObj) {
-              const waBtn = document.getElementById('waFollowUpBtn');
-              if (!waBtn) return;
+                if (response.ok || response.redirected) {
+                  submitSuccess.style.display = "block";
+                  form.reset();
+                  if (typeof gtag === "function") {
+                    gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
+                  }
+                  submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-              const waUrl = buildWaLinkFromForm(formObj);
-              waBtn.href = waUrl;
-              waBtn.target = '_blank';
-              waBtn.rel = 'noopener noreferrer';
-              waBtn.style.display = 'inline-block';
-
-              // Analytics sem bloquear o clique
-              waBtn.addEventListener('click', function () {
-                if (typeof gtag === 'function') {
-                  gtag('event', 'clique_whatsapp', {
-                    event_category: 'Contato',
-                    event_label: 'WhatsApp FollowUp',
-                  });
+                  if(waBtn) {
+                      const waUrl = buildWaLinkFromForm(formObj);
+                      waBtn.href = waUrl;
+                      waBtn.style.display = 'inline-block';
+                      // Auto-redirect mobile (opcional)
+                      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                        setTimeout(() => { window.location.href = waUrl; }, 1500);
+                      }
+                  }
+                } else {
+                  throw new Error('Server response not OK');
                 }
-              }, { passive: true, once: true });
-
-              // Opcional: abrir automaticamente no mobile
-              const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-              if (isMobile) {
-                setTimeout(() => {
-                  window.location.href = waUrl;
-                }, 400);
-              }
-            }
-
-            if (response.redirected) {
-              submitSuccess.style.display = "block";
-              form.reset();
-              if (typeof gtag === "function") {
-                gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
-              }
-              submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              applyWhatsappCTA(formObj);
-            } else if (response.ok) {
-              return response.text().then(() => {
-                submitSuccess.style.display = "block";
-                form.reset();
-                if (typeof gtag === "function") {
-                  gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
-                }
-                submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                applyWhatsappCTA(formObj);
+              })
+              .catch((error) => {
+                loadingSpinner.style.display = "none";
+                submitError.style.display = "block";
+                console.error("Erro:", error);
+                submitError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              })
+              .finally(() => {
+                if (submitBtn) submitBtn.disabled = false;
               });
-            } else {
-              return response.text().then(text => {
-                console.error('Erro na resposta do servidor (não OK):', response.status, text);
-                throw new Error(`Erro na resposta do servidor: ${response.status}`);
-              });
-            }
-          })
-          .catch((error) => {
-            loadingSpinner.style.display = "none";
-            submitSuccess.style.display = "none";
-            submitError.style.display = "block";
-            console.error("Erro no fetch ou processamento da resposta:", error);
-            submitError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // Fallback: ainda assim prepara o botão do WhatsApp para o usuário tentar contato
-            try {
-              const waBtn = document.getElementById('waFollowUpBtn');
-              if (waBtn) {
-                waBtn.href = buildWaLinkFromForm(formObj);
-                waBtn.target = '_blank';
-                waBtn.rel = 'noopener noreferrer';
-                waBtn.style.display = 'inline-block';
-              }
-            } catch (e) {
-              console.warn('Falha ao preparar link WhatsApp no fallback:', e);
-            }
-          })
-          .finally(() => {
-            if (submitBtn) submitBtn.disabled = false;
-          });
-        });
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
-        whatsappLinks.forEach(function(link) {
-          link.addEventListener("click", function () {
-            if (typeof gtag === "function") {
-              gtag('event', 'clique_whatsapp', { 'event_category': 'Contato', 'event_label': 'WhatsApp' });
-            }
-          });
-        });
-      });
-    </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll('.swiper-button-next, .swiper-button-prev').forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            let secao = "Carrossel principal";
-            const swiper = this.closest('.swiper');
-            if (swiper) {
-              if (swiper.classList.contains('fachada-swiper')) secao = "Fachadas";
-              if (swiper.classList.contains('interiores-swiper')) secao = "Interiores";
-              if (swiper.classList.contains('areas-externas-swiper')) secao = "Áreas externas";
-              if (swiper.classList.contains('plantas-swiper')) secao = "Plantas humanizadas";
-              if (swiper.classList.contains('tour-swiper')) secao = "Tour Virtual";
-            }
-            if (typeof gtag === "function") {
-              gtag('event', 'navegacao_galeria', {
-                'event_category': 'Interação',
-                'event_label': secao,
-                'direction': btn.classList.contains('swiper-button-next') ? 'próximo' : 'anterior'
-              });
-            }
-          });
-        });
-
-        document.querySelectorAll('.solution-swiper img').forEach(function(img) {
-          img.addEventListener('click', function() {
-            let secao = "Indefinido";
-            const swiper = this.closest('.swiper');
-            if (swiper) {
-              if (swiper.classList.contains('fachada-swiper')) secao = "Fachadas";
-              if (swiper.classList.contains('interiores-swiper')) secao = "Interiores";
-              if (swiper.classList.contains('areas-externas-swiper')) secao = "Áreas externas";
-              if (swiper.classList.contains('plantas-swiper')) secao = "Plantas humanizadas";
-            }
-            if (typeof gtag === "function") {
-              gtag('event', 'visualizacao_ampliada', { 'event_category': 'Interação', 'event_label': secao });
-            }
-          });
-        });
-
-        document.querySelectorAll('#menu a').forEach(function(link) {
-          link.addEventListener('click', function() {
-            const secao = this.getAttribute('href').replace('#', '');
-            if (typeof gtag === "function") {
-              gtag('event', 'navegacao_menu', { 'event_category': 'Navegação', 'event_label': secao });
-            }
-          });
-        });
-
-        const videoPlayer = document.getElementById('videoPlayer');
-        if (videoPlayer) {
-          videoPlayer.addEventListener('play', function() {
-            if (typeof gtag === "function") {
-              gtag('event', 'video_play', { 'event_category': 'Vídeo', 'event_label': this.querySelector('source').getAttribute('src') });
-            }
-          });
-          videoPlayer.addEventListener('ended', function() {
-            if (typeof gtag === "function") {
-              gtag('event', 'video_complete', { 'event_category': 'Vídeo', 'event_label': this.querySelector('source').getAttribute('src') });
-            }
-          });
+            });
         }
       });
     </script>
