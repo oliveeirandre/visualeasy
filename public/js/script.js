@@ -280,27 +280,71 @@ function initializeSwipers() {
   if (btnNext) btnNext.addEventListener('click', showNext);
   if (btnClose) btnClose.addEventListener('click', closeModal);
 
-  if (swipeArea) {
-    let startX = null;
-    let isTouching = false;
-    const threshold = 50;
-    swipeArea.addEventListener('touchstart', function (e) {
-      if (e.touches.length === 1) {
-        startX = e.touches[0].clientX;
-        isTouching = true;
-      }
-    }, { passive: true });
+  if (modalImage) {
+    let startX = 0;
+    let currentDragX = 0;
+    let isDragging = false;
 
-    swipeArea.addEventListener('touchend', function (e) {
-      if (!isTouching || startX === null) return;
-      const endX = e.changedTouches[0].clientX;
-      const deltaX = endX - startX;
-      if (Math.abs(deltaX) > threshold) {
-        deltaX > 0 ? showPrev() : showNext();
+    function handleDragStart(e) {
+      if (e.type === 'mousedown') e.preventDefault(); // Evita drag nativo
+      startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      isDragging = true;
+      modalImage.classList.add('dragging');
+      modalImage.style.transform = `translateX(0px)`;
+    }
+
+    function handleDragMove(e) {
+      if (!isDragging) return;
+      const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      currentDragX = currentX - startX;
+      // Aplica o movimento imediatamente acompanhando o dedo/mouse
+      modalImage.style.transform = `translateX(${currentDragX}px)`;
+    }
+
+    function handleDragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      modalImage.classList.remove('dragging');
+
+      const threshold = window.innerWidth * 0.15 > 50 ? window.innerWidth * 0.15 : 50;
+
+      if (Math.abs(currentDragX) > threshold) {
+        // Arrasta completamente para fora da tela para concluir a transição
+        const direction = currentDragX > 0 ? 1 : -1;
+        modalImage.style.transform = `translateX(${direction * window.innerWidth}px)`;
+
+        setTimeout(() => {
+          if (direction > 0) showPrev();
+          else showNext();
+
+          // Posiciona a nova imagem vindo do lado oposto (sem transição)
+          modalImage.classList.add('dragging');
+          modalImage.style.transform = `translateX(${-direction * window.innerWidth}px)`;
+
+          // Força o navegador a renderizar o frame
+          void modalImage.offsetWidth;
+
+          // Desliza para o centro (com transição restaurada)
+          modalImage.classList.remove('dragging');
+          modalImage.style.transform = `translateX(0px)`;
+        }, 200); // timing para casar com a velocidade do drag de saída
+      } else {
+        // Se arrastou pouco, solta e volta pro meio num snap
+        modalImage.style.transform = `translateX(0px)`;
       }
-      startX = null;
-      isTouching = false;
-    });
+      currentDragX = 0;
+    }
+
+    // Eventos de Toque (Mobile)
+    modalImage.addEventListener('touchstart', handleDragStart, { passive: true });
+    modalImage.addEventListener('touchmove', handleDragMove, { passive: true });
+    modalImage.addEventListener('touchend', handleDragEnd);
+    modalImage.addEventListener('touchcancel', handleDragEnd);
+
+    // Eventos de Mouse (Desktop)
+    modalImage.addEventListener('mousedown', handleDragStart);
+    window.addEventListener('mousemove', handleDragMove);
+    window.addEventListener('mouseup', handleDragEnd);
   }
   if (modal) {
     // Fecha ao clicar no fundo escuro (não no modal-content)

@@ -1098,9 +1098,17 @@ header .logo {
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
     object-fit: contain;
-    transition: opacity .2s ease;
+    transition: opacity .2s ease, transform .3s cubic-bezier(0.25, 1, 0.5, 1);
     position: relative;
     z-index: 3;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: grab;
+}
+
+#modalImage.dragging {
+    transition: none !important;
+    cursor: grabbing;
 }
 
 /* Wrapper do conteúdo do modal */
