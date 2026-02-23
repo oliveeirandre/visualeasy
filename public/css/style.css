@@ -712,61 +712,6 @@ header .logo {
     font-weight: 700;
 }
 
-/* --- Preloader --- */
-#preloader {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity .7s cubic-bezier(.4, 0, .2, 1);
-    opacity: 1;
-}
-
-.logo-mask {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-mask img {
-    width: 80px;
-    height: 80px;
-    display: block;
-    position: relative;
-    z-index: 1;
-}
-
-.mask-anim {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 2;
-    animation: revealLogo 2s cubic-bezier(.4, 0, .2, 1) forwards;
-}
-
-@keyframes revealLogo {
-    from {
-        width: 100%;
-    }
-
-    to {
-        width: 0;
-    }
-}
-
-#preloader.preloader-hide {
-    opacity: 0;
-    pointer-events: none;
-}
 
 /* --- Custom Checkbox/Radio --- */
 .custom-checkbox {

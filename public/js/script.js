@@ -82,16 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Preloader
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      const preloader = document.getElementById('preloader');
-      if (preloader) {
-        preloader.classList.add('preloader-hide');
-        setTimeout(() => preloader.remove(), 300);
-      }
-    }, 300);
-  });
+
 
   // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
