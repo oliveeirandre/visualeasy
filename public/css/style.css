@@ -1060,46 +1060,134 @@ header .logo {
 
 /* --- Image Modal --- */
 #imageModal {
-    backdrop-filter: blur(5px);
-    transition: all .3s ease-in-out;
-    background: rgba(0, 0, 0, .75);
-}
-
-#modalImage {
-    max-height: 80vh;
-    max-width: 90vw;
-    transition: all .3s ease;
-}
-
-#imageModal .swipe-area {
-    position: absolute;
+    /* Overlay fixo que cobre TODA a tela, independente do scroll */
+    position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 9500;
+
+    /* Centraliza o conteúdo horizontal e verticalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Fundo escuro com blur */
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    /* Animação */
+    transition: opacity .3s ease-in-out;
 }
 
+#imageModal.hidden {
+    display: none;
+}
+
+/* Imagem dentro do modal */
+#modalImage {
+    display: block;
+    max-height: 85vh;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+    object-fit: contain;
+    transition: opacity .2s ease;
+    position: relative;
+    z-index: 3;
+}
+
+/* Wrapper do conteúdo do modal */
 #imageModal .modal-content {
     position: relative;
     z-index: 2;
+    display: inline-flex;
+    /* ajusta-se ao tamanho da imagem */
+    align-items: center;
+    justify-content: center;
 }
 
+/* Botão fechar (X) — canto superior direito do modal-content */
+#modalClose {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s ease, transform .2s ease;
+}
+
+#modalClose:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+
+/* Botões prev/next — centralizados verticalmente nas laterais */
+#modalPrev,
+#modalNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, .9);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s ease, transform .2s ease;
+}
+
+#modalPrev {
+    left: -20px;
+}
+
+#modalNext {
+    right: -20px;
+}
+
+#modalPrev:hover,
+#modalNext:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Barra de progresso de carregamento dentro do modal-content */
 .image-loading-progress {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
-    height: 4px;
+    height: 3px;
     background-color: #007bff;
     transition: width .3s ease-out;
     z-index: 10;
-}
-
-#modalClose,
-#modalNext,
-#modalPrev {
-    z-index: 10 !important;
+    border-radius: 0 0 8px 8px;
 }
 
 /* --- Lazy Sections --- */
