@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Lazy load para performance metrics
+    // Preloader
     window.addEventListener('load', function() {
         setTimeout(function() {
             const preloader = document.getElementById('preloader');
@@ -93,11 +93,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
 
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function(item) {
+        const btn = item.querySelector('.faq-question');
+        if (btn) {
+            btn.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                // Fecha todos
+                faqItems.forEach(function(other) {
+                    other.classList.remove('active');
+                    const otherBtn = other.querySelector('.faq-question');
+                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                });
+                // Abre o clicado (se não estava aberto)
+                if (!isActive) {
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        }
+    });
+
+    // Scroll Reveal (Intersection Observer para animações)
+    const revealElements = document.querySelectorAll('section, .carousel-container');
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal', 'revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(function(el) {
+            el.classList.add('reveal');
+            revealObserver.observe(el);
+        });
+    }
+
     // Inicializar Swipers se carregados
     if (typeof Swiper !== 'undefined') {
       initializeSwipers();
     } else {
-        // Fallback caso script do swiper demore
         window.onload = function() {
             if (typeof Swiper !== 'undefined') initializeSwipers();
         }
@@ -198,12 +237,14 @@ document.addEventListener('DOMContentLoaded', function() {
       modalImage.src = currentImages[currentIndex].src;
       modal.classList.remove('hidden');
       modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
       document.addEventListener('keydown', handleKeyNavigation);
     };
 
     function closeModal() {
       modal.classList.add('hidden');
       modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
       document.removeEventListener('keydown', handleKeyNavigation);
     }
 
@@ -236,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let isTouching = false;
       const threshold = 50;
       swipeArea.addEventListener('touchstart', function (e) {
-        if (window.innerWidth < 768 && e.touches.length === 1) {
+        if (e.touches.length === 1) {
           startX = e.touches[0].clientX;
           isTouching = true;
         }
@@ -349,7 +390,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if(!input) return true;
         input.value = formatDisplay(input.value);
         const e164 = normalizeE164(input.value);
-        // Validação simples
         const valid = e164 && /^\+\d{8,15}$/.test(e164);
 
         if (valid) {
@@ -374,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Montar Link WhatsApp
     function buildWaLinkFromForm(formObj) {
-      const myNumber = '5519996996756'; // Formato limpo
+      const myNumber = '5519996996756';
       const linhas = [
         'Olá, Visual Easy 3D!',
         'Enviei uma solicitação de orçamento pelo site e gostaria de continuar por aqui.',
@@ -389,6 +429,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if(form) {
         form.addEventListener("submit", function (event) {
           event.preventDefault();
+
+          // Honeypot check (bots preenchem campos ocultos)
+          const honeypot = document.getElementById('website_url');
+          if (honeypot && honeypot.value.length > 0) {
+            // Silenciosamente rejeita (bot detectado)
+            submitSuccess.style.display = "block";
+            form.reset();
+            return;
+          }
 
           if (typeof window.validateWhatsapp === 'function' && !window.validateWhatsapp()) {
              const input = document.getElementById('whatsapp_input');
@@ -406,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const formObj = {};
           const formData = new FormData(form);
           for (let [key, value] of formData.entries()) {
-            if (key !== 'itens[]') formObj[key] = value;
+            if (key !== 'itens[]' && key !== 'website_url') formObj[key] = value;
           }
           const checkedItems = form.querySelectorAll('input[name="itens[]"]:checked');
           formObj.itens = Array.from(checkedItems).map(cb => cb.value);
@@ -434,7 +483,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   const waUrl = buildWaLinkFromForm(formObj);
                   waBtn.href = waUrl;
                   waBtn.style.display = 'inline-block';
-                  // Auto-redirect mobile (opcional)
                   if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                     setTimeout(() => { window.location.href = waUrl; }, 1500);
                   }
