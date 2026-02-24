@@ -132,6 +132,32 @@ document.addEventListener('DOMContentLoaded', function () {
       if (typeof Swiper !== 'undefined') initializeSwipers();
     }
   }
+
+  // Custom Lazy Load Observer para Renders Pesados e iframes
+  if ('IntersectionObserver' in window) {
+    const lazyMediaObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (el.dataset.src) {
+            el.src = el.dataset.src;
+            el.removeAttribute('data-src');
+          }
+          observer.unobserve(el);
+        }
+      });
+    }, { rootMargin: '600px 0px 600px 0px' });
+
+    document.querySelectorAll('img[data-src], iframe[data-src]').forEach((el) => {
+      lazyMediaObserver.observe(el);
+    });
+  } else {
+    // Fallback para navegadores antigos
+    document.querySelectorAll('img[data-src], iframe[data-src]').forEach((el) => {
+      el.src = el.dataset.src;
+      el.removeAttribute('data-src');
+    });
+  }
 });
 
 // Função de Inicialização do Swiper
@@ -217,7 +243,7 @@ function initializeSwipers() {
     });
   }
 
-    document.addEventListener('click', function(e) {
+  document.addEventListener('click', function (e) {
     const trigger = e.target.closest('.modal-trigger');
     if (trigger && modal) {
       e.preventDefault();
