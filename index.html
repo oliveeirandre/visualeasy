@@ -569,7 +569,7 @@
                             <button id="prevVideo" class="video-nav-button mr-2"
                                 aria-label="Vídeo anterior">&#10094;</button>
                             <div class="aspect-video flex-1 relative rounded-lg overflow-hidden shadow-lg">
-                                <video id="videoPlayer" class="w-full h-full object-cover" preload="metadata"
+                                <!-- <video id="videoPlayer" class="w-full h-full object-cover" preload="metadata"
                                     playsinline controls controlsList="nodownload" oncontextmenu="return false;"
                                     poster="public/assets/video/thumbnail-video-1.jpg">
                                     <source src="public/assets/video/video-1.mp4" type="video/mp4" />
@@ -577,7 +577,7 @@
                                     <track kind="captions" label="Português" src="public/assets/video/captions-pt.vtt"
                                         srclang="pt" />
                                     Seu navegador não suporta o elemento de vídeo HTML5.
-                                </video>
+                                </video> -->
                                 <div
                                     class="video-loading-spinner absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden">
                                     <div class="loading-circle"></div>
@@ -602,19 +602,19 @@
                                     <iframe
                                         src="https://tour360.meupasseiovirtual.com/070287/319041/tourvirtual/index.html"
                                         class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy"
-                                        decoding="async" title="Tour Virtual 360"></iframe>
+                                        decoding="async" title="Tour Virtual 360" allow="xr-spatial-tracking"></iframe>
                                 </div>
                                 <div class="swiper-slide">
                                     <iframe
                                         src="https://tour360.meupasseiovirtual.com/070287/279671/tourvirtual/index.html"
                                         class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy"
-                                        decoding="async" title="Tour Virtual 360"></iframe>
+                                        decoding="async" title="Tour Virtual 360" allow="xr-spatial-tracking"></iframe>
                                 </div>
                                 <div class="swiper-slide">
                                     <iframe
                                         src="https://tour360.meupasseiovirtual.com/070287/299768/tourvirtual/index.html"
                                         class="w-full h-96 object-contain rounded-lg shadow-md" loading="lazy"
-                                        decoding="async" title="Tour Virtual 360"></iframe>
+                                        decoding="async" title="Tour Virtual 360" allow="xr-spatial-tracking"></iframe>
                                 </div>
                             </div>
                             <div class="swiper-button-prev" aria-label="Tour anterior"></div>
@@ -1031,13 +1031,13 @@
             <div class="flex justify-end">
                 <a href="https://www.instagram.com/visual.easy/" target="_blank" rel="noopener noreferrer"
                     class="hover:text-gray-500 transition duration-300" aria-label="Instagram">
-                    <img src="public/assets/identidade_visual/instagram-icon.webp?v=3" alt="Ícone Instagram" class="h-8 w-8"
-                        width="32" height="32" loading="lazy" decoding="async">
+                    <img src="public/assets/identidade_visual/instagram-icon.webp?v=3" alt="Ícone Instagram"
+                        class="h-8 w-8" width="32" height="32" loading="lazy" decoding="async">
                 </a>
                 <a href="https://www.linkedin.com/company/visual-easy-3d/" target="_blank" rel="noopener noreferrer"
                     class="hover:text-gray-500 transition duration-300" aria-label="LinkedIn">
-                    <img src="public/assets/identidade_visual/linkedin-icon.webp?v=3" alt="Ícone LinkedIn" class="h-8 w-8"
-                        width="32" height="32" loading="lazy" decoding="async">
+                    <img src="public/assets/identidade_visual/linkedin-icon.webp?v=3" alt="Ícone LinkedIn"
+                        class="h-8 w-8" width="32" height="32" loading="lazy" decoding="async">
                 </a>
                 <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
                     aria-label="Email">
@@ -1063,8 +1063,8 @@
             </a>
             <a href="mailto:visualeasy.3d@gmail.com" class="hover:text-gray-500 transition duration-300"
                 aria-label="Email">
-                <img src="public/assets/identidade_visual/email-icon-grey.webp?v=3" alt="Email" class="h-8 w-8" width="32"
-                    height="32" loading="lazy" decoding="async">
+                <img src="public/assets/identidade_visual/email-icon-grey.webp?v=3" alt="Email" class="h-8 w-8"
+                    width="32" height="32" loading="lazy" decoding="async">
             </a>
             <a href="https://wa.me/5519996996756" target="_blank" rel="noopener noreferrer"
                 class="hover:text-gray-500 transition duration-300" aria-label="WhatsApp">
