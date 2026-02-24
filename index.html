@@ -24,18 +24,7 @@
 
     <!-- Google Analytics (Deferido para não bloquear) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-THZBSRV92T"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-THZBSRV92T', {
-            send_page_view: true,
-            anonymize_ip: true,
-            cookie_flags: 'SameSite=None;Secure',
-        });
-    </script>
+    <script src="public/js/ga.js" async></script>
 
     <!-- SEO Meta Tags -->
     <meta name="description"

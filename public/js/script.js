@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Bloqueio de contexto (anti-download simples)
+  // Bloqueio de contexto (anti-download simples) CSP Safe
   document.querySelectorAll('img').forEach(function (img) {
-    img.setAttribute('oncontextmenu', 'return false;');
+    img.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     img.setAttribute('draggable', 'false');
-    img.setAttribute('ondragstart', 'return false;');
+    img.addEventListener('dragstart', function (e) { e.preventDefault(); });
     img.style.webkitUserSelect = 'none';
     img.style.userSelect = 'none';
   });
   document.querySelectorAll('iframe').forEach(function (iframe) {
-    iframe.setAttribute('oncontextmenu', 'return false;');
+    iframe.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   });
 
   // Toggle do Menu Mobile
