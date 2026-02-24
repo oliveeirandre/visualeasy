@@ -217,28 +217,29 @@ function initializeSwipers() {
     });
   }
 
-  window.openModal = function (image, swiperClass) {
-    // Pega apenas os slides originais (ignora duplicatas do loop)
-    const container = document.querySelector(`.${swiperClass}`);
-    if (!container) return;
-    const allImages = container.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) img');
-    currentImages = Array.from(allImages);
-    // Encontra pelo src (robusto contra clônes do Swiper loop)
-    const clickedSrc = image.src;
-    currentIndex = currentImages.findIndex(function (img) { return img.src === clickedSrc; });
-    if (currentImages.length === 0 || currentIndex === -1) {
-      // Fallback: usa a própria imagem clicada
-      currentImages = [image];
-      currentIndex = 0;
+    document.addEventListener('click', function(e) {
+    const trigger = e.target.closest('.modal-trigger');
+    if (trigger && modal) {
+      e.preventDefault();
+      const swiperClass = trigger.getAttribute('data-swiper-modal');
+      const container = document.querySelector('.' + swiperClass);
+      if (!container) return;
+      const allImages = container.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) img');
+      currentImages = Array.from(allImages);
+      const clickedSrc = trigger.src;
+      currentIndex = currentImages.findIndex(function (img) { return img.src === clickedSrc; });
+      if (currentImages.length === 0 || currentIndex === -1) {
+        currentImages = [trigger];
+        currentIndex = 0;
+      }
+      imageLoadingProgress.style.width = '0%';
+      modalImage.src = currentImages[currentIndex].src;
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', handleKeyNavigation);
     }
-
-    imageLoadingProgress.style.width = '0%';
-    modalImage.src = currentImages[currentIndex].src;
-    modal.classList.remove('hidden');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', handleKeyNavigation);
-  };
+  });
 
   function closeModal() {
     modal.classList.add('hidden');
