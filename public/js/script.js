@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener(evt, loadDeferredMedia, { once: true, passive: true });
   });
 
-  setTimeout(loadDeferredMedia, 3500);
+  setTimeout(loadDeferredMedia, 2000);
 });
 
 // Função de Inicialização do Swiper
