@@ -540,43 +540,57 @@ document.addEventListener("DOMContentLoaded", function () {
       const jsonDataToSend = new FormData();
       jsonDataToSend.append('json', JSON.stringify(formObj));
 
-      fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
-        method: "POST",
-        body: jsonDataToSend,
-      })
-        .then((response) => {
-          loadingSpinner.style.display = "none";
-          const waBtn = document.getElementById('waFollowUpBtn');
+      const waBtn = document.getElementById('waFollowUpBtn');
 
-          if (response.ok || response.redirected) {
-            submitSuccess.style.display = "block";
-            form.reset();
-            if (typeof gtag === "function") {
-              gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
-            }
-            submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      let iframe = document.getElementById('hidden_submit_frame');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'hidden_submit_frame';
+        iframe.id = 'hidden_submit_frame';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
 
-            if (waBtn) {
-              const waUrl = buildWaLinkFromForm(formObj);
-              waBtn.href = waUrl;
-              waBtn.style.display = 'inline-block';
-              if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                setTimeout(() => { window.location.href = waUrl; }, 1500);
-              }
-            }
-          } else {
-            throw new Error('Server response not OK');
+      const tempForm = document.createElement('form');
+      tempForm.action = "https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec";
+      tempForm.method = "POST";
+      tempForm.target = "hidden_submit_frame";
+      tempForm.style.display = "none";
+
+      const input = document.createElement('input');
+      input.type = "hidden";
+      input.name = "json";
+      input.value = JSON.stringify(formObj);
+      tempForm.appendChild(input);
+      document.body.appendChild(tempForm);
+
+      try {
+        tempForm.submit();
+      } catch (e) {
+        console.error("Erro de submissão do formulário:", e);
+      }
+
+      setTimeout(() => {
+        if (submitBtn) submitBtn.disabled = false;
+        loadingSpinner.style.display = "none";
+        submitSuccess.style.display = "block";
+        form.reset();
+
+        if (typeof gtag === "function") {
+          gtag('event', 'enviar_orcamento', { 'event_category': 'Formulário', 'event_label': 'Orçamento' });
+        }
+        submitSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        if (waBtn) {
+          const waUrl = buildWaLinkFromForm(formObj);
+          waBtn.href = waUrl;
+          waBtn.style.display = 'inline-block';
+          if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            setTimeout(() => { window.location.href = waUrl; }, 1500);
           }
-        })
-        .catch((error) => {
-          loadingSpinner.style.display = "none";
-          submitError.style.display = "block";
-          console.error("Erro:", error);
-          submitError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        })
-        .finally(() => {
-          if (submitBtn) submitBtn.disabled = false;
-        });
+        }
+        document.body.removeChild(tempForm);
+      }, 1500);
     });
   }
 });
