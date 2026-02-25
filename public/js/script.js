@@ -542,16 +542,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
         method: "POST",
-        mode: "no-cors",
         body: jsonDataToSend,
       })
         .then((response) => {
           loadingSpinner.style.display = "none";
           const waBtn = document.getElementById('waFollowUpBtn');
 
-          // Com mode: no-cors, a resposta será do tipo 'opaque' e response.ok será false.
-          // Assumimos que a requisição chegou ao servidor se não caiu no catch de rede.
-          if (response.type === "opaque" || response.ok || response.redirected) {
+          if (response.ok || response.redirected) {
             submitSuccess.style.display = "block";
             form.reset();
             if (typeof gtag === "function") {
