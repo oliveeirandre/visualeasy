@@ -133,31 +133,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Custom Lazy Load Observer para Renders Pesados e iframes
-  if ('IntersectionObserver' in window) {
-    const lazyMediaObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          if (el.dataset.src) {
-            el.src = el.dataset.src;
-            el.removeAttribute('data-src');
-          }
-          observer.unobserve(el);
-        }
-      });
-    }, { rootMargin: '600px 0px 600px 0px' });
+  // Custom Lazy Load baseado em interação e timeout para resolver os clones do Swiper loop
+  let isMediaLoaded = false;
+  function loadDeferredMedia() {
+    if (isMediaLoaded) return;
+    isMediaLoaded = true;
 
+    // Captura orginais e clones feitos dinamicamente
     document.querySelectorAll('img[data-src], iframe[data-src]').forEach((el) => {
-      lazyMediaObserver.observe(el);
+      if (el.dataset.src) {
+        el.src = el.dataset.src;
+        el.removeAttribute('data-src');
+      }
     });
-  } else {
-    // Fallback para navegadores antigos
-    document.querySelectorAll('img[data-src], iframe[data-src]').forEach((el) => {
-      el.src = el.dataset.src;
-      el.removeAttribute('data-src');
-    });
+
+    if (typeof Swiper !== 'undefined') {
+      const swipers = document.querySelectorAll('.swiper');
+      swipers.forEach(swiperEl => {
+        if (swiperEl.swiper) swiperEl.swiper.update();
+      });
+    }
   }
+
+  ['scroll', 'mousemove', 'touchstart', 'click'].forEach(evt => {
+    document.addEventListener(evt, loadDeferredMedia, { once: true, passive: true });
+  });
+
+  setTimeout(loadDeferredMedia, 3500);
 });
 
 // Função de Inicialização do Swiper
