@@ -66,10 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Smooth Scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]:not(#waFollowUpBtn)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      const targetAttr = this.getAttribute('href');
+      if (targetAttr === '#') return; // Ignora âncoras vazias
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(targetAttr);
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   });
