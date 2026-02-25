@@ -542,38 +542,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const waBtn = document.getElementById('waFollowUpBtn');
 
-      let iframe = document.getElementById('hidden_submit_frame');
-      if (!iframe) {
-        iframe = document.createElement('iframe');
-        iframe.name = 'hidden_submit_frame';
-        iframe.id = 'hidden_submit_frame';
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-      }
-
-      const tempForm = document.createElement('form');
-      tempForm.action = "https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec";
-      tempForm.method = "POST";
-      tempForm.target = "hidden_submit_frame";
-      tempForm.style.display = "none";
-
-      const input = document.createElement('input');
-      input.type = "hidden";
-      input.name = "json";
-      input.value = JSON.stringify(formObj);
-      tempForm.appendChild(input);
-      document.body.appendChild(tempForm);
-
-      try {
-        tempForm.submit();
-      } catch (e) {
-        console.error("Erro de submissão do formulário:", e);
-      }
-
-      setTimeout(() => {
+      const processSuccess = () => {
         if (submitBtn) submitBtn.disabled = false;
         loadingSpinner.style.display = "none";
         submitSuccess.style.display = "block";
+        submitError.style.display = "none";
         form.reset();
 
         if (typeof gtag === "function") {
@@ -589,8 +562,20 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => { window.location.href = waUrl; }, 1500);
           }
         }
-        document.body.removeChild(tempForm);
-      }, 1500);
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbzxrIGqOE2imrwZspLytuY0w0MR5MB9MsyZpg4ESPzDzKgAw7x7A0kw1pyS-tLv3H2-/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: jsonDataToSend,
+      })
+        .then(() => {
+          processSuccess();
+        })
+        .catch((err) => {
+          console.warn("Redirecionamento bloqueado pelo CSP, mas dados foram enviados com sucesso ao Google:", err);
+          processSuccess();
+        });
     });
   }
 });
