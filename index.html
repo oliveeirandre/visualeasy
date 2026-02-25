@@ -53,15 +53,19 @@
 
     <!-- Preload LCP Images -->
     <link rel="preload" href="public/assets/identidade_visual/logo.webp?v=13" as="image" type="image/webp" />
-    <link rel="preload" href="public/assets/section_02_carrossel/01.webp" as="image" fetchpriority="high"
-        type="image/webp" />
+    <link rel="preload" as="image" href="public/assets/section_02_carrossel/01.webp"
+        imagesrcset="public/assets/section_02_carrossel/01-mobile.webp 800w, public/assets/section_02_carrossel/01.webp 1920w"
+        imagesizes="(max-width: 768px) 100vw, 100vw" fetchpriority="high" type="image/webp" />
 
     <!-- CSS Fonts & Libs (Otimizado com display=swap) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.3/swiper-bundle.min.css"
-        integrity="sha384-zbY5EMKmn4yBZTowVWvlH3B+0PyH7ls7rIXkRnKGl96VLxGHP1M0f4ODs62u4DKQ" crossorigin="anonymous" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11.2.3/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.3/swiper-bundle.min.css">
+    </noscript>
 
     <!-- Custom CSS (Otimizado) -->
     <link rel="preload" href="public/css/style.min.css?v=13" as="style" />
@@ -197,30 +201,60 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="public/assets/section_02_carrossel/01.webp"
+                            srcset="public/assets/section_02_carrossel/01-mobile.webp 800w, public/assets/section_02_carrossel/01.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
                             alt="Renderização fotorrealista de fachada principal de empreendimento residencial de alto padrão com iluminação diurna e tratamento paisagístico"
                             class="w-full object-cover" loading="eager" decoding="sync" width="1920" height="1080"
                             fetchpriority="high" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/02.webp" alt="Perspectiva angular de fachada contemporânea com detalhes em vidro e concreto aparente destacando a volumetria arquitetônica do edifício" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/02.webp"
+                            srcset="public/assets/section_02_carrossel/02-mobile.webp 800w, public/assets/section_02_carrossel/02.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Perspectiva angular de fachada contemporânea com detalhes em vidro e concreto aparente destacando a volumetria arquitetônica do edifício"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/03.webp" alt="Render de área externa exclusiva com piscina infinity, deck molhado e paisagismo integrado em ambiente de lazer de condomínio" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/03.webp"
+                            srcset="public/assets/section_02_carrossel/03-mobile.webp 800w, public/assets/section_02_carrossel/03.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Render de área externa exclusiva com piscina infinity, deck molhado e paisagismo integrado em ambiente de lazer de condomínio"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/04.webp" alt="Visualização hiperrealista de área de lazer com piscina, jardins e espaço gourmet ao ar livre com detalhes de iluminação e texturas naturais" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/04.webp"
+                            srcset="public/assets/section_02_carrossel/04-mobile.webp 800w, public/assets/section_02_carrossel/04.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Visualização hiperrealista de área de lazer com piscina, jardins e espaço gourmet ao ar livre com detalhes de iluminação e texturas naturais"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/05.webp" alt="Renderização de interior de apartamento de luxo com sala integrada, mobiliário contemporâneo e amplas aberturas para luz natural" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/05.webp"
+                            srcset="public/assets/section_02_carrossel/05-mobile.webp 800w, public/assets/section_02_carrossel/05.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Renderização de interior de apartamento de luxo com sala integrada, mobiliário contemporâneo e amplas aberturas para luz natural"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/06.webp" alt="Sala de estar de alto padrão com design de interiores premium, pé-direito duplo e acabamentos sofisticados em render 3D ultrarrealista" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/06.webp"
+                            srcset="public/assets/section_02_carrossel/06-mobile.webp 800w, public/assets/section_02_carrossel/06.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Sala de estar de alto padrão com design de interiores premium, pé-direito duplo e acabamentos sofisticados em render 3D ultrarrealista"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/07.webp" alt="Cozinha gourmet com ilha central, armários planejados e eletrodomésticos de última geração em apartamento premium renderizado em 3D" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/07.webp"
+                            srcset="public/assets/section_02_carrossel/07-mobile.webp 800w, public/assets/section_02_carrossel/07.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Cozinha gourmet com ilha central, armários planejados e eletrodomésticos de última geração em apartamento premium renderizado em 3D"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                     <div class="swiper-slide">
-                        <img src="public/assets/section_02_carrossel/08.webp" alt="Planta humanizada de apartamento tipo com distribuição otimizada, 3 dormitórios, varanda gourmet e acabamentos realistas em renderização vista superior" class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
+                        <img src="public/assets/section_02_carrossel/08.webp"
+                            srcset="public/assets/section_02_carrossel/08-mobile.webp 800w, public/assets/section_02_carrossel/08.webp 1920w"
+                            sizes="(max-width: 768px) 100vw, 100vw"
+                            alt="Planta humanizada de apartamento tipo com distribuição otimizada, 3 dormitórios, varanda gourmet e acabamentos realistas em renderização vista superior"
+                            class="w-full object-cover" loading="lazy" decoding="async" width="1920" height="1080" />
                     </div>
                 </div>
                 <div class="swiper-button-prev" aria-label="Imagem anterior"></div>
@@ -232,29 +266,59 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img src="public/assets/section_02_carrossel/01.webp"
+                                srcset="public/assets/section_02_carrossel/01-mobile.webp 800w, public/assets/section_02_carrossel/01.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
                                 alt="Miniatura de fachada moderna residencial com tratamento de luz diurna e elementos arquitetônicos contemporâneos"
                                 loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/02.webp" alt="Miniatura de perspectiva lateral da fachada com detalhes de revestimento e volumetria de projeto arquitetônico premium" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/02.webp"
+                                srcset="public/assets/section_02_carrossel/02-mobile.webp 800w, public/assets/section_02_carrossel/02.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de perspectiva lateral da fachada com detalhes de revestimento e volumetria de projeto arquitetônico premium"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/03.webp" alt="Miniatura de área externa exclusiva com piscina e paisagismo integrado em ambiente de lazer de alto padrão" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/03.webp"
+                                srcset="public/assets/section_02_carrossel/03-mobile.webp 800w, public/assets/section_02_carrossel/03.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de área externa exclusiva com piscina e paisagismo integrado em ambiente de lazer de alto padrão"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/04.webp" alt="Miniatura de área de lazer completa com piscina, deck molhado e espaço gourmet para convivência em condomínio" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/04.webp"
+                                srcset="public/assets/section_02_carrossel/04-mobile.webp 800w, public/assets/section_02_carrossel/04.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de área de lazer completa com piscina, deck molhado e espaço gourmet para convivência em condomínio"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/05.webp" alt="Miniatura de interior de apartamento com sala ampla, decoração sofisticada e iluminação natural abundante" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/05.webp"
+                                srcset="public/assets/section_02_carrossel/05-mobile.webp 800w, public/assets/section_02_carrossel/05.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de interior de apartamento com sala ampla, decoração sofisticada e iluminação natural abundante"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/06.webp" alt="Miniatura de sala de estar contemporânea com pé-direito elevado, mobiliário exclusivo e detalhes arquitetônicos premium" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/06.webp"
+                                srcset="public/assets/section_02_carrossel/06-mobile.webp 800w, public/assets/section_02_carrossel/06.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de sala de estar contemporânea com pé-direito elevado, mobiliário exclusivo e detalhes arquitetônicos premium"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/07.webp" alt="Miniatura de cozinha planejada com ilha central, equipamentos de alta performance e integração com área social" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/07.webp"
+                                srcset="public/assets/section_02_carrossel/07-mobile.webp 800w, public/assets/section_02_carrossel/07.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de cozinha planejada com ilha central, equipamentos de alta performance e integração com área social"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="public/assets/section_02_carrossel/08.webp" alt="Miniatura de planta humanizada vista superior com layout otimizado, mobiliário e diferenciação de ambientes por texturas" loading="lazy" decoding="async" width="120" height="80" />
+                            <img src="public/assets/section_02_carrossel/08.webp"
+                                srcset="public/assets/section_02_carrossel/08-mobile.webp 800w, public/assets/section_02_carrossel/08.webp 1920w"
+                                sizes="(max-width: 768px) 100vw, 100vw"
+                                alt="Miniatura de planta humanizada vista superior com layout otimizado, mobiliário e diferenciação de ambientes por texturas"
+                                loading="lazy" decoding="async" width="120" height="80" />
                         </div>
                     </div>
                 </div>
@@ -283,31 +347,67 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="public/assets/section_04/fachadas/fachada_01.webp"
-                                        alt="Fachada principal..."
+                                        srcset="public/assets/section_04/fachadas/fachada_01-mobile.webp 800w, public/assets/section_04/fachadas/fachada_01.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Fachada principal..."
                                         class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
                                         loading="lazy" decoding="async" width="720" height="384"
                                         data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_02.webp" alt="Fachada noturna..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_02.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_02-mobile.webp 800w, public/assets/section_04/fachadas/fachada_02.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Fachada noturna..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_03.webp" alt="Detalhe..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_03.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_03-mobile.webp 800w, public/assets/section_04/fachadas/fachada_03.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Detalhe..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_04.webp" alt="Perspectiva aérea..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_04.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_04-mobile.webp 800w, public/assets/section_04/fachadas/fachada_04.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Perspectiva aérea..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_05.webp" alt="Vista aérea frontal..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_05.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_05-mobile.webp 800w, public/assets/section_04/fachadas/fachada_05.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Vista aérea frontal..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_06.webp" alt="Render fotorrealista..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_06.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_06-mobile.webp 800w, public/assets/section_04/fachadas/fachada_06.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Render fotorrealista..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_07.webp" alt="Perspectiva lateral..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_07.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_07-mobile.webp 800w, public/assets/section_04/fachadas/fachada_07.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Perspectiva lateral..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/fachadas/fachada_08.webp" alt="Fachada em perspectiva..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="fachada-swiper" />
+                                    <img src="public/assets/section_04/fachadas/fachada_08.webp"
+                                        srcset="public/assets/section_04/fachadas/fachada_08-mobile.webp 800w, public/assets/section_04/fachadas/fachada_08.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Fachada em perspectiva..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="fachada-swiper" />
                                 </div>
                             </div>
                             <div class="swiper-button-prev" aria-label="Fachada anterior"></div>
@@ -328,31 +428,67 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="public/assets/section_04/interiores/interior_01.webp"
-                                        alt="Sala de estar..."
+                                        srcset="public/assets/section_04/interiores/interior_01-mobile.webp 800w, public/assets/section_04/interiores/interior_01.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Sala de estar..."
                                         class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
                                         loading="lazy" decoding="async" width="720" height="384"
                                         data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_02.webp" alt="Cozinha integrada..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_02.webp"
+                                        srcset="public/assets/section_04/interiores/interior_02-mobile.webp 800w, public/assets/section_04/interiores/interior_02.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Cozinha integrada..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_03.webp" alt="Suíte master..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_03.webp"
+                                        srcset="public/assets/section_04/interiores/interior_03-mobile.webp 800w, public/assets/section_04/interiores/interior_03.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Suíte master..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_04.webp" alt="Banheiro suíte..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_04.webp"
+                                        srcset="public/assets/section_04/interiores/interior_04-mobile.webp 800w, public/assets/section_04/interiores/interior_04.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Banheiro suíte..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_05.webp" alt="Home office..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_05.webp"
+                                        srcset="public/assets/section_04/interiores/interior_05-mobile.webp 800w, public/assets/section_04/interiores/interior_05.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Home office..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_06.webp" alt="Sala de jantar..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_06.webp"
+                                        srcset="public/assets/section_04/interiores/interior_06-mobile.webp 800w, public/assets/section_04/interiores/interior_06.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Sala de jantar..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_07.webp" alt="Home theater..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_07.webp"
+                                        srcset="public/assets/section_04/interiores/interior_07-mobile.webp 800w, public/assets/section_04/interiores/interior_07.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Home theater..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/interiores/interior_08.webp" alt="Varanda gourmet..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="interiores-swiper" />
+                                    <img src="public/assets/section_04/interiores/interior_08.webp"
+                                        srcset="public/assets/section_04/interiores/interior_08-mobile.webp 800w, public/assets/section_04/interiores/interior_08.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Varanda gourmet..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="interiores-swiper" />
                                 </div>
                             </div>
                             <div class="swiper-button-prev" aria-label="Interior anterior"></div>
@@ -372,31 +508,67 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="public/assets/section_04/areas_externas/exterior_01.webp"
-                                        alt="Piscina com borda infinita..."
+                                        srcset="public/assets/section_04/areas_externas/exterior_01-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_01.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Piscina com borda infinita..."
                                         class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
                                         loading="lazy" decoding="async" width="720" height="384"
                                         data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_02.webp" alt="Espaço gourmet..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_02.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_02-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_02.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Espaço gourmet..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_03.webp" alt="Área de lazer noturna..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_03.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_03-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_03.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Área de lazer noturna..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_04.webp" alt="Playground..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_04.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_04-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_04.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Playground..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_05.webp" alt="Área de convivência..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_05.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_05-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_05.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Área de convivência..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_06.webp" alt="Terraço..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_06.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_06-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_06.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Terraço..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_07.webp" alt="Quadra poliesportiva..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_07.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_07-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_07.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Quadra poliesportiva..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/areas_externas/exterior_08.webp" alt="Praça central..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="areas-externas-swiper" />
+                                    <img src="public/assets/section_04/areas_externas/exterior_08.webp"
+                                        srcset="public/assets/section_04/areas_externas/exterior_08-mobile.webp 800w, public/assets/section_04/areas_externas/exterior_08.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Praça central..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="areas-externas-swiper" />
                                 </div>
                             </div>
                             <div class="swiper-button-prev" aria-label="Área externa anterior"></div>
@@ -415,12 +587,18 @@
                         <div class="swiper plantas-swiper solution-swiper dual-image-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="public/assets/section_04/humanizadas/planta_terreo.webp" alt="Planta térreo..." class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger" loading="lazy" decoding="async" width="720" height="384" data-swiper-modal="plantas-swiper" />
+                                    <img src="public/assets/section_04/humanizadas/planta_terreo.webp"
+                                        srcset="public/assets/section_04/humanizadas/planta_terreo-mobile.webp 800w, public/assets/section_04/humanizadas/planta_terreo.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Planta térreo..."
+                                        class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
+                                        loading="lazy" decoding="async" width="720" height="384"
+                                        data-swiper-modal="plantas-swiper" />
                                 </div>
                                 <div class="swiper-slide">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                         data-src="public/assets/section_04/humanizadas/planta_pavimento_1.webp"
-                                        alt="Planta 1º pavimento..."
+                                        data-srcset="public/assets/section_04/humanizadas/planta_pavimento_1-mobile.webp 800w, public/assets/section_04/humanizadas/planta_pavimento_1.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Planta 1º pavimento..."
                                         class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
                                         loading="lazy" decoding="async" width="720" height="384"
                                         data-swiper-modal="plantas-swiper" />
@@ -428,7 +606,8 @@
                                 <div class="swiper-slide">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                         data-src="public/assets/section_04/humanizadas/planta_pavimento_tipo.webp"
-                                        alt="Planta pavimento tipo..."
+                                        data-srcset="public/assets/section_04/humanizadas/planta_pavimento_tipo-mobile.webp 800w, public/assets/section_04/humanizadas/planta_pavimento_tipo.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Planta pavimento tipo..."
                                         class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
                                         loading="lazy" decoding="async" width="720" height="384"
                                         data-swiper-modal="plantas-swiper" />
@@ -436,7 +615,8 @@
                                 <div class="swiper-slide">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                         data-src="public/assets/section_04/humanizadas/planta_apto_tipo.webp"
-                                        alt="Planta apto tipo..."
+                                        data-srcset="public/assets/section_04/humanizadas/planta_apto_tipo-mobile.webp 800w, public/assets/section_04/humanizadas/planta_apto_tipo.webp 1920w"
+                                        sizes="(max-width: 768px) 100vw, 800px" alt="Planta apto tipo..."
                                         class="w-full h-96 object-contain rounded-lg shadow-md cursor-pointer modal-trigger"
                                         loading="lazy" decoding="async" width="720" height="384"
                                         data-swiper-modal="plantas-swiper" />

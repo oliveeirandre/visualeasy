@@ -140,10 +140,14 @@ document.addEventListener('DOMContentLoaded', function () {
     isMediaLoaded = true;
 
     // Captura orginais e clones feitos dinamicamente
-    document.querySelectorAll('img[data-src], iframe[data-src]').forEach((el) => {
+    document.querySelectorAll('img[data-src], img[data-srcset], iframe[data-src]').forEach((el) => {
       if (el.dataset.src) {
         el.src = el.dataset.src;
         el.removeAttribute('data-src');
+      }
+      if (el.dataset.srcset) {
+        el.srcset = el.dataset.srcset;
+        el.removeAttribute('data-srcset');
       }
     });
 
